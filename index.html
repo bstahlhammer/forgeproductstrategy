@@ -1,545 +1,198 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Brian Stahlhammer — Forge Product Strategy</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<style>
-:root{--navy:#0A1628;--navy-mid:#0F1E38;--navy-light:#162440;--navy-card:#111E35;--cyan:#00C2FF;--cyan-dim:rgba(0,194,255,0.12);--white:#FFFFFF;--white-70:rgba(255,255,255,0.7);--white-40:rgba(255,255,255,0.4);--white-15:rgba(255,255,255,0.08);--border:rgba(0,194,255,0.18);--fd:'Sora',sans-serif;--fb:'Inter',sans-serif;--mw:1200px;--nh:72px}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--navy);color:var(--white);font-family:var(--fb);font-size:16px;line-height:1.6;overflow-x:hidden}
-::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--navy)}::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:3px}
-.container{max-width:var(--mw);margin:0 auto;padding:0 24px}
-section{padding:100px 0;position:relative}
-.fade-up{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
-.fade-up.visible{opacity:1;transform:translateY(0)}
-.fade-up.d1{transition-delay:.1s}.fade-up.d2{transition-delay:.2s}.fade-up.d3{transition-delay:.3s}.fade-up.d4{transition-delay:.4s}
-nav{position:fixed;top:0;left:0;right:0;z-index:999;height:var(--nh);display:flex;align-items:center;background:rgba(10,22,40,.75);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-bottom:1px solid var(--border);transition:background .3s}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:1.15rem;color:var(--white);letter-spacing:-.02em}
-.nav-logo .brand{color:var(--cyan)}
-.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
-.nav-links a{color:var(--white-70);text-decoration:none;font-size:.875rem;font-weight:500;letter-spacing:.02em;transition:color .2s}
-.nav-links a:hover{color:var(--cyan)}
-.btn-nav{background:var(--cyan);color:var(--navy);padding:10px 22px;border-radius:6px;font-family:var(--fd);font-weight:700;font-size:.875rem;text-decoration:none;transition:all .2s;white-space:nowrap}
-.btn-nav:hover{background:#22d4ff;box-shadow:0 0 24px rgba(0,194,255,.5);transform:translateY(-1px)}
-.nav-hbg{display:none;background:none;border:none;cursor:pointer;color:var(--white);padding:4px}
-#hero{min-height:100vh;display:flex;align-items:center;padding-top:var(--nh);overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 50%,rgba(0,194,255,.07) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 10% 20%,rgba(0,100,200,.08) 0%,transparent 60%)}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,194,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,194,255,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 0%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 0%,transparent 100%)}
-.hero-inner{display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center;position:relative;z-index:2;width:100%}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--cyan-dim);border:1px solid var(--border);color:var(--cyan);font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:24px}
-.hero-eyebrow::before{content:'';width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
-.hero-h1{font-family:var(--fd);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:20px}
-.hero-h1 em{font-style:normal;color:var(--cyan)}
-.hero-sub{font-size:1.05rem;color:var(--white-70);font-weight:400;margin-bottom:40px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
-.dot{width:4px;height:4px;background:var(--cyan);border-radius:50%;display:inline-block}
-.hero-ctas{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:56px}
-.btn-p{background:var(--cyan);color:var(--navy);padding:14px 32px;border-radius:6px;font-family:var(--fd);font-weight:700;font-size:.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
-.btn-p:hover{background:#22d4ff;box-shadow:0 0 32px rgba(0,194,255,.5);transform:translateY(-2px)}
-.btn-o{background:transparent;color:var(--white);padding:14px 32px;border-radius:6px;border:1px solid rgba(255,255,255,.25);font-family:var(--fd);font-weight:600;font-size:.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
-.btn-o:hover{border-color:var(--cyan);color:var(--cyan)}
-.hero-stats{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--border);padding-top:40px}
-.stat-item{flex:1;min-width:110px;padding-right:28px;border-right:1px solid var(--border);margin-right:28px}
-.stat-item:last-child{border-right:none;margin-right:0;padding-right:0}
-.stat-num{font-family:var(--fd);font-size:1.9rem;font-weight:800;color:var(--cyan);line-height:1;margin-bottom:4px}
-.stat-lbl{font-size:.75rem;color:var(--white-40);font-weight:500;text-transform:uppercase;letter-spacing:.05em}
-.hero-img-col{display:flex;justify-content:center;align-items:center}
-.hs-wrap{position:relative;width:300px;height:380px}
-.hs-box{width:100%;height:100%;border-radius:16px;background:linear-gradient(135deg,var(--navy-light) 0%,var(--navy-mid) 100%);border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;overflow:hidden}
-.hs-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cyan),transparent)}
-.hs-icon{width:80px;height:80px;border-radius:50%;background:var(--cyan-dim);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:2.5rem}
-.hs-lbl{font-size:.8rem;color:var(--white-40);text-align:center;font-weight:500;line-height:1.5}
-.hs-badge{position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);background:var(--navy-card);border:1px solid var(--border);border-radius:100px;padding:8px 20px;font-family:var(--fd);font-weight:700;font-size:.8rem;color:var(--cyan);white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.4)}
-.sec-label{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--cyan);margin-bottom:16px}
-.sec-title{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.7rem);font-weight:800;line-height:1.15;letter-spacing:-.02em;margin-bottom:16px}
-.sec-sub{color:var(--white-70);font-size:1rem;max-width:560px}
-#about{background:var(--navy)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.about-narrative p{color:var(--white-70);margin-bottom:16px;font-size:.975rem;line-height:1.75}
-.about-narrative p:first-of-type{color:var(--white);font-size:1.05rem}
-.phi-block{margin-top:36px;padding:28px 32px;background:var(--navy-card);border-left:3px solid var(--cyan);border-radius:0 12px 12px 0;position:relative}
-.phi-block::before{content:'"';font-family:var(--fd);font-size:5rem;line-height:1;color:var(--cyan);opacity:.12;position:absolute;top:8px;left:16px}
-.phi-block p{font-family:var(--fd);font-size:1rem;font-weight:500;color:var(--white);line-height:1.6;position:relative;z-index:1;margin:0}
-.phi-attr{margin-top:12px!important;font-size:.78rem!important;color:var(--cyan)!important;font-weight:600!important;letter-spacing:.05em}
-.edu-block{margin-bottom:36px}
-.edu-item{display:flex;gap:16px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--white-15)}
-.edu-item:last-child{border-bottom:none}
-.edu-icon{width:38px;height:38px;background:var(--cyan-dim);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.edu-deg{font-family:var(--fd);font-weight:600;font-size:.875rem;color:var(--white);margin-bottom:2px}
-.edu-sch{font-size:.78rem;color:var(--white-40)}
-.pills-lbl{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white-40);margin-bottom:14px}
-.pills{display:flex;flex-wrap:wrap;gap:8px}
-.pill{background:var(--white-15);border:1px solid var(--border);color:var(--white-70);font-size:.78rem;font-weight:500;padding:6px 14px;border-radius:100px;transition:all .2s;cursor:default}
-.pill:hover{background:var(--cyan-dim);color:var(--cyan);border-color:var(--cyan)}
-.pill.c{background:var(--cyan-dim);border-color:var(--border);color:var(--cyan)}
-#services{background:var(--navy-mid)}
-.svc-hdr{text-align:center;margin-bottom:60px}
-.svc-hdr .sec-sub{margin:0 auto}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:24px}
-.svc-grid-b{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:820px;margin:0 auto 56px}
-.svc-card{background:var(--navy-card);border:1px solid var(--border);border-radius:16px;padding:32px 28px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
-.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),transparent);opacity:0;transition:opacity .25s}
-.svc-card:hover{transform:translateY(-6px);border-color:rgba(0,194,255,.4);box-shadow:0 20px 60px rgba(0,0,0,.4)}
-.svc-card:hover::before{opacity:1}
-.svc-card.sig{border-color:rgba(0,194,255,.4);background:linear-gradient(135deg,#0F2040 0%,var(--navy-card) 100%)}
-.sig-badge{position:absolute;top:20px;right:20px;background:var(--cyan);color:var(--navy);font-size:.62rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:100px}
-.svc-icon{font-size:2rem;margin-bottom:16px;display:block}
-.svc-title{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:6px}
-.svc-wk{font-size:.72rem;color:var(--cyan);font-weight:600;margin-bottom:12px;letter-spacing:.05em}
-.svc-desc{font-size:.875rem;color:var(--white-70);line-height:1.65}
-.svc-cta{text-align:center}
-#case-studies{background:var(--navy)}
-.cs-hdr{margin-bottom:60px}
-.cs-card{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:28px;transition:border-color .25s,box-shadow .25s}
-.cs-card:hover{border-color:rgba(0,194,255,.35);box-shadow:0 16px 48px rgba(0,0,0,.4)}
-.cs-vis{display:flex;align-items:center;justify-content:center;padding:48px;min-height:260px;position:relative;overflow:hidden}
-.cs-vis::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,var(--cyan-dim) 0%,transparent 70%)}
-.cs-vis-icon{font-size:5rem;position:relative;z-index:1;filter:drop-shadow(0 0 20px rgba(0,194,255,.35))}
-.cs-vis-num{position:absolute;bottom:16px;right:20px;font-family:var(--fd);font-size:5rem;font-weight:800;color:rgba(0,194,255,.05);line-height:1;z-index:0}
-.cs-content{background:var(--navy-card);padding:44px 36px;display:flex;flex-direction:column;justify-content:center}
-.cs-tag{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--cyan);margin-bottom:12px}
-.cs-title{font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--white);margin-bottom:16px;line-height:1.25}
-.cs-desc{font-size:.875rem;color:var(--white-70);line-height:1.7;margin-bottom:28px}
-.cs-metrics{display:flex;flex-wrap:wrap;gap:12px}
-.cs-met{background:var(--cyan-dim);border:1px solid var(--border);border-radius:8px;padding:10px 16px}
-.cs-met-num{font-family:var(--fd);font-size:1.2rem;font-weight:800;color:var(--cyan);line-height:1;margin-bottom:2px}
-.cs-met-lbl{font-size:.68rem;color:var(--white-40);text-transform:uppercase;letter-spacing:.05em;font-weight:600}
-.cs-card.rev .cs-content{order:-1}
-#hire{background:var(--navy-mid)}
-.hire-intro{text-align:center;margin-bottom:60px}
-.hire-intro .sec-sub{margin:0 auto}
-.hire-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-.hire-col{border-radius:20px;padding:48px 40px;position:relative;overflow:hidden}
-.hire-dark{background:var(--navy-card);border:1px solid var(--border)}
-.hire-dark::before{content:'';position:absolute;top:-80px;right:-80px;width:250px;height:250px;background:radial-gradient(circle,rgba(0,194,255,.08) 0%,transparent 70%);pointer-events:none}
-.hire-light{background:linear-gradient(135deg,rgba(0,194,255,.08) 0%,rgba(0,80,160,.06) 100%);border:1px solid rgba(0,194,255,.28)}
-.hire-tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:20px;padding:5px 12px;border-radius:4px;background:var(--cyan-dim);color:var(--cyan)}
-.hire-col h3{font-family:var(--fd);font-size:1.4rem;font-weight:700;margin-bottom:14px;line-height:1.2}
-.hire-col>p{color:var(--white-70);font-size:.9rem;line-height:1.7;margin-bottom:28px}
-.hire-list{list-style:none;margin-bottom:36px}
-.hire-list li{display:flex;align-items:flex-start;gap:10px;color:var(--white-70);font-size:.875rem;margin-bottom:10px}
-.hire-list li::before{content:'→';color:var(--cyan);font-weight:700;flex-shrink:0;margin-top:1px}
-#contact{background:var(--navy);text-align:center}
-.ct-head{font-family:var(--fd);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
-.ct-sub{color:var(--white-70);font-size:1rem;margin-bottom:56px;max-width:460px;margin-left:auto;margin-right:auto}
-.ct-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:56px;max-width:820px;margin-left:auto;margin-right:auto}
-.ct-tile{background:var(--navy-card);border:1px solid var(--border);border-radius:14px;padding:24px 14px;text-decoration:none;color:var(--white);transition:all .25s;display:flex;flex-direction:column;align-items:center;gap:8px}
-.ct-tile:hover{border-color:var(--cyan);background:var(--cyan-dim);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.3)}
-.tile-icon{font-size:1.6rem}
-.tile-lbl{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--cyan)}
-.tile-val{font-size:.75rem;color:var(--white-70);word-break:break-all;text-align:center}
-.cf-wrap{max-width:600px;margin:0 auto;background:var(--navy-card);border:1px solid var(--border);border-radius:20px;padding:40px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.fg{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
-.fg label{font-size:.78rem;font-weight:600;color:var(--white-70);text-align:left;letter-spacing:.03em}
-.fg input,.fg textarea{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:8px;padding:12px 16px;color:var(--white);font-family:var(--fb);font-size:.9rem;transition:border-color .2s,box-shadow .2s;outline:none;resize:vertical;width:100%}
-.fg input::placeholder,.fg textarea::placeholder{color:var(--white-40)}
-.fg input:focus,.fg textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,194,255,.1)}
-.fg textarea{min-height:120px}
-.btn-sub{width:100%;background:var(--cyan);color:var(--navy);border:none;padding:15px 32px;border-radius:8px;font-family:var(--fd);font-weight:700;font-size:1rem;cursor:pointer;transition:all .2s;margin-top:8px}
-.btn-sub:hover{background:#22d4ff;box-shadow:0 0 32px rgba(0,194,255,.5);transform:translateY(-2px)}
-footer{background:var(--navy-mid);border-top:1px solid var(--border);padding:48px 0 32px}
-.ft-inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:start;gap:40px;margin-bottom:36px}
-.ft-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:1.1rem;color:var(--white);margin-bottom:10px}
-.ft-logo .brand{color:var(--cyan)}
-.ft-tag{font-size:.82rem;color:var(--white-40);font-style:italic}
-.ft-nav{display:flex;gap:24px;list-style:none;flex-wrap:wrap;justify-content:center}
-.ft-nav a{color:var(--white-40);text-decoration:none;font-size:.82rem;transition:color .2s}
-.ft-nav a:hover{color:var(--cyan)}
-.ft-right{text-align:right}
-.ft-copy{font-size:.75rem;color:var(--white-40);line-height:1.7}
-.ft-hr{border:none;border-top:1px solid var(--border);margin-bottom:24px}
-.glow-div{height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:.25}
-.mob-drawer{display:none;position:fixed;top:var(--nh);left:0;right:0;background:rgba(10,22,40,.97);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);z-index:998;padding:20px 24px;flex-direction:column;gap:2px}
-.mob-drawer.open{display:flex}
-.mob-drawer a{color:var(--white-70);text-decoration:none;font-size:.95rem;font-weight:500;padding:12px 0;border-bottom:1px solid var(--white-15);transition:color .2s}
-.mob-drawer a:hover{color:var(--cyan)}
-.mob-drawer a:last-child{border-bottom:none}
-.mob-drawer .btn-nav{margin-top:14px;text-align:center;display:block}
-@media(max-width:960px){
-.nav-links{display:none}.nav-hbg{display:block}
-.hero-inner{grid-template-columns:1fr;text-align:center}.hero-img-col{order:-1}
-.hs-wrap{width:200px;height:260px;margin:0 auto}.hero-ctas{justify-content:center}.hero-sub{justify-content:center}.hero-stats{justify-content:center}
-.about-grid{grid-template-columns:1fr;gap:48px}
-.svc-grid{grid-template-columns:1fr 1fr}
-.cs-card{grid-template-columns:1fr}.cs-card.rev .cs-content{order:0}
-.hire-grid{grid-template-columns:1fr}
-.ct-tiles{grid-template-columns:repeat(2,1fr)}.form-row{grid-template-columns:1fr}
-.ft-inner{grid-template-columns:1fr;text-align:center;gap:20px}.ft-nav{justify-content:center}.ft-right{text-align:center}
-}
-@media(max-width:600px){
-section{padding:72px 0}.svc-grid{grid-template-columns:1fr}.svc-grid-b{grid-template-columns:1fr}
-.stat-item{min-width:80px;padding-right:16px;margin-right:16px}.stat-num{font-size:1.5rem}
-.hire-col{padding:32px 24px}.cf-wrap{padding:28px 20px}
-}
-</style>
-</head>
-<body>
+￼
 
-<nav id="main-nav">
-  <div class="container">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo"><span>🔥</span><span>Forge<span class="brand"> Product Strategy</span></span></a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#case-studies">Work</a></li>
-        <li><a href="#hire">Hire Brian</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#contact" class="btn-nav">Book a Call</a></li>
-      </ul>
-      <button class="nav-hbg" id="hbg" aria-label="Toggle menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
-    </div>
-  </div>
-</nav>
+FORGE PRODUCT STRATEGY
+I build the products that transform companies.
+After 20 years turning complex technology challenges into market-leading products, I founded Forge to bring that same hands-on expertise to companies at their most critical inflection points.
+WORK WITH ME
 
-<div class="mob-drawer" id="mob-nav">
-  <a href="#about" onclick="closeMob()">About</a>
-  <a href="#services" onclick="closeMob()">Services</a>
-  <a href="#case-studies" onclick="closeMob()">Work</a>
-  <a href="#hire" onclick="closeMob()">Hire Brian</a>
-  <a href="#contact" onclick="closeMob()">Contact</a>
-  <a href="#contact" class="btn-nav" onclick="closeMob()">Book a Call</a>
-</div>
+SEE MY WORK
+20+
+YEARS IN PRODUCT
+10M+
+DEVICES SHIPPED
+4
+CONTINENTS
+$B+
+REVENUE IMPACT
+👤
+Brian Stahlhammer
+Replace with headshot
+￼
+FOUNDER
+PRODUCT STRATEGY
+·
+GO-TO-MARKET ARCHITECTURE
+·
+HARDWARE TO SAAS PIVOTS
+·
+FRACTIONAL CPO
+·
+THE PIVOT BLUEPRINT
+·
+EXECUTIVE COACHING
+·
+INDUSTRIAL IOT
+·
+CYBERSECURITY PLATFORMS
+·
+PRODUCT STRATEGY
+·
+GO-TO-MARKET ARCHITECTURE
+·
+HARDWARE TO SAAS PIVOTS
+·
+FRACTIONAL CPO
+·
+THE PIVOT BLUEPRINT
+·
+EXECUTIVE COACHING
+·
+INDUSTRIAL IOT
+·
+CYBERSECURITY PLATFORMS
+·
+ABOUT BRIAN
+Strategy that comes from actually doing the work.
+I started my career as a mechanical engineer at Colorado State, then spent years at PwC and Accenture doing management consulting. That combination of technical depth and business rigor is still the foundation of how I think about product.
+After getting my MBA at Georgetown, I moved into operational product roles where things got real fast. At Gogo, GCI, CableLabs, Calix, and FreeWave, I wasn't advising from the outside. I was in the room, making the tradeoffs, building the teams, and owning the outcomes.
+The work I'm most proud of at FreeWave was turning a 30-year-old hardware company into a cybersecurity platform business. That kind of transformation, where you're rebuilding the revenue model, the go-to-market motion, and the product architecture all at once, is exactly what Forge is built to help other companies navigate.
+I've worked across four continents and managed international teams in India, China, Brazil, and Vietnam. I've built paywalls, billing systems, and licensing infrastructure from scratch. And I've seen what separates the companies that successfully pivot from the ones that don't.
+"The best product strategies aren't found in frameworks. They're forged at the intersection of deep customer empathy, rigorous market analysis, and the courage to make hard tradeoffs."
+BRIAN STAHLHAMMER, FOUNDER, FORGE PRODUCT STRATEGY
+Education & Credentials
+￼
+B.S. Mechanical Engineering
+Colorado State University
+￼
+MBA
+Georgetown University
+￼
+Product Management Certification
+Stanford University
+￼
+Strategy Certification
+Northwestern University
+￼
+Product Management Certification
+Pragmatic Institute
+AREAS OF EXPERTISE
+What I bring
+to the table
+Product Strategy
+Go-to-Market
+Platform-as-a-Service
+Cybersecurity / OZT
+Industrial IoT
+Revenue Architecture
+B2B SaaS Scaling
+Hardware to SaaS Pivots
+OKR & Roadmapping
+Matrix Leadership
+Telecom Platforms
+Management Consulting
+Executive Coaching
+P&L Ownership
+WHAT I OFFER
+Engagements built for your moment of change.
+Each engagement starts with a real conversation about where you are and where you need to get to. No templated deliverables, no generic frameworks.
+01
+SIGNATURE PROGRAM
+The Pivot Blueprint
+12-WEEK ADVISORY PROGRAM
+A structured, end-to-end transformation program for companies ready to make a defining strategic pivot. We work through diagnosis, strategy architecture, go-to-market design, org alignment, and execution roadmap together.
+↗
+02
+Fractional CPO
+ONGOING / RETAINER
+Executive-level product leadership embedded in your company. Ideal for growth-stage teams that need a seasoned CPO to build product culture, set strategy, and drive quarterly execution without the full-time overhead.
+↗
+03
+GTM Strategy Workshops
+1 TO 3 DAY INTENSIVE
+High-intensity working sessions that produce a market-ready go-to-market strategy, including ICP definition, pricing architecture, channel design, and launch sequencing.
+↗
+04
+Product Org Assessment
+2 TO 4 WEEK ENGAGEMENT
+A rigorous diagnostic of your product organization covering team structure, process maturity, tooling, and output quality, delivered with a prioritized improvement roadmap.
+↗
+05
+Executive Coaching & Mentoring
+MONTHLY / ONGOING
+One-on-one coaching for CPOs, VPs of Product, and senior PMs navigating career inflection points, organizational complexity, or their first real P&L responsibility.
+↗
+BOOK A FREE DISCOVERY CALL
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="container">
-    <div class="hero-inner">
-      <div>
-        <div class="hero-eyebrow fade-up">Forge Product Strategy · Boulder, CO</div>
-        <h1 class="hero-h1 fade-up d1">I Build the Products<br/>That <em>Transform</em> Companies.</h1>
-        <div class="hero-sub fade-up d2">
-          <span>Product Strategist</span><span class="dot"></span>
-          <span>Go-to-Market Architect</span><span class="dot"></span>
-          <span>Founder</span>
-        </div>
-        <div class="hero-ctas fade-up d3">
-          <a href="#services" class="btn-p">Work With Me <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <a href="#case-studies" class="btn-o">See My Work</a>
-        </div>
-        <div class="hero-stats fade-up d4">
-          <div class="stat-item"><div class="stat-num">20+</div><div class="stat-lbl">Years Experience</div></div>
-          <div class="stat-item"><div class="stat-num">10M+</div><div class="stat-lbl">Devices Shipped</div></div>
-          <div class="stat-item"><div class="stat-num">4</div><div class="stat-lbl">Continents</div></div>
-          <div class="stat-item"><div class="stat-num">$B+</div><div class="stat-lbl">Revenue Impact</div></div>
-        </div>
-      </div>
-      <div class="hero-img-col fade-up d2">
-        <div class="hs-wrap">
-          <div class="hs-box">
-            <div class="hs-icon">👤</div>
-            <div class="hs-lbl">Brian Stahlhammer<br/>Replace with headshot</div>
-          </div>
-          <div class="hs-badge">🔥 Forge Product Strategy</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+SELECTED WORK
+Transformations I've led.
+These aren't case studies I wrote about. They're companies I worked inside, problems I owned, and outcomes I was accountable for.
+01
+FREEWAVE TECHNOLOGIES · BOULDER, CO · CYBERSECURITY
+Turning a 30-year hardware company into a cybersecurity platform
+FreeWave had built a strong reputation in industrial wireless over three decades, but the market was shifting toward software and recurring revenue. I led the full product strategy transformation, defining Operational Zero Trust as a category, rebuilding the go-to-market motion for enterprise sales, and architecting the recurring revenue infrastructure that made the pivot financially viable.
+02
+CALIX · TELECOMMUNICATIONS · COMMUNITY WI-FI
+Scaling SmartTown Wi-Fi to 10 million device connections
+At Calix I took their SmartTown platform from early traction to 10M+ connected devices, while maintaining high NPS scores across the subscriber base. This required rethinking pricing architecture, building out the partner ecosystem, and developing the product intelligence layer that made Calix the dominant player in rural broadband.
+03
+CABLELABS · INNOVATION RESEARCH · BROADBAND
+Shaping the future of community Wi-Fi infrastructure
+CableLabs sits at the center of the cable industry's R&D ecosystem, and my work there was about influencing where the entire industry was headed. I led product and innovation strategy for next-generation community Wi-Fi, developing standards, proof-of-concept deployments, and technology roadmaps that shaped how broadband infrastructure evolved across North America.
+04
+GCI · ALASKA · DIGITAL EXPERIENCE
+Reimagining the digital experience for Alaska's unique telecom market
+Alaska is unlike any other telecom market in the country. I redesigned GCI's digital customer experience and seasonal prepaid strategy specifically for those dynamics, building the billing systems, licensing mechanisms, and self-service flows from scratch. The result was a meaningfully improved CSAT score and a measurable reduction in churn.
+HIRE BRIAN
+Two ways to work together.
+FORGE PRODUCT STRATEGY — ADVISORY
+Consulting & Advisory Engagements
+Bring me in as an external strategic advisor or embedded consultant. This works best for boards, CEOs, and CPOs who need someone who has actually done the transformation they're trying to execute, not just advised on it from the outside.
+	•	The Pivot Blueprint, our 12-week transformation program Fractional CPO on retainer Go-to-market strategy and product launch Board-level product strategy advisory Team capability building and coaching M&A product due diligence
+START A CONVERSATION
 
-<div class="glow-div"></div>
+FULL-TIME EXECUTIVE ROLES — SELECTIVE
+CPO / VP Product Opportunities
+I'm selectively open to full-time executive product leadership at mission-driven companies where I can operate, not just advise. If you're building something that matters and need someone who has been in the transformation before, let's talk.
+	•	Chief Product Officer VP of Product Management Head of Product for platform or SaaS businesses Industrial IoT, cybersecurity, telecom, or enterprise SaaS Hardware-to-software pivots or platform scaling moments Roles with P&L ownership and board exposure
+CONNECT WITH BRIAN
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-narrative">
-        <span class="sec-label fade-up">About Brian</span>
-        <h2 class="sec-title fade-up d1">Strategy forged from<br/>three decades of doing.</h2>
-        <div class="fade-up d2">
-          <p>Brian Stahlhammer is a senior product leader who has spent 20+ years at the intersection of technology, strategy, and transformation — turning ambitious ideas into market-defining products.</p>
-          <p>His career began with a mechanical engineering degree from Colorado State and early consulting experience at PwC and Accenture, where he honed the analytical rigor that would define everything that followed. A Georgetown MBA sharpened his strategic lens.</p>
-          <p>Operational roles at Gogo, GCI, CableLabs, Calix, and FreeWave gave him the battle scars that only come from execution. Most recently at FreeWave Technologies, Brian led the transformation of a 30-year-old hardware company into a cybersecurity Platform-as-a-Service business — establishing category leadership in Operational Zero Trust security and driving significant profitability improvements.</p>
-          <p>Today, Brian channels that hard-won expertise into Forge Product Strategy — advising CEOs and CPOs of mid-sized companies navigating their own product strategy pivots and go-to-market transformations.</p>
-        </div>
-        <div class="phi-block fade-up d3">
-          <p>The best product strategies aren't found in frameworks — they're forged at the intersection of deep customer empathy, rigorous market analysis, and the courage to make hard tradeoffs.</p>
-          <p class="phi-attr">— Brian Stahlhammer</p>
-        </div>
-      </div>
-      <div>
-        <div class="edu-block fade-up d1">
-          <span class="sec-label">Education</span>
-          <div class="edu-item"><div class="edu-icon">🎓</div><div><div class="edu-deg">B.S. Mechanical Engineering</div><div class="edu-sch">Colorado State University</div></div></div>
-          <div class="edu-item"><div class="edu-icon">🎓</div><div><div class="edu-deg">MBA</div><div class="edu-sch">Georgetown University</div></div></div>
-          <div class="edu-item"><div class="edu-icon">📜</div><div><div class="edu-deg">Product Management Certification</div><div class="edu-sch">Stanford University</div></div></div>
-          <div class="edu-item"><div class="edu-icon">📜</div><div><div class="edu-deg">Strategy Certification</div><div class="edu-sch">Northwestern University</div></div></div>
-          <div class="edu-item"><div class="edu-icon">📜</div><div><div class="edu-deg">Pragmatic Institute Certification</div><div class="edu-sch">Pragmatic Institute</div></div></div>
-        </div>
-        <div class="fade-up d2">
-          <div class="pills-lbl">Core Expertise</div>
-          <div class="pills">
-            <span class="pill c">Product Strategy</span><span class="pill c">Go-to-Market</span>
-            <span class="pill">Platform-as-a-Service</span><span class="pill">Cybersecurity / OZT</span>
-            <span class="pill">Industrial IoT</span><span class="pill">Revenue Architecture</span>
-            <span class="pill">B2B SaaS Scaling</span><span class="pill">Hardware → SaaS Pivots</span>
-            <span class="pill">OKR &amp; Roadmapping</span><span class="pill">Matrix Leadership</span>
-            <span class="pill">Telecom Platforms</span><span class="pill">Management Consulting</span>
-            <span class="pill">Executive Coaching</span><span class="pill">P&amp;L Ownership</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+GET IN TOUCH
+Let's talk about your next transformation.
+Whether you have a specific engagement in mind or just want to think through a challenge, I'm always up for a direct conversation. No sales process, no intake forms.
+✉
+EMAIL
+brian@forgeproductstrategy.com
+in
+LINKEDIN
+linkedin.com/in/brianstahlhammer
+◷
+CALENDLY
+Book a free 30-minute call
+YOUR NAME
 
-<div class="glow-div"></div>
+COMPANY
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="container">
-    <div class="svc-hdr">
-      <span class="sec-label fade-up">What I Offer</span>
-      <h2 class="sec-title fade-up d1">Engagements built<br/>for your moment of change.</h2>
-      <p class="sec-sub fade-up d2">From 12-week transformations to ongoing fractional leadership — each engagement is designed around one thing: getting you to the other side of the pivot.</p>
-    </div>
-    <div class="svc-grid">
-      <div class="svc-card sig fade-up">
-        <span class="sig-badge">SIGNATURE</span>
-        <span class="svc-icon">⚒️</span>
-        <div class="svc-title">The Pivot Blueprint</div>
-        <div class="svc-wk">12-Week Advisory Program</div>
-        <p class="svc-desc">A structured end-to-end transformation program for product leaders ready to make a defining strategic pivot. Covers diagnosis, strategy architecture, GTM design, org alignment, and execution roadmap.</p>
-      </div>
-      <div class="svc-card fade-up d1">
-        <span class="svc-icon">🎯</span>
-        <div class="svc-title">Fractional CPO</div>
-        <div class="svc-wk">Ongoing / Retainer</div>
-        <p class="svc-desc">Executive-level product leadership without the full-time cost. Ideal for growth-stage companies that need a seasoned CPO to build product culture, set strategy, and execute quarterly.</p>
-      </div>
-      <div class="svc-card fade-up d2">
-        <span class="svc-icon">🚀</span>
-        <div class="svc-title">GTM Strategy Workshops</div>
-        <div class="svc-wk">1–3 Day Intensive</div>
-        <p class="svc-desc">High-intensity workshops that produce a market-ready go-to-market strategy — including ICP definition, pricing architecture, channel design, and launch sequencing.</p>
-      </div>
-    </div>
-    <div class="svc-grid-b">
-      <div class="svc-card fade-up">
-        <span class="svc-icon">🔍</span>
-        <div class="svc-title">Product Org Assessment</div>
-        <div class="svc-wk">2–4 Week Engagement</div>
-        <p class="svc-desc">A rigorous diagnostic of your product organization — team structure, process maturity, tooling, and output quality — with a prioritized improvement roadmap.</p>
-      </div>
-      <div class="svc-card fade-up d1">
-        <span class="svc-icon">🤝</span>
-        <div class="svc-title">Executive Coaching &amp; Mentoring</div>
-        <div class="svc-wk">Monthly / Ongoing</div>
-        <p class="svc-desc">One-on-one coaching for CPOs, VPs of Product, and senior PMs navigating career inflection points, organizational complexity, or their first major P&amp;L responsibility.</p>
-      </div>
-    </div>
-    <div class="svc-cta fade-up">
-      <a href="#contact" class="btn-p">Book a Free Discovery Call <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    </div>
-  </div>
-</section>
+EMAIL ADDRESS
 
-<div class="glow-div"></div>
+WHAT BRINGS YOU HERE?
+              Select an option
+              The Pivot Blueprint (12-week program)
+              Fractional CPO
+              GTM Strategy Workshop
+              Product Org Assessment
+              Executive Coaching
+              CPO / VP Product role
+              Just want to connect
+            
+TELL ME MORE
+SEND MESSAGE
 
-<!-- CASE STUDIES -->
-<section id="case-studies">
-  <div class="container">
-    <div class="cs-hdr">
-      <span class="sec-label fade-up">Case Studies</span>
-      <h2 class="sec-title fade-up d1">Transformations I've led.<br/>Results that speak.</h2>
-    </div>
+￼
+	•	About
+	•	Services
+	•	Work
+	•	Hire Brian
+	•	Contact
+© 2025 Forge Product Strategy. All rights reserved. Boulder, Colorado.
 
-    <div class="cs-card fade-up">
-      <div class="cs-vis" style="background:linear-gradient(135deg,#0D1F3C 0%,#091524 100%);">
-        <div class="cs-vis-icon">🛡️</div><div class="cs-vis-num">01</div>
-      </div>
-      <div class="cs-content">
-        <div class="cs-tag">FreeWave Technologies · Cybersecurity</div>
-        <h3 class="cs-title">Operational Zero Trust:<br/>Hardware Company Becomes Security Platform</h3>
-        <p class="cs-desc">Led the end-to-end product strategy transformation of FreeWave's Zentry platform — pivoting a 30-year hardware manufacturer into a PaaS cybersecurity business. Defined OZT category positioning, built the enterprise go-to-market motion, and drove substantial profitability improvements through recurring revenue architecture.</p>
-        <div class="cs-metrics">
-          <div class="cs-met"><div class="cs-met-num">30yr</div><div class="cs-met-lbl">Legacy Transformed</div></div>
-          <div class="cs-met"><div class="cs-met-num">PaaS</div><div class="cs-met-lbl">Revenue Model</div></div>
-          <div class="cs-met"><div class="cs-met-num">OZT</div><div class="cs-met-lbl">Category Leader</div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cs-card rev fade-up">
-      <div class="cs-vis" style="background:linear-gradient(135deg,#0D2A1C 0%,#091524 100%);">
-        <div class="cs-vis-icon">📡</div><div class="cs-vis-num">02</div>
-      </div>
-      <div class="cs-content">
-        <div class="cs-tag">Calix · Telecommunications Platform</div>
-        <h3 class="cs-title">SmartTown Wi-Fi:<br/>Scaling to 10M+ Device Connections</h3>
-        <p class="cs-desc">Scaled Calix's SmartTown community Wi-Fi platform from early stage to 10M+ device connections, achieving high NPS scores across the subscriber base. Drove product strategy, pricing architecture, and partner ecosystem development that established Calix as the market leader in rural broadband intelligence.</p>
-        <div class="cs-metrics">
-          <div class="cs-met"><div class="cs-met-num">10M+</div><div class="cs-met-lbl">Device Connections</div></div>
-          <div class="cs-met"><div class="cs-met-num">High</div><div class="cs-met-lbl">NPS Achieved</div></div>
-          <div class="cs-met"><div class="cs-met-num">#1</div><div class="cs-met-lbl">Market Position</div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cs-card fade-up">
-      <div class="cs-vis" style="background:linear-gradient(135deg,#1A1A0C 0%,#091524 100%);">
-        <div class="cs-vis-icon">🌐</div><div class="cs-vis-num">03</div>
-      </div>
-      <div class="cs-content">
-        <div class="cs-tag">CableLabs · Innovation Research</div>
-        <h3 class="cs-title">Community Wi-Fi Innovation:<br/>Shaping Industry Standards</h3>
-        <p class="cs-desc">Led product and innovation strategy at CableLabs for next-generation community Wi-Fi infrastructure. Developed industry standards, proof-of-concept deployments, and technology roadmaps that influenced the direction of broadband connectivity across North America.</p>
-        <div class="cs-metrics">
-          <div class="cs-met"><div class="cs-met-num">R&amp;D</div><div class="cs-met-lbl">Innovation Lab</div></div>
-          <div class="cs-met"><div class="cs-met-num">Std</div><div class="cs-met-lbl">Industry Standards</div></div>
-          <div class="cs-met"><div class="cs-met-num">NA</div><div class="cs-met-lbl">Network Footprint</div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cs-card rev fade-up">
-      <div class="cs-vis" style="background:linear-gradient(135deg,#0C1A2A 0%,#091524 100%);">
-        <div class="cs-vis-icon">❄️</div><div class="cs-vis-num">04</div>
-      </div>
-      <div class="cs-content">
-        <div class="cs-tag">GCI · Digital Experience · Alaska</div>
-        <h3 class="cs-title">Digital Experience Transformation:<br/>Seasonal Prepaid Innovation</h3>
-        <p class="cs-desc">Redesigned GCI's digital customer experience and seasonal prepaid product strategy for Alaska's unique market dynamics. Built product infrastructure — including billing systems, licensing mechanisms, and self-service flows — enabling GCI to serve a geographically dispersed customer base with dramatically improved CSAT and reduced churn.</p>
-        <div class="cs-metrics">
-          <div class="cs-met"><div class="cs-met-num">AK</div><div class="cs-met-lbl">Unique Market</div></div>
-          <div class="cs-met"><div class="cs-met-num">↑</div><div class="cs-met-lbl">CSAT Improved</div></div>
-          <div class="cs-met"><div class="cs-met-num">↓</div><div class="cs-met-lbl">Churn Reduced</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="glow-div"></div>
-
-<!-- HIRE -->
-<section id="hire">
-  <div class="container">
-    <div class="hire-intro">
-      <span class="sec-label fade-up">Hire Brian</span>
-      <h2 class="sec-title fade-up d1">Two ways to work together.</h2>
-      <p class="sec-sub fade-up d2">Whether you need an external advisor or an internal operator — Brian brings the same depth of experience and commitment to outcomes.</p>
-    </div>
-    <div class="hire-grid">
-      <div class="hire-col hire-dark fade-up">
-        <div class="hire-tag">Forge Product Strategy</div>
-        <h3>Advisory &amp; Consulting Engagements</h3>
-        <p>Bring in Brian as an external strategic advisor or embedded consultant. Ideal for boards, CEOs, and CPOs who need an experienced operator to help navigate a defining moment in their company's product trajectory.</p>
-        <ul class="hire-list">
-          <li>The Pivot Blueprint (12-week transformation program)</li>
-          <li>Fractional CPO (ongoing retainer)</li>
-          <li>GTM Strategy &amp; Product Launch</li>
-          <li>Board-level product strategy advisory</li>
-          <li>Team capability building &amp; coaching</li>
-          <li>M&amp;A product due diligence</li>
-        </ul>
-        <a href="#contact" class="btn-p">Start a Conversation <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
-      <div class="hire-col hire-light fade-up d1">
-        <div class="hire-tag">Open to Opportunities</div>
-        <h3>CPO / VP Product Roles</h3>
-        <p>Brian is selectively open to full-time executive product leadership roles at mission-driven companies where he can apply his transformation expertise as an operator — not just an advisor.</p>
-        <ul class="hire-list">
-          <li>Chief Product Officer (CPO)</li>
-          <li>VP of Product Management</li>
-          <li>Head of Product (Platform / SaaS)</li>
-          <li>Industrial IoT, cybersecurity, telecom, enterprise SaaS</li>
-          <li>Hardware-to-software pivots or platform scaling moments</li>
-          <li>Roles with P&amp;L ownership and board exposure</li>
-        </ul>
-        <a href="#contact" class="btn-o">Connect With Brian</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="glow-div"></div>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <span class="sec-label fade-up">Get In Touch</span>
-    <h2 class="ct-head fade-up d1">Let's talk about your<br/>next transformation.</h2>
-    <p class="ct-sub fade-up d2">Whether you're ready to start or just exploring — reach out and let's see if there's a fit.</p>
-    <div class="ct-tiles fade-up d2">
-      <a href="mailto:brian@forgeproductstrategy.com" class="ct-tile">
-        <div class="tile-icon">✉️</div><div class="tile-lbl">Email</div>
-        <div class="tile-val">brian@forgeproductstrategy.com</div>
-      </a>
-      <a href="#contact" class="ct-tile">
-        <div class="tile-icon">📞</div><div class="tile-lbl">Phone</div>
-        <div class="tile-val">Schedule via Calendly</div>
-      </a>
-      <a href="https://linkedin.com/in/brianstahlhammer" target="_blank" rel="noopener" class="ct-tile">
-        <div class="tile-icon">💼</div><div class="tile-lbl">LinkedIn</div>
-        <div class="tile-val">linkedin.com/in/brianstahlhammer</div>
-      </a>
-      <a href="https://calendly.com/brianstahlhammer" target="_blank" rel="noopener" class="ct-tile">
-        <div class="tile-icon">📅</div><div class="tile-lbl">Calendly</div>
-        <div class="tile-val">Book a free 30-min call</div>
-      </a>
-    </div>
-    <div class="cf-wrap fade-up d3">
-      <div class="form-row">
-        <div class="fg"><label>Your Name</label><input type="text" placeholder="Jane Smith" /></div>
-        <div class="fg"><label>Company</label><input type="text" placeholder="Acme Corp" /></div>
-      </div>
-      <div class="fg"><label>Email Address</label><input type="email" placeholder="jane@acmecorp.com" /></div>
-      <div class="fg"><label>How can Brian help?</label><textarea placeholder="Tell me about your challenge — the more context the better..."></textarea></div>
-      <button class="btn-sub" id="sbtn" type="button">Send Message →</button>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <div class="ft-inner">
-      <div>
-        <a href="#hero" class="ft-logo"><span>🔥</span><span>Forge<span class="brand"> Product Strategy</span></span></a>
-        <p class="ft-tag">Strategy forged from experience.</p>
-      </div>
-      <ul class="ft-nav">
-        <li><a href="#about">About</a></li><li><a href="#services">Services</a></li>
-        <li><a href="#case-studies">Work</a></li><li><a href="#hire">Hire Brian</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="ft-right">
-        <p class="ft-copy">© 2025 Forge Product Strategy<br/>Brian Stahlhammer. All rights reserved.</p>
-      </div>
-    </div>
-    <hr class="ft-hr" />
-    <p style="text-align:center;font-size:.72rem;color:rgba(255,255,255,.25)">Boulder, Colorado · Available for engagements globally</p>
-  </div>
-</footer>
-
-<script>
-const hbg=document.getElementById('hbg'),mn=document.getElementById('mob-nav');
-hbg.addEventListener('click',()=>mn.classList.toggle('open'));
-function closeMob(){mn.classList.remove('open')}
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})
-},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
-setTimeout(()=>{document.querySelectorAll('#hero .fade-up').forEach((el,i)=>setTimeout(()=>el.classList.add('visible'),i*130))},80);
-const nav=document.getElementById('main-nav');
-window.addEventListener('scroll',()=>{nav.style.background=window.scrollY>60?'rgba(10,22,40,.97)':'rgba(10,22,40,.75)';},{passive:true});
-document.getElementById('sbtn').addEventListener('click',function(){
-  const inputs=this.closest('.cf-wrap').querySelectorAll('input,textarea');
-  const ok=[...inputs].every(i=>i.value.trim());
-  if(!ok){this.textContent='Please fill in all fields ↑';this.style.background='#FF6B4A';setTimeout(()=>{this.textContent='Send Message →';this.style.background='';},2500);}
-  else{this.textContent='✓ Message Sent!';this.style.background='#00C87A';setTimeout(()=>{this.textContent='Send Message →';this.style.background='';inputs.forEach(i=>i.value='');},3000);}
-});
-</script>
-</body>
-</html>
+Strategy forged from experience.
