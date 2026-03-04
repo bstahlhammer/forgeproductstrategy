@@ -4,6 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Brian Stahlhammer — Forge Product Strategy</title>
+<link rel="icon" type="image/png" href="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" />
+<link rel="apple-touch-icon" href="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" />
+<meta name="msapplication-TileImage" content="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -22,7 +25,7 @@
   --fd: 'DM Serif Display', serif;
   --fb: 'DM Sans', sans-serif;
   --mw: 1160px;
-  --nh: 68px;
+  --nh: 112px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -54,8 +57,9 @@ nav {
   transition: background .3s;
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
-.nav-logo img { height: 32px; width: auto; display: block; }
-.nav-logo { text-decoration: none; }
+.nav-logo img { height: 96px; width: auto; display: block; }
+.nav-logo { text-decoration: none; margin-left: -8px; }
+.nav-inner { padding-left: 0; }
 .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
 .nav-links a { color: var(--mid); text-decoration: none; font-size: .85rem; font-weight: 500; letter-spacing: .01em; transition: color .2s; }
 .nav-links a:hover { color: var(--black); }
@@ -161,14 +165,14 @@ nav {
   gap: 16px; position: relative; overflow: hidden;
 }
 .hs-frame::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--black); }
-.hs-inner-icon { width: 88px; height: 88px; border-radius: 50%; background: var(--rule); display: flex; align-items: center; justify-content: center; font-size: 2.8rem; }
-.hs-inner-lbl { font-size: .8rem; color: var(--light); text-align: center; line-height: 1.5; }
+.hs-inner-icon { display: none; }
+.hs-inner-lbl { display: none; }
 .hs-tag {
   position: absolute; bottom: 20px; left: 20px; right: 20px;
   background: var(--black); color: var(--white);
   padding: 14px 18px; display: flex; align-items: center; justify-content: space-between;
 }
-.hs-tag img { height: 20px; width: auto; filter: brightness(0) invert(1); }
+.hs-tag img { height: 28px; width: auto; filter: brightness(0) invert(1); }
 .hs-tag-role { font-size: .72rem; color: rgba(255,255,255,.5); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; }
 
 /* ── SECTION COMMON ── */
@@ -317,7 +321,8 @@ section { padding: 110px 0; }
 /* ── FOOTER ── */
 footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.06); padding: 48px 0 32px; }
 .ft-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 40px; margin-bottom: 40px; }
-.ft-logo img { height: 28px; width: auto; filter: brightness(0) invert(1); opacity: .7; }
+.ft-logo img { height: 64px; width: auto; filter: brightness(0) invert(1); opacity: .75; }
+.ft-logo-wrap { display: flex; flex-direction: column; gap: 8px; }
 .ft-logo { text-decoration: none; display: block; }
 .ft-nav { display: flex; gap: 28px; list-style: none; justify-content: center; flex-wrap: wrap; }
 .ft-nav a { color: rgba(255,255,255,.3); text-decoration: none; font-size: .8rem; transition: color .2s; }
@@ -360,6 +365,12 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   .cs-num { display: none; }
 }
 </style>
+<meta property="og:title" content="Brian Stahlhammer — Forge Product Strategy" />
+<meta property="og:description" content="Senior product leader and founder of Forge Product Strategy. 20+ years transforming companies through product strategy and go-to-market expertise." />
+<meta property="og:image" content="https://i.postimg.cc/HxD2MwXw/Favorite-Aragon-Photo-Brian-Stahlhammer-2026-03-03-14.jpg" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://i.postimg.cc/HxD2MwXw/Favorite-Aragon-Photo-Brian-Stahlhammer-2026-03-03-14.jpg" />
 </head>
 <body>
 
@@ -415,8 +426,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
       </div>
       <div class="hero-img-col fade-up d2">
         <div class="hs-frame">
-          <div class="hs-inner-icon">👤</div>
-          <div class="hs-inner-lbl">Brian Stahlhammer<br/>Replace with headshot</div>
+          <img src="https://i.postimg.cc/HxD2MwXw/Favorite-Aragon-Photo-Brian-Stahlhammer-2026-03-03-14.jpg" alt="Brian Stahlhammer" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" />
           <div class="hs-tag">
             <img src="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" alt="Forge Product Strategy" />
             <span class="hs-tag-role">Founder</span>
@@ -678,25 +688,26 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
-  <div class="container">
+<section id="contact" style="position:relative;overflow:hidden;">
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;opacity:0.04;background:url('https://i.postimg.cc/0yXnjbG2/FPS-Logo.png') center/contain no-repeat;filter:brightness(0) invert(1);pointer-events:none;z-index:0;"></div>
+  <div class="container" style="position:relative;z-index:1;">
     <div class="ct-inner">
       <div class="ct-left fade-up">
         <span class="ct-kicker">Get in Touch</span>
         <h2 class="ct-head">Let's talk about<br/>your <em>next</em><br/>transformation.</h2>
         <p class="ct-p">Whether you have a specific engagement in mind or just want to think through a challenge, I'm always up for a direct conversation. No sales process, no intake forms.</p>
         <div class="ct-tiles">
-          <a href="mailto:brian@forgeproductstrategy.com" class="ct-tile">
+          <a href="/cdn-cgi/l/email-protection#0a6878636b644a6c65786d6f7a78656e7f697e797e786b7e6f6d7324696567" class="ct-tile">
             <div class="tile-icon">✉</div>
-            <div><div class="tile-lbl">Email</div><div class="tile-val">brian@forgeproductstrategy.com</div></div>
+            <div><div class="tile-lbl">Email</div><div class="tile-val"><span class="__cf_email__" data-cfemail="b0d2c2d9d1def0d6dfc2d7d5c0c2dfd4c5d3c4c3c4c2d1c4d5d7c99ed3dfdd">[email&#160;protected]</span></div></div>
           </a>
           <a href="https://linkedin.com/in/brianstahlhammer" target="_blank" rel="noopener" class="ct-tile">
             <div class="tile-icon">in</div>
             <div><div class="tile-lbl">LinkedIn</div><div class="tile-val">linkedin.com/in/brianstahlhammer</div></div>
           </a>
-          <a href="https://calendly.com/brianstahlhammer" target="_blank" rel="noopener" class="ct-tile">
-            <div class="tile-icon">◷</div>
-            <div><div class="tile-lbl">Calendly</div><div class="tile-val">Book a free 30-minute call</div></div>
+          <a href="GCAL_LINK_HERE" target="_blank" rel="noopener" class="ct-tile">
+            <div class="tile-icon">📅</div>
+            <div><div class="tile-lbl">Google Calendar</div><div class="tile-val">Book a free 30-minute call</div></div>
           </a>
         </div>
       </div>
@@ -727,6 +738,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
       </div>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
@@ -750,7 +762,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // EmailJS
 emailjs.init("XN59403PvG9TAz-Wp");
 
@@ -810,14 +822,4 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     msg.className = 'form-msg success';
     btn.textContent = 'Message sent ✓';
     this.reset();
-    setTimeout(() => { btn.textContent = 'Send message →'; btn.disabled = false; }, 4000);
-  } catch (err) {
-    msg.textContent = 'Something went wrong. Please email brian@forgeproductstrategy.com directly.';
-    msg.className = 'form-msg error';
-    btn.textContent = 'Send message →';
-    btn.disabled = false;
-  }
-});
-</script>
-</body>
-</html>
+    setTimeout(() => { btn.textContent = 'Send message →'; btn.disabled = false; }, 4
