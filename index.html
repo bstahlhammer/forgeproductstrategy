@@ -4,9 +4,14 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Brian Stahlhammer — Forge Product Strategy</title>
+<meta property="og:title" content="Brian Stahlhammer — Forge Product Strategy" />
+<meta property="og:description" content="Senior product leader and founder of Forge Product Strategy. 20+ years transforming companies through product strategy and go-to-market expertise." />
+<meta property="og:image" content="https://i.postimg.cc/HxD2MwXw/Favorite-Aragon-Photo-Brian-Stahlhammer-2026-03-03-14.jpg" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://i.postimg.cc/HxD2MwXw/Favorite-Aragon-Photo-Brian-Stahlhammer-2026-03-03-14.jpg" />
 <link rel="icon" type="image/png" href="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" />
 <link rel="apple-touch-icon" href="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" />
-<meta name="msapplication-TileImage" content="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -21,23 +26,18 @@
   --rule: #E2E2E2;
   --bg: #F8F7F4;
   --white: #FFFFFF;
-  --accent: #0D0D0D;
   --fd: 'DM Serif Display', serif;
   --fb: 'DM Sans', sans-serif;
   --mw: 1160px;
   --nh: 112px;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--black); font-family: var(--fb); font-size: 16px; line-height: 1.65; overflow-x: hidden; }
-
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--black); border-radius: 2px; }
-
 .container { max-width: var(--mw); margin: 0 auto; padding: 0 40px; }
-
 .fade-up { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 .fade-up.d1 { transition-delay: .08s; }
@@ -45,21 +45,20 @@ body { background: var(--bg); color: var(--black); font-family: var(--fb); font-
 .fade-up.d3 { transition-delay: .24s; }
 .fade-up.d4 { transition-delay: .32s; }
 
-/* ── NAV ── */
+/* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 999;
   height: var(--nh);
   display: flex; align-items: center;
-  background: rgba(248,247,244,0.88);
+  background: rgba(248,247,244,0.92);
   backdrop-filter: blur(16px) saturate(1.2);
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
   border-bottom: 1px solid var(--rule);
   transition: background .3s;
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
-.nav-logo img { height: 96px; width: auto; display: block; }
-.nav-logo { text-decoration: none; margin-left: -8px; }
-.nav-inner { padding-left: 0; }
+.nav-logo { text-decoration: none; margin-left: -4px; flex-shrink: 0; }
+.nav-logo img { height: 88px; width: auto; display: block; }
 .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
 .nav-links a { color: var(--mid); text-decoration: none; font-size: .85rem; font-weight: 500; letter-spacing: .01em; transition: color .2s; }
 .nav-links a:hover { color: var(--black); }
@@ -73,15 +72,15 @@ nav {
 .btn-nav:hover { background: var(--charcoal); transform: translateY(-1px); }
 .nav-hbg { display: none; background: none; border: none; cursor: pointer; color: var(--black); padding: 4px; }
 
-/* ── MOBILE DRAWER ── */
-.mob-drawer { display: none; position: fixed; top: var(--nh); left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--rule); z-index: 998; padding: 20px 40px; flex-direction: column; gap: 0; }
+/* MOBILE DRAWER */
+.mob-drawer { display: none; position: fixed; top: var(--nh); left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--rule); z-index: 998; padding: 20px 40px; flex-direction: column; }
 .mob-drawer.open { display: flex; }
 .mob-drawer a { color: var(--charcoal); text-decoration: none; font-size: .95rem; font-weight: 500; padding: 14px 0; border-bottom: 1px solid var(--rule); transition: color .2s; }
 .mob-drawer a:hover { color: var(--black); }
 .mob-drawer a:last-child { border-bottom: none; }
-.mob-drawer .btn-nav { margin-top: 16px; text-align: center; display: block; border-radius: 3px; }
+.mob-drawer .btn-nav { margin-top: 16px; text-align: center; display: block; }
 
-/* ── HERO ── */
+/* HERO */
 #hero {
   min-height: 100vh;
   padding-top: var(--nh);
@@ -92,27 +91,21 @@ nav {
 }
 .hero-ticker {
   position: absolute; bottom: 0; left: 0; right: 0;
-  border-top: 1px solid var(--rule);
   overflow: hidden; height: 44px; display: flex; align-items: center;
   background: var(--black); color: var(--white);
 }
 .ticker-track {
-  display: flex; gap: 0;
+  display: flex;
   animation: ticker 28s linear infinite;
   white-space: nowrap;
 }
-.ticker-track span {
-  font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
-  padding: 0 40px;
-}
+.ticker-track span { font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; padding: 0 40px; }
 .ticker-track span.sep { opacity: .3; padding: 0; }
 @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
 .hero-inner {
   display: grid; grid-template-columns: 1fr 420px;
   gap: 80px; align-items: center;
-  padding: 80px 0 100px;
-  width: 100%;
+  padding: 80px 0 100px; width: 100%;
 }
 .hero-kicker {
   display: inline-flex; align-items: center; gap: 10px;
@@ -124,14 +117,10 @@ nav {
   font-family: var(--fd);
   font-size: clamp(3rem, 5.5vw, 5rem);
   font-weight: 400; line-height: 1.05;
-  letter-spacing: -.02em; margin-bottom: 32px;
-  color: var(--black);
+  letter-spacing: -.02em; margin-bottom: 32px; color: var(--black);
 }
 .hero-h1 em { font-style: italic; }
-.hero-p {
-  font-size: 1.05rem; color: var(--mid); line-height: 1.75;
-  max-width: 500px; margin-bottom: 44px; font-weight: 300;
-}
+.hero-p { font-size: 1.05rem; color: var(--mid); line-height: 1.75; max-width: 500px; margin-bottom: 44px; font-weight: 300; }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 64px; }
 .btn-blk {
   background: var(--black); color: var(--white);
@@ -155,35 +144,32 @@ nav {
 .h-stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
 .h-stat-num { font-family: var(--fd); font-size: 2.4rem; font-weight: 400; color: var(--black); line-height: 1; margin-bottom: 4px; }
 .h-stat-lbl { font-size: .72rem; color: var(--light); font-weight: 500; text-transform: uppercase; letter-spacing: .08em; }
-
 .hero-img-col { position: relative; }
 .hs-frame {
   width: 100%; aspect-ratio: 3/4;
-  background: var(--bg);
   border: 1px solid var(--rule);
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 16px; position: relative; overflow: hidden;
+  position: relative; overflow: hidden;
+  background: var(--bg);
 }
-.hs-frame::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--black); }
-.hs-inner-icon { display: none; }
-.hs-inner-lbl { display: none; }
+.hs-frame::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--black); z-index: 2; }
+.hs-frame img.headshot { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
 .hs-tag {
-  position: absolute; bottom: 20px; left: 20px; right: 20px;
+  position: absolute; bottom: 0; left: 0; right: 0;
   background: var(--black); color: var(--white);
   padding: 14px 18px; display: flex; align-items: center; justify-content: space-between;
+  z-index: 2;
 }
 .hs-tag img { height: 28px; width: auto; filter: brightness(0) invert(1); }
 .hs-tag-role { font-size: .72rem; color: rgba(255,255,255,.5); font-weight: 500; letter-spacing: .06em; text-transform: uppercase; }
 
-/* ── SECTION COMMON ── */
+/* SECTION COMMON */
 section { padding: 110px 0; }
-.sec-rule { width: 100%; height: 1px; background: var(--rule); margin-bottom: 80px; }
 .sec-kicker { font-size: .68rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--light); margin-bottom: 20px; display: block; }
 .sec-title { font-family: var(--fd); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 400; line-height: 1.1; letter-spacing: -.02em; margin-bottom: 20px; color: var(--black); }
 .sec-title em { font-style: italic; }
 .sec-sub { color: var(--mid); font-size: 1rem; max-width: 540px; font-weight: 300; line-height: 1.75; }
 
-/* ── ABOUT ── */
+/* ABOUT */
 #about { background: var(--bg); }
 .about-top { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; margin-bottom: 80px; }
 .about-narrative p { color: var(--charcoal); margin-bottom: 20px; font-size: .975rem; line-height: 1.8; font-weight: 300; }
@@ -191,15 +177,13 @@ section { padding: 110px 0; }
 .phi-wrap { padding: 40px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin-top: 44px; }
 .phi-wrap blockquote { font-family: var(--fd); font-size: 1.35rem; font-style: italic; font-weight: 400; color: var(--black); line-height: 1.5; margin-bottom: 16px; }
 .phi-attr { font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--light); }
-
 .edu-title { font-family: var(--fd); font-size: 1.4rem; font-weight: 400; margin-bottom: 32px; color: var(--black); }
 .edu-item { display: flex; gap: 20px; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--rule); }
 .edu-item:first-of-type { border-top: 1px solid var(--rule); }
 .edu-logo { width: 52px; height: 52px; object-fit: contain; flex-shrink: 0; background: var(--white); border: 1px solid var(--rule); padding: 8px; }
-.edu-logo-placeholder { width: 52px; height: 52px; flex-shrink: 0; background: var(--rule); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+.edu-logo-placeholder { width: 52px; height: 52px; flex-shrink: 0; background: var(--rule); display: none; align-items: center; justify-content: center; font-size: 1.2rem; }
 .edu-deg { font-weight: 600; font-size: .9rem; color: var(--black); margin-bottom: 2px; }
 .edu-sch { font-size: .8rem; color: var(--mid); }
-
 .about-bottom { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: start; padding-top: 60px; border-top: 1px solid var(--rule); }
 .skills-lbl { font-size: .68rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--light); margin-bottom: 4px; display: block; }
 .skills-head { font-family: var(--fd); font-size: 1.3rem; font-weight: 400; color: var(--black); line-height: 1.2; }
@@ -208,7 +192,7 @@ section { padding: 110px 0; }
 .pill:hover { background: var(--black); color: var(--white); border-color: var(--black); }
 .pill.bold { background: var(--black); color: var(--white); border-color: var(--black); }
 
-/* ── SERVICES ── */
+/* SERVICES */
 #services { background: var(--white); }
 .svc-header { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; margin-bottom: 70px; }
 .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 1px; }
@@ -232,20 +216,13 @@ section { padding: 110px 0; }
 .svc-card.sig:hover .svc-arrow { color: var(--white); }
 .svc-cta { text-align: center; }
 
-/* ── CASE STUDIES ── */
+/* CASE STUDIES */
 #case-studies { background: var(--bg); }
 .cs-hdr { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; margin-bottom: 70px; }
-.cs-list { display: flex; flex-direction: column; gap: 0; }
-.cs-item {
-  display: grid; grid-template-columns: 80px 1fr auto;
-  gap: 40px; align-items: start;
-  padding: 44px 0; border-top: 1px solid var(--rule);
-  cursor: default; transition: background .2s;
-  position: relative;
-}
+.cs-list { display: flex; flex-direction: column; }
+.cs-item { display: grid; grid-template-columns: 80px 1fr auto; gap: 40px; align-items: start; padding: 44px 0; border-top: 1px solid var(--rule); }
 .cs-item:last-child { border-bottom: 1px solid var(--rule); }
 .cs-num { font-family: var(--fd); font-size: 1rem; font-style: italic; color: var(--rule); padding-top: 4px; }
-.cs-body {}
 .cs-tag { font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--light); margin-bottom: 10px; display: block; }
 .cs-title { font-family: var(--fd); font-size: 1.5rem; font-weight: 400; color: var(--black); line-height: 1.2; margin-bottom: 14px; }
 .cs-desc { font-size: .9rem; color: var(--mid); line-height: 1.75; max-width: 560px; font-weight: 300; }
@@ -254,8 +231,9 @@ section { padding: 110px 0; }
 .cs-met-num { font-family: var(--fd); font-size: 1.8rem; font-weight: 400; color: var(--black); line-height: 1; }
 .cs-met-lbl { font-size: .68rem; color: var(--light); text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
 
-/* ── HIRE ── */
+/* HIRE */
 #hire { background: var(--white); }
+.hire-intro { margin-bottom: 60px; }
 .hire-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
 .hire-col { padding: 56px 48px; }
 .hire-dark { background: var(--black); }
@@ -279,51 +257,42 @@ section { padding: 110px 0; }
 .btn-wht-inv { background: var(--white); color: var(--black); padding: 13px 28px; font-family: var(--fb); font-weight: 600; font-size: .82rem; text-decoration: none; letter-spacing: .04em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; transition: all .2s; }
 .btn-wht-inv:hover { background: var(--bg); transform: translateY(-1px); }
 
-/* ── CONTACT ── */
-#contact { background: var(--black); color: var(--white); }
-.ct-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
-.ct-left {}
+/* CONTACT */
+#contact { background: var(--black); color: var(--white); position: relative; overflow: hidden; }
+.contact-logo-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; opacity: .04; background: url('https://i.postimg.cc/0yXnjbG2/FPS-Logo.png') center/contain no-repeat; filter: brightness(0) invert(1); pointer-events: none; z-index: 0; }
+.ct-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; position: relative; z-index: 1; }
 .ct-kicker { font-size: .68rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 20px; display: block; }
 .ct-head { font-family: var(--fd); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.1; letter-spacing: -.02em; margin-bottom: 28px; color: var(--white); }
 .ct-head em { font-style: italic; }
 .ct-p { font-size: .95rem; color: rgba(255,255,255,.5); line-height: 1.75; margin-bottom: 48px; font-weight: 300; }
-.ct-tiles { display: flex; flex-direction: column; gap: 0; }
+.ct-tiles { display: flex; flex-direction: column; }
 .ct-tile { display: flex; align-items: center; gap: 20px; padding: 20px 0; border-top: 1px solid rgba(255,255,255,.08); text-decoration: none; color: var(--white); transition: all .2s; }
 .ct-tile:last-child { border-bottom: 1px solid rgba(255,255,255,.08); }
 .ct-tile:hover { padding-left: 8px; }
 .tile-icon { font-size: 1.2rem; width: 40px; text-align: center; flex-shrink: 0; }
 .tile-lbl { font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 2px; }
 .tile-val { font-size: .875rem; color: rgba(255,255,255,.8); }
-
-.cf { display: flex; flex-direction: column; gap: 0; }
+.cf { display: flex; flex-direction: column; }
 .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .fg { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
 .fg label { font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.4); }
-.fg input, .fg textarea, .fg select {
-  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
-  padding: 14px 18px; color: var(--white); font-family: var(--fb); font-size: .9rem;
-  transition: border-color .2s, background .2s; outline: none; resize: vertical; width: 100%;
-}
+.fg input, .fg textarea, .fg select { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); padding: 14px 18px; color: var(--white); font-family: var(--fb); font-size: .9rem; transition: border-color .2s, background .2s; outline: none; resize: vertical; width: 100%; }
 .fg input::placeholder, .fg textarea::placeholder { color: rgba(255,255,255,.2); }
 .fg input:focus, .fg textarea:focus { border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.08); }
 .fg textarea { min-height: 130px; }
-.btn-submit {
-  background: var(--white); color: var(--black); border: none;
-  padding: 16px 36px; font-family: var(--fb); font-weight: 600; font-size: .875rem;
-  cursor: pointer; letter-spacing: .06em; text-transform: uppercase; transition: all .2s; margin-top: 8px;
-  display: inline-flex; align-items: center; gap: 10px; align-self: flex-start;
-}
+.fg select { color: rgba(255,255,255,.6); }
+.fg select option { background: var(--black); color: var(--white); }
+.btn-submit { background: var(--white); color: var(--black); border: none; padding: 16px 36px; font-family: var(--fb); font-weight: 600; font-size: .875rem; cursor: pointer; letter-spacing: .06em; text-transform: uppercase; transition: all .2s; margin-top: 8px; display: inline-flex; align-items: center; gap: 10px; align-self: flex-start; }
 .btn-submit:hover { background: var(--bg); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.4); }
 .form-msg { font-size: .82rem; padding: 12px 16px; margin-top: 12px; display: none; }
 .form-msg.success { background: rgba(0,200,120,.1); color: #00C878; border: 1px solid rgba(0,200,120,.2); display: block; }
 .form-msg.error { background: rgba(255,80,60,.1); color: #FF503C; border: 1px solid rgba(255,80,60,.2); display: block; }
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.06); padding: 48px 0 32px; }
 .ft-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 40px; margin-bottom: 40px; }
-.ft-logo img { height: 64px; width: auto; filter: brightness(0) invert(1); opacity: .75; }
-.ft-logo-wrap { display: flex; flex-direction: column; gap: 8px; }
 .ft-logo { text-decoration: none; display: block; }
+.ft-logo img { height: 64px; width: auto; filter: brightness(0) invert(1); opacity: .75; }
 .ft-nav { display: flex; gap: 28px; list-style: none; justify-content: center; flex-wrap: wrap; }
 .ft-nav a { color: rgba(255,255,255,.3); text-decoration: none; font-size: .8rem; transition: color .2s; }
 .ft-nav a:hover { color: rgba(255,255,255,.8); }
@@ -332,10 +301,11 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 .ft-hr { border: none; border-top: 1px solid rgba(255,255,255,.06); margin-bottom: 20px; }
 .ft-tag { font-size: .72rem; color: rgba(255,255,255,.2); font-style: italic; text-align: center; }
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media (max-width: 960px) {
   .container { padding: 0 24px; }
   .nav-links { display: none; } .nav-hbg { display: block; }
+  .nav-logo img { height: 64px; }
   .hero-inner { grid-template-columns: 1fr; gap: 48px; }
   .hero-img-col { order: -1; } .hs-frame { max-width: 320px; margin: 0 auto; }
   .hero-stats { flex-wrap: wrap; gap: 24px; }
@@ -365,12 +335,6 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   .cs-num { display: none; }
 }
 </style>
-<meta property="og:title" content="Brian Stahlhammer — Forge Product Strategy" />
-<meta property="og:description" content="Senior product leader and founder of Forge Product Strategy. 20+ years transforming companies through product strategy and go-to-market expertise." />
-<meta property="og:image" content="https://i.postimg.cc/HxD2MwXw/Favorite-Aragon-Photo-Brian-Stahlhammer-2026-03-03-14.jpg" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://i.postimg.cc/HxD2MwXw/Favorite-Aragon-Photo-Brian-Stahlhammer-2026-03-03-14.jpg" />
 </head>
 <body>
 
@@ -426,7 +390,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
       </div>
       <div class="hero-img-col fade-up d2">
         <div class="hs-frame">
-          <img src="https://i.postimg.cc/HxD2MwXw/Favorite-Aragon-Photo-Brian-Stahlhammer-2026-03-03-14.jpg" alt="Brian Stahlhammer" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" />
+          <img class="headshot" src="https://i.postimg.cc/HxD2MwXw/Favorite-Aragon-Photo-Brian-Stahlhammer-2026-03-03-14.jpg" alt="Brian Stahlhammer" />
           <div class="hs-tag">
             <img src="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" alt="Forge Product Strategy" />
             <span class="hs-tag-role">Founder</span>
@@ -479,27 +443,27 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <div class="edu-title">Education &amp; Credentials</div>
         <div class="edu-item">
           <img class="edu-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/3/35/Colorado_State_University_seal.svg/150px-Colorado_State_University_seal.svg.png" alt="Colorado State University" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-          <div class="edu-logo-placeholder" style="display:none">🎓</div>
+          <div class="edu-logo-placeholder">🎓</div>
           <div><div class="edu-deg">B.S. Mechanical Engineering</div><div class="edu-sch">Colorado State University</div></div>
         </div>
         <div class="edu-item">
           <img class="edu-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/Georgetown_University_seal.svg/150px-Georgetown_University_seal.svg.png" alt="Georgetown University" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-          <div class="edu-logo-placeholder" style="display:none">🎓</div>
+          <div class="edu-logo-placeholder">🎓</div>
           <div><div class="edu-deg">MBA</div><div class="edu-sch">Georgetown University</div></div>
         </div>
         <div class="edu-item">
           <img class="edu-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Stanford_Cardinal_logo.svg/150px-Stanford_Cardinal_logo.svg.png" alt="Stanford University" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-          <div class="edu-logo-placeholder" style="display:none">📜</div>
+          <div class="edu-logo-placeholder">📜</div>
           <div><div class="edu-deg">Product Management Certification</div><div class="edu-sch">Stanford University</div></div>
         </div>
         <div class="edu-item">
           <img class="edu-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Northwestern_University_seal.svg/150px-Northwestern_University_seal.svg.png" alt="Northwestern University" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-          <div class="edu-logo-placeholder" style="display:none">📜</div>
+          <div class="edu-logo-placeholder">📜</div>
           <div><div class="edu-deg">Strategy Certification</div><div class="edu-sch">Northwestern University</div></div>
         </div>
         <div class="edu-item">
           <img class="edu-logo" src="https://pragmaticinstitute.com/wp-content/uploads/2022/10/pragmatic-logo-mark.png" alt="Pragmatic Institute" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-          <div class="edu-logo-placeholder" style="display:none">📜</div>
+          <div class="edu-logo-placeholder">📜</div>
           <div><div class="edu-deg">Product Management Certification</div><div class="edu-sch">Pragmatic Institute</div></div>
         </div>
       </div>
@@ -625,7 +589,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <div class="cs-body">
           <span class="cs-tag">CableLabs · Innovation Research · Broadband</span>
           <div class="cs-title">Shaping the future of community Wi-Fi infrastructure</div>
-          <p class="cs-desc">CableLabs sits at the center of the cable industry's R&D ecosystem, and my work there was about influencing where the entire industry was headed. I led product and innovation strategy for next-generation community Wi-Fi, developing standards, proof-of-concept deployments, and technology roadmaps that shaped how broadband infrastructure evolved across North America.</p>
+          <p class="cs-desc">CableLabs sits at the center of the cable industry's R&amp;D ecosystem, and my work there was about influencing where the entire industry was headed. I led product and innovation strategy for next-generation community Wi-Fi, developing standards, proof-of-concept deployments, and technology roadmaps that shaped how broadband infrastructure evolved across North America.</p>
         </div>
         <div class="cs-metrics">
           <div class="cs-met"><div class="cs-met-num">Std</div><div class="cs-met-lbl">Industry Standards Set</div></div>
@@ -650,7 +614,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 <!-- HIRE -->
 <section id="hire">
   <div class="container">
-    <div style="margin-bottom:60px;">
+    <div class="hire-intro">
       <span class="sec-kicker fade-up">Hire Brian</span>
       <h2 class="sec-title fade-up d1">Two ways to work<br/><em>together.</em></h2>
     </div>
@@ -688,18 +652,18 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 </section>
 
 <!-- CONTACT -->
-<section id="contact" style="position:relative;overflow:hidden;">
-  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;opacity:0.04;background:url('https://i.postimg.cc/0yXnjbG2/FPS-Logo.png') center/contain no-repeat;filter:brightness(0) invert(1);pointer-events:none;z-index:0;"></div>
-  <div class="container" style="position:relative;z-index:1;">
+<section id="contact">
+  <div class="contact-logo-bg"></div>
+  <div class="container">
     <div class="ct-inner">
       <div class="ct-left fade-up">
         <span class="ct-kicker">Get in Touch</span>
         <h2 class="ct-head">Let's talk about<br/>your <em>next</em><br/>transformation.</h2>
         <p class="ct-p">Whether you have a specific engagement in mind or just want to think through a challenge, I'm always up for a direct conversation. No sales process, no intake forms.</p>
         <div class="ct-tiles">
-          <a href="/cdn-cgi/l/email-protection#0a6878636b644a6c65786d6f7a78656e7f697e797e786b7e6f6d7324696567" class="ct-tile">
+          <a href="mailto:brian@forgeproductstrategy.com" class="ct-tile">
             <div class="tile-icon">✉</div>
-            <div><div class="tile-lbl">Email</div><div class="tile-val"><span class="__cf_email__" data-cfemail="b0d2c2d9d1def0d6dfc2d7d5c0c2dfd4c5d3c4c3c4c2d1c4d5d7c99ed3dfdd">[email&#160;protected]</span></div></div>
+            <div><div class="tile-lbl">Email</div><div class="tile-val">brian@forgeproductstrategy.com</div></div>
           </a>
           <a href="https://linkedin.com/in/brianstahlhammer" target="_blank" rel="noopener" class="ct-tile">
             <div class="tile-icon">in</div>
@@ -738,7 +702,6 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
       </div>
     </div>
   </div>
-  </div>
 </section>
 
 <!-- FOOTER -->
@@ -762,33 +725,27 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// EmailJS
+<script>
 emailjs.init("XN59403PvG9TAz-Wp");
 
-// Mobile nav
 const hbg = document.getElementById('hbg'), mn = document.getElementById('mob-nav');
 hbg.addEventListener('click', () => mn.classList.toggle('open'));
 function closeMob() { mn.classList.remove('open'); }
 
-// Scroll fade-up
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
 }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-// Hero fires immediately
 setTimeout(() => {
   document.querySelectorAll('#hero .fade-up').forEach((el, i) => setTimeout(() => el.classList.add('visible'), i * 120));
 }, 80);
 
-// Nav on scroll
 const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
-  nav.style.background = window.scrollY > 60 ? 'rgba(248,247,244,0.97)' : 'rgba(248,247,244,0.88)';
+  nav.style.background = window.scrollY > 60 ? 'rgba(248,247,244,0.97)' : 'rgba(248,247,244,0.92)';
 }, { passive: true });
 
-// Contact form with EmailJS
 document.getElementById('contact-form').addEventListener('submit', async function(e) {
   e.preventDefault();
   const btn = document.getElementById('sbtn');
@@ -822,4 +779,14 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     msg.className = 'form-msg success';
     btn.textContent = 'Message sent ✓';
     this.reset();
-    setTimeout(() => { btn.textContent = 'Send message →'; btn.disabled = false; }, 4
+    setTimeout(() => { btn.textContent = 'Send message →'; btn.disabled = false; }, 4000);
+  } catch(err) {
+    msg.textContent = 'Something went wrong. Please email brian@forgeproductstrategy.com directly.';
+    msg.className = 'form-msg error';
+    btn.textContent = 'Send message →';
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
