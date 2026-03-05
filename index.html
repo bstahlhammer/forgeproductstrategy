@@ -96,10 +96,6 @@ nav {
 .mob-drawer a:last-child { border-bottom: none; }
 .mob-drawer .btn-nav { margin-top: 16px; text-align: center; display: block; }
 
-/* ═══════════════════════════════
-   MAIN PAGE
-═══════════════════════════════ */
-
 /* HERO */
 #hero {
   min-height: 100vh;
@@ -285,9 +281,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 .ft-hr { border: none; border-top: 1px solid rgba(255,255,255,.06); margin-bottom: 20px; }
 .ft-tag { font-size: .72rem; color: rgba(255,255,255,.2); font-style: italic; text-align: center; }
 
-/* ═══════════════════════════════
-   TRANSITION AUDIT PAGE
-═══════════════════════════════ */
+/* TRANSITION AUDIT PAGE */
 #audit-page { background: var(--bg); }
 
 .audit-hero {
@@ -313,7 +307,6 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 .audit-meta-value { font-size: .9rem; color: rgba(255,255,255,.95); font-weight: 500; }
 .audit-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
 
-/* AUDIT SECTIONS */
 .audit-section { padding: 80px 0; border-bottom: 1px solid var(--rule); }
 .audit-section:last-of-type { border-bottom: none; }
 .audit-section-alt { background: var(--white); }
@@ -326,7 +319,6 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 .audit-body p strong { font-weight: 600; color: var(--black); }
 .audit-body p:last-child { margin-bottom: 0; }
 
-/* OUTCOMES */
 .outcomes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 48px; }
 .outcome-item { background: var(--white); padding: 32px 28px; }
 .audit-section-alt .outcome-item { background: var(--bg); }
@@ -334,13 +326,11 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 .outcome-title { font-family: var(--fd); font-size: 1.1rem; font-weight: 400; color: var(--black); margin-bottom: 10px; line-height: 1.2; }
 .outcome-desc { font-size: .875rem; color: var(--mid); line-height: 1.7; font-weight: 300; }
 
-/* PHASES */
 .phases { display: flex; flex-direction: column; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 48px; }
 .phase-item { background: var(--white); padding: 40px 36px; display: grid; grid-template-columns: 200px 1fr; gap: 48px; align-items: start; transition: background .2s; }
 .audit-section-alt .phase-item { background: var(--bg); }
 .phase-item:hover { background: var(--bg); }
 .audit-section-alt .phase-item:hover { background: var(--rule); }
-.phase-meta {}
 .phase-num { font-family: var(--fd); font-size: 2.5rem; font-weight: 400; color: #D0D8F0; line-height: 1; margin-bottom: 8px; }
 .phase-label { font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--light); margin-bottom: 6px; display: block; }
 .phase-weeks { font-size: .82rem; color: var(--orange); font-weight: 600; }
@@ -351,7 +341,6 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 .phase-deliverables li::before { content: '→'; color: var(--orange); flex-shrink: 0; font-weight: 600; margin-top: 1px; }
 .phase-deliverable-label { margin-top: 16px; margin-bottom: 8px; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--light); }
 
-/* WHO IS THIS FOR */
 .persona-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 48px; }
 .persona-card { background: var(--white); padding: 36px 32px; }
 .persona-card.dark { background: var(--black); }
@@ -364,7 +353,6 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 .persona-card.dark .persona-desc { color: rgba(255,255,255,.82); }
 .persona-card:not(.dark) .persona-desc { color: var(--mid); }
 
-/* FIT CHECK */
 .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
 .fit-col-title { font-family: var(--fd); font-size: 1.2rem; font-weight: 400; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--rule); }
 .fit-list { list-style: none; }
@@ -373,14 +361,12 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 .fit-yes .icon { background: #E8EEFB; color: #2250B7; }
 .fit-no .icon { background: #FAEAEA; color: #B61E23; }
 
-/* BONUSES */
 .bonus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 48px; }
 .bonus-card { background: var(--white); padding: 32px 28px; }
 .bonus-icon { font-size: 1.6rem; margin-bottom: 16px; display: block; }
 .bonus-title { font-family: var(--fd); font-size: 1.05rem; font-weight: 400; color: var(--black); margin-bottom: 10px; }
 .bonus-desc { font-size: .875rem; color: var(--mid); line-height: 1.7; font-weight: 300; }
 
-/* AUDIT CTA */
 .audit-cta-section { background: var(--black); padding: 80px 0; text-align: center; position: relative; overflow: hidden; }
 .audit-cta-section::before { content: ''; position: absolute; inset: 0; background: url('https://i.postimg.cc/0yXnjbG2/FPS-Logo.png') center/400px no-repeat; opacity: .03; filter: brightness(0) invert(1); }
 .audit-cta-inner { position: relative; z-index: 1; }
@@ -394,9 +380,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   .container { padding: 0 24px; }
   .nav-full { padding: 0 24px 0 0; }
   .nav-links { display: none; } .nav-hbg { display: block; }
-  .nav-full { padding: 0 24px 0 0; }
   .nav-logo img { height: 60px; }
-  --nh: 84px;
   .hero-inner { grid-template-columns: 1fr; gap: 48px; }
   .hero-img-col { order: -1; } .hs-frame { max-width: 320px; margin: 0 auto; }
   .hero-stats { flex-wrap: wrap; gap: 24px; }
@@ -470,7 +454,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   <a onclick="showPage('main');scrollTo('#contact');closeMob()" class="btn-nav">Book a Call</a>
 </div>
 
-<!-- ═══════════════════════════ MAIN PAGE ═══════════════════════════ -->
+<!-- MAIN PAGE -->
 <div id="main-page" class="page active">
 
 <section id="hero">
@@ -739,9 +723,9 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <h2 class="ct-head">Let's talk about<br/>your <em>next</em><br/>transformation.</h2>
         <p class="ct-p">Whether you have a specific engagement in mind or just want to think through a challenge, I'm always up for a direct conversation. No sales process, no intake forms.</p>
         <div class="ct-tiles">
-          <a href="/cdn-cgi/l/email-protection#fc9e8e959d92bc9a938e9b998c8e9398899f888f888e9d88999b85d29f9391" class="ct-tile">
+          <a href="mailto:brian@forgeproductstrategy.com" class="ct-tile">
             <div class="tile-icon">✉</div>
-            <div><div class="tile-lbl">Email</div><div class="tile-val"><span class="__cf_email__" data-cfemail="b9dbcbd0d8d7f9dfd6cbdedcc9cbd6ddccdacdcacdcbd8cddcdec097dad6d4">[email&#160;protected]</span></div></div>
+            <div><div class="tile-lbl">Email</div><div class="tile-val">brian@forgeproductstrategy.com</div></div>
           </a>
           <a href="https://linkedin.com/in/brianstahlhammer" target="_blank" rel="noopener" class="ct-tile">
             <div class="tile-icon">in</div>
@@ -805,11 +789,9 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 
 </div><!-- end main-page -->
 
-
-<!-- ═══════════════════════════ AUDIT PAGE ═══════════════════════════ -->
+<!-- AUDIT PAGE -->
 <div id="audit-page" class="page">
 
-<!-- AUDIT HERO -->
 <div class="audit-hero">
   <div class="container">
     <div class="audit-hero-inner">
@@ -842,7 +824,6 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   </div>
 </div>
 
-<!-- THE PROBLEM -->
 <div class="audit-section">
   <div class="container">
     <div class="audit-2col">
@@ -860,7 +841,6 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   </div>
 </div>
 
-<!-- OUTCOMES -->
 <div class="audit-section audit-section-alt">
   <div class="container">
     <div class="audit-2col">
@@ -907,7 +887,6 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   </div>
 </div>
 
-<!-- PHASES -->
 <div class="audit-section">
   <div class="container">
     <div style="margin-bottom:48px;">
@@ -1009,7 +988,6 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   </div>
 </div>
 
-<!-- WHO IS THIS FOR -->
 <div class="audit-section audit-section-alt">
   <div class="container">
     <div style="margin-bottom: 48px;">
@@ -1051,7 +1029,6 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   </div>
 </div>
 
-<!-- BONUSES -->
 <div class="audit-section">
   <div class="container">
     <div style="margin-bottom:48px;">
@@ -1078,7 +1055,6 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   </div>
 </div>
 
-<!-- AUDIT CTA -->
 <div class="audit-cta-section">
   <div class="container">
     <div class="audit-cta-inner">
@@ -1116,15 +1092,13 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 
 </div><!-- end audit-page -->
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 emailjs.init("XN59403PvG9TAz-Wp");
 
-// Page switching
 function showPage(page) {
   document.getElementById('main-page').classList.toggle('active', page === 'main');
   document.getElementById('audit-page').classList.toggle('active', page === 'audit');
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  // Re-trigger fade-ups on audit page
   if (page === 'audit') {
     setTimeout(() => {
       document.querySelectorAll('#audit-page .fade-up').forEach(el => {
@@ -1145,29 +1119,24 @@ function scrollTo(selector) {
   }, 50);
 }
 
-// Mobile nav
 const hbg = document.getElementById('hbg'), mn = document.getElementById('mob-nav');
 hbg.addEventListener('click', () => mn.classList.toggle('open'));
 function closeMob() { mn.classList.remove('open'); }
 
-// Scroll fade-up
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
 }, { threshold: 0.06, rootMargin: '0px 0px -20px 0px' });
 document.querySelectorAll('#main-page .fade-up').forEach(el => obs.observe(el));
 
-// Hero fires immediately
 setTimeout(() => {
   document.querySelectorAll('#hero .fade-up').forEach((el, i) => setTimeout(() => el.classList.add('visible'), i * 120));
 }, 80);
 
-// Nav on scroll
 const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
   nav.style.background = '#0D0D0D';
 }, { passive: true });
 
-// Contact form
 document.getElementById('contact-form').addEventListener('submit', async function(e) {
   e.preventDefault();
   const btn = document.getElementById('sbtn');
@@ -1194,4 +1163,14 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     msg.className = 'form-msg success';
     btn.textContent = 'Message sent ✓';
     this.reset();
-    setTimeout(() => { btn.textContent = 'Send message →'; btn.disabled = false; }, 
+    setTimeout(() => { btn.textContent = 'Send message →'; btn.disabled = false; }, 4000);
+  } catch(err) {
+    msg.textContent = 'Something went wrong. Please email me directly.';
+    msg.className = 'form-msg error';
+    btn.textContent = 'Send message →';
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
