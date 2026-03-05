@@ -11,6 +11,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg" />
 <link rel="icon" type="image/png" href="/FPS_Logo.png" />
+<link rel="shortcut icon" type="image/png" href="/FPS_Logo.png" />
 <link rel="apple-touch-icon" href="/FPS_Logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -67,8 +68,9 @@ nav {
   transition: background .3s;
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 0; }
-.nav-logo { text-decoration: none; flex-shrink: 0; display: flex; align-items: center; margin-right: auto; }
+.nav-logo { text-decoration: none; flex-shrink: 0; display: flex; align-items: flex-end; gap: 14px; margin-right: auto; }
 .nav-logo img { height: 84px; width: auto; display: block; }
+.nav-logo-text { font-family: var(--fb); font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: #ffffff; white-space: nowrap; padding-bottom: 4px; line-height: 1; }
 .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
 .nav-links a { color: #81C3E4; text-decoration: none; font-size: .85rem; font-weight: 500; letter-spacing: .01em; transition: color .2s; cursor: pointer; }
 .nav-links a:hover, .nav-links a.active-tab { color: #ffffff; }
@@ -440,6 +442,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
     <div class="nav-inner">
       <a class="nav-logo" onclick="showPage('main')" style="cursor:pointer;">
         <img src="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" alt="Forge Product Strategy" />
+        <span class="nav-logo-text">Forge Product Strategy</span>
       </a>
       <ul class="nav-links" id="nav-links-main">
         <li><a onclick="showPage('main');scrollTo('#about')">About</a></li>
@@ -736,9 +739,9 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <h2 class="ct-head">Let's talk about<br/>your <em>next</em><br/>transformation.</h2>
         <p class="ct-p">Whether you have a specific engagement in mind or just want to think through a challenge, I'm always up for a direct conversation. No sales process, no intake forms.</p>
         <div class="ct-tiles">
-          <a href="mailto:brian@forgeproductstrategy.com" class="ct-tile">
+          <a href="/cdn-cgi/l/email-protection#fc9e8e959d92bc9a938e9b998c8e9398899f888f888e9d88999b85d29f9391" class="ct-tile">
             <div class="tile-icon">✉</div>
-            <div><div class="tile-lbl">Email</div><div class="tile-val">brian@forgeproductstrategy.com</div></div>
+            <div><div class="tile-lbl">Email</div><div class="tile-val"><span class="__cf_email__" data-cfemail="b9dbcbd0d8d7f9dfd6cbdedcc9cbd6ddccdacdcacdcbd8cddcdec097dad6d4">[email&#160;protected]</span></div></div>
           </a>
           <a href="https://linkedin.com/in/brianstahlhammer" target="_blank" rel="noopener" class="ct-tile">
             <div class="tile-icon">in</div>
@@ -1113,7 +1116,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 
 </div><!-- end audit-page -->
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 emailjs.init("XN59403PvG9TAz-Wp");
 
 // Page switching
@@ -1134,7 +1137,11 @@ function showPage(page) {
 function scrollTo(selector) {
   setTimeout(() => {
     const el = document.querySelector(selector);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (el) {
+      const navH = document.getElementById('main-nav').offsetHeight;
+      const top = el.getBoundingClientRect().top + window.pageYOffset - navH;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
   }, 50);
 }
 
@@ -1187,14 +1194,4 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     msg.className = 'form-msg success';
     btn.textContent = 'Message sent ✓';
     this.reset();
-    setTimeout(() => { btn.textContent = 'Send message →'; btn.disabled = false; }, 4000);
-  } catch(err) {
-    msg.textContent = 'Something went wrong. Please email brian@forgeproductstrategy.com directly.';
-    msg.className = 'form-msg error';
-    btn.textContent = 'Send message →';
-    btn.disabled = false;
-  }
-});
-</script>
-</body>
-</html>
+    setTimeout(() => { btn.textContent = 'Send message →'; btn.disabled = false; }, 
