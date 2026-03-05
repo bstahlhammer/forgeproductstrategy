@@ -1163,4 +1163,14 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     msg.className = 'form-msg success';
     btn.textContent = 'Message sent ✓';
     this.reset();
-    setTimeout(() => { btn.textContent = 'Send message →
+    setTimeout(() => { btn.textContent = 'Send message →'; btn.disabled = false; }, 4000);
+  } catch(err) {
+    msg.textContent = 'Something went wrong. Please email me directly.';
+    msg.className = 'form-msg error';
+    btn.textContent = 'Send message →';
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
