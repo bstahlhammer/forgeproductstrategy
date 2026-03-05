@@ -9,8 +9,8 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg">
-<link rel="icon" type="image/png" href="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png">
-<link rel="apple-touch-icon" href="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png">
+<link rel="icon" type="image/png" href="/FPS_Logo.png">
+<link rel="apple-touch-icon" href="/FPS_Logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
@@ -61,36 +61,35 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 999;
   height: var(--nh);
   display: flex; align-items: center;
-  background: rgba(248,247,244,0.92);
-  backdrop-filter: blur(16px) saturate(1.2);
-  -webkit-backdrop-filter: blur(16px) saturate(1.2);
-  border-bottom: 1px solid var(--rule);
+  background: #0D0D0D;
+  border-bottom: 1px solid #2a2a2a;
   transition: background .3s;
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 0; }
 .nav-logo { text-decoration: none; flex-shrink: 0; display: flex; align-items: center; margin-right: auto; }
 .nav-logo img { height: 84px; width: auto; display: block; }
 .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-.nav-links a { color: var(--mid); text-decoration: none; font-size: .85rem; font-weight: 500; letter-spacing: .01em; transition: color .2s; cursor: pointer; }
-.nav-links a:hover, .nav-links a.active-tab { color: var(--black); }
-.nav-links a.active-tab { border-bottom: 2px solid var(--black); padding-bottom: 2px; }
+.nav-links a { color: #81C3E4; text-decoration: none; font-size: .85rem; font-weight: 500; letter-spacing: .01em; transition: color .2s; cursor: pointer; }
+.nav-links a:hover, .nav-links a.active-tab { color: #ffffff; }
+.nav-links a.active-tab { border-bottom: 2px solid #81C3E4; padding-bottom: 2px; }
 .nav-links a.audit-link { color: var(--orange); font-weight: 600; }
 .nav-links a.audit-link:hover { color: var(--black); }
 .btn-nav {
-  background: var(--black); color: var(--white);
+  background: var(--orange); color: #ffffff;
   padding: 10px 22px; border-radius: 3px;
   font-family: var(--fb); font-weight: 600; font-size: .82rem;
   text-decoration: none; letter-spacing: .04em; text-transform: uppercase;
   transition: all .2s; white-space: nowrap; cursor: pointer; border: none;
 }
-.btn-nav:hover { background: var(--charcoal); transform: translateY(-1px); }
+.btn-nav:hover { background: #D94E00; transform: translateY(-1px); }
+.nav-links a.btn-nav, .nav-links a.btn-nav:hover { color: #ffffff !important; }
 .nav-hbg { display: none; background: none; border: none; cursor: pointer; color: var(--black); padding: 4px; }
 
 /* MOBILE DRAWER */
-.mob-drawer { display: none; position: fixed; top: var(--nh); left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--rule); z-index: 998; padding: 20px 40px; flex-direction: column; }
+.mob-drawer { display: none; position: fixed; top: var(--nh); left: 0; right: 0; background: #0D0D0D; border-bottom: 1px solid #2a2a2a; z-index: 998; padding: 20px 40px; flex-direction: column; }
 .mob-drawer.open { display: flex; }
-.mob-drawer a { color: var(--charcoal); text-decoration: none; font-size: .95rem; font-weight: 500; padding: 14px 0; border-bottom: 1px solid var(--rule); transition: color .2s; cursor: pointer; }
-.mob-drawer a:hover { color: var(--black); }
+.mob-drawer a { color: #81C3E4; text-decoration: none; font-size: .95rem; font-weight: 500; padding: 14px 0; border-bottom: 1px solid #2a2a2a; transition: color .2s; cursor: pointer; }
+.mob-drawer a:hover { color: #ffffff; }
 .mob-drawer a:last-child { border-bottom: none; }
 .mob-drawer .btn-nav { margin-top: 16px; text-align: center; display: block; }
 
@@ -107,15 +106,7 @@ nav {
   border-bottom: 1px solid var(--rule);
   position: relative; overflow: hidden;
 }
-.hero-ticker {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  overflow: hidden; height: 44px; display: flex; align-items: center;
-  background: #162969; color: var(--white);
-}
-.ticker-track { display: flex; animation: ticker 28s linear infinite; white-space: nowrap; }
-.ticker-track span { font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; padding: 0 40px; }
-.ticker-track span.sep { opacity: .3; padding: 0; }
-@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
 .hero-inner {
   display: grid; grid-template-columns: 1fr 420px;
   gap: 80px; align-items: center;
@@ -443,7 +434,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 <body>
 
 <!-- NAV -->
-<nav id="main-nav" style="background: rgba(248, 247, 244, 0.97);">
+<nav id="main-nav" style="background: rgb(13, 13, 13);">
   <div class="nav-full">
     <div class="nav-inner">
       <a class="nav-logo" onclick="showPage('main')" style="cursor:pointer;">
@@ -491,7 +482,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         </div>
         <div class="hero-stats fade-up d4 visible">
           <div class="h-stat"><div class="h-stat-num">20+</div><div class="h-stat-lbl">Years in Product</div></div>
-          <div class="h-stat"><div class="h-stat-num">10M+</div><div class="h-stat-lbl">Devices Shipped</div></div>
+          <div class="h-stat"><div class="h-stat-num">30+</div><div class="h-stat-lbl">Go-to-Market Strategies Shaped</div></div>
           <div class="h-stat"><div class="h-stat-num">4</div><div class="h-stat-lbl">Continents</div></div>
           <div class="h-stat"><div class="h-stat-num">$Billions</div><div class="h-stat-lbl">Revenue Impact</div></div>
         </div>
@@ -501,44 +492,10 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
           <img class="headshot" src="https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg" alt="Brian Stahlhammer">
           <div class="hs-tag">
             <img src="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" alt="Forge Product Strategy">
-            <span class="hs-tag-role">Founder</span>
+            <span class="hs-tag-role"><strong style="color:#ffffff;font-weight:600;margin-right:6px;">Brian Stahlhammer</strong> — Founder</span>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="hero-ticker">
-    <div class="ticker-track">
-      <span>Product Strategy</span><span class="sep"> · </span>
-      <span>Go-to-Market Architecture</span><span class="sep"> · </span>
-      <span>Digital Transformation</span><span class="sep"> · </span>
-      <span>The Transition Audit</span><span class="sep"> · </span>
-      <span>AI Product Strategy</span><span class="sep"> · </span>
-      <span>Embedded Hardware-Software Platforms</span><span class="sep"> · </span>
-      <span>Fractional CPO</span><span class="sep"> · </span>
-      <span>Revenue &amp; Profitability Architecture</span><span class="sep"> · </span>
-      <span>Cybersecurity</span><span class="sep"> · </span>
-      <span>Player-Coach Leadership</span><span class="sep"> · </span>
-      <span>Design Leadership</span><span class="sep"> · </span>
-      <span>Executive Coaching</span><span class="sep"> · </span>
-      <span>B2B SaaS Scaling</span><span class="sep"> · </span>
-      <span>Industrial IoT</span><span class="sep"> · </span>
-      <span>AI Integration</span><span class="sep"> · </span>
-      <span>Product Strategy</span><span class="sep"> · </span>
-      <span>Go-to-Market Architecture</span><span class="sep"> · </span>
-      <span>Digital Transformation</span><span class="sep"> · </span>
-      <span>The Transition Audit</span><span class="sep"> · </span>
-      <span>AI Product Strategy</span><span class="sep"> · </span>
-      <span>Embedded Hardware-Software Platforms</span><span class="sep"> · </span>
-      <span>Fractional CPO</span><span class="sep"> · </span>
-      <span>Revenue &amp; Profitability Architecture</span><span class="sep"> · </span>
-      <span>Cybersecurity</span><span class="sep"> · </span>
-      <span>Player-Coach Leadership</span><span class="sep"> · </span>
-      <span>Design Leadership</span><span class="sep"> · </span>
-      <span>Executive Coaching</span><span class="sep"> · </span>
-      <span>B2B SaaS Scaling</span><span class="sep"> · </span>
-      <span>Industrial IoT</span><span class="sep"> · </span>
-      <span>AI Integration</span><span class="sep"> · </span>
     </div>
   </div>
 </section>
@@ -584,7 +541,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         </div>
       </div>
     </div>
-    <div class="about-bottom fade-up">
+    <div class="about-bottom fade-up visible">
       <div>
         <span class="skills-lbl">Areas of Expertise</span>
         <div class="skills-head">What I bring<br>to the table</div>
@@ -617,13 +574,13 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   <div class="container">
     <div class="svc-header">
       <div>
-        <span class="sec-kicker fade-up">What I Offer</span>
-        <h2 class="sec-title fade-up d1">Engagements built for<br><em>your moment of change.</em></h2>
+        <span class="sec-kicker fade-up visible">What I Offer</span>
+        <h2 class="sec-title fade-up d1 visible">Engagements built for<br><em>your moment of change.</em></h2>
       </div>
-      <p class="sec-sub fade-up d1">Each engagement starts with a real conversation about where you are and where you need to get to. No templated deliverables, no generic frameworks.</p>
+      <p class="sec-sub fade-up d1 visible">Each engagement starts with a real conversation about where you are and where you need to get to. No templated deliverables, no generic frameworks.</p>
     </div>
     <div class="svc-grid">
-      <div class="svc-card sig fade-up" onclick="showPage('audit')" style="cursor:pointer;">
+      <div class="svc-card sig fade-up visible" onclick="showPage('audit')" style="cursor:pointer;">
         <span class="svc-num">01</span>
         <span class="sig-badge">Signature Program</span>
         <div class="svc-title">The Transition Audit</div>
@@ -631,14 +588,14 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <p class="svc-desc">A structured diagnostic and strategy program for mid-market CEOs and CPOs navigating product pivots. We assess every dimension of your organization, identify the real gaps, and build the transformation roadmap together.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d1">
+      <div class="svc-card fade-up d1 visible">
         <span class="svc-num">02</span>
         <div class="svc-title">Fractional CPO</div>
         <div class="svc-wk">Ongoing / Retainer</div>
         <p class="svc-desc">Executive-level product leadership embedded in your company. Ideal for growth-stage teams that need a seasoned CPO to build product culture, set strategy, and drive quarterly execution without the full-time overhead.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d2">
+      <div class="svc-card fade-up d2 visible">
         <span class="svc-num">03</span>
         <div class="svc-title">GTM Strategy Workshops</div>
         <div class="svc-wk">1 to 3 Day Intensive</div>
@@ -647,14 +604,14 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
       </div>
     </div>
     <div class="svc-grid-b">
-      <div class="svc-card fade-up">
+      <div class="svc-card fade-up visible">
         <span class="svc-num">04</span>
         <div class="svc-title">Product Org Assessment</div>
         <div class="svc-wk">2 to 4 Week Engagement</div>
         <p class="svc-desc">A rigorous diagnostic of your product organization covering team structure, process maturity, tooling, and output quality, delivered with a prioritized improvement roadmap.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d1">
+      <div class="svc-card fade-up d1 visible">
         <span class="svc-num">05</span>
         <div class="svc-title">Executive Coaching &amp; Mentoring</div>
         <div class="svc-wk">Monthly / Ongoing</div>
@@ -662,7 +619,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <span class="svc-arrow">↗</span>
       </div>
     </div>
-    <div class="svc-cta fade-up">
+    <div class="svc-cta fade-up visible">
       <a onclick="showPage('main');scrollTo('#contact')" class="btn-blk">Book a free discovery call <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
     </div>
   </div>
@@ -1199,7 +1156,7 @@ setTimeout(() => {
 // Nav on scroll
 const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
-  nav.style.background = window.scrollY > 60 ? 'rgba(248,247,244,0.97)' : 'rgba(248,247,244,0.92)';
+  nav.style.background = '#0D0D0D';
 }, { passive: true });
 
 // Contact form
@@ -1251,8 +1208,8 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg">
-<link rel="icon" type="image/png" href="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png">
-<link rel="apple-touch-icon" href="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png">
+<link rel="icon" type="image/png" href="/FPS_Logo.png">
+<link rel="apple-touch-icon" href="/FPS_Logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
@@ -1303,36 +1260,35 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 999;
   height: var(--nh);
   display: flex; align-items: center;
-  background: rgba(248,247,244,0.92);
-  backdrop-filter: blur(16px) saturate(1.2);
-  -webkit-backdrop-filter: blur(16px) saturate(1.2);
-  border-bottom: 1px solid var(--rule);
+  background: #0D0D0D;
+  border-bottom: 1px solid #2a2a2a;
   transition: background .3s;
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 0; }
 .nav-logo { text-decoration: none; flex-shrink: 0; display: flex; align-items: center; margin-right: auto; }
 .nav-logo img { height: 84px; width: auto; display: block; }
 .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-.nav-links a { color: var(--mid); text-decoration: none; font-size: .85rem; font-weight: 500; letter-spacing: .01em; transition: color .2s; cursor: pointer; }
-.nav-links a:hover, .nav-links a.active-tab { color: var(--black); }
-.nav-links a.active-tab { border-bottom: 2px solid var(--black); padding-bottom: 2px; }
+.nav-links a { color: #81C3E4; text-decoration: none; font-size: .85rem; font-weight: 500; letter-spacing: .01em; transition: color .2s; cursor: pointer; }
+.nav-links a:hover, .nav-links a.active-tab { color: #ffffff; }
+.nav-links a.active-tab { border-bottom: 2px solid #81C3E4; padding-bottom: 2px; }
 .nav-links a.audit-link { color: var(--orange); font-weight: 600; }
 .nav-links a.audit-link:hover { color: var(--black); }
 .btn-nav {
-  background: var(--black); color: var(--white);
+  background: var(--orange); color: #ffffff;
   padding: 10px 22px; border-radius: 3px;
   font-family: var(--fb); font-weight: 600; font-size: .82rem;
   text-decoration: none; letter-spacing: .04em; text-transform: uppercase;
   transition: all .2s; white-space: nowrap; cursor: pointer; border: none;
 }
-.btn-nav:hover { background: var(--charcoal); transform: translateY(-1px); }
+.btn-nav:hover { background: #D94E00; transform: translateY(-1px); }
+.nav-links a.btn-nav, .nav-links a.btn-nav:hover { color: #ffffff !important; }
 .nav-hbg { display: none; background: none; border: none; cursor: pointer; color: var(--black); padding: 4px; }
 
 /* MOBILE DRAWER */
-.mob-drawer { display: none; position: fixed; top: var(--nh); left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--rule); z-index: 998; padding: 20px 40px; flex-direction: column; }
+.mob-drawer { display: none; position: fixed; top: var(--nh); left: 0; right: 0; background: #0D0D0D; border-bottom: 1px solid #2a2a2a; z-index: 998; padding: 20px 40px; flex-direction: column; }
 .mob-drawer.open { display: flex; }
-.mob-drawer a { color: var(--charcoal); text-decoration: none; font-size: .95rem; font-weight: 500; padding: 14px 0; border-bottom: 1px solid var(--rule); transition: color .2s; cursor: pointer; }
-.mob-drawer a:hover { color: var(--black); }
+.mob-drawer a { color: #81C3E4; text-decoration: none; font-size: .95rem; font-weight: 500; padding: 14px 0; border-bottom: 1px solid #2a2a2a; transition: color .2s; cursor: pointer; }
+.mob-drawer a:hover { color: #ffffff; }
 .mob-drawer a:last-child { border-bottom: none; }
 .mob-drawer .btn-nav { margin-top: 16px; text-align: center; display: block; }
 
@@ -1349,15 +1305,7 @@ nav {
   border-bottom: 1px solid var(--rule);
   position: relative; overflow: hidden;
 }
-.hero-ticker {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  overflow: hidden; height: 44px; display: flex; align-items: center;
-  background: #162969; color: var(--white);
-}
-.ticker-track { display: flex; animation: ticker 28s linear infinite; white-space: nowrap; }
-.ticker-track span { font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; padding: 0 40px; }
-.ticker-track span.sep { opacity: .3; padding: 0; }
-@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
 .hero-inner {
   display: grid; grid-template-columns: 1fr 420px;
   gap: 80px; align-items: center;
@@ -1685,7 +1633,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 <body>
 
 <!-- NAV -->
-<nav id="main-nav" style="background: rgba(248, 247, 244, 0.97);">
+<nav id="main-nav" style="background: rgb(13, 13, 13);">
   <div class="nav-full">
     <div class="nav-inner">
       <a class="nav-logo" onclick="showPage('main')" style="cursor:pointer;">
@@ -1733,7 +1681,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         </div>
         <div class="hero-stats fade-up d4 visible">
           <div class="h-stat"><div class="h-stat-num">20+</div><div class="h-stat-lbl">Years in Product</div></div>
-          <div class="h-stat"><div class="h-stat-num">10M+</div><div class="h-stat-lbl">Devices Shipped</div></div>
+          <div class="h-stat"><div class="h-stat-num">30+</div><div class="h-stat-lbl">Go-to-Market Strategies Shaped</div></div>
           <div class="h-stat"><div class="h-stat-num">4</div><div class="h-stat-lbl">Continents</div></div>
           <div class="h-stat"><div class="h-stat-num">$Billions</div><div class="h-stat-lbl">Revenue Impact</div></div>
         </div>
@@ -1743,44 +1691,10 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
           <img class="headshot" src="https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg" alt="Brian Stahlhammer">
           <div class="hs-tag">
             <img src="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" alt="Forge Product Strategy">
-            <span class="hs-tag-role">Founder</span>
+            <span class="hs-tag-role"><strong style="color:#ffffff;font-weight:600;margin-right:6px;">Brian Stahlhammer</strong> — Founder</span>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="hero-ticker">
-    <div class="ticker-track">
-      <span>Product Strategy</span><span class="sep"> · </span>
-      <span>Go-to-Market Architecture</span><span class="sep"> · </span>
-      <span>Digital Transformation</span><span class="sep"> · </span>
-      <span>The Transition Audit</span><span class="sep"> · </span>
-      <span>AI Product Strategy</span><span class="sep"> · </span>
-      <span>Embedded Hardware-Software Platforms</span><span class="sep"> · </span>
-      <span>Fractional CPO</span><span class="sep"> · </span>
-      <span>Revenue &amp; Profitability Architecture</span><span class="sep"> · </span>
-      <span>Cybersecurity</span><span class="sep"> · </span>
-      <span>Player-Coach Leadership</span><span class="sep"> · </span>
-      <span>Design Leadership</span><span class="sep"> · </span>
-      <span>Executive Coaching</span><span class="sep"> · </span>
-      <span>B2B SaaS Scaling</span><span class="sep"> · </span>
-      <span>Industrial IoT</span><span class="sep"> · </span>
-      <span>AI Integration</span><span class="sep"> · </span>
-      <span>Product Strategy</span><span class="sep"> · </span>
-      <span>Go-to-Market Architecture</span><span class="sep"> · </span>
-      <span>Digital Transformation</span><span class="sep"> · </span>
-      <span>The Transition Audit</span><span class="sep"> · </span>
-      <span>AI Product Strategy</span><span class="sep"> · </span>
-      <span>Embedded Hardware-Software Platforms</span><span class="sep"> · </span>
-      <span>Fractional CPO</span><span class="sep"> · </span>
-      <span>Revenue &amp; Profitability Architecture</span><span class="sep"> · </span>
-      <span>Cybersecurity</span><span class="sep"> · </span>
-      <span>Player-Coach Leadership</span><span class="sep"> · </span>
-      <span>Design Leadership</span><span class="sep"> · </span>
-      <span>Executive Coaching</span><span class="sep"> · </span>
-      <span>B2B SaaS Scaling</span><span class="sep"> · </span>
-      <span>Industrial IoT</span><span class="sep"> · </span>
-      <span>AI Integration</span><span class="sep"> · </span>
     </div>
   </div>
 </section>
@@ -1826,7 +1740,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         </div>
       </div>
     </div>
-    <div class="about-bottom fade-up">
+    <div class="about-bottom fade-up visible">
       <div>
         <span class="skills-lbl">Areas of Expertise</span>
         <div class="skills-head">What I bring<br>to the table</div>
@@ -1859,13 +1773,13 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   <div class="container">
     <div class="svc-header">
       <div>
-        <span class="sec-kicker fade-up">What I Offer</span>
-        <h2 class="sec-title fade-up d1">Engagements built for<br><em>your moment of change.</em></h2>
+        <span class="sec-kicker fade-up visible">What I Offer</span>
+        <h2 class="sec-title fade-up d1 visible">Engagements built for<br><em>your moment of change.</em></h2>
       </div>
-      <p class="sec-sub fade-up d1">Each engagement starts with a real conversation about where you are and where you need to get to. No templated deliverables, no generic frameworks.</p>
+      <p class="sec-sub fade-up d1 visible">Each engagement starts with a real conversation about where you are and where you need to get to. No templated deliverables, no generic frameworks.</p>
     </div>
     <div class="svc-grid">
-      <div class="svc-card sig fade-up" onclick="showPage('audit')" style="cursor:pointer;">
+      <div class="svc-card sig fade-up visible" onclick="showPage('audit')" style="cursor:pointer;">
         <span class="svc-num">01</span>
         <span class="sig-badge">Signature Program</span>
         <div class="svc-title">The Transition Audit</div>
@@ -1873,14 +1787,14 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <p class="svc-desc">A structured diagnostic and strategy program for mid-market CEOs and CPOs navigating product pivots. We assess every dimension of your organization, identify the real gaps, and build the transformation roadmap together.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d1">
+      <div class="svc-card fade-up d1 visible">
         <span class="svc-num">02</span>
         <div class="svc-title">Fractional CPO</div>
         <div class="svc-wk">Ongoing / Retainer</div>
         <p class="svc-desc">Executive-level product leadership embedded in your company. Ideal for growth-stage teams that need a seasoned CPO to build product culture, set strategy, and drive quarterly execution without the full-time overhead.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d2">
+      <div class="svc-card fade-up d2 visible">
         <span class="svc-num">03</span>
         <div class="svc-title">GTM Strategy Workshops</div>
         <div class="svc-wk">1 to 3 Day Intensive</div>
@@ -1889,14 +1803,14 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
       </div>
     </div>
     <div class="svc-grid-b">
-      <div class="svc-card fade-up">
+      <div class="svc-card fade-up visible">
         <span class="svc-num">04</span>
         <div class="svc-title">Product Org Assessment</div>
         <div class="svc-wk">2 to 4 Week Engagement</div>
         <p class="svc-desc">A rigorous diagnostic of your product organization covering team structure, process maturity, tooling, and output quality, delivered with a prioritized improvement roadmap.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d1">
+      <div class="svc-card fade-up d1 visible">
         <span class="svc-num">05</span>
         <div class="svc-title">Executive Coaching &amp; Mentoring</div>
         <div class="svc-wk">Monthly / Ongoing</div>
@@ -1904,7 +1818,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <span class="svc-arrow">↗</span>
       </div>
     </div>
-    <div class="svc-cta fade-up">
+    <div class="svc-cta fade-up visible">
       <a onclick="showPage('main');scrollTo('#contact')" class="btn-blk">Book a free discovery call <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
     </div>
   </div>
@@ -2441,7 +2355,7 @@ setTimeout(() => {
 // Nav on scroll
 const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
-  nav.style.background = window.scrollY > 60 ? 'rgba(248,247,244,0.97)' : 'rgba(248,247,244,0.92)';
+  nav.style.background = '#0D0D0D';
 }, { passive: true });
 
 // Contact form
@@ -2484,7 +2398,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 
 </body>
 <!-- NAV -->
-<nav id="main-nav" style="background: rgba(248, 247, 244, 0.97);">
+<nav id="main-nav" style="background: rgb(13, 13, 13);">
   <div class="nav-full">
     <div class="nav-inner">
       <a class="nav-logo" onclick="showPage('main')" style="cursor:pointer;">
@@ -2530,7 +2444,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         </div>
         <div class="hero-stats fade-up d4 visible">
           <div class="h-stat"><div class="h-stat-num">20+</div><div class="h-stat-lbl">Years in Product</div></div>
-          <div class="h-stat"><div class="h-stat-num">10M+</div><div class="h-stat-lbl">Devices Shipped</div></div>
+          <div class="h-stat"><div class="h-stat-num">30+</div><div class="h-stat-lbl">Go-to-Market Strategies Shaped</div></div>
           <div class="h-stat"><div class="h-stat-num">4</div><div class="h-stat-lbl">Continents</div></div>
           <div class="h-stat"><div class="h-stat-num">$Billions</div><div class="h-stat-lbl">Revenue Impact</div></div>
         </div>
@@ -2540,44 +2454,10 @@ document.getElementById('contact-form').addEventListener('submit', async functio
           <img class="headshot" src="https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg" alt="Brian Stahlhammer">
           <div class="hs-tag">
             <img src="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" alt="Forge Product Strategy">
-            <span class="hs-tag-role">Founder</span>
+            <span class="hs-tag-role"><strong style="color:#ffffff;font-weight:600;margin-right:6px;">Brian Stahlhammer</strong> — Founder</span>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="hero-ticker">
-    <div class="ticker-track">
-      <span>Product Strategy</span><span class="sep"> · </span>
-      <span>Go-to-Market Architecture</span><span class="sep"> · </span>
-      <span>Digital Transformation</span><span class="sep"> · </span>
-      <span>The Transition Audit</span><span class="sep"> · </span>
-      <span>AI Product Strategy</span><span class="sep"> · </span>
-      <span>Embedded Hardware-Software Platforms</span><span class="sep"> · </span>
-      <span>Fractional CPO</span><span class="sep"> · </span>
-      <span>Revenue &amp; Profitability Architecture</span><span class="sep"> · </span>
-      <span>Cybersecurity</span><span class="sep"> · </span>
-      <span>Player-Coach Leadership</span><span class="sep"> · </span>
-      <span>Design Leadership</span><span class="sep"> · </span>
-      <span>Executive Coaching</span><span class="sep"> · </span>
-      <span>B2B SaaS Scaling</span><span class="sep"> · </span>
-      <span>Industrial IoT</span><span class="sep"> · </span>
-      <span>AI Integration</span><span class="sep"> · </span>
-      <span>Product Strategy</span><span class="sep"> · </span>
-      <span>Go-to-Market Architecture</span><span class="sep"> · </span>
-      <span>Digital Transformation</span><span class="sep"> · </span>
-      <span>The Transition Audit</span><span class="sep"> · </span>
-      <span>AI Product Strategy</span><span class="sep"> · </span>
-      <span>Embedded Hardware-Software Platforms</span><span class="sep"> · </span>
-      <span>Fractional CPO</span><span class="sep"> · </span>
-      <span>Revenue &amp; Profitability Architecture</span><span class="sep"> · </span>
-      <span>Cybersecurity</span><span class="sep"> · </span>
-      <span>Player-Coach Leadership</span><span class="sep"> · </span>
-      <span>Design Leadership</span><span class="sep"> · </span>
-      <span>Executive Coaching</span><span class="sep"> · </span>
-      <span>B2B SaaS Scaling</span><span class="sep"> · </span>
-      <span>Industrial IoT</span><span class="sep"> · </span>
-      <span>AI Integration</span><span class="sep"> · </span>
     </div>
   </div>
 </section>
@@ -2623,7 +2503,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         </div>
       </div>
     </div>
-    <div class="about-bottom fade-up">
+    <div class="about-bottom fade-up visible">
       <div>
         <span class="skills-lbl">Areas of Expertise</span>
         <div class="skills-head">What I bring<br>to the table</div>
@@ -2656,13 +2536,13 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   <div class="container">
     <div class="svc-header">
       <div>
-        <span class="sec-kicker fade-up">What I Offer</span>
-        <h2 class="sec-title fade-up d1">Engagements built for<br><em>your moment of change.</em></h2>
+        <span class="sec-kicker fade-up visible">What I Offer</span>
+        <h2 class="sec-title fade-up d1 visible">Engagements built for<br><em>your moment of change.</em></h2>
       </div>
-      <p class="sec-sub fade-up d1">Each engagement starts with a real conversation about where you are and where you need to get to. No templated deliverables, no generic frameworks.</p>
+      <p class="sec-sub fade-up d1 visible">Each engagement starts with a real conversation about where you are and where you need to get to. No templated deliverables, no generic frameworks.</p>
     </div>
     <div class="svc-grid">
-      <div class="svc-card sig fade-up" onclick="showPage('audit')" style="cursor:pointer;">
+      <div class="svc-card sig fade-up visible" onclick="showPage('audit')" style="cursor:pointer;">
         <span class="svc-num">01</span>
         <span class="sig-badge">Signature Program</span>
         <div class="svc-title">The Transition Audit</div>
@@ -2670,14 +2550,14 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         <p class="svc-desc">A structured diagnostic and strategy program for mid-market CEOs and CPOs navigating product pivots. We assess every dimension of your organization, identify the real gaps, and build the transformation roadmap together.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d1">
+      <div class="svc-card fade-up d1 visible">
         <span class="svc-num">02</span>
         <div class="svc-title">Fractional CPO</div>
         <div class="svc-wk">Ongoing / Retainer</div>
         <p class="svc-desc">Executive-level product leadership embedded in your company. Ideal for growth-stage teams that need a seasoned CPO to build product culture, set strategy, and drive quarterly execution without the full-time overhead.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d2">
+      <div class="svc-card fade-up d2 visible">
         <span class="svc-num">03</span>
         <div class="svc-title">GTM Strategy Workshops</div>
         <div class="svc-wk">1 to 3 Day Intensive</div>
@@ -2686,14 +2566,14 @@ document.getElementById('contact-form').addEventListener('submit', async functio
       </div>
     </div>
     <div class="svc-grid-b">
-      <div class="svc-card fade-up">
+      <div class="svc-card fade-up visible">
         <span class="svc-num">04</span>
         <div class="svc-title">Product Org Assessment</div>
         <div class="svc-wk">2 to 4 Week Engagement</div>
         <p class="svc-desc">A rigorous diagnostic of your product organization covering team structure, process maturity, tooling, and output quality, delivered with a prioritized improvement roadmap.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d1">
+      <div class="svc-card fade-up d1 visible">
         <span class="svc-num">05</span>
         <div class="svc-title">Executive Coaching &amp; Mentoring</div>
         <div class="svc-wk">Monthly / Ongoing</div>
@@ -2701,7 +2581,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         <span class="svc-arrow">↗</span>
       </div>
     </div>
-    <div class="svc-cta fade-up">
+    <div class="svc-cta fade-up visible">
       <a onclick="showPage('main');scrollTo('#contact')" class="btn-blk">Book a free discovery call <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
     </div>
   </div>
@@ -2895,7 +2775,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         </div>
         <div class="hero-stats fade-up d4 visible">
           <div class="h-stat"><div class="h-stat-num">20+</div><div class="h-stat-lbl">Years in Product</div></div>
-          <div class="h-stat"><div class="h-stat-num">10M+</div><div class="h-stat-lbl">Devices Shipped</div></div>
+          <div class="h-stat"><div class="h-stat-num">30+</div><div class="h-stat-lbl">Go-to-Market Strategies Shaped</div></div>
           <div class="h-stat"><div class="h-stat-num">4</div><div class="h-stat-lbl">Continents</div></div>
           <div class="h-stat"><div class="h-stat-num">$Billions</div><div class="h-stat-lbl">Revenue Impact</div></div>
         </div>
@@ -2905,44 +2785,200 @@ document.getElementById('contact-form').addEventListener('submit', async functio
           <img class="headshot" src="https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg" alt="Brian Stahlhammer">
           <div class="hs-tag">
             <img src="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" alt="Forge Product Strategy">
-            <span class="hs-tag-role">Founder</span>
+            <span class="hs-tag-role"><strong style="color:#ffffff;font-weight:600;margin-right:6px;">Brian Stahlhammer</strong> — Founder</span>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="hero-ticker">
-    <div class="ticker-track">
-      <span>Product Strategy</span><span class="sep"> · </span>
-      <span>Go-to-Market Architecture</span><span class="sep"> · </span>
-      <span>Digital Transformation</span><span class="sep"> · </span>
-      <span>The Transition Audit</span><span class="sep"> · </span>
-      <span>AI Product Strategy</span><span class="sep"> · </span>
-      <span>Embedded Hardware-Software Platforms</span><span class="sep"> · </span>
-      <span>Fractional CPO</span><span class="sep"> · </span>
-      <span>Revenue &amp; Profitability Architecture</span><span class="sep"> · </span>
-      <span>Cybersecurity</span><span class="sep"> · </span>
-      <span>Player-Coach Leadership</span><span class="sep"> · </span>
-      <span>Design Leadership</span><span class="sep"> · </span>
-      <span>Executive Coaching</span><span class="sep"> · </span>
-      <span>B2B SaaS Scaling</span><span class="sep"> · </span>
-      <span>Industrial IoT</span><span class="sep"> · </span>
-      <span>AI Integration</span><span class="sep"> · </span>
-      <span>Product Strategy</span><span class="sep"> · </span>
-      <span>Go-to-Market Architecture</span><span class="sep"> · </span>
-      <span>Digital Transformation</span><span class="sep"> · </span>
-      <span>The Transition Audit</span><span class="sep"> · </span>
-      <span>AI Product Strategy</span><span class="sep"> · </span>
-      <span>Embedded Hardware-Software Platforms</span><span class="sep"> · </span>
-      <span>Fractional CPO</span><span class="sep"> · </span>
-      <span>Revenue &amp; Profitability Architecture</span><span class="sep"> · </span>
-      <span>Cybersecurity</span><span class="sep"> · </span>
-      <span>Player-Coach Leadership</span><span class="sep"> · </span>
-      <span>Design Leadership</span><span class="sep"> · </span>
-      <span>Executive Coaching</span><span class="sep"> · </span>
-      <span>B2B SaaS Scaling</span><span class="sep"> · </span>
-      <span>Industrial IoT</span><span class="sep"> · </span>
-      <span>AI Integration</span><span class="sep"> · </span>
+</section>
+<div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-kicker fade-up visible">Forge Product Strategy</div>
+        <h1 class="hero-h1 fade-up d1 visible">Product transformations<br>don't fail for lack of vision.<br><em>They fail from lack of<br>aligned execution.</em></h1>
+        <p class="hero-p fade-up d2 visible">I help CEOs and CPOs close that gap — with the pattern recognition that only comes from having led this exact transformation from the inside, not from a consulting deck.</p>
+        <div class="hero-ctas fade-up d3 visible">
+          <a onclick="showPage('main');scrollTo('#services')" class="btn-blk">Work with me <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+          <a onclick="showPage('audit')" class="btn-orange">The Transition Audit <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        </div>
+        <div class="hero-stats fade-up d4 visible">
+          <div class="h-stat"><div class="h-stat-num">20+</div><div class="h-stat-lbl">Years in Product</div></div>
+          <div class="h-stat"><div class="h-stat-num">30+</div><div class="h-stat-lbl">Go-to-Market Strategies Shaped</div></div>
+          <div class="h-stat"><div class="h-stat-num">4</div><div class="h-stat-lbl">Continents</div></div>
+          <div class="h-stat"><div class="h-stat-num">$Billions</div><div class="h-stat-lbl">Revenue Impact</div></div>
+        </div>
+      </div>
+      <div class="hero-img-col fade-up d2 visible">
+        <div class="hs-frame">
+          <img class="headshot" src="https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg" alt="Brian Stahlhammer">
+          <div class="hs-tag">
+            <img src="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" alt="Forge Product Strategy">
+            <span class="hs-tag-role"><strong style="color:#ffffff;font-weight:600;margin-right:6px;">Brian Stahlhammer</strong> — Founder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="hero-inner">
+      <div>
+        <div class="hero-kicker fade-up visible">Forge Product Strategy</div>
+        <h1 class="hero-h1 fade-up d1 visible">Product transformations<br>don't fail for lack of vision.<br><em>They fail from lack of<br>aligned execution.</em></h1>
+        <p class="hero-p fade-up d2 visible">I help CEOs and CPOs close that gap — with the pattern recognition that only comes from having led this exact transformation from the inside, not from a consulting deck.</p>
+        <div class="hero-ctas fade-up d3 visible">
+          <a onclick="showPage('main');scrollTo('#services')" class="btn-blk">Work with me <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+          <a onclick="showPage('audit')" class="btn-orange">The Transition Audit <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        </div>
+        <div class="hero-stats fade-up d4 visible">
+          <div class="h-stat"><div class="h-stat-num">20+</div><div class="h-stat-lbl">Years in Product</div></div>
+          <div class="h-stat"><div class="h-stat-num">30+</div><div class="h-stat-lbl">Go-to-Market Strategies Shaped</div></div>
+          <div class="h-stat"><div class="h-stat-num">4</div><div class="h-stat-lbl">Continents</div></div>
+          <div class="h-stat"><div class="h-stat-num">$Billions</div><div class="h-stat-lbl">Revenue Impact</div></div>
+        </div>
+      </div>
+      <div class="hero-img-col fade-up d2 visible">
+        <div class="hs-frame">
+          <img class="headshot" src="https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg" alt="Brian Stahlhammer">
+          <div class="hs-tag">
+            <img src="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" alt="Forge Product Strategy">
+            <span class="hs-tag-role"><strong style="color:#ffffff;font-weight:600;margin-right:6px;">Brian Stahlhammer</strong> — Founder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+<div>
+        <div class="hero-kicker fade-up visible">Forge Product Strategy</div>
+        <h1 class="hero-h1 fade-up d1 visible">Product transformations<br>don't fail for lack of vision.<br><em>They fail from lack of<br>aligned execution.</em></h1>
+        <p class="hero-p fade-up d2 visible">I help CEOs and CPOs close that gap — with the pattern recognition that only comes from having led this exact transformation from the inside, not from a consulting deck.</p>
+        <div class="hero-ctas fade-up d3 visible">
+          <a onclick="showPage('main');scrollTo('#services')" class="btn-blk">Work with me <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+          <a onclick="showPage('audit')" class="btn-orange">The Transition Audit <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        </div>
+        <div class="hero-stats fade-up d4 visible">
+          <div class="h-stat"><div class="h-stat-num">20+</div><div class="h-stat-lbl">Years in Product</div></div>
+          <div class="h-stat"><div class="h-stat-num">30+</div><div class="h-stat-lbl">Go-to-Market Strategies Shaped</div></div>
+          <div class="h-stat"><div class="h-stat-num">4</div><div class="h-stat-lbl">Continents</div></div>
+          <div class="h-stat"><div class="h-stat-num">$Billions</div><div class="h-stat-lbl">Revenue Impact</div></div>
+        </div>
+      </div>
+<div class="hero-kicker fade-up visible">Forge Product Strategy</div>
+<h1 class="hero-h1 fade-up d1 visible">Product transformations<br>don't fail for lack of vision.<br><em>They fail from lack of<br>aligned execution.</em></h1>
+<p class="hero-p fade-up d2 visible">I help CEOs and CPOs close that gap — with the pattern recognition that only comes from having led this exact transformation from the inside, not from a consulting deck.</p>
+<div class="hero-ctas fade-up d3 visible">
+          <a onclick="showPage('main');scrollTo('#services')" class="btn-blk">Work with me <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+          <a onclick="showPage('audit')" class="btn-orange">The Transition Audit <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        </div>
+<div class="hero-stats fade-up d4 visible">
+          <div class="h-stat"><div class="h-stat-num">20+</div><div class="h-stat-lbl">Years in Product</div></div>
+          <div class="h-stat"><div class="h-stat-num">30+</div><div class="h-stat-lbl">Go-to-Market Strategies Shaped</div></div>
+          <div class="h-stat"><div class="h-stat-num">4</div><div class="h-stat-lbl">Continents</div></div>
+          <div class="h-stat"><div class="h-stat-num">$Billions</div><div class="h-stat-lbl">Revenue Impact</div></div>
+        </div>
+<div>
+        <div class="hero-kicker fade-up visible">Forge Product Strategy</div>
+        <h1 class="hero-h1 fade-up d1 visible">Product transformations<br>don't fail for lack of vision.<br><em>They fail from lack of<br>aligned execution.</em></h1>
+        <p class="hero-p fade-up d2 visible">I help CEOs and CPOs close that gap — with the pattern recognition that only comes from having led this exact transformation from the inside, not from a consulting deck.</p>
+        <div class="hero-ctas fade-up d3 visible">
+          <a onclick="showPage('main');scrollTo('#services')" class="btn-blk">Work with me <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+          <a onclick="showPage('audit')" class="btn-orange">The Transition Audit <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        </div>
+        <div class="hero-stats fade-up d4 visible">
+          <div class="h-stat"><div class="h-stat-num">20+</div><div class="h-stat-lbl">Years in Product</div></div>
+          <div class="h-stat"><div class="h-stat-num">30+</div><div class="h-stat-lbl">Go-to-Market Strategies Shaped</div></div>
+          <div class="h-stat"><div class="h-stat-num">4</div><div class="h-stat-lbl">Continents</div></div>
+          <div class="h-stat"><div class="h-stat-num">$Billions</div><div class="h-stat-lbl">Revenue Impact</div></div>
+        </div>
+      </div>
+<div class="hero-img-col fade-up d2 visible">
+        <div class="hs-frame">
+          <img class="headshot" src="https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg" alt="Brian Stahlhammer">
+          <div class="hs-tag">
+            <img src="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" alt="Forge Product Strategy">
+            <span class="hs-tag-role"><strong style="color:#ffffff;font-weight:600;margin-right:6px;">Brian Stahlhammer</strong> — Founder</span>
+          </div>
+        </div>
+      </div>
+<div class="hero-inner">
+      <div>
+        <div class="hero-kicker fade-up visible">Forge Product Strategy</div>
+        <h1 class="hero-h1 fade-up d1 visible">Product transformations<br>don't fail for lack of vision.<br><em>They fail from lack of<br>aligned execution.</em></h1>
+        <p class="hero-p fade-up d2 visible">I help CEOs and CPOs close that gap — with the pattern recognition that only comes from having led this exact transformation from the inside, not from a consulting deck.</p>
+        <div class="hero-ctas fade-up d3 visible">
+          <a onclick="showPage('main');scrollTo('#services')" class="btn-blk">Work with me <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+          <a onclick="showPage('audit')" class="btn-orange">The Transition Audit <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        </div>
+        <div class="hero-stats fade-up d4 visible">
+          <div class="h-stat"><div class="h-stat-num">20+</div><div class="h-stat-lbl">Years in Product</div></div>
+          <div class="h-stat"><div class="h-stat-num">30+</div><div class="h-stat-lbl">Go-to-Market Strategies Shaped</div></div>
+          <div class="h-stat"><div class="h-stat-num">4</div><div class="h-stat-lbl">Continents</div></div>
+          <div class="h-stat"><div class="h-stat-num">$Billions</div><div class="h-stat-lbl">Revenue Impact</div></div>
+        </div>
+      </div>
+      <div class="hero-img-col fade-up d2 visible">
+        <div class="hs-frame">
+          <img class="headshot" src="https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg" alt="Brian Stahlhammer">
+          <div class="hs-tag">
+            <img src="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" alt="Forge Product Strategy">
+            <span class="hs-tag-role"><strong style="color:#ffffff;font-weight:600;margin-right:6px;">Brian Stahlhammer</strong> — Founder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+<div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-kicker fade-up visible">Forge Product Strategy</div>
+        <h1 class="hero-h1 fade-up d1 visible">Product transformations<br>don't fail for lack of vision.<br><em>They fail from lack of<br>aligned execution.</em></h1>
+        <p class="hero-p fade-up d2 visible">I help CEOs and CPOs close that gap — with the pattern recognition that only comes from having led this exact transformation from the inside, not from a consulting deck.</p>
+        <div class="hero-ctas fade-up d3 visible">
+          <a onclick="showPage('main');scrollTo('#services')" class="btn-blk">Work with me <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+          <a onclick="showPage('audit')" class="btn-orange">The Transition Audit <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        </div>
+        <div class="hero-stats fade-up d4 visible">
+          <div class="h-stat"><div class="h-stat-num">20+</div><div class="h-stat-lbl">Years in Product</div></div>
+          <div class="h-stat"><div class="h-stat-num">30+</div><div class="h-stat-lbl">Go-to-Market Strategies Shaped</div></div>
+          <div class="h-stat"><div class="h-stat-num">4</div><div class="h-stat-lbl">Continents</div></div>
+          <div class="h-stat"><div class="h-stat-num">$Billions</div><div class="h-stat-lbl">Revenue Impact</div></div>
+        </div>
+      </div>
+      <div class="hero-img-col fade-up d2 visible">
+        <div class="hs-frame">
+          <img class="headshot" src="https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg" alt="Brian Stahlhammer">
+          <div class="hs-tag">
+            <img src="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" alt="Forge Product Strategy">
+            <span class="hs-tag-role"><strong style="color:#ffffff;font-weight:600;margin-right:6px;">Brian Stahlhammer</strong> — Founder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-kicker fade-up visible">Forge Product Strategy</div>
+        <h1 class="hero-h1 fade-up d1 visible">Product transformations<br>don't fail for lack of vision.<br><em>They fail from lack of<br>aligned execution.</em></h1>
+        <p class="hero-p fade-up d2 visible">I help CEOs and CPOs close that gap — with the pattern recognition that only comes from having led this exact transformation from the inside, not from a consulting deck.</p>
+        <div class="hero-ctas fade-up d3 visible">
+          <a onclick="showPage('main');scrollTo('#services')" class="btn-blk">Work with me <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+          <a onclick="showPage('audit')" class="btn-orange">The Transition Audit <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        </div>
+        <div class="hero-stats fade-up d4 visible">
+          <div class="h-stat"><div class="h-stat-num">20+</div><div class="h-stat-lbl">Years in Product</div></div>
+          <div class="h-stat"><div class="h-stat-num">30+</div><div class="h-stat-lbl">Go-to-Market Strategies Shaped</div></div>
+          <div class="h-stat"><div class="h-stat-num">4</div><div class="h-stat-lbl">Continents</div></div>
+          <div class="h-stat"><div class="h-stat-num">$Billions</div><div class="h-stat-lbl">Revenue Impact</div></div>
+        </div>
+      </div>
+      <div class="hero-img-col fade-up d2 visible">
+        <div class="hs-frame">
+          <img class="headshot" src="https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg" alt="Brian Stahlhammer">
+          <div class="hs-tag">
+            <img src="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" alt="Forge Product Strategy">
+            <span class="hs-tag-role"><strong style="color:#ffffff;font-weight:600;margin-right:6px;">Brian Stahlhammer</strong> — Founder</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -2987,275 +3023,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         </div>
       </div>
     </div>
-    <div class="about-bottom fade-up">
-      <div>
-        <span class="skills-lbl">Areas of Expertise</span>
-        <div class="skills-head">What I bring<br>to the table</div>
-      </div>
-      <div class="pills">
-        <span class="pill bold">Product Strategy</span>
-        <span class="pill bold">Go-to-Market</span>
-        <span class="pill">Platform-as-a-Service</span>
-        <span class="pill">Cybersecurity</span>
-        <span class="pill">Industrial IoT</span>
-        <span class="pill">Revenue &amp; Profitability Architecture</span>
-        <span class="pill">B2B SaaS Scaling</span>
-        <span class="pill">Embedded Hardware-Software Platform Orchestration</span>
-        <span class="pill">Digital Transformation</span>
-        <span class="pill">Design Leadership</span>
-        <span class="pill">OKR &amp; Roadmapping</span>
-        <span class="pill">Matrix Leadership</span>
-        <span class="pill">Player-Coach Leadership</span>
-        <span class="pill">AI Integration</span>
-        <span class="pill">AI Product Strategy</span>
-        <span class="pill">Management Consulting</span>
-        <span class="pill">Executive Coaching</span>
-        <span class="pill">P&amp;L Ownership</span>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="container">
-    <div class="about-top">
-      <div class="about-narrative">
-        <span class="sec-kicker fade-up visible">About Brian</span>
-        <h2 class="sec-title fade-up d1 visible">Strategy that comes from<br><em>actually doing the work.</em></h2>
-        <div class="fade-up d2 visible">
-          <p>I studied mechanical engineering at Colorado State, but somewhere between thermodynamics and structural analysis, I realized I cared more about the <strong>"why"</strong> than the "how." Why does this product exist? Who needs it? What problem does it actually solve? That instinct pulled me toward product — and it's never let go.</p>
-          <p>Coming out of engineering school, I joined PwC and then Accenture, where I spent years embedded with product management teams helping them think through how to innovate and how to sustain growth through major strategic transitions. The MBA at Georgetown sharpened the business rigor. But both chapters — before and after Georgetown — were fundamentally about consulting. I loved the work. What I longed for was skin in the game.</p>
-          <p>So I crossed to the other side of the desk. At Gogo, GCI, CableLabs, and Calix, I stopped advising and started owning — roadmaps, P&amp;L, team performance, market outcomes. Then at <strong>FreeWave</strong>, everything I had learned came together. I took a 30-year-old hardware company and helped it find genuine product-market fit with a new customer base, a new product-led operating model, and a new place in the market. Rebuilding the revenue model, the go-to-market motion, and the product architecture all at once — that's the work I've realized I'm exceptionally good at.</p>
-          <p>Across all of it, I've led diverse, cross-functional teams and global delivery organizations spanning four continents — building the kind of alignment, collaboration, and shared momentum that turns a strategy on a slide into outcomes your customers actually feel.</p>
-        </div>
-        <div class="phi-wrap fade-up d3 visible">
-          <blockquote>"Every company I've worked with has a unique culture, a specific market reality, existing strengths worth building on, and a strategy only they could execute. The advice I bring will never come off a shelf — it will be shaped by all of that, and built to fit."</blockquote>
-          <div class="phi-attr">Brian Stahlhammer, Founder, Forge Product Strategy</div>
-        </div>
-      </div>
-      <div class="fade-up d1 visible">
-        <div class="edu-title">Education &amp; Credentials</div>
-        <div class="edu-item">
-          <div class="edu-badge edu-badge-gu">GEORGE<br>TOWN</div>
-          <div><div class="edu-deg">MBA</div><div class="edu-sch">Georgetown University</div></div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-badge edu-badge-csu">C·S·U</div>
-          <div><div class="edu-deg">B.S. Mechanical Engineering</div><div class="edu-sch">Colorado State University</div></div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-badge edu-badge-su">S</div>
-          <div><div class="edu-deg">Mastering AI for Product Innovation</div><div class="edu-sch">Stanford University — Certificate</div></div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-badge edu-badge-pi">PRAG<br>MATIC</div>
-          <div><div class="edu-deg">Certified Product Manager</div><div class="edu-sch">Pragmatic Institute</div></div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-badge edu-badge-nu">N·U</div>
-          <div><div class="edu-deg">Product Strategy</div><div class="edu-sch">Northwestern University — Certificate</div></div>
-        </div>
-      </div>
-    </div>
-    <div class="about-bottom fade-up">
-      <div>
-        <span class="skills-lbl">Areas of Expertise</span>
-        <div class="skills-head">What I bring<br>to the table</div>
-      </div>
-      <div class="pills">
-        <span class="pill bold">Product Strategy</span>
-        <span class="pill bold">Go-to-Market</span>
-        <span class="pill">Platform-as-a-Service</span>
-        <span class="pill">Cybersecurity</span>
-        <span class="pill">Industrial IoT</span>
-        <span class="pill">Revenue &amp; Profitability Architecture</span>
-        <span class="pill">B2B SaaS Scaling</span>
-        <span class="pill">Embedded Hardware-Software Platform Orchestration</span>
-        <span class="pill">Digital Transformation</span>
-        <span class="pill">Design Leadership</span>
-        <span class="pill">OKR &amp; Roadmapping</span>
-        <span class="pill">Matrix Leadership</span>
-        <span class="pill">Player-Coach Leadership</span>
-        <span class="pill">AI Integration</span>
-        <span class="pill">AI Product Strategy</span>
-        <span class="pill">Management Consulting</span>
-        <span class="pill">Executive Coaching</span>
-        <span class="pill">P&amp;L Ownership</span>
-      </div>
-    </div>
-  </div>
-<div class="about-top">
-      <div class="about-narrative">
-        <span class="sec-kicker fade-up visible">About Brian</span>
-        <h2 class="sec-title fade-up d1 visible">Strategy that comes from<br><em>actually doing the work.</em></h2>
-        <div class="fade-up d2 visible">
-          <p>I studied mechanical engineering at Colorado State, but somewhere between thermodynamics and structural analysis, I realized I cared more about the <strong>"why"</strong> than the "how." Why does this product exist? Who needs it? What problem does it actually solve? That instinct pulled me toward product — and it's never let go.</p>
-          <p>Coming out of engineering school, I joined PwC and then Accenture, where I spent years embedded with product management teams helping them think through how to innovate and how to sustain growth through major strategic transitions. The MBA at Georgetown sharpened the business rigor. But both chapters — before and after Georgetown — were fundamentally about consulting. I loved the work. What I longed for was skin in the game.</p>
-          <p>So I crossed to the other side of the desk. At Gogo, GCI, CableLabs, and Calix, I stopped advising and started owning — roadmaps, P&amp;L, team performance, market outcomes. Then at <strong>FreeWave</strong>, everything I had learned came together. I took a 30-year-old hardware company and helped it find genuine product-market fit with a new customer base, a new product-led operating model, and a new place in the market. Rebuilding the revenue model, the go-to-market motion, and the product architecture all at once — that's the work I've realized I'm exceptionally good at.</p>
-          <p>Across all of it, I've led diverse, cross-functional teams and global delivery organizations spanning four continents — building the kind of alignment, collaboration, and shared momentum that turns a strategy on a slide into outcomes your customers actually feel.</p>
-        </div>
-        <div class="phi-wrap fade-up d3 visible">
-          <blockquote>"Every company I've worked with has a unique culture, a specific market reality, existing strengths worth building on, and a strategy only they could execute. The advice I bring will never come off a shelf — it will be shaped by all of that, and built to fit."</blockquote>
-          <div class="phi-attr">Brian Stahlhammer, Founder, Forge Product Strategy</div>
-        </div>
-      </div>
-      <div class="fade-up d1 visible">
-        <div class="edu-title">Education &amp; Credentials</div>
-        <div class="edu-item">
-          <div class="edu-badge edu-badge-gu">GEORGE<br>TOWN</div>
-          <div><div class="edu-deg">MBA</div><div class="edu-sch">Georgetown University</div></div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-badge edu-badge-csu">C·S·U</div>
-          <div><div class="edu-deg">B.S. Mechanical Engineering</div><div class="edu-sch">Colorado State University</div></div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-badge edu-badge-su">S</div>
-          <div><div class="edu-deg">Mastering AI for Product Innovation</div><div class="edu-sch">Stanford University — Certificate</div></div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-badge edu-badge-pi">PRAG<br>MATIC</div>
-          <div><div class="edu-deg">Certified Product Manager</div><div class="edu-sch">Pragmatic Institute</div></div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-badge edu-badge-nu">N·U</div>
-          <div><div class="edu-deg">Product Strategy</div><div class="edu-sch">Northwestern University — Certificate</div></div>
-        </div>
-      </div>
-    </div>
-<div class="about-bottom fade-up">
-      <div>
-        <span class="skills-lbl">Areas of Expertise</span>
-        <div class="skills-head">What I bring<br>to the table</div>
-      </div>
-      <div class="pills">
-        <span class="pill bold">Product Strategy</span>
-        <span class="pill bold">Go-to-Market</span>
-        <span class="pill">Platform-as-a-Service</span>
-        <span class="pill">Cybersecurity</span>
-        <span class="pill">Industrial IoT</span>
-        <span class="pill">Revenue &amp; Profitability Architecture</span>
-        <span class="pill">B2B SaaS Scaling</span>
-        <span class="pill">Embedded Hardware-Software Platform Orchestration</span>
-        <span class="pill">Digital Transformation</span>
-        <span class="pill">Design Leadership</span>
-        <span class="pill">OKR &amp; Roadmapping</span>
-        <span class="pill">Matrix Leadership</span>
-        <span class="pill">Player-Coach Leadership</span>
-        <span class="pill">AI Integration</span>
-        <span class="pill">AI Product Strategy</span>
-        <span class="pill">Management Consulting</span>
-        <span class="pill">Executive Coaching</span>
-        <span class="pill">P&amp;L Ownership</span>
-      </div>
-    </div>
-<div class="container">
-    <div class="about-top">
-      <div class="about-narrative">
-        <span class="sec-kicker fade-up visible">About Brian</span>
-        <h2 class="sec-title fade-up d1 visible">Strategy that comes from<br><em>actually doing the work.</em></h2>
-        <div class="fade-up d2 visible">
-          <p>I studied mechanical engineering at Colorado State, but somewhere between thermodynamics and structural analysis, I realized I cared more about the <strong>"why"</strong> than the "how." Why does this product exist? Who needs it? What problem does it actually solve? That instinct pulled me toward product — and it's never let go.</p>
-          <p>Coming out of engineering school, I joined PwC and then Accenture, where I spent years embedded with product management teams helping them think through how to innovate and how to sustain growth through major strategic transitions. The MBA at Georgetown sharpened the business rigor. But both chapters — before and after Georgetown — were fundamentally about consulting. I loved the work. What I longed for was skin in the game.</p>
-          <p>So I crossed to the other side of the desk. At Gogo, GCI, CableLabs, and Calix, I stopped advising and started owning — roadmaps, P&amp;L, team performance, market outcomes. Then at <strong>FreeWave</strong>, everything I had learned came together. I took a 30-year-old hardware company and helped it find genuine product-market fit with a new customer base, a new product-led operating model, and a new place in the market. Rebuilding the revenue model, the go-to-market motion, and the product architecture all at once — that's the work I've realized I'm exceptionally good at.</p>
-          <p>Across all of it, I've led diverse, cross-functional teams and global delivery organizations spanning four continents — building the kind of alignment, collaboration, and shared momentum that turns a strategy on a slide into outcomes your customers actually feel.</p>
-        </div>
-        <div class="phi-wrap fade-up d3 visible">
-          <blockquote>"Every company I've worked with has a unique culture, a specific market reality, existing strengths worth building on, and a strategy only they could execute. The advice I bring will never come off a shelf — it will be shaped by all of that, and built to fit."</blockquote>
-          <div class="phi-attr">Brian Stahlhammer, Founder, Forge Product Strategy</div>
-        </div>
-      </div>
-      <div class="fade-up d1 visible">
-        <div class="edu-title">Education &amp; Credentials</div>
-        <div class="edu-item">
-          <div class="edu-badge edu-badge-gu">GEORGE<br>TOWN</div>
-          <div><div class="edu-deg">MBA</div><div class="edu-sch">Georgetown University</div></div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-badge edu-badge-csu">C·S·U</div>
-          <div><div class="edu-deg">B.S. Mechanical Engineering</div><div class="edu-sch">Colorado State University</div></div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-badge edu-badge-su">S</div>
-          <div><div class="edu-deg">Mastering AI for Product Innovation</div><div class="edu-sch">Stanford University — Certificate</div></div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-badge edu-badge-pi">PRAG<br>MATIC</div>
-          <div><div class="edu-deg">Certified Product Manager</div><div class="edu-sch">Pragmatic Institute</div></div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-badge edu-badge-nu">N·U</div>
-          <div><div class="edu-deg">Product Strategy</div><div class="edu-sch">Northwestern University — Certificate</div></div>
-        </div>
-      </div>
-    </div>
-    <div class="about-bottom fade-up">
-      <div>
-        <span class="skills-lbl">Areas of Expertise</span>
-        <div class="skills-head">What I bring<br>to the table</div>
-      </div>
-      <div class="pills">
-        <span class="pill bold">Product Strategy</span>
-        <span class="pill bold">Go-to-Market</span>
-        <span class="pill">Platform-as-a-Service</span>
-        <span class="pill">Cybersecurity</span>
-        <span class="pill">Industrial IoT</span>
-        <span class="pill">Revenue &amp; Profitability Architecture</span>
-        <span class="pill">B2B SaaS Scaling</span>
-        <span class="pill">Embedded Hardware-Software Platform Orchestration</span>
-        <span class="pill">Digital Transformation</span>
-        <span class="pill">Design Leadership</span>
-        <span class="pill">OKR &amp; Roadmapping</span>
-        <span class="pill">Matrix Leadership</span>
-        <span class="pill">Player-Coach Leadership</span>
-        <span class="pill">AI Integration</span>
-        <span class="pill">AI Product Strategy</span>
-        <span class="pill">Management Consulting</span>
-        <span class="pill">Executive Coaching</span>
-        <span class="pill">P&amp;L Ownership</span>
-      </div>
-    </div>
-  </div>
-<section id="about">
-  <div class="container">
-    <div class="about-top">
-      <div class="about-narrative">
-        <span class="sec-kicker fade-up visible">About Brian</span>
-        <h2 class="sec-title fade-up d1 visible">Strategy that comes from<br><em>actually doing the work.</em></h2>
-        <div class="fade-up d2 visible">
-          <p>I studied mechanical engineering at Colorado State, but somewhere between thermodynamics and structural analysis, I realized I cared more about the <strong>"why"</strong> than the "how." Why does this product exist? Who needs it? What problem does it actually solve? That instinct pulled me toward product — and it's never let go.</p>
-          <p>Coming out of engineering school, I joined PwC and then Accenture, where I spent years embedded with product management teams helping them think through how to innovate and how to sustain growth through major strategic transitions. The MBA at Georgetown sharpened the business rigor. But both chapters — before and after Georgetown — were fundamentally about consulting. I loved the work. What I longed for was skin in the game.</p>
-          <p>So I crossed to the other side of the desk. At Gogo, GCI, CableLabs, and Calix, I stopped advising and started owning — roadmaps, P&amp;L, team performance, market outcomes. Then at <strong>FreeWave</strong>, everything I had learned came together. I took a 30-year-old hardware company and helped it find genuine product-market fit with a new customer base, a new product-led operating model, and a new place in the market. Rebuilding the revenue model, the go-to-market motion, and the product architecture all at once — that's the work I've realized I'm exceptionally good at.</p>
-          <p>Across all of it, I've led diverse, cross-functional teams and global delivery organizations spanning four continents — building the kind of alignment, collaboration, and shared momentum that turns a strategy on a slide into outcomes your customers actually feel.</p>
-        </div>
-        <div class="phi-wrap fade-up d3 visible">
-          <blockquote>"Every company I've worked with has a unique culture, a specific market reality, existing strengths worth building on, and a strategy only they could execute. The advice I bring will never come off a shelf — it will be shaped by all of that, and built to fit."</blockquote>
-          <div class="phi-attr">Brian Stahlhammer, Founder, Forge Product Strategy</div>
-        </div>
-      </div>
-      <div class="fade-up d1 visible">
-        <div class="edu-title">Education &amp; Credentials</div>
-        <div class="edu-item">
-          <div class="edu-badge edu-badge-gu">GEORGE<br>TOWN</div>
-          <div><div class="edu-deg">MBA</div><div class="edu-sch">Georgetown University</div></div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-badge edu-badge-csu">C·S·U</div>
-          <div><div class="edu-deg">B.S. Mechanical Engineering</div><div class="edu-sch">Colorado State University</div></div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-badge edu-badge-su">S</div>
-          <div><div class="edu-deg">Mastering AI for Product Innovation</div><div class="edu-sch">Stanford University — Certificate</div></div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-badge edu-badge-pi">PRAG<br>MATIC</div>
-          <div><div class="edu-deg">Certified Product Manager</div><div class="edu-sch">Pragmatic Institute</div></div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-badge edu-badge-nu">N·U</div>
-          <div><div class="edu-deg">Product Strategy</div><div class="edu-sch">Northwestern University — Certificate</div></div>
-        </div>
-      </div>
-    </div>
-    <div class="about-bottom fade-up">
+    <div class="about-bottom fade-up visible">
       <div>
         <span class="skills-lbl">Areas of Expertise</span>
         <div class="skills-head">What I bring<br>to the table</div>
@@ -3287,13 +3055,13 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   <div class="container">
     <div class="svc-header">
       <div>
-        <span class="sec-kicker fade-up">What I Offer</span>
-        <h2 class="sec-title fade-up d1">Engagements built for<br><em>your moment of change.</em></h2>
+        <span class="sec-kicker fade-up visible">What I Offer</span>
+        <h2 class="sec-title fade-up d1 visible">Engagements built for<br><em>your moment of change.</em></h2>
       </div>
-      <p class="sec-sub fade-up d1">Each engagement starts with a real conversation about where you are and where you need to get to. No templated deliverables, no generic frameworks.</p>
+      <p class="sec-sub fade-up d1 visible">Each engagement starts with a real conversation about where you are and where you need to get to. No templated deliverables, no generic frameworks.</p>
     </div>
     <div class="svc-grid">
-      <div class="svc-card sig fade-up" onclick="showPage('audit')" style="cursor:pointer;">
+      <div class="svc-card sig fade-up visible" onclick="showPage('audit')" style="cursor:pointer;">
         <span class="svc-num">01</span>
         <span class="sig-badge">Signature Program</span>
         <div class="svc-title">The Transition Audit</div>
@@ -3301,14 +3069,14 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         <p class="svc-desc">A structured diagnostic and strategy program for mid-market CEOs and CPOs navigating product pivots. We assess every dimension of your organization, identify the real gaps, and build the transformation roadmap together.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d1">
+      <div class="svc-card fade-up d1 visible">
         <span class="svc-num">02</span>
         <div class="svc-title">Fractional CPO</div>
         <div class="svc-wk">Ongoing / Retainer</div>
         <p class="svc-desc">Executive-level product leadership embedded in your company. Ideal for growth-stage teams that need a seasoned CPO to build product culture, set strategy, and drive quarterly execution without the full-time overhead.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d2">
+      <div class="svc-card fade-up d2 visible">
         <span class="svc-num">03</span>
         <div class="svc-title">GTM Strategy Workshops</div>
         <div class="svc-wk">1 to 3 Day Intensive</div>
@@ -3317,14 +3085,14 @@ document.getElementById('contact-form').addEventListener('submit', async functio
       </div>
     </div>
     <div class="svc-grid-b">
-      <div class="svc-card fade-up">
+      <div class="svc-card fade-up visible">
         <span class="svc-num">04</span>
         <div class="svc-title">Product Org Assessment</div>
         <div class="svc-wk">2 to 4 Week Engagement</div>
         <p class="svc-desc">A rigorous diagnostic of your product organization covering team structure, process maturity, tooling, and output quality, delivered with a prioritized improvement roadmap.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d1">
+      <div class="svc-card fade-up d1 visible">
         <span class="svc-num">05</span>
         <div class="svc-title">Executive Coaching &amp; Mentoring</div>
         <div class="svc-wk">Monthly / Ongoing</div>
@@ -3332,7 +3100,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         <span class="svc-arrow">↗</span>
       </div>
     </div>
-    <div class="svc-cta fade-up">
+    <div class="svc-cta fade-up visible">
       <a onclick="showPage('main');scrollTo('#contact')" class="btn-blk">Book a free discovery call <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
     </div>
   </div>
@@ -3522,7 +3290,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         </div>
         <div class="hero-stats fade-up d4 visible">
           <div class="h-stat"><div class="h-stat-num">20+</div><div class="h-stat-lbl">Years in Product</div></div>
-          <div class="h-stat"><div class="h-stat-num">10M+</div><div class="h-stat-lbl">Devices Shipped</div></div>
+          <div class="h-stat"><div class="h-stat-num">30+</div><div class="h-stat-lbl">Go-to-Market Strategies Shaped</div></div>
           <div class="h-stat"><div class="h-stat-num">4</div><div class="h-stat-lbl">Continents</div></div>
           <div class="h-stat"><div class="h-stat-num">$Billions</div><div class="h-stat-lbl">Revenue Impact</div></div>
         </div>
@@ -3532,44 +3300,10 @@ document.getElementById('contact-form').addEventListener('submit', async functio
           <img class="headshot" src="https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg" alt="Brian Stahlhammer">
           <div class="hs-tag">
             <img src="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" alt="Forge Product Strategy">
-            <span class="hs-tag-role">Founder</span>
+            <span class="hs-tag-role"><strong style="color:#ffffff;font-weight:600;margin-right:6px;">Brian Stahlhammer</strong> — Founder</span>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="hero-ticker">
-    <div class="ticker-track">
-      <span>Product Strategy</span><span class="sep"> · </span>
-      <span>Go-to-Market Architecture</span><span class="sep"> · </span>
-      <span>Digital Transformation</span><span class="sep"> · </span>
-      <span>The Transition Audit</span><span class="sep"> · </span>
-      <span>AI Product Strategy</span><span class="sep"> · </span>
-      <span>Embedded Hardware-Software Platforms</span><span class="sep"> · </span>
-      <span>Fractional CPO</span><span class="sep"> · </span>
-      <span>Revenue &amp; Profitability Architecture</span><span class="sep"> · </span>
-      <span>Cybersecurity</span><span class="sep"> · </span>
-      <span>Player-Coach Leadership</span><span class="sep"> · </span>
-      <span>Design Leadership</span><span class="sep"> · </span>
-      <span>Executive Coaching</span><span class="sep"> · </span>
-      <span>B2B SaaS Scaling</span><span class="sep"> · </span>
-      <span>Industrial IoT</span><span class="sep"> · </span>
-      <span>AI Integration</span><span class="sep"> · </span>
-      <span>Product Strategy</span><span class="sep"> · </span>
-      <span>Go-to-Market Architecture</span><span class="sep"> · </span>
-      <span>Digital Transformation</span><span class="sep"> · </span>
-      <span>The Transition Audit</span><span class="sep"> · </span>
-      <span>AI Product Strategy</span><span class="sep"> · </span>
-      <span>Embedded Hardware-Software Platforms</span><span class="sep"> · </span>
-      <span>Fractional CPO</span><span class="sep"> · </span>
-      <span>Revenue &amp; Profitability Architecture</span><span class="sep"> · </span>
-      <span>Cybersecurity</span><span class="sep"> · </span>
-      <span>Player-Coach Leadership</span><span class="sep"> · </span>
-      <span>Design Leadership</span><span class="sep"> · </span>
-      <span>Executive Coaching</span><span class="sep"> · </span>
-      <span>B2B SaaS Scaling</span><span class="sep"> · </span>
-      <span>Industrial IoT</span><span class="sep"> · </span>
-      <span>AI Integration</span><span class="sep"> · </span>
     </div>
   </div>
 </section>
@@ -3615,7 +3349,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         </div>
       </div>
     </div>
-    <div class="about-bottom fade-up">
+    <div class="about-bottom fade-up visible">
       <div>
         <span class="skills-lbl">Areas of Expertise</span>
         <div class="skills-head">What I bring<br>to the table</div>
@@ -3648,13 +3382,13 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   <div class="container">
     <div class="svc-header">
       <div>
-        <span class="sec-kicker fade-up">What I Offer</span>
-        <h2 class="sec-title fade-up d1">Engagements built for<br><em>your moment of change.</em></h2>
+        <span class="sec-kicker fade-up visible">What I Offer</span>
+        <h2 class="sec-title fade-up d1 visible">Engagements built for<br><em>your moment of change.</em></h2>
       </div>
-      <p class="sec-sub fade-up d1">Each engagement starts with a real conversation about where you are and where you need to get to. No templated deliverables, no generic frameworks.</p>
+      <p class="sec-sub fade-up d1 visible">Each engagement starts with a real conversation about where you are and where you need to get to. No templated deliverables, no generic frameworks.</p>
     </div>
     <div class="svc-grid">
-      <div class="svc-card sig fade-up" onclick="showPage('audit')" style="cursor:pointer;">
+      <div class="svc-card sig fade-up visible" onclick="showPage('audit')" style="cursor:pointer;">
         <span class="svc-num">01</span>
         <span class="sig-badge">Signature Program</span>
         <div class="svc-title">The Transition Audit</div>
@@ -3662,14 +3396,14 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         <p class="svc-desc">A structured diagnostic and strategy program for mid-market CEOs and CPOs navigating product pivots. We assess every dimension of your organization, identify the real gaps, and build the transformation roadmap together.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d1">
+      <div class="svc-card fade-up d1 visible">
         <span class="svc-num">02</span>
         <div class="svc-title">Fractional CPO</div>
         <div class="svc-wk">Ongoing / Retainer</div>
         <p class="svc-desc">Executive-level product leadership embedded in your company. Ideal for growth-stage teams that need a seasoned CPO to build product culture, set strategy, and drive quarterly execution without the full-time overhead.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d2">
+      <div class="svc-card fade-up d2 visible">
         <span class="svc-num">03</span>
         <div class="svc-title">GTM Strategy Workshops</div>
         <div class="svc-wk">1 to 3 Day Intensive</div>
@@ -3678,14 +3412,14 @@ document.getElementById('contact-form').addEventListener('submit', async functio
       </div>
     </div>
     <div class="svc-grid-b">
-      <div class="svc-card fade-up">
+      <div class="svc-card fade-up visible">
         <span class="svc-num">04</span>
         <div class="svc-title">Product Org Assessment</div>
         <div class="svc-wk">2 to 4 Week Engagement</div>
         <p class="svc-desc">A rigorous diagnostic of your product organization covering team structure, process maturity, tooling, and output quality, delivered with a prioritized improvement roadmap.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d1">
+      <div class="svc-card fade-up d1 visible">
         <span class="svc-num">05</span>
         <div class="svc-title">Executive Coaching &amp; Mentoring</div>
         <div class="svc-wk">Monthly / Ongoing</div>
@@ -3693,7 +3427,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         <span class="svc-arrow">↗</span>
       </div>
     </div>
-    <div class="svc-cta fade-up">
+    <div class="svc-cta fade-up visible">
       <a onclick="showPage('main');scrollTo('#contact')" class="btn-blk">Book a free discovery call <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
     </div>
   </div>
@@ -4229,7 +3963,7 @@ setTimeout(() => {
 // Nav on scroll
 const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
-  nav.style.background = window.scrollY > 60 ? 'rgba(248,247,244,0.97)' : 'rgba(248,247,244,0.92)';
+  nav.style.background = '#0D0D0D';
 }, { passive: true });
 
 // Contact form
@@ -4271,7 +4005,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 <body>
 
 <!-- NAV -->
-<nav id="main-nav" style="background: rgba(248, 247, 244, 0.97);">
+<nav id="main-nav" style="background: rgb(13, 13, 13);">
   <div class="nav-full">
     <div class="nav-inner">
       <a class="nav-logo" onclick="showPage('main')" style="cursor:pointer;">
@@ -4319,7 +4053,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         </div>
         <div class="hero-stats fade-up d4 visible">
           <div class="h-stat"><div class="h-stat-num">20+</div><div class="h-stat-lbl">Years in Product</div></div>
-          <div class="h-stat"><div class="h-stat-num">10M+</div><div class="h-stat-lbl">Devices Shipped</div></div>
+          <div class="h-stat"><div class="h-stat-num">30+</div><div class="h-stat-lbl">Go-to-Market Strategies Shaped</div></div>
           <div class="h-stat"><div class="h-stat-num">4</div><div class="h-stat-lbl">Continents</div></div>
           <div class="h-stat"><div class="h-stat-num">$Billions</div><div class="h-stat-lbl">Revenue Impact</div></div>
         </div>
@@ -4329,44 +4063,10 @@ document.getElementById('contact-form').addEventListener('submit', async functio
           <img class="headshot" src="https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg" alt="Brian Stahlhammer">
           <div class="hs-tag">
             <img src="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" alt="Forge Product Strategy">
-            <span class="hs-tag-role">Founder</span>
+            <span class="hs-tag-role"><strong style="color:#ffffff;font-weight:600;margin-right:6px;">Brian Stahlhammer</strong> — Founder</span>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="hero-ticker">
-    <div class="ticker-track">
-      <span>Product Strategy</span><span class="sep"> · </span>
-      <span>Go-to-Market Architecture</span><span class="sep"> · </span>
-      <span>Digital Transformation</span><span class="sep"> · </span>
-      <span>The Transition Audit</span><span class="sep"> · </span>
-      <span>AI Product Strategy</span><span class="sep"> · </span>
-      <span>Embedded Hardware-Software Platforms</span><span class="sep"> · </span>
-      <span>Fractional CPO</span><span class="sep"> · </span>
-      <span>Revenue &amp; Profitability Architecture</span><span class="sep"> · </span>
-      <span>Cybersecurity</span><span class="sep"> · </span>
-      <span>Player-Coach Leadership</span><span class="sep"> · </span>
-      <span>Design Leadership</span><span class="sep"> · </span>
-      <span>Executive Coaching</span><span class="sep"> · </span>
-      <span>B2B SaaS Scaling</span><span class="sep"> · </span>
-      <span>Industrial IoT</span><span class="sep"> · </span>
-      <span>AI Integration</span><span class="sep"> · </span>
-      <span>Product Strategy</span><span class="sep"> · </span>
-      <span>Go-to-Market Architecture</span><span class="sep"> · </span>
-      <span>Digital Transformation</span><span class="sep"> · </span>
-      <span>The Transition Audit</span><span class="sep"> · </span>
-      <span>AI Product Strategy</span><span class="sep"> · </span>
-      <span>Embedded Hardware-Software Platforms</span><span class="sep"> · </span>
-      <span>Fractional CPO</span><span class="sep"> · </span>
-      <span>Revenue &amp; Profitability Architecture</span><span class="sep"> · </span>
-      <span>Cybersecurity</span><span class="sep"> · </span>
-      <span>Player-Coach Leadership</span><span class="sep"> · </span>
-      <span>Design Leadership</span><span class="sep"> · </span>
-      <span>Executive Coaching</span><span class="sep"> · </span>
-      <span>B2B SaaS Scaling</span><span class="sep"> · </span>
-      <span>Industrial IoT</span><span class="sep"> · </span>
-      <span>AI Integration</span><span class="sep"> · </span>
     </div>
   </div>
 </section>
@@ -4412,7 +4112,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         </div>
       </div>
     </div>
-    <div class="about-bottom fade-up">
+    <div class="about-bottom fade-up visible">
       <div>
         <span class="skills-lbl">Areas of Expertise</span>
         <div class="skills-head">What I bring<br>to the table</div>
@@ -4445,13 +4145,13 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   <div class="container">
     <div class="svc-header">
       <div>
-        <span class="sec-kicker fade-up">What I Offer</span>
-        <h2 class="sec-title fade-up d1">Engagements built for<br><em>your moment of change.</em></h2>
+        <span class="sec-kicker fade-up visible">What I Offer</span>
+        <h2 class="sec-title fade-up d1 visible">Engagements built for<br><em>your moment of change.</em></h2>
       </div>
-      <p class="sec-sub fade-up d1">Each engagement starts with a real conversation about where you are and where you need to get to. No templated deliverables, no generic frameworks.</p>
+      <p class="sec-sub fade-up d1 visible">Each engagement starts with a real conversation about where you are and where you need to get to. No templated deliverables, no generic frameworks.</p>
     </div>
     <div class="svc-grid">
-      <div class="svc-card sig fade-up" onclick="showPage('audit')" style="cursor:pointer;">
+      <div class="svc-card sig fade-up visible" onclick="showPage('audit')" style="cursor:pointer;">
         <span class="svc-num">01</span>
         <span class="sig-badge">Signature Program</span>
         <div class="svc-title">The Transition Audit</div>
@@ -4459,14 +4159,14 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         <p class="svc-desc">A structured diagnostic and strategy program for mid-market CEOs and CPOs navigating product pivots. We assess every dimension of your organization, identify the real gaps, and build the transformation roadmap together.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d1">
+      <div class="svc-card fade-up d1 visible">
         <span class="svc-num">02</span>
         <div class="svc-title">Fractional CPO</div>
         <div class="svc-wk">Ongoing / Retainer</div>
         <p class="svc-desc">Executive-level product leadership embedded in your company. Ideal for growth-stage teams that need a seasoned CPO to build product culture, set strategy, and drive quarterly execution without the full-time overhead.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d2">
+      <div class="svc-card fade-up d2 visible">
         <span class="svc-num">03</span>
         <div class="svc-title">GTM Strategy Workshops</div>
         <div class="svc-wk">1 to 3 Day Intensive</div>
@@ -4475,14 +4175,14 @@ document.getElementById('contact-form').addEventListener('submit', async functio
       </div>
     </div>
     <div class="svc-grid-b">
-      <div class="svc-card fade-up">
+      <div class="svc-card fade-up visible">
         <span class="svc-num">04</span>
         <div class="svc-title">Product Org Assessment</div>
         <div class="svc-wk">2 to 4 Week Engagement</div>
         <p class="svc-desc">A rigorous diagnostic of your product organization covering team structure, process maturity, tooling, and output quality, delivered with a prioritized improvement roadmap.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d1">
+      <div class="svc-card fade-up d1 visible">
         <span class="svc-num">05</span>
         <div class="svc-title">Executive Coaching &amp; Mentoring</div>
         <div class="svc-wk">Monthly / Ongoing</div>
@@ -4490,7 +4190,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         <span class="svc-arrow">↗</span>
       </div>
     </div>
-    <div class="svc-cta fade-up">
+    <div class="svc-cta fade-up visible">
       <a onclick="showPage('main');scrollTo('#contact')" class="btn-blk">Book a free discovery call <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
     </div>
   </div>
@@ -5027,7 +4727,7 @@ setTimeout(() => {
 // Nav on scroll
 const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
-  nav.style.background = window.scrollY > 60 ? 'rgba(248,247,244,0.97)' : 'rgba(248,247,244,0.92)';
+  nav.style.background = '#0D0D0D';
 }, { passive: true });
 
 // Contact form
@@ -5079,8 +4779,8 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg">
-<link rel="icon" type="image/png" href="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png">
-<link rel="apple-touch-icon" href="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png">
+<link rel="icon" type="image/png" href="/FPS_Logo.png">
+<link rel="apple-touch-icon" href="/FPS_Logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
@@ -5131,36 +4831,35 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 999;
   height: var(--nh);
   display: flex; align-items: center;
-  background: rgba(248,247,244,0.92);
-  backdrop-filter: blur(16px) saturate(1.2);
-  -webkit-backdrop-filter: blur(16px) saturate(1.2);
-  border-bottom: 1px solid var(--rule);
+  background: #0D0D0D;
+  border-bottom: 1px solid #2a2a2a;
   transition: background .3s;
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 0; }
 .nav-logo { text-decoration: none; flex-shrink: 0; display: flex; align-items: center; margin-right: auto; }
 .nav-logo img { height: 84px; width: auto; display: block; }
 .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-.nav-links a { color: var(--mid); text-decoration: none; font-size: .85rem; font-weight: 500; letter-spacing: .01em; transition: color .2s; cursor: pointer; }
-.nav-links a:hover, .nav-links a.active-tab { color: var(--black); }
-.nav-links a.active-tab { border-bottom: 2px solid var(--black); padding-bottom: 2px; }
+.nav-links a { color: #81C3E4; text-decoration: none; font-size: .85rem; font-weight: 500; letter-spacing: .01em; transition: color .2s; cursor: pointer; }
+.nav-links a:hover, .nav-links a.active-tab { color: #ffffff; }
+.nav-links a.active-tab { border-bottom: 2px solid #81C3E4; padding-bottom: 2px; }
 .nav-links a.audit-link { color: var(--orange); font-weight: 600; }
 .nav-links a.audit-link:hover { color: var(--black); }
 .btn-nav {
-  background: var(--black); color: var(--white);
+  background: var(--orange); color: #ffffff;
   padding: 10px 22px; border-radius: 3px;
   font-family: var(--fb); font-weight: 600; font-size: .82rem;
   text-decoration: none; letter-spacing: .04em; text-transform: uppercase;
   transition: all .2s; white-space: nowrap; cursor: pointer; border: none;
 }
-.btn-nav:hover { background: var(--charcoal); transform: translateY(-1px); }
+.btn-nav:hover { background: #D94E00; transform: translateY(-1px); }
+.nav-links a.btn-nav, .nav-links a.btn-nav:hover { color: #ffffff !important; }
 .nav-hbg { display: none; background: none; border: none; cursor: pointer; color: var(--black); padding: 4px; }
 
 /* MOBILE DRAWER */
-.mob-drawer { display: none; position: fixed; top: var(--nh); left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--rule); z-index: 998; padding: 20px 40px; flex-direction: column; }
+.mob-drawer { display: none; position: fixed; top: var(--nh); left: 0; right: 0; background: #0D0D0D; border-bottom: 1px solid #2a2a2a; z-index: 998; padding: 20px 40px; flex-direction: column; }
 .mob-drawer.open { display: flex; }
-.mob-drawer a { color: var(--charcoal); text-decoration: none; font-size: .95rem; font-weight: 500; padding: 14px 0; border-bottom: 1px solid var(--rule); transition: color .2s; cursor: pointer; }
-.mob-drawer a:hover { color: var(--black); }
+.mob-drawer a { color: #81C3E4; text-decoration: none; font-size: .95rem; font-weight: 500; padding: 14px 0; border-bottom: 1px solid #2a2a2a; transition: color .2s; cursor: pointer; }
+.mob-drawer a:hover { color: #ffffff; }
 .mob-drawer a:last-child { border-bottom: none; }
 .mob-drawer .btn-nav { margin-top: 16px; text-align: center; display: block; }
 
@@ -5177,15 +4876,7 @@ nav {
   border-bottom: 1px solid var(--rule);
   position: relative; overflow: hidden;
 }
-.hero-ticker {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  overflow: hidden; height: 44px; display: flex; align-items: center;
-  background: #162969; color: var(--white);
-}
-.ticker-track { display: flex; animation: ticker 28s linear infinite; white-space: nowrap; }
-.ticker-track span { font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; padding: 0 40px; }
-.ticker-track span.sep { opacity: .3; padding: 0; }
-@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
 .hero-inner {
   display: grid; grid-template-columns: 1fr 420px;
   gap: 80px; align-items: center;
@@ -5513,7 +5204,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 <body>
 
 <!-- NAV -->
-<nav id="main-nav" style="background: rgba(248, 247, 244, 0.97);">
+<nav id="main-nav" style="background: rgb(13, 13, 13);">
   <div class="nav-full">
     <div class="nav-inner">
       <a class="nav-logo" onclick="showPage('main')" style="cursor:pointer;">
@@ -5561,7 +5252,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         </div>
         <div class="hero-stats fade-up d4 visible">
           <div class="h-stat"><div class="h-stat-num">20+</div><div class="h-stat-lbl">Years in Product</div></div>
-          <div class="h-stat"><div class="h-stat-num">10M+</div><div class="h-stat-lbl">Devices Shipped</div></div>
+          <div class="h-stat"><div class="h-stat-num">30+</div><div class="h-stat-lbl">Go-to-Market Strategies Shaped</div></div>
           <div class="h-stat"><div class="h-stat-num">4</div><div class="h-stat-lbl">Continents</div></div>
           <div class="h-stat"><div class="h-stat-num">$Billions</div><div class="h-stat-lbl">Revenue Impact</div></div>
         </div>
@@ -5571,44 +5262,10 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
           <img class="headshot" src="https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg" alt="Brian Stahlhammer">
           <div class="hs-tag">
             <img src="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" alt="Forge Product Strategy">
-            <span class="hs-tag-role">Founder</span>
+            <span class="hs-tag-role"><strong style="color:#ffffff;font-weight:600;margin-right:6px;">Brian Stahlhammer</strong> — Founder</span>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="hero-ticker">
-    <div class="ticker-track">
-      <span>Product Strategy</span><span class="sep"> · </span>
-      <span>Go-to-Market Architecture</span><span class="sep"> · </span>
-      <span>Digital Transformation</span><span class="sep"> · </span>
-      <span>The Transition Audit</span><span class="sep"> · </span>
-      <span>AI Product Strategy</span><span class="sep"> · </span>
-      <span>Embedded Hardware-Software Platforms</span><span class="sep"> · </span>
-      <span>Fractional CPO</span><span class="sep"> · </span>
-      <span>Revenue &amp; Profitability Architecture</span><span class="sep"> · </span>
-      <span>Cybersecurity</span><span class="sep"> · </span>
-      <span>Player-Coach Leadership</span><span class="sep"> · </span>
-      <span>Design Leadership</span><span class="sep"> · </span>
-      <span>Executive Coaching</span><span class="sep"> · </span>
-      <span>B2B SaaS Scaling</span><span class="sep"> · </span>
-      <span>Industrial IoT</span><span class="sep"> · </span>
-      <span>AI Integration</span><span class="sep"> · </span>
-      <span>Product Strategy</span><span class="sep"> · </span>
-      <span>Go-to-Market Architecture</span><span class="sep"> · </span>
-      <span>Digital Transformation</span><span class="sep"> · </span>
-      <span>The Transition Audit</span><span class="sep"> · </span>
-      <span>AI Product Strategy</span><span class="sep"> · </span>
-      <span>Embedded Hardware-Software Platforms</span><span class="sep"> · </span>
-      <span>Fractional CPO</span><span class="sep"> · </span>
-      <span>Revenue &amp; Profitability Architecture</span><span class="sep"> · </span>
-      <span>Cybersecurity</span><span class="sep"> · </span>
-      <span>Player-Coach Leadership</span><span class="sep"> · </span>
-      <span>Design Leadership</span><span class="sep"> · </span>
-      <span>Executive Coaching</span><span class="sep"> · </span>
-      <span>B2B SaaS Scaling</span><span class="sep"> · </span>
-      <span>Industrial IoT</span><span class="sep"> · </span>
-      <span>AI Integration</span><span class="sep"> · </span>
     </div>
   </div>
 </section>
@@ -5654,7 +5311,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         </div>
       </div>
     </div>
-    <div class="about-bottom fade-up">
+    <div class="about-bottom fade-up visible">
       <div>
         <span class="skills-lbl">Areas of Expertise</span>
         <div class="skills-head">What I bring<br>to the table</div>
@@ -5687,13 +5344,13 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   <div class="container">
     <div class="svc-header">
       <div>
-        <span class="sec-kicker fade-up">What I Offer</span>
-        <h2 class="sec-title fade-up d1">Engagements built for<br><em>your moment of change.</em></h2>
+        <span class="sec-kicker fade-up visible">What I Offer</span>
+        <h2 class="sec-title fade-up d1 visible">Engagements built for<br><em>your moment of change.</em></h2>
       </div>
-      <p class="sec-sub fade-up d1">Each engagement starts with a real conversation about where you are and where you need to get to. No templated deliverables, no generic frameworks.</p>
+      <p class="sec-sub fade-up d1 visible">Each engagement starts with a real conversation about where you are and where you need to get to. No templated deliverables, no generic frameworks.</p>
     </div>
     <div class="svc-grid">
-      <div class="svc-card sig fade-up" onclick="showPage('audit')" style="cursor:pointer;">
+      <div class="svc-card sig fade-up visible" onclick="showPage('audit')" style="cursor:pointer;">
         <span class="svc-num">01</span>
         <span class="sig-badge">Signature Program</span>
         <div class="svc-title">The Transition Audit</div>
@@ -5701,14 +5358,14 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <p class="svc-desc">A structured diagnostic and strategy program for mid-market CEOs and CPOs navigating product pivots. We assess every dimension of your organization, identify the real gaps, and build the transformation roadmap together.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d1">
+      <div class="svc-card fade-up d1 visible">
         <span class="svc-num">02</span>
         <div class="svc-title">Fractional CPO</div>
         <div class="svc-wk">Ongoing / Retainer</div>
         <p class="svc-desc">Executive-level product leadership embedded in your company. Ideal for growth-stage teams that need a seasoned CPO to build product culture, set strategy, and drive quarterly execution without the full-time overhead.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d2">
+      <div class="svc-card fade-up d2 visible">
         <span class="svc-num">03</span>
         <div class="svc-title">GTM Strategy Workshops</div>
         <div class="svc-wk">1 to 3 Day Intensive</div>
@@ -5717,14 +5374,14 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
       </div>
     </div>
     <div class="svc-grid-b">
-      <div class="svc-card fade-up">
+      <div class="svc-card fade-up visible">
         <span class="svc-num">04</span>
         <div class="svc-title">Product Org Assessment</div>
         <div class="svc-wk">2 to 4 Week Engagement</div>
         <p class="svc-desc">A rigorous diagnostic of your product organization covering team structure, process maturity, tooling, and output quality, delivered with a prioritized improvement roadmap.</p>
         <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d1">
+      <div class="svc-card fade-up d1 visible">
         <span class="svc-num">05</span>
         <div class="svc-title">Executive Coaching &amp; Mentoring</div>
         <div class="svc-wk">Monthly / Ongoing</div>
@@ -5732,7 +5389,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <span class="svc-arrow">↗</span>
       </div>
     </div>
-    <div class="svc-cta fade-up">
+    <div class="svc-cta fade-up visible">
       <a onclick="showPage('main');scrollTo('#contact')" class="btn-blk">Book a free discovery call <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
     </div>
   </div>
@@ -6269,7 +5926,7 @@ setTimeout(() => {
 // Nav on scroll
 const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
-  nav.style.background = window.scrollY > 60 ? 'rgba(248,247,244,0.97)' : 'rgba(248,247,244,0.92)';
+  nav.style.background = '#0D0D0D';
 }, { passive: true });
 
 // Contact form
