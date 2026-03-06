@@ -417,6 +417,77 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   .audit-section { padding: 56px 0; }
 }
 </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8G359JY81Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8G359JY81Q', {
+    send_page_view: true,
+    cookie_flags: 'SameSite=None;Secure'
+  });
+
+  // Track nav link clicks
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[onclick], button[onclick]').forEach(el => {
+      el.addEventListener('click', function() {
+        const label = this.textContent.trim() || this.getAttribute('aria-label') || 'unknown';
+        gtag('event', 'navigation_click', {
+          event_category: 'Navigation',
+          event_label: label
+        });
+      });
+    });
+
+    // Track contact form submission
+    const form = document.getElementById('contact-form');
+    if (form) {
+      form.addEventListener('submit', function() {
+        gtag('event', 'form_submit', {
+          event_category: 'Contact',
+          event_label: 'Contact Form'
+        });
+      });
+    }
+
+    // Track page/section views (main vs audit page)
+    const originalShowPage = window.showPage;
+    window.showPage = function(page) {
+      gtag('event', 'page_view', {
+        page_title: page === 'audit' ? 'The Transition Audit' : 'Home',
+        page_location: window.location.href + '#' + page
+      });
+      if (originalShowPage) originalShowPage(page);
+    };
+
+    // Track outbound links (LinkedIn, etc.)
+    document.querySelectorAll('a[href^="http"]').forEach(el => {
+      el.addEventListener('click', function() {
+        gtag('event', 'outbound_click', {
+          event_category: 'Outbound',
+          event_label: this.href
+        });
+      });
+    });
+
+    // Track scroll depth
+    let depths = { 25: false, 50: false, 75: false, 90: false };
+    window.addEventListener('scroll', function() {
+      const pct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+      Object.keys(depths).forEach(d => {
+        if (!depths[d] && pct >= d) {
+          depths[d] = true;
+          gtag('event', 'scroll_depth', {
+            event_category: 'Engagement',
+            event_label: d + '%'
+          });
+        }
+      });
+    }, { passive: true });
+  });
+</script>
 </head>
 <body>
 
