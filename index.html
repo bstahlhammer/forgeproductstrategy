@@ -181,8 +181,8 @@ section { padding: 110px 0; }
 .svc-card:hover { background: var(--bg); }
 .svc-card.sig { background: var(--black); cursor: pointer; }
 .svc-card.sig:hover { background: var(--off-black); }
-.svc-num { font-family: var(--fd); font-size: .85rem; font-style: italic; color: var(--rule); margin-bottom: 28px; display: block; }
-.svc-card.sig .svc-num { color: rgba(255,255,255,.35); }
+.svc-num { display: none; }
+.svc-card.sig .svc-num { display: none; }
 .sig-badge { display: inline-block; font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 4px 10px; border: 1px solid rgba(255,95,14,.5); color: var(--orange); margin-bottom: 16px; background: rgba(255,95,14,.08); }
 .svc-title { font-family: var(--fd); font-size: 1.3rem; font-weight: 400; color: var(--black); margin-bottom: 8px; line-height: 1.2; }
 .svc-card.sig .svc-title { color: var(--white); }
@@ -190,10 +190,7 @@ section { padding: 110px 0; }
 .svc-card.sig .svc-wk { color: var(--orange); }
 .svc-desc { font-size: .875rem; color: var(--mid); line-height: 1.7; font-weight: 300; }
 .svc-card.sig .svc-desc { color: rgba(255,255,255,.85); }
-.svc-arrow { position: absolute; bottom: 32px; right: 32px; font-size: 1.2rem; color: var(--rule); transition: color .2s, transform .2s; }
-.svc-card:hover .svc-arrow { color: var(--black); transform: translate(3px,-3px); }
-.svc-card.sig .svc-arrow { color: var(--orange); }
-.svc-card.sig:hover .svc-arrow { color: var(--orange); transform: translate(3px,-3px); }
+.svc-arrow { display: none; }
 .svc-cta { text-align: center; }
 
 /* CASE STUDIES */
@@ -534,7 +531,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
       <div>
         <div class="hero-kicker fade-up">Forge Product Strategy</div>
         <h1 class="hero-h1 fade-up d1">Product transformations<br/>don't fail for lack of vision.<br/><em>They fail from lack of<br/>aligned execution.</em></h1>
-        <p class="hero-p fade-up d2">I help CEOs and CPOs close that gap. The pattern recognition that only comes from having led this exact transformation from the inside, not from a consulting deck.</p>
+        <p class="hero-p fade-up d2">I help CEOs and CPOs close that gap — with the pattern recognition that only comes from having led this exact transformation from the inside, not from a consulting deck.</p>
         <div class="hero-ctas fade-up d3">
           <a onclick="showPage('main');scrollToSection('#services')" class="btn-blk">Work with me <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <a onclick="showPage('audit')" class="btn-orange">The Transition Audit <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -551,7 +548,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
           <img class="headshot" src="https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg" alt="Brian Stahlhammer" />
           <div class="hs-tag">
             <img src="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" alt="Forge Product Strategy" />
-            <span class="hs-tag-role"><strong style="color:#ffffff;font-weight:600;margin-right:6px;">Brian Stahlhammer</strong>, Founder</span>
+            <span class="hs-tag-role"><strong style="color:#ffffff;font-weight:600;margin-right:6px;">Brian Stahlhammer</strong> — Founder</span>
           </div>
         </div>
       </div>
@@ -563,16 +560,16 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   <div class="container">
     <div class="about-top">
       <div class="about-narrative">
-        <span class="sec-kicker fade-up">About Brian</span>
-        <h2 class="sec-title fade-up d1">Strategy that comes from<br/><em>actually doing the work.</em></h2>
+        <span class="sec-kicker fade-up">Earned, Not Studied</span>
+        <h2 class="sec-title fade-up d1" style="font-size:clamp(1.9rem,3vw,2.8rem);">Strategy that comes from<br/><em>actually doing the work.</em></h2>
         <div class="fade-up d2">
-          <p>I studied mechanical engineering at Colorado State, but somewhere between thermodynamics and structural analysis, I realized I cared more about the <strong>"why"</strong> than the "how." Why does this product exist? Who needs it? What problem does it actually solve? That instinct pulled me toward product. It's never let go.</p>
-          <p>Coming out of engineering school, I joined PwC and then Accenture, where I spent years embedded with product management teams helping them think through how to innovate and how to sustain growth through major strategic transitions. The MBA at Georgetown sharpened the business rigor. But both chapters, before and after Georgetown, were fundamentally about consulting. I loved the work. What I longed for was skin in the game.</p>
-          <p>So I crossed to the other side of the desk. At Gogo, GCI, CableLabs, and Calix, I stopped advising and started owning: roadmaps, P&L, team performance, market outcomes. Then at <strong>FreeWave</strong>, everything I had learned came together. I took a 30-year-old hardware company and helped it find genuine product-market fit with a new customer base, a new product-led operating model, and a new place in the market. Rebuilding the revenue model, the go-to-market motion, and the product architecture all at once. That's the work I've realized I'm exceptionally good at.</p>
-          <p>Across all of it, I've led diverse, cross-functional teams and global delivery organizations spanning four continents, building the kind of alignment, collaboration, and shared momentum that turns a strategy on a slide into outcomes your customers actually feel.</p>
+          <p>I studied mechanical engineering at Colorado State, but somewhere between thermodynamics and structural analysis, I realized I cared more about the <strong>"why"</strong> than the "how." Why does this product exist? Who needs it? What problem does it actually solve? That instinct pulled me toward product — and it's never let go.</p>
+          <p>Coming out of engineering school, I joined PwC and then Accenture, where I spent years embedded with product management teams helping them think through how to innovate and how to sustain growth through major strategic transitions. The MBA at Georgetown sharpened the business rigor. But both chapters — before and after Georgetown — were fundamentally about consulting. I loved the work. What I longed for was skin in the game.</p>
+          <p>So I crossed to the other side of the desk. At Gogo, GCI, CableLabs, and Calix, I stopped advising and started owning — roadmaps, P&amp;L, team performance, market outcomes. Then at <strong>FreeWave</strong>, everything I had learned came together. I took a 30-year-old hardware company and helped it find genuine product-market fit with a new customer base, a new product-led operating model, and a new place in the market. Rebuilding the revenue model, the go-to-market motion, and the product architecture all at once — that's the work I've realized I'm exceptionally good at.</p>
+          <p>Across all of it, I've led diverse, cross-functional teams and global delivery organizations spanning four continents — building the kind of alignment, collaboration, and shared momentum that turns a strategy on a slide into outcomes your customers actually feel.</p>
         </div>
         <div class="phi-wrap fade-up d3">
-          <blockquote>"Every company I've worked with has a unique culture, a specific market reality, existing strengths worth building on, and a strategy only they could execute. The advice I bring will never come off a shelf. It will be shaped by all of that, and built to fit."</blockquote>
+          <blockquote>"Every company I've worked with has a unique culture, a specific market reality, existing strengths worth building on, and a strategy that too often lives in a deck rather than the product, siloed from the teams responsible for building and selling it. The advice I bring will never come off a shelf. It will be shaped by all of that, and built to fit."</blockquote>
           <div class="phi-attr">Brian Stahlhammer, Founder, Forge Product Strategy</div>
         </div>
       </div>
@@ -588,7 +585,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         </div>
         <div class="edu-item">
           <div class="edu-badge edu-badge-su">S</div>
-          <div><div class="edu-deg">Mastering AI for Product Innovation</div><div class="edu-sch">Stanford University, Certificate</div></div>
+          <div><div class="edu-deg">Mastering AI for Product Innovation</div><div class="edu-sch">Stanford University — Certificate</div></div>
         </div>
         <div class="edu-item">
           <div class="edu-badge edu-badge-pi">PRAG<br/>MATIC</div>
@@ -596,7 +593,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         </div>
         <div class="edu-item">
           <div class="edu-badge edu-badge-nu">N·U</div>
-          <div><div class="edu-deg">Product Strategy</div><div class="edu-sch">Northwestern University, Certificate</div></div>
+          <div><div class="edu-deg">Product Strategy</div><div class="edu-sch">Northwestern University — Certificate</div></div>
         </div>
       </div>
     </div>
@@ -735,7 +732,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <div class="cs-body">
           <span class="cs-tag">GCI · Alaska · Digital Experience</span>
           <div class="cs-title">Reimagining the digital experience for Alaska's unique telecom market</div>
-          <p class="cs-desc">Alaska is unlike any other telecom market in the country. I redesigned GCI's digital customer experience and seasonal prepaid strategy specifically for those dynamics, building the billing systems, licensing mechanisms, and self-service flows from scratch. The result was 25% revenue growth in year one, alongside a measurable reduction in churn.</p>
+          <p class="cs-desc">Alaska is unlike any other telecom market in the country. I redesigned GCI's digital customer experience and seasonal prepaid strategy specifically for those dynamics, building the billing systems, licensing mechanisms, and self-service flows from scratch. The result was 25% revenue growth in year one and a 20% reduction in annual churn.</p>
         </div>
         <div class="cs-metrics">
           <div class="cs-met"><div class="cs-met-num">25%</div><div class="cs-met-lbl">Revenue Growth Yr 1</div></div>
@@ -754,7 +751,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
     </div>
     <div class="hire-grid fade-up">
       <div class="hire-col hire-dark">
-        <span class="hire-tag">Forge Product Strategy, Advisory</span>
+        <span class="hire-tag">Forge Product Strategy — Advisory</span>
         <h3>Consulting &amp; Advisory Engagements</h3>
         <p>Bring me in as an external strategic advisor or embedded consultant. This works best for boards, CEOs, and CPOs who need someone who has actually done the transformation they're trying to execute, not just advised on it from the outside.</p>
         <ul class="hire-list">
@@ -768,7 +765,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <a class="btn-wht-inv" onclick="showPage('main');scrollToSection('#contact')">Start a conversation <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div class="hire-col hire-light">
-        <span class="hire-tag">Full-Time Executive Roles, Selective</span>
+        <span class="hire-tag">Full-Time Executive Roles — Selective</span>
         <h3>CPO / VP Product Opportunities</h3>
         <p>I'm selectively open to full-time executive product leadership at mission-driven companies where I can operate, not just advise. If you're building something that matters and need someone who has been in the transformation before, let's talk.</p>
         <ul class="hire-list">
@@ -794,9 +791,9 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <h2 class="ct-head">Let's talk about<br/>your <em>next</em><br/>transformation.</h2>
         <p class="ct-p">Whether you have a specific engagement in mind or just want to think through a challenge, I'm always up for a direct conversation. No sales process, no intake forms.</p>
         <div class="ct-tiles">
-          <a href="mailto:brian@forgeproductstrategy.com" class="ct-tile">
+          <a href="/cdn-cgi/l/email-protection#5e3c2c373f301e38312c393b2e2c313a2b3d2a2d2a2c3f2a3b3927703d3133" class="ct-tile">
             <div class="tile-icon">✉</div>
-            <div><div class="tile-lbl">Email</div><div class="tile-val">brian@forgeproductstrategy.com</div></div>
+            <div><div class="tile-lbl">Email</div><div class="tile-val"><span class="__cf_email__" data-cfemail="84e6f6ede5eac4e2ebf6e3e1f4f6ebe0f1e7f0f7f0f6e5f0e1e3fdaae7ebe9">[email&#160;protected]</span></div></div>
           </a>
           <a href="https://linkedin.com/in/brianstahlhammer" target="_blank" rel="noopener" class="ct-tile">
             <div class="tile-icon">in</div>
@@ -866,7 +863,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 <div class="audit-hero">
   <div class="container">
     <div class="audit-hero-inner">
-      <div class="audit-eyebrow">Forge Product Strategy, Signature Program</div>
+      <div class="audit-eyebrow">Forge Product Strategy — Signature Program</div>
       <h1 class="audit-h1">The Transition<br/>Audit<em>™</em></h1>
       <p class="audit-tagline">An 8 to 12 week assessment and recommendations program for mid-market CEOs and CPOs navigating a product strategy pivot or new go-to-market launch.</p>
       <div class="audit-hero-meta">
@@ -903,10 +900,10 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <h2 class="audit-heading fade-up d1">Most pivots don't fail because<br/>the strategy is <em>wrong.</em></h2>
       </div>
       <div class="audit-body fade-up d1">
-        <p>They fail because the organization isn't rebuilt to execute it. The CEO sees the destination clearly. The board has approved the direction. Maybe there's even a prototype or early customers. But underneath the surface, the entire operational engine of the company: sales compensation, marketing messaging, support workflows, development priorities, even the org chart itself. All of it still optimized for the old business.</p>
+        <p>They fail because the organization isn't rebuilt to execute it. The CEO sees the destination clearly. The board has approved the direction. Maybe there's even a prototype or early customers. But underneath the surface, the entire operational engine of the company — sales compensation, marketing messaging, support workflows, development priorities, even the org chart itself — is still optimized for the old business.</p>
         <p>Leadership teams find themselves in an agonizing middle ground: too committed to turn back, but unable to accelerate because every function is pulling from a different playbook. The result is a slow, expensive bleed of resources, morale, and market timing that transforms what should be a bold strategic move into a years-long exercise in organizational frustration.</p>
         <p><strong>What makes this particularly painful is the isolation.</strong> CEOs and CPOs navigating these transitions rarely have peers inside the organization who fully grasp the scope of what needs to change. Board members want progress updates, not vulnerability. Direct reports are simultaneously managing the old business and trying to build the new one, often with conflicting incentives.</p>
-        <p>The Transition Audit exists to break that pattern by bringing structured diagnostic rigor, cross-functional strategy development, and the pattern recognition of someone who has led this exact transformation before.</p>
+        <p>The Transition Audit exists to break that pattern — bringing structured diagnostic rigor, cross-functional strategy development, and the pattern recognition of someone who has led this exact transformation before.</p>
       </div>
     </div>
   </div>
@@ -930,7 +927,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
           <div class="outcome-item">
             <span class="outcome-num">02</span>
             <div class="outcome-title">Redesigned Go-to-Market Strategy</div>
-            <p class="outcome-desc">Sales, marketing, customer success, and support: purpose-built for your new offering and operating model, not retrofitted from the old one.</p>
+            <p class="outcome-desc">Sales, marketing, customer success, and support — purpose-built for your new offering and operating model, not retrofitted from the old one.</p>
           </div>
           <div class="outcome-item">
             <span class="outcome-num">03</span>
@@ -940,17 +937,17 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
           <div class="outcome-item">
             <span class="outcome-num">04</span>
             <div class="outcome-title">Product Development Prioritization Framework</div>
-            <p class="outcome-desc">A framework that balances investment between legacy maintenance, transitional features, and new platform development, so engineering resources drive the pivot.</p>
+            <p class="outcome-desc">A framework that balances investment between legacy maintenance, transitional features, and new platform development — so engineering resources drive the pivot.</p>
           </div>
           <div class="outcome-item">
             <span class="outcome-num">05</span>
             <div class="outcome-title">Legacy Asset Leverage Plan</div>
-            <p class="outcome-desc">Identifies which existing customers, products, partnerships, brand equity, and institutional knowledge are strategic accelerants, along with a plan to extract maximum transitional value from each.</p>
+            <p class="outcome-desc">Identifies which existing customers, products, partnerships, brand equity, and institutional knowledge are strategic accelerants — and a plan to extract maximum transitional value from each.</p>
           </div>
           <div class="outcome-item">
             <span class="outcome-num">06</span>
             <div class="outcome-title">Executive Alignment &amp; Shared Conviction</div>
-            <p class="outcome-desc">Built through facilitated workshops and collaborative strategy development, not a consultant's binder that sits on a shelf. Your team builds it with you.</p>
+            <p class="outcome-desc">Built through facilitated workshops and collaborative strategy development — not a consultant's binder that sits on a shelf. Your team builds it with you.</p>
           </div>
         </div>
       </div>
@@ -996,7 +993,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         </div>
         <div>
           <div class="phase-title">Strategy Architecture</div>
-          <p class="phase-desc">Collaborative strategy development with your leadership team, building the transformation roadmap together so alignment is baked in from the start, not bolted on at the end.</p>
+          <p class="phase-desc">Collaborative strategy development with your leadership team — building the transformation roadmap together so that alignment is baked in from the start, not bolted on at the end.</p>
           <div class="phase-deliverable-label">Includes</div>
           <ul class="phase-deliverables">
             <li>Go-to-market strategy redesign workshop across sales, marketing, customer success, and support</li>
@@ -1019,7 +1016,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         </div>
         <div>
           <div class="phase-title">Validation &amp; Refinement</div>
-          <p class="phase-desc">Stress-testing the strategy against financial realities, organizational constraints, and market dynamics, then refining it into an executable plan with built-in accountability.</p>
+          <p class="phase-desc">Stress-testing the strategy against financial realities, organizational constraints, and market dynamics — then refining it into an executable plan with built-in accountability.</p>
           <div class="phase-deliverable-label">Includes</div>
           <ul class="phase-deliverables">
             <li>Financial modeling of the transition including investment requirements and revenue bridge analysis</li>
@@ -1041,7 +1038,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         </div>
         <div>
           <div class="phase-title">Execution Blueprint &amp; Handoff</div>
-          <p class="phase-desc">Synthesizing everything into a single, prioritized execution plan your leadership team can begin implementing immediately, with clear ownership, sequencing, and milestones.</p>
+          <p class="phase-desc">Synthesizing everything into a single, prioritized execution plan your leadership team can begin implementing immediately — with clear ownership, sequencing, and milestones.</p>
           <div class="phase-deliverable-label">Includes</div>
           <ul class="phase-deliverables">
             <li>Executive alignment session with full leadership team to confirm buy-in and ownership</li>
@@ -1051,7 +1048,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
           </ul>
           <div class="phase-deliverable-label">Deliverable</div>
           <ul class="phase-deliverables">
-            <li>The complete Transition Audit report: your board-ready transformation strategy and 90-day execution sprint plan</li>
+            <li>The complete Transition Audit report — your board-ready transformation strategy and 90-day execution sprint plan</li>
           </ul>
         </div>
       </div>
@@ -1067,13 +1064,13 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
     </div>
     <div class="persona-grid fade-up d1">
       <div class="persona-card dark">
-        <span class="persona-role">Primary: The CEO / President</span>
+        <span class="persona-role">Primary — The CEO / President</span>
         <div class="persona-title">You've committed to the pivot. Now you need to get the organization to execute it.</div>
-        <p class="persona-desc">Mid-market leader (100 to 1,000 employees) who has already made the strategic decision to pivot but is facing organizational resistance, execution uncertainty, or cross-functional misalignment. You've built the company, or inherited a legacy business, and feel personally responsible for getting this transition right. You're not looking for strategy theory. You need an operator who has done this before and can help you see around corners.</p>
+        <p class="persona-desc">Mid-market leader (100 to 1,000 employees) who has already made the strategic decision to pivot but is facing organizational resistance, execution uncertainty, or cross-functional misalignment. You've built the company — or inherited a legacy business — and feel personally responsible for getting this transition right. You're not looking for strategy theory. You need an operator who has done this before and can help you see around corners.</p>
       </div>
       <div class="persona-card">
-        <span class="persona-role">Secondary: The CPO / VP Product</span>
-        <div class="persona-title">You see the strategic pivot more clearly than anyone, yet lack the cross-functional authority to drive it.</div>
+        <span class="persona-role">Secondary — The CPO / VP Product</span>
+        <div class="persona-title">You see the strategic pivot more clearly than anyone — but lack the cross-functional authority to drive it.</div>
         <p class="persona-desc">The product leader who understands what needs to change but can't move the organization alone. You're often the internal champion who identifies the need for outside help and advocates to the CEO for a structured approach. You want a partner who speaks your language but can also command credibility in boardroom conversations about revenue, org design, and go-to-market strategy.</p>
       </div>
     </div>
@@ -1082,16 +1079,16 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <div class="fit-col-title">This program is right for you if...</div>
         <ul class="fit-list fit-yes">
           <li><span class="icon">✓</span>You've committed to a product pivot, but your leadership team is still operating from different playbooks.</li>
-          <li><span class="icon">✓</span>Your go-to-market motion and org structure were designed for the business you built, not the one you're building.</li>
+          <li><span class="icon">✓</span>Your go-to-market motion and org structure were designed for the business you built — not the one you're building.</li>
           <li><span class="icon">✓</span>You have sacred cows everyone knows are holding you back, but nobody has been willing to name them.</li>
-          <li><span class="icon">✓</span>You want an advisor who has personally led this kind of transformation, not someone who studied it in a case study.</li>
+          <li><span class="icon">✓</span>You want an advisor who has personally led this kind of transformation — not someone who studied it in a case study.</li>
           <li><span class="icon">✓</span>You're ready to invest 12 focused weeks to compress what would otherwise be 12 to 24 months of expensive trial and error.</li>
         </ul>
       </div>
       <div>
         <div class="fit-col-title">This program is not right for you if...</div>
         <ul class="fit-list fit-no">
-          <li><span class="icon">✗</span>You're looking for someone to run the transformation for you. This program builds your team's capacity and alignment. It's advisory, not outsourced execution.</li>
+          <li><span class="icon">✗</span>You're looking for someone to run the transformation for you. This program builds your team's capacity and alignment — it's advisory, not outsourced execution.</li>
           <li><span class="icon">✗</span>You want a generic strategic framework or off-the-shelf playbook. Every engagement is deeply customized to your specific business and market.</li>
           <li><span class="icon">✗</span>You're still evaluating whether to pivot at all. This program is for leaders who have made the decision and need help executing it.</li>
         </ul>
@@ -1110,12 +1107,12 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
       <div class="bonus-card">
         <span class="bonus-icon">📋</span>
         <div class="bonus-title">Board Narrative Package</div>
-        <p class="bonus-desc">A polished, board-ready summary of the transformation strategy that positions the pivot as a structured, de-risked initiative, not a leap of faith. Includes executive summary, financial bridge narrative, and key risk mitigations.</p>
+        <p class="bonus-desc">A polished, board-ready summary of the transformation strategy that positions the pivot as a structured, de-risked initiative — not a leap of faith. Includes executive summary, financial bridge narrative, and key risk mitigations.</p>
       </div>
       <div class="bonus-card">
         <span class="bonus-icon">📣</span>
         <div class="bonus-title">Transition Communication Toolkit</div>
-        <p class="bonus-desc">Internal messaging frameworks for announcing and managing the pivot across the organization, from all-hands messaging to individual team briefings, so the broader company understands the why and the how.</p>
+        <p class="bonus-desc">Internal messaging frameworks for announcing and managing the pivot across the organization — from all-hands messaging to individual team briefings — so the broader company understands the why and the how.</p>
       </div>
       <div class="bonus-card">
         <span class="bonus-icon">💬</span>
