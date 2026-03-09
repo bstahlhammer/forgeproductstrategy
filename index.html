@@ -140,6 +140,7 @@ nav {
 section { padding: 110px 0; }
 .sec-kicker { font-size: .68rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--light); margin-bottom: 20px; display: block; }
 .sec-title { font-family: var(--fd); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 400; line-height: 1.1; letter-spacing: -.02em; margin-bottom: 20px; color: var(--black); }
+.about-title { font-size: clamp(1.6rem, 2.4vw, 2.4rem); }
 .sec-title em { font-style: italic; }
 .sec-sub { color: var(--mid); font-size: 1rem; max-width: 540px; font-weight: 300; line-height: 1.75; }
 
@@ -181,8 +182,8 @@ section { padding: 110px 0; }
 .svc-card:hover { background: var(--bg); }
 .svc-card.sig { background: var(--black); cursor: pointer; }
 .svc-card.sig:hover { background: var(--off-black); }
-.svc-num { font-family: var(--fd); font-size: .85rem; font-style: italic; color: var(--rule); margin-bottom: 28px; display: block; }
-.svc-card.sig .svc-num { color: rgba(255,255,255,.35); }
+.svc-num { display: none; }
+.svc-card.sig .svc-num { display: none; }
 .sig-badge { display: inline-block; font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 4px 10px; border: 1px solid rgba(255,95,14,.5); color: var(--orange); margin-bottom: 16px; background: rgba(255,95,14,.08); }
 .svc-title { font-family: var(--fd); font-size: 1.3rem; font-weight: 400; color: var(--black); margin-bottom: 8px; line-height: 1.2; }
 .svc-card.sig .svc-title { color: var(--white); }
@@ -190,10 +191,7 @@ section { padding: 110px 0; }
 .svc-card.sig .svc-wk { color: var(--orange); }
 .svc-desc { font-size: .875rem; color: var(--mid); line-height: 1.7; font-weight: 300; }
 .svc-card.sig .svc-desc { color: rgba(255,255,255,.85); }
-.svc-arrow { position: absolute; bottom: 32px; right: 32px; font-size: 1.2rem; color: var(--rule); transition: color .2s, transform .2s; }
-.svc-card:hover .svc-arrow { color: var(--black); transform: translate(3px,-3px); }
-.svc-card.sig .svc-arrow { color: var(--orange); }
-.svc-card.sig:hover .svc-arrow { color: var(--orange); transform: translate(3px,-3px); }
+.svc-arrow { display: none; }
 .svc-cta { text-align: center; }
 
 /* CASE STUDIES */
@@ -532,8 +530,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   <div class="container">
     <div class="hero-inner">
       <div>
-        
-        <h1 class="hero-h1 fade-up d1">Product transformations<br/>don't fail for lack of vision.<br/><em>They fail from lack of<br/>aligned execution.</em></h1>
+                <h1 class="hero-h1 fade-up d1">Product transformations<br/>don't fail for lack of vision.<br/><em>They fail from lack of<br/>aligned execution.</em></h1>
         <p class="hero-p fade-up d2">I help CEOs and CPOs close that gap — with the pattern recognition that only comes from having led this exact transformation from the inside, not from a consulting deck.</p>
         <div class="hero-ctas fade-up d3">
           <a onclick="showPage('main');scrollToSection('#services')" class="btn-blk">Work with me <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -563,8 +560,8 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   <div class="container">
     <div class="about-top">
       <div class="about-narrative">
-        <span class="sec-kicker fade-up">About Brian</span>
-        <h2 class="sec-title fade-up d1">Strategy that comes from<br/><em>actually doing the work.</em></h2>
+        <span class="sec-kicker fade-up">Earned, Not Studied</span>
+        <h2 class="sec-title about-title fade-up d1">Strategy that comes from<br/><em>actually doing the work.</em></h2>
         <div class="fade-up d2">
           <p>I studied mechanical engineering at Colorado State, but somewhere between thermodynamics and structural analysis, I realized I cared more about the <strong>"why"</strong> than the "how." Why does this product exist? Who needs it? What problem does it actually solve? That instinct pulled me toward product — and it's never let go.</p>
           <p>Coming out of engineering school, I joined PwC and then Accenture, where I spent years embedded with product management teams helping them think through how to innovate and how to sustain growth through major strategic transitions. The MBA at Georgetown sharpened the business rigor. But both chapters — before and after Georgetown — were fundamentally about consulting. I loved the work. What I longed for was skin in the game.</p>
@@ -572,7 +569,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
           <p>Across all of it, I've led diverse, cross-functional teams and global delivery organizations spanning four continents — building the kind of alignment, collaboration, and shared momentum that turns a strategy on a slide into outcomes your customers actually feel.</p>
         </div>
         <div class="phi-wrap fade-up d3">
-          <blockquote>"Every company I've worked with has a unique culture, a specific market reality, existing strengths worth building on, and a strategy only they could execute. The advice I bring will never come off a shelf — it will be shaped by all of that, and built to fit."</blockquote>
+          <blockquote>"Every company I've worked with has a unique culture, a specific market reality, existing strengths worth building on, and a strategy that too often lives in a deck rather than the product, siloed from the teams responsible for building and selling it. The advice I bring will never come off a shelf. It will be shaped by all of that, and built to fit."</blockquote>
           <div class="phi-attr">Brian Stahlhammer, Founder, Forge Product Strategy</div>
         </div>
       </div>
@@ -794,9 +791,9 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <h2 class="ct-head">Let's talk about<br/>your <em>next</em><br/>transformation.</h2>
         <p class="ct-p">Whether you have a specific engagement in mind or just want to think through a challenge, I'm always up for a direct conversation. No sales process, no intake forms.</p>
         <div class="ct-tiles">
-          <a href="/cdn-cgi/l/email-protection#5e3c2c373f301e38312c393b2e2c313a2b3d2a2d2a2c3f2a3b3927703d3133" class="ct-tile">
+          <a href="mailto:brian@forgeproductstrategy.com" class="ct-tile">
             <div class="tile-icon">✉</div>
-            <div><div class="tile-lbl">Email</div><div class="tile-val"><span class="__cf_email__" data-cfemail="84e6f6ede5eac4e2ebf6e3e1f4f6ebe0f1e7f0f7f0f6e5f0e1e3fdaae7ebe9">[email&#160;protected]</span></div></div>
+            <div><div class="tile-lbl">Email</div><div class="tile-val">brian@forgeproductstrategy.com</div></div>
           </a>
           <a href="https://linkedin.com/in/brianstahlhammer" target="_blank" rel="noopener" class="ct-tile">
             <div class="tile-icon">in</div>
