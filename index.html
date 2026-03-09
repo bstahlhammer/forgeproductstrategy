@@ -416,8 +416,6 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 }
 </style>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8G359JY81Q"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -482,6 +480,33 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
             event_label: d + '%'
           });
         }
+      });
+    }, { passive: true });
+  });
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8G359JY81Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8G359JY81Q', { send_page_view: true });
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[onclick], button[onclick]').forEach(el => {
+      el.addEventListener('click', function() {
+        gtag('event', 'navigation_click', { event_category: 'Navigation', event_label: (this.textContent.trim() || 'unknown') });
+      });
+    });
+    var form = document.getElementById('contact-form');
+    if (form) { form.addEventListener('submit', function() { gtag('event', 'form_submit', { event_category: 'Contact', event_label: 'Contact Form' }); }); }
+    document.querySelectorAll('a[href^="http"]').forEach(el => {
+      el.addEventListener('click', function() { gtag('event', 'outbound_click', { event_category: 'Outbound', event_label: this.href }); });
+    });
+    var depths = { 25: false, 50: false, 75: false, 90: false };
+    window.addEventListener('scroll', function() {
+      var pct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+      Object.keys(depths).forEach(function(d) {
+        if (!depths[d] && pct >= d) { depths[d] = true; gtag('event', 'scroll_depth', { event_category: 'Engagement', event_label: d + '%' }); }
       });
     }, { passive: true });
   });
@@ -791,9 +816,9 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <h2 class="ct-head">Let's talk about<br/>your <em>next</em><br/>transformation.</h2>
         <p class="ct-p">Whether you have a specific engagement in mind or just want to think through a challenge, I'm always up for a direct conversation. No sales process, no intake forms.</p>
         <div class="ct-tiles">
-          <a href="/cdn-cgi/l/email-protection#c2a0b0aba3ac82a4adb0a5a7b2b0ada6b7a1b6b1b6b0a3b6a7a5bbeca1adaf" class="ct-tile">
+          <a href="mailto:brian@forgeproductstrategy.com" class="ct-tile">
             <div class="tile-icon">✉</div>
-            <div><div class="tile-lbl">Email</div><div class="tile-val"><span class="__cf_email__" data-cfemail="01637368606f41676e73666471736e6574627572757360756466782f626e6c">[email&#160;protected]</span></div></div>
+            <div><div class="tile-lbl">Email</div><div class="tile-val">brian@forgeproductstrategy.com</div></div>
           </a>
           <a href="https://linkedin.com/in/brianstahlhammer" target="_blank" rel="noopener" class="ct-tile">
             <div class="tile-icon">in</div>
@@ -1160,7 +1185,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 
 </div><!-- end audit-page -->
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 emailjs.init("XN59403PvG9TAz-Wp");
 
 function showPage(page) {
@@ -1231,4 +1256,14 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     msg.className = 'form-msg success';
     btn.textContent = 'Message sent ✓';
     this.reset();
-    setTimeout(() => { btn.textContent = 'Send message →
+    setTimeout(() => { btn.textContent = 'Send message →'; btn.disabled = false; }, 4000);
+  } catch(err) {
+    msg.textContent = 'Something went wrong. Please email me directly.';
+    msg.className = 'form-msg error';
+    btn.textContent = 'Send message →';
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
