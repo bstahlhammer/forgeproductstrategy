@@ -47,12 +47,7 @@ body { background: var(--bg); color: var(--black); font-family: 'DM Sans', sans-
 ::-webkit-scrollbar-thumb { background: var(--black); border-radius: 2px; }
 .container { max-width: var(--mw); margin: 0 auto; padding: 0 40px; }
 .nav-full { max-width: var(--mw); margin: 0 auto; padding: 0 40px 0 0; width: 100%; display: flex; align-items: center; }
-.fade-up { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
-.fade-up.visible { opacity: 1; transform: translateY(0); }
-.fade-up.d1 { transition-delay: .08s; }
-.fade-up.d2 { transition-delay: .16s; }
-.fade-up.d3 { transition-delay: .24s; }
-.fade-up.d4 { transition-delay: .32s; }
+/* animations removed for compatibility */
 
 /* PAGE TABS */
 .page { display: none; }
@@ -587,21 +582,21 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   <div class="container">
     <div class="hero-inner">
       <div>
-        <h1 class="hero-h1 fade-up d1">Product transformations<br/>don't fail for lack of vision.<br/><em>They fail from lack of<br/>aligned execution.</em></h1>
-        <p class="hero-p fade-up d2">I help CEOs and CPOs close that gap — with the pattern recognition that only comes from having led this exact transformation from the inside, not from a consulting deck.</p>
-        <div class="hero-ctas fade-up d3">
+        <h1 class="hero-h1">Product transformations<br/>don't fail for lack of vision.<br/><em>They fail from lack of<br/>aligned execution.</em></h1>
+        <p class="hero-p">I help CEOs and CPOs close that gap — with the pattern recognition that only comes from having led this exact transformation from the inside, not from a consulting deck.</p>
+        <div class="hero-ctas">
           <a onclick="showPage('main');scrollToSection('#services')" class="btn-blk">Work with me <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <a onclick="showPage('diagnostic')" class="btn-teal">Start with the Diagnostic <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <a onclick="showPage('audit')" class="btn-orange">The Full Audit <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
-        <div class="hero-stats fade-up d4">
+        <div class="hero-stats">
           <div class="h-stat"><div class="h-stat-num">20+</div><div class="h-stat-lbl">Years in Product</div></div>
           <div class="h-stat"><div class="h-stat-num">30+</div><div class="h-stat-lbl">Go-to-Market Strategies Shaped</div></div>
           <div class="h-stat"><div class="h-stat-num">4</div><div class="h-stat-lbl">Continents</div></div>
           <div class="h-stat"><div class="h-stat-num">$Billions</div><div class="h-stat-lbl">Revenue Impact</div></div>
         </div>
       </div>
-      <div class="hero-img-col fade-up d2">
+      <div class="hero-img-col">
         <div class="hs-frame">
           <img class="headshot" src="https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg" alt="Brian Stahlhammer" />
           <div class="hs-tag">
@@ -618,20 +613,20 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   <div class="container">
     <div class="about-top">
       <div class="about-narrative">
-        <span class="sec-kicker fade-up">Earned, Not Studied</span>
-        <h2 class="sec-title about-title fade-up d1">Strategy that comes from<br/><em>actually doing the work.</em></h2>
-        <div class="fade-up d2">
+        <span class="sec-kicker">Earned, Not Studied</span>
+        <h2 class="sec-title about-title">Strategy that comes from<br/><em>actually doing the work.</em></h2>
+        <div >
           <p>I studied mechanical engineering at Colorado State, but somewhere between thermodynamics and structural analysis, I realized I cared more about the <strong>"why"</strong> than the "how." Why does this product exist? Who needs it? What problem does it actually solve? That instinct pulled me toward product — and it's never let go.</p>
           <p>Coming out of engineering school, I joined PwC and then Accenture, where I spent years embedded with product management teams helping them think through how to innovate and how to sustain growth through major strategic transitions. The MBA at Georgetown sharpened the business rigor. But both chapters — before and after Georgetown — were fundamentally about consulting. I loved the work. What I longed for was skin in the game.</p>
           <p>So I crossed to the other side of the desk. At Gogo, GCI, CableLabs, and Calix, I stopped advising and started owning — roadmaps, P&amp;L, team performance, market outcomes. Then at <strong>FreeWave</strong>, everything I had learned came together. I took a 30-year-old hardware company and helped it find genuine product-market fit with a new customer base, a new product-led operating model, and a new place in the market. Rebuilding the revenue model, the go-to-market motion, and the product architecture all at once — that's the work I've realized I'm exceptionally good at.</p>
           <p>Across all of it, I've led diverse, cross-functional teams and global delivery organizations spanning four continents — building the kind of alignment, collaboration, and shared momentum that turns a strategy on a slide into outcomes your customers actually feel.</p>
         </div>
-        <div class="phi-wrap fade-up d3">
+        <div class="phi-wrap">
           <blockquote>"Every company I've worked with has a strategy that looks great in a deck and stalls in execution. The gap is almost never the idea. It's the alignment, the org design, the go-to-market motion: the operational reality the strategy forgot to account for. The advice I bring is built around yours."</blockquote>
           <div class="phi-attr">Brian Stahlhammer, Founder, Forge Product Strategy</div>
         </div>
       </div>
-      <div class="fade-up d1">
+      <div >
         <div class="edu-title">Education &amp; Credentials</div>
         <div class="edu-item">
           <div class="edu-badge edu-badge-gu">GEORGE<br/>TOWN</div>
@@ -655,7 +650,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         </div>
       </div>
     </div>
-    <div class="about-bottom fade-up">
+    <div class="about-bottom">
       <div>
         <span class="skills-lbl">Areas of Expertise</span>
         <div class="skills-head">What I bring<br/>to the table</div>
@@ -688,21 +683,21 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   <div class="container">
     <div class="svc-header">
       <div>
-        <span class="sec-kicker fade-up">What I Offer</span>
-        <h2 class="sec-title fade-up d1">Engagements built for<br/><em>your moment of change.</em></h2>
+        <span class="sec-kicker">What I Offer</span>
+        <h2 class="sec-title">Engagements built for<br/><em>your moment of change.</em></h2>
       </div>
-      <p class="sec-sub fade-up d1">Each engagement starts with a real conversation about where you are and where you need to get to. No templated deliverables, no generic frameworks.</p>
+      <p class="sec-sub">Each engagement starts with a real conversation about where you are and where you need to get to. No templated deliverables, no generic frameworks.</p>
     </div>
 
     <!-- Top two: signature programs -->
     <div class="svc-grid-top" style="margin-bottom:1px;">
-      <div class="svc-card sig-teal fade-up" onclick="showPage('diagnostic')" style="cursor:pointer;">
+      <div class="svc-card sig-teal" onclick="showPage('diagnostic')" style="cursor:pointer;">
         <span class="sig-badge-teal">Entry Point Program</span>
         <div class="svc-title">The Transition Diagnostic</div>
         <div class="svc-wk">2 to 3 Week Sprint</div>
         <p class="svc-desc">A focused diagnostic sprint that gives you a clear, honest picture of where your organization stands, what's blocking the transition, and what you already have working in your favor. The natural starting point before committing to the full Audit — or a standalone engagement in its own right.</p>
       </div>
-      <div class="svc-card sig fade-up d1" onclick="showPage('audit')" style="cursor:pointer;">
+      <div class="svc-card sig" onclick="showPage('audit')" style="cursor:pointer;">
         <span class="sig-badge">Signature Program</span>
         <div class="svc-title">The Transition Audit</div>
         <div class="svc-wk">8 to 10 Week Assessment &amp; Strategy</div>
@@ -712,23 +707,23 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 
     <!-- Bottom three -->
     <div class="svc-grid">
-      <div class="svc-card fade-up">
+      <div class="svc-card">
         <div class="svc-title">Fractional CPO</div>
         <div class="svc-wk">Ongoing / Retainer</div>
         <p class="svc-desc">Executive-level product leadership embedded in your company. Ideal for growth-stage teams that need a seasoned CPO to build product culture, set strategy, and drive quarterly execution without the full-time overhead.</p>
       </div>
-      <div class="svc-card fade-up d1">
+      <div class="svc-card">
         <div class="svc-title">GTM Strategy Workshops</div>
         <div class="svc-wk">1 to 3 Day Intensive</div>
         <p class="svc-desc">High-intensity working sessions that produce a market-ready go-to-market strategy, including ICP definition, pricing architecture, channel design, and launch sequencing.</p>
       </div>
-      <div class="svc-card fade-up d2">
+      <div class="svc-card">
         <div class="svc-title">Executive Coaching &amp; Mentoring</div>
         <div class="svc-wk">Monthly / Ongoing</div>
         <p class="svc-desc">One-on-one coaching for CPOs, VPs of Product, and senior PMs navigating career inflection points, organizational complexity, or their first real P&amp;L responsibility.</p>
       </div>
     </div>
-    <div class="svc-cta fade-up">
+    <div class="svc-cta">
       <a onclick="showPage('main');scrollToSection('#contact')" class="btn-blk">Book a free discovery call <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
@@ -738,13 +733,13 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   <div class="container">
     <div class="cs-hdr">
       <div>
-        <span class="sec-kicker fade-up">Selected Work</span>
-        <h2 class="sec-title fade-up d1">Transformations<br/><em>I've led.</em></h2>
+        <span class="sec-kicker">Selected Work</span>
+        <h2 class="sec-title">Transformations<br/><em>I've led.</em></h2>
       </div>
-      <p class="sec-sub fade-up d1">These aren't case studies I wrote about. They're companies I worked inside, problems I owned, and outcomes I was accountable for.</p>
+      <p class="sec-sub">These aren't case studies I wrote about. They're companies I worked inside, problems I owned, and outcomes I was accountable for.</p>
     </div>
     <div class="cs-list">
-      <div class="cs-item fade-up">
+      <div class="cs-item">
         <div class="cs-num">01</div>
         <div class="cs-body">
           <span class="cs-tag">FreeWave Technologies · Boulder, CO · Cybersecurity</span>
@@ -756,7 +751,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
           <div class="cs-met"><div class="cs-met-num">PaaS</div><div class="cs-met-lbl">New Revenue Model</div></div>
         </div>
       </div>
-      <div class="cs-item fade-up">
+      <div class="cs-item">
         <div class="cs-num">02</div>
         <div class="cs-body">
           <span class="cs-tag">Calix · Telecommunications · Community Wi-Fi</span>
@@ -768,7 +763,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
           <div class="cs-met"><div class="cs-met-num">#1</div><div class="cs-met-lbl">Market Position</div></div>
         </div>
       </div>
-      <div class="cs-item fade-up">
+      <div class="cs-item">
         <div class="cs-num">03</div>
         <div class="cs-body">
           <span class="cs-tag">CableLabs · Innovation Research · Broadband</span>
@@ -780,7 +775,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
           <div class="cs-met"><div class="cs-met-num">3</div><div class="cs-met-lbl">Patents Granted</div></div>
         </div>
       </div>
-      <div class="cs-item fade-up">
+      <div class="cs-item">
         <div class="cs-num">04</div>
         <div class="cs-body">
           <span class="cs-tag">GCI · Alaska · Digital Experience</span>
@@ -799,10 +794,10 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 <section id="hire">
   <div class="container">
     <div class="hire-intro">
-      <span class="sec-kicker fade-up">Hire Brian</span>
-      <h2 class="sec-title fade-up d1">Two ways to work<br/><em>together.</em></h2>
+      <span class="sec-kicker">Hire Brian</span>
+      <h2 class="sec-title">Two ways to work<br/><em>together.</em></h2>
     </div>
-    <div class="hire-grid fade-up">
+    <div class="hire-grid">
       <div class="hire-col hire-dark">
         <span class="hire-tag">Forge Product Strategy — Advisory</span>
         <h3>Consulting &amp; Advisory Engagements</h3>
@@ -839,7 +834,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   <div class="contact-logo-bg"></div>
   <div class="container">
     <div class="ct-inner">
-      <div class="ct-left fade-up">
+      <div class="ct-left">
         <span class="ct-kicker">Get in Touch</span>
         <h2 class="ct-head">Let's talk about<br/>your <em>next</em><br/>transformation.</h2>
         <p class="ct-p">Whether you have a specific engagement in mind or just want to think through a challenge, I'm always up for a direct conversation. No sales process, no intake forms.</p>
@@ -858,7 +853,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
           </a>
         </div>
       </div>
-      <div class="fade-up d2">
+      <div >
         <form class="cf" id="contact-form" novalidate>
           <div class="cf-row">
             <div class="fg"><label>Your Name</label><input type="text" id="cf-name" placeholder="Jane Smith" required /></div>
@@ -914,7 +909,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 <!-- ============================================================ -->
 <!-- DIAGNOSTIC PAGE -->
 <!-- ============================================================ -->
-<div id="diagnostic-page" class="page diag-page-wrap">
+<div id="diagnostic-page" class="page diag-page-wrap" style="display:none">
 
 <div class="diag-hero">
   <div class="container">
@@ -953,10 +948,10 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   <div class="container">
     <div class="prog-2col">
       <div>
-        <span class="prog-label fade-up">What It Is</span>
-        <h2 class="prog-heading fade-up d1">Clarity before<br/>you <em>commit.</em></h2>
+        <span class="prog-label">What It Is</span>
+        <h2 class="prog-heading">Clarity before<br/>you <em>commit.</em></h2>
       </div>
-      <div class="prog-body fade-up d1">
+      <div class="prog-body">
         <p>Most companies approaching a product pivot already have a strategic direction. The problem isn't the vision. It's that leadership doesn't yet have a shared, honest picture of the gap between where the business stands today and what the new model actually requires.</p>
         <p>The Transition Diagnostic is a standalone 2-3 week engagement that delivers exactly that picture. It's the front end of the full Transition Audit program — available as an independent sprint for leadership teams that want to validate the scope of their challenge before committing to a full transformation engagement.</p>
         <p><strong>The output is a Current-State Diagnostic Report</strong> that gives you and your leadership team a factual, prioritized view of the gaps, assets, and risks standing between your current business and the one you're building. No theory. No frameworks for their own sake. Just clarity.</p>
@@ -970,11 +965,11 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   <div class="container">
     <div class="prog-2col">
       <div>
-        <span class="prog-label fade-up">What You'll Walk Away With</span>
-        <h2 class="prog-heading fade-up d1">Six deliverables.<br/><em>Complete clarity.</em></h2>
+        <span class="prog-label">What You'll Walk Away With</span>
+        <h2 class="prog-heading">Six deliverables.<br/><em>Complete clarity.</em></h2>
       </div>
       <div>
-        <div class="diag-deliverables fade-up d1">
+        <div class="diag-deliverables">
           <div class="diag-del-item">
             <span class="diag-del-icon">📊</span>
             <div class="diag-del-title">Current-State Diagnostic Report</div>
@@ -1014,10 +1009,10 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 <div class="prog-section">
   <div class="container">
     <div style="margin-bottom:48px;">
-      <span class="prog-label fade-up">How It Works</span>
-      <h2 class="prog-heading fade-up d1">Three weeks.<br/><em>One clear picture.</em></h2>
+      <span class="prog-label">How It Works</span>
+      <h2 class="prog-heading">Three weeks.<br/><em>One clear picture.</em></h2>
     </div>
-    <div class="phases fade-up d1">
+    <div class="phases">
       <div class="phase-item">
         <div class="phase-meta">
           <div class="phase-num">01</div>
@@ -1073,10 +1068,10 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 <div class="prog-section prog-section-alt">
   <div class="container">
     <div style="margin-bottom: 48px;">
-      <span class="prog-label fade-up">Who This Is For</span>
-      <h2 class="prog-heading fade-up d1">Right for leaders who need<br/><em>clarity before commitment.</em></h2>
+      <span class="prog-label">Who This Is For</span>
+      <h2 class="prog-heading">Right for leaders who need<br/><em>clarity before commitment.</em></h2>
     </div>
-    <div class="fit-grid fade-up d1">
+    <div class="fit-grid">
       <div>
         <div class="fit-col-title">The Diagnostic is the right starting point if...</div>
         <ul class="fit-list fit-yes">
@@ -1142,7 +1137,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 <!-- ============================================================ -->
 <!-- AUDIT PAGE -->
 <!-- ============================================================ -->
-<div id="audit-page" class="page audit-page-wrap">
+<div id="audit-page" class="page audit-page-wrap" style="display:none">
 
 <div class="audit-hero">
   <div class="container">
@@ -1192,10 +1187,10 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   <div class="container">
     <div class="prog-2col">
       <div>
-        <span class="prog-label fade-up">The Problem</span>
-        <h2 class="prog-heading fade-up d1">Most pivots don't fail because<br/>the strategy is <em>wrong.</em></h2>
+        <span class="prog-label">The Problem</span>
+        <h2 class="prog-heading">Most pivots don't fail because<br/>the strategy is <em>wrong.</em></h2>
       </div>
-      <div class="prog-body fade-up d1">
+      <div class="prog-body">
         <p>They fail because the organization isn't rebuilt to execute it. The CEO sees the destination clearly. The board has approved the direction. Maybe there's even a prototype or early customers. But underneath the surface, the entire operational engine of the company — sales compensation, marketing messaging, support workflows, development priorities, even the org chart itself — is still optimized for the old business.</p>
         <p>Leadership teams find themselves in an agonizing middle ground: too committed to turn back, but unable to accelerate because every function is pulling from a different playbook. The result is a slow, expensive bleed of resources, morale, and market timing.</p>
         <p><strong>What makes this particularly painful is the isolation.</strong> CEOs and CPOs navigating these transitions rarely have peers inside the organization who fully grasp the scope of what needs to change. Board members want progress updates, not vulnerability. Direct reports are simultaneously managing the old business and trying to build the new one, often with conflicting incentives.</p>
@@ -1209,12 +1204,12 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   <div class="container">
     <div class="prog-2col">
       <div>
-        <span class="prog-label fade-up">What You'll Walk Away With</span>
-        <h2 class="prog-heading fade-up d1">Six deliverables.<br/><em>One complete strategy.</em></h2>
-        <p style="color:var(--mid);font-size:.9rem;line-height:1.75;font-weight:300;margin-top:16px;" class="fade-up d2">Upon completion, your organization will have everything needed to begin executing the transformation with clarity, alignment, and confidence.</p>
+        <span class="prog-label">What You'll Walk Away With</span>
+        <h2 class="prog-heading">Six deliverables.<br/><em>One complete strategy.</em></h2>
+        <p style="color:var(--mid);font-size:.9rem;line-height:1.75;font-weight:300;margin-top:16px;" >Upon completion, your organization will have everything needed to begin executing the transformation with clarity, alignment, and confidence.</p>
       </div>
       <div>
-        <div class="outcomes-grid fade-up d1">
+        <div class="outcomes-grid">
           <div class="outcome-item">
             <span class="outcome-num">01</span>
             <div class="outcome-title">Unified Transformation Roadmap</div>
@@ -1254,11 +1249,11 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 <div class="prog-section">
   <div class="container">
     <div style="margin-bottom:48px;">
-      <span class="prog-label fade-up">Program Structure</span>
-      <h2 class="prog-heading fade-up d1">Four phases.<br/><em>Eight to ten weeks.</em></h2>
-      <p style="color:var(--mid);font-size:.9rem;line-height:1.75;font-weight:300;margin-top:16px;max-width:520px;" class="fade-up d2">Companies entering from The Transition Diagnostic begin at Phase 2 — your diagnostic report and all materials carry forward directly, eliminating the discovery phase.</p>
+      <span class="prog-label">Program Structure</span>
+      <h2 class="prog-heading">Four phases.<br/><em>Eight to ten weeks.</em></h2>
+      <p style="color:var(--mid);font-size:.9rem;line-height:1.75;font-weight:300;margin-top:16px;max-width:520px;" >Companies entering from The Transition Diagnostic begin at Phase 2 — your diagnostic report and all materials carry forward directly, eliminating the discovery phase.</p>
     </div>
-    <div class="phases fade-up d1">
+    <div class="phases">
       <div class="phase-item">
         <div class="phase-meta">
           <div class="phase-num">01</div>
@@ -1354,10 +1349,10 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 <div class="prog-section prog-section-alt">
   <div class="container">
     <div style="margin-bottom: 48px;">
-      <span class="prog-label fade-up">Who This Is For</span>
-      <h2 class="prog-heading fade-up d1">Built for leaders who have<br/>made the decision <em>and need to execute it.</em></h2>
+      <span class="prog-label">Who This Is For</span>
+      <h2 class="prog-heading">Built for leaders who have<br/>made the decision <em>and need to execute it.</em></h2>
     </div>
-    <div class="persona-grid fade-up d1">
+    <div class="persona-grid">
       <div class="persona-card dark">
         <span class="persona-role">Primary — The CEO / President</span>
         <div class="persona-title">You've committed to the pivot. Now you need to get the organization to execute it.</div>
@@ -1369,7 +1364,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <p class="persona-desc">The product leader who understands what needs to change but can't move the organization alone. You're often the internal champion who identifies the need for outside help and advocates to the CEO for a structured approach. You want a partner who speaks your language but can also command credibility in boardroom conversations about revenue, org design, and go-to-market strategy.</p>
       </div>
     </div>
-    <div class="fit-grid fade-up d2">
+    <div class="fit-grid">
       <div>
         <div class="fit-col-title">This program is right for you if...</div>
         <ul class="fit-list fit-yes">
@@ -1395,10 +1390,10 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 <div class="prog-section">
   <div class="container">
     <div style="margin-bottom:48px;">
-      <span class="prog-label fade-up">What's Included</span>
-      <h2 class="prog-heading fade-up d1">The program plus<br/><em>three bonus deliverables.</em></h2>
+      <span class="prog-label">What's Included</span>
+      <h2 class="prog-heading">The program plus<br/><em>three bonus deliverables.</em></h2>
     </div>
-    <div class="bonus-grid fade-up d1">
+    <div class="bonus-grid">
       <div class="bonus-card">
         <span class="bonus-icon">📋</span>
         <div class="bonus-title">Board Narrative Package</div>
@@ -1467,14 +1462,14 @@ function showPage(page) {
   if (page === 'audit') {
     setTimeout(() => {
       document.querySelectorAll('#audit-page .fade-up').forEach(el => {
-        if (!el.classList.contains('visible')) obs.observe(el);
+        if (!el.classList.contains('animate')) { el.classList.add('animate'); obs.observe(el); }
       });
     }, 100);
   }
   if (page === 'diagnostic') {
     setTimeout(() => {
       document.querySelectorAll('#diagnostic-page .fade-up').forEach(el => {
-        if (!el.classList.contains('visible')) obs.observe(el);
+        if (!el.classList.contains('animate')) { el.classList.add('animate'); obs.observe(el); }
       });
     }, 100);
   }
@@ -1498,10 +1493,10 @@ function closeMob() { mn.classList.remove('open'); }
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
 }, { threshold: 0.06, rootMargin: '0px 0px -20px 0px' });
-document.querySelectorAll('#main-page .fade-up').forEach(el => obs.observe(el));
+
 
 setTimeout(() => {
-  document.querySelectorAll('#hero .fade-up').forEach((el, i) => setTimeout(() => el.classList.add('visible'), i * 120));
+
 }, 80);
 
 const nav = document.getElementById('main-nav');
