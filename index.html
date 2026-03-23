@@ -33,6 +33,8 @@
   --blue-light: #E8EEFB;
   --red: #B61E23;
   --red-light: #FAEAEA;
+  --teal: #0E9E8A;
+  --teal-light: #E6F7F5;
   
   --fd: 'DM Serif Display', serif;
   --fb: 'DM Sans', sans-serif;
@@ -71,12 +73,14 @@ nav {
 .nav-logo { text-decoration: none; flex-shrink: 0; display: flex; align-items: flex-end; gap: 14px; margin-right: auto; }
 .nav-logo img { height: 84px; width: auto; display: block; }
 .nav-logo-text { font-family: var(--fb); font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: #ffffff; white-space: nowrap; padding-bottom: 4px; line-height: 1; }
-.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
 .nav-links a { color: #81C3E4; text-decoration: none; font-size: .85rem; font-weight: 500; letter-spacing: .01em; transition: color .2s; cursor: pointer; }
 .nav-links a:hover, .nav-links a.active-tab { color: #ffffff; }
 .nav-links a.active-tab { border-bottom: 2px solid #81C3E4; padding-bottom: 2px; }
 .nav-links a.audit-link { color: var(--orange); font-weight: 600; }
-.nav-links a.audit-link:hover { color: var(--black); }
+.nav-links a.audit-link:hover { color: #ffffff; }
+.nav-links a.diag-link { color: var(--teal); font-weight: 600; }
+.nav-links a.diag-link:hover { color: #ffffff; }
 .btn-nav {
   background: var(--orange); color: #ffffff;
   padding: 10px 22px; border-radius: 3px;
@@ -123,6 +127,8 @@ nav {
 .btn-wht:hover { background: var(--black); color: var(--white); }
 .btn-orange { background: var(--orange); color: var(--white); padding: 15px 34px; border-radius: 3px; font-family: var(--fb); font-weight: 600; font-size: .875rem; text-decoration: none; letter-spacing: .04em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 10px; transition: all .2s; cursor: pointer; border: none; }
 .btn-orange:hover { background: #D94E00; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,95,14,.25); }
+.btn-teal { background: var(--teal); color: var(--white); padding: 15px 34px; border-radius: 3px; font-family: var(--fb); font-weight: 600; font-size: .875rem; text-decoration: none; letter-spacing: .04em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 10px; transition: all .2s; cursor: pointer; border: none; }
+.btn-teal:hover { background: #0B8878; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(14,158,138,.25); }
 .hero-stats { display: flex; gap: 0; }
 .h-stat { padding-right: 40px; border-right: 1px solid var(--rule); margin-right: 40px; }
 .h-stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
@@ -156,7 +162,6 @@ section { padding: 110px 0; }
 .edu-item { display: flex; gap: 20px; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--rule); }
 .edu-item:first-of-type { border-top: 1px solid var(--rule); }
 .edu-logo { width: 52px; height: 52px; object-fit: contain; flex-shrink: 0; background: var(--white); border: 1px solid var(--rule); padding: 6px; display: block; }
-.edu-logo-placeholder { width: 52px; height: 52px; flex-shrink: 0; display: none; align-items: center; justify-content: center; font-size: 1.2rem; }
 .edu-badge { width: 52px; height: 52px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border: 1px solid var(--rule); font-weight: 800; font-size: .75rem; letter-spacing: .01em; text-align: center; line-height: 1.1; border-radius: 2px; }
 .edu-badge-gu  { background: #00205B; color: #FFFFFF; font-size: .65rem; letter-spacing: .04em; }
 .edu-badge-csu { background: #1E4D2B; color: #C8C372; font-size: .65rem; letter-spacing: .04em; }
@@ -176,21 +181,27 @@ section { padding: 110px 0; }
 /* SERVICES */
 #services { background: var(--white); }
 .svc-header { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; margin-bottom: 70px; }
+.svc-grid-top { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 1px; }
 .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 1px; }
 .svc-grid-b { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 56px; }
 .svc-card { background: var(--white); padding: 36px 32px; position: relative; transition: background .25s; cursor: default; }
 .svc-card:hover { background: var(--bg); }
 .svc-card.sig { background: var(--black); cursor: pointer; }
 .svc-card.sig:hover { background: var(--off-black); }
+.svc-card.sig-teal { background: #0A3830; cursor: pointer; }
+.svc-card.sig-teal:hover { background: #0D4840; }
 .svc-num { display: none; }
-.svc-card.sig .svc-num { display: none; }
 .sig-badge { display: inline-block; font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 4px 10px; border: 1px solid rgba(255,95,14,.5); color: var(--orange); margin-bottom: 16px; background: rgba(255,95,14,.08); }
+.sig-badge-teal { display: inline-block; font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 4px 10px; border: 1px solid rgba(14,158,138,.5); color: var(--teal); margin-bottom: 16px; background: rgba(14,158,138,.08); }
 .svc-title { font-family: var(--fd); font-size: 1.3rem; font-weight: 400; color: var(--black); margin-bottom: 8px; line-height: 1.2; }
 .svc-card.sig .svc-title { color: var(--white); }
+.svc-card.sig-teal .svc-title { color: var(--white); }
 .svc-wk { font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--light); margin-bottom: 16px; }
 .svc-card.sig .svc-wk { color: var(--orange); }
+.svc-card.sig-teal .svc-wk { color: var(--teal); }
 .svc-desc { font-size: .875rem; color: var(--mid); line-height: 1.7; font-weight: 300; }
 .svc-card.sig .svc-desc { color: rgba(255,255,255,.85); }
+.svc-card.sig-teal .svc-desc { color: rgba(255,255,255,.85); }
 .svc-arrow { display: none; }
 .svc-cta { text-align: center; }
 
@@ -279,7 +290,29 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 .ft-hr { border: none; border-top: 1px solid rgba(255,255,255,.06); margin-bottom: 20px; }
 .ft-tag { font-size: .72rem; color: rgba(255,255,255,.2); font-style: italic; text-align: center; }
 
-/* TRANSITION AUDIT PAGE */
+/* ===================== */
+/* SHARED PROGRAM PAGE STYLES */
+/* ===================== */
+
+/* DIAGNOSTIC PAGE */
+#diagnostic-page { background: var(--bg); }
+
+.diag-hero {
+  background: #071F1C; color: var(--white);
+  padding: calc(var(--nh) + 80px) 0 80px;
+  position: relative; overflow: hidden;
+}
+.diag-hero::before {
+  content: '';
+  position: absolute; top: 0; right: 0; bottom: 0; width: 40%;
+  background: url('https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg') center top/cover no-repeat;
+  opacity: .10;
+}
+.diag-hero-inner { position: relative; z-index: 1; max-width: 680px; }
+.diag-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: .68rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--teal); margin-bottom: 24px; }
+.diag-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--teal); }
+
+/* AUDIT PAGE */
 #audit-page { background: var(--bg); }
 
 .audit-hero {
@@ -296,61 +329,92 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 .audit-hero-inner { position: relative; z-index: 1; max-width: 680px; }
 .audit-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: .68rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--orange); margin-bottom: 24px; }
 .audit-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--orange); }
-.audit-h1 { font-family: var(--fd); font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 400; line-height: 1.05; letter-spacing: -.02em; margin-bottom: 12px; }
-.audit-h1 em { font-style: italic; color: var(--orange); }
-.audit-tagline { font-size: 1.1rem; color: rgba(255,255,255,.82); font-weight: 300; margin-bottom: 40px; line-height: 1.6; }
-.audit-hero-meta { display: flex; flex-wrap: wrap; gap: 32px; margin-bottom: 44px; }
-.audit-meta-item { display: flex; flex-direction: column; gap: 4px; }
-.audit-meta-label { font-size: .65rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #5EAAE6; }
-.audit-meta-value { font-size: .9rem; color: rgba(255,255,255,.95); font-weight: 500; }
-.audit-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
 
-.audit-section { padding: 80px 0; border-bottom: 1px solid var(--rule); }
-.audit-section:last-of-type { border-bottom: none; }
-.audit-section-alt { background: var(--white); }
+/* Shared program hero elements */
+.prog-h1 { font-family: var(--fd); font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 400; line-height: 1.05; letter-spacing: -.02em; margin-bottom: 12px; }
+.prog-h1 em { font-style: italic; }
+.audit-h1 em { color: var(--orange); }
+.diag-h1 em { color: var(--teal); }
+.prog-tagline { font-size: 1.1rem; color: rgba(255,255,255,.82); font-weight: 300; margin-bottom: 40px; line-height: 1.6; }
+.prog-hero-meta { display: flex; flex-wrap: wrap; gap: 32px; margin-bottom: 44px; }
+.prog-meta-item { display: flex; flex-direction: column; gap: 4px; }
+.prog-meta-label { font-size: .65rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.audit-page-wrap .prog-meta-label { color: #5EAAE6; }
+.diag-page-wrap .prog-meta-label { color: var(--teal); }
+.prog-meta-value { font-size: .9rem; color: rgba(255,255,255,.95); font-weight: 500; }
+.prog-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
 
-.audit-2col { display: grid; grid-template-columns: 340px 1fr; gap: 80px; align-items: start; }
-.audit-label { font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--light); margin-bottom: 16px; display: block; }
-.audit-heading { font-family: var(--fd); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 400; line-height: 1.1; letter-spacing: -.02em; margin-bottom: 20px; color: var(--black); }
-.audit-heading em { font-style: italic; }
-.audit-body p { color: var(--charcoal); font-size: .975rem; line-height: 1.8; font-weight: 300; margin-bottom: 18px; }
-.audit-body p strong { font-weight: 600; color: var(--black); }
-.audit-body p:last-child { margin-bottom: 0; }
+/* Pathway banner — shown on audit page */
+.pathway-banner {
+  background: #0A3830;
+  border-bottom: 1px solid rgba(14,158,138,.2);
+  padding: 20px 0;
+}
+.pathway-banner-inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+}
+.pathway-banner-text { font-size: .9rem; color: rgba(255,255,255,.85); font-weight: 300; line-height: 1.6; }
+.pathway-banner-text strong { color: var(--teal); font-weight: 600; }
+.pathway-banner-cta { flex-shrink: 0; }
+.btn-teal-sm { background: var(--teal); color: var(--white); padding: 10px 22px; border-radius: 3px; font-family: var(--fb); font-weight: 600; font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; transition: all .2s; cursor: pointer; border: none; white-space: nowrap; }
+.btn-teal-sm:hover { background: #0B8878; }
 
+/* Shared program section styles */
+.prog-section { padding: 80px 0; border-bottom: 1px solid var(--rule); }
+.prog-section:last-of-type { border-bottom: none; }
+.prog-section-alt { background: var(--white); }
+
+.prog-2col { display: grid; grid-template-columns: 340px 1fr; gap: 80px; align-items: start; }
+.prog-label { font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--light); margin-bottom: 16px; display: block; }
+.prog-heading { font-family: var(--fd); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 400; line-height: 1.1; letter-spacing: -.02em; margin-bottom: 20px; color: var(--black); }
+.prog-heading em { font-style: italic; }
+.prog-body p { color: var(--charcoal); font-size: .975rem; line-height: 1.8; font-weight: 300; margin-bottom: 18px; }
+.prog-body p strong { font-weight: 600; color: var(--black); }
+.prog-body p:last-child { margin-bottom: 0; }
+
+/* Outcomes grid */
 .outcomes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 48px; }
 .outcome-item { background: var(--white); padding: 32px 28px; }
-.audit-section-alt .outcome-item { background: var(--bg); }
+.prog-section-alt .outcome-item { background: var(--bg); }
 .outcome-num { font-family: var(--fd); font-size: .85rem; font-style: italic; color: #406FB9; margin-bottom: 16px; display: block; }
+.outcome-num-teal { color: var(--teal); }
 .outcome-title { font-family: var(--fd); font-size: 1.1rem; font-weight: 400; color: var(--black); margin-bottom: 10px; line-height: 1.2; }
 .outcome-desc { font-size: .875rem; color: var(--mid); line-height: 1.7; font-weight: 300; }
 
+/* Phases */
 .phases { display: flex; flex-direction: column; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 48px; }
 .phase-item { background: var(--white); padding: 40px 36px; display: grid; grid-template-columns: 200px 1fr; gap: 48px; align-items: start; transition: background .2s; }
-.audit-section-alt .phase-item { background: var(--bg); }
+.prog-section-alt .phase-item { background: var(--bg); }
 .phase-item:hover { background: var(--bg); }
-.audit-section-alt .phase-item:hover { background: var(--rule); }
+.prog-section-alt .phase-item:hover { background: var(--rule); }
 .phase-num { font-family: var(--fd); font-size: 2.5rem; font-weight: 400; color: #D0D8F0; line-height: 1; margin-bottom: 8px; }
 .phase-label { font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--light); margin-bottom: 6px; display: block; }
-.phase-weeks { font-size: .82rem; color: var(--orange); font-weight: 600; }
+.phase-weeks { font-size: .82rem; font-weight: 600; }
+.audit-page-wrap .phase-weeks { color: var(--orange); }
+.diag-page-wrap .phase-weeks { color: var(--teal); }
 .phase-title { font-family: var(--fd); font-size: 1.35rem; font-weight: 400; color: var(--black); margin-bottom: 12px; line-height: 1.2; }
 .phase-desc { font-size: .9rem; color: var(--charcoal); line-height: 1.75; font-weight: 300; margin-bottom: 20px; }
 .phase-deliverables { list-style: none; }
 .phase-deliverables li { display: flex; align-items: flex-start; gap: 10px; font-size: .85rem; color: var(--charcoal); margin-bottom: 8px; font-weight: 300; }
-.phase-deliverables li::before { content: '→'; color: var(--orange); flex-shrink: 0; font-weight: 600; margin-top: 1px; }
+.audit-page-wrap .phase-deliverables li::before { content: '→'; color: var(--orange); flex-shrink: 0; font-weight: 600; margin-top: 1px; }
+.diag-page-wrap .phase-deliverables li::before { content: '→'; color: var(--teal); flex-shrink: 0; font-weight: 600; margin-top: 1px; }
 .phase-deliverable-label { margin-top: 16px; margin-bottom: 8px; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--light); }
 
+/* Personas */
 .persona-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 48px; }
 .persona-card { background: var(--white); padding: 36px 32px; }
 .persona-card.dark { background: var(--black); }
+.persona-card.dark-teal { background: #071F1C; }
 .persona-role { font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 16px; display: block; }
-.persona-card.dark .persona-role { color: rgba(255,255,255,.4); }
-.persona-card:not(.dark) .persona-role { color: var(--light); }
+.persona-card.dark .persona-role, .persona-card.dark-teal .persona-role { color: rgba(255,255,255,.4); }
+.persona-card:not(.dark):not(.dark-teal) .persona-role { color: var(--light); }
 .persona-title { font-family: var(--fd); font-size: 1.3rem; font-weight: 400; margin-bottom: 14px; line-height: 1.2; }
-.persona-card.dark .persona-title { color: var(--white); }
+.persona-card.dark .persona-title, .persona-card.dark-teal .persona-title { color: var(--white); }
 .persona-desc { font-size: .875rem; line-height: 1.75; font-weight: 300; }
-.persona-card.dark .persona-desc { color: rgba(255,255,255,.82); }
-.persona-card:not(.dark) .persona-desc { color: var(--mid); }
+.persona-card.dark .persona-desc, .persona-card.dark-teal .persona-desc { color: rgba(255,255,255,.82); }
+.persona-card:not(.dark):not(.dark-teal) .persona-desc { color: var(--mid); }
 
+/* Fit grid */
 .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
 .fit-col-title { font-family: var(--fd); font-size: 1.2rem; font-weight: 400; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--rule); }
 .fit-list { list-style: none; }
@@ -359,19 +423,32 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 .fit-yes .icon { background: #E8EEFB; color: #2250B7; }
 .fit-no .icon { background: #FAEAEA; color: #B61E23; }
 
+/* Bonus grid */
 .bonus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 48px; }
 .bonus-card { background: var(--white); padding: 32px 28px; }
 .bonus-icon { font-size: 1.6rem; margin-bottom: 16px; display: block; }
 .bonus-title { font-family: var(--fd); font-size: 1.05rem; font-weight: 400; color: var(--black); margin-bottom: 10px; }
 .bonus-desc { font-size: .875rem; color: var(--mid); line-height: 1.7; font-weight: 300; }
 
+/* Deliverables grid for diagnostic */
+.diag-deliverables { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 48px; }
+.diag-del-item { background: var(--white); padding: 32px 28px; }
+.prog-section-alt .diag-del-item { background: var(--bg); }
+.diag-del-icon { font-size: 1.4rem; margin-bottom: 14px; display: block; }
+.diag-del-title { font-family: var(--fd); font-size: 1.1rem; font-weight: 400; color: var(--black); margin-bottom: 8px; line-height: 1.2; }
+.diag-del-desc { font-size: .875rem; color: var(--mid); line-height: 1.7; font-weight: 300; }
+
+/* CTA sections */
 .audit-cta-section { background: var(--black); padding: 80px 0; text-align: center; position: relative; overflow: hidden; }
-.audit-cta-section::before { content: ''; position: absolute; inset: 0; background: url('https://i.postimg.cc/0yXnjbG2/FPS-Logo.png') center/400px no-repeat; opacity: .03; filter: brightness(0) invert(1); }
-.audit-cta-inner { position: relative; z-index: 1; }
-.audit-cta-kicker { font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 20px; display: block; }
-.audit-cta-head { font-family: var(--fd); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; color: var(--white); margin-bottom: 20px; line-height: 1.1; }
-.audit-cta-head em { font-style: italic; color: var(--orange); }
-.audit-cta-sub { font-size: 1rem; color: rgba(255,255,255,.82); max-width: 520px; margin: 0 auto 40px; font-weight: 300; line-height: 1.7; }
+.diag-cta-section { background: #071F1C; padding: 80px 0; text-align: center; position: relative; overflow: hidden; }
+.audit-cta-section::before, .diag-cta-section::before { content: ''; position: absolute; inset: 0; background: url('https://i.postimg.cc/0yXnjbG2/FPS-Logo.png') center/400px no-repeat; opacity: .03; filter: brightness(0) invert(1); }
+.prog-cta-inner { position: relative; z-index: 1; }
+.prog-cta-kicker { font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 20px; display: block; }
+.prog-cta-head { font-family: var(--fd); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; color: var(--white); margin-bottom: 20px; line-height: 1.1; }
+.prog-cta-head em { font-style: italic; }
+.audit-cta-section .prog-cta-head em { color: var(--orange); }
+.diag-cta-section .prog-cta-head em { color: var(--teal); }
+.prog-cta-sub { font-size: 1rem; color: rgba(255,255,255,.82); max-width: 520px; margin: 0 auto 40px; font-weight: 300; line-height: 1.7; }
 
 /* RESPONSIVE */
 @media (max-width: 960px) {
@@ -386,6 +463,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   .about-top { grid-template-columns: 1fr; gap: 56px; }
   .about-bottom { grid-template-columns: 1fr; gap: 32px; }
   .svc-header { grid-template-columns: 1fr; gap: 24px; }
+  .svc-grid-top { grid-template-columns: 1fr; }
   .svc-grid { grid-template-columns: 1fr; }
   .svc-grid-b { grid-template-columns: 1fr; }
   .cs-hdr { grid-template-columns: 1fr; gap: 24px; }
@@ -398,12 +476,14 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   .ft-inner { grid-template-columns: 1fr; text-align: center; gap: 20px; }
   .ft-nav { justify-content: center; }
   .ft-right { text-align: center; }
-  .audit-2col { grid-template-columns: 1fr; gap: 32px; }
+  .prog-2col { grid-template-columns: 1fr; gap: 32px; }
   .phase-item { grid-template-columns: 1fr; gap: 20px; }
   .outcomes-grid { grid-template-columns: 1fr; }
   .persona-grid { grid-template-columns: 1fr; }
   .fit-grid { grid-template-columns: 1fr; }
   .bonus-grid { grid-template-columns: 1fr; }
+  .diag-deliverables { grid-template-columns: 1fr; }
+  .pathway-banner-inner { flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 600px) {
   section { padding: 72px 0; }
@@ -412,7 +492,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   .h-stat-num { font-size: 1.8rem; }
   .cs-item { grid-template-columns: 1fr; gap: 16px; }
   .cs-num { display: none; }
-  .audit-section { padding: 56px 0; }
+  .prog-section { padding: 56px 0; }
 }
 </style>
 
@@ -424,61 +504,31 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
     send_page_view: true,
     cookie_flags: 'SameSite=None;Secure'
   });
-
-  // Track nav link clicks
   document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('a[onclick], button[onclick]').forEach(el => {
       el.addEventListener('click', function() {
         const label = this.textContent.trim() || this.getAttribute('aria-label') || 'unknown';
-        gtag('event', 'navigation_click', {
-          event_category: 'Navigation',
-          event_label: label
-        });
+        gtag('event', 'navigation_click', { event_category: 'Navigation', event_label: label });
       });
     });
-
-    // Track contact form submission
     const form = document.getElementById('contact-form');
     if (form) {
       form.addEventListener('submit', function() {
-        gtag('event', 'form_submit', {
-          event_category: 'Contact',
-          event_label: 'Contact Form'
-        });
+        gtag('event', 'form_submit', { event_category: 'Contact', event_label: 'Contact Form' });
       });
     }
-
-    // Track page/section views (main vs audit page)
-    const originalShowPage = window.showPage;
-    window.showPage = function(page) {
-      gtag('event', 'page_view', {
-        page_title: page === 'audit' ? 'The Transition Audit' : 'Home',
-        page_location: window.location.href + '#' + page
-      });
-      if (originalShowPage) originalShowPage(page);
-    };
-
-    // Track outbound links (LinkedIn, etc.)
     document.querySelectorAll('a[href^="http"]').forEach(el => {
       el.addEventListener('click', function() {
-        gtag('event', 'outbound_click', {
-          event_category: 'Outbound',
-          event_label: this.href
-        });
+        gtag('event', 'outbound_click', { event_category: 'Outbound', event_label: this.href });
       });
     });
-
-    // Track scroll depth
     let depths = { 25: false, 50: false, 75: false, 90: false };
     window.addEventListener('scroll', function() {
       const pct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
       Object.keys(depths).forEach(d => {
         if (!depths[d] && pct >= d) {
           depths[d] = true;
-          gtag('event', 'scroll_depth', {
-            event_category: 'Engagement',
-            event_label: d + '%'
-          });
+          gtag('event', 'scroll_depth', { event_category: 'Engagement', event_label: d + '%' });
         }
       });
     }, { passive: true });
@@ -491,25 +541,6 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-8G359JY81Q', { send_page_view: true });
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('a[onclick], button[onclick]').forEach(el => {
-      el.addEventListener('click', function() {
-        gtag('event', 'navigation_click', { event_category: 'Navigation', event_label: (this.textContent.trim() || 'unknown') });
-      });
-    });
-    var form = document.getElementById('contact-form');
-    if (form) { form.addEventListener('submit', function() { gtag('event', 'form_submit', { event_category: 'Contact', event_label: 'Contact Form' }); }); }
-    document.querySelectorAll('a[href^="http"]').forEach(el => {
-      el.addEventListener('click', function() { gtag('event', 'outbound_click', { event_category: 'Outbound', event_label: this.href }); });
-    });
-    var depths = { 25: false, 50: false, 75: false, 90: false };
-    window.addEventListener('scroll', function() {
-      var pct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
-      Object.keys(depths).forEach(function(d) {
-        if (!depths[d] && pct >= d) { depths[d] = true; gtag('event', 'scroll_depth', { event_category: 'Engagement', event_label: d + '%' }); }
-      });
-    }, { passive: true });
-  });
 </script>
 </head>
 <body>
@@ -525,10 +556,10 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
       <ul class="nav-links" id="nav-links-main">
         <li><a onclick="showPage('main');scrollToSection('#about')">About</a></li>
         <li><a onclick="showPage('main');scrollToSection('#services')">Services</a></li>
+        <li><a onclick="showPage('diagnostic')" class="diag-link">The Transition Diagnostic</a></li>
         <li><a onclick="showPage('audit')" class="audit-link">The Transition Audit</a></li>
         <li><a onclick="showPage('main');scrollToSection('#case-studies')">Work</a></li>
         <li><a onclick="showPage('main');scrollToSection('#hire')">Hire Brian</a></li>
-        <li><a onclick="showPage('main');scrollToSection('#contact')">Contact</a></li>
         <li><a onclick="showPage('main');scrollToSection('#contact')" class="btn-nav">Book a Call</a></li>
       </ul>
       <button class="nav-hbg" id="hbg" aria-label="Toggle menu">
@@ -541,6 +572,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 <div class="mob-drawer" id="mob-nav">
   <a onclick="showPage('main');scrollToSection('#about');closeMob()">About</a>
   <a onclick="showPage('main');scrollToSection('#services');closeMob()">Services</a>
+  <a onclick="showPage('diagnostic');closeMob()" style="color:var(--teal);font-weight:600;">The Transition Diagnostic</a>
   <a onclick="showPage('audit');closeMob()" style="color:var(--orange);font-weight:600;">The Transition Audit</a>
   <a onclick="showPage('main');scrollToSection('#case-studies');closeMob()">Work</a>
   <a onclick="showPage('main');scrollToSection('#hire');closeMob()">Hire Brian</a>
@@ -548,18 +580,21 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   <a onclick="showPage('main');scrollToSection('#contact');closeMob()" class="btn-nav">Book a Call</a>
 </div>
 
+<!-- ============================================================ -->
 <!-- MAIN PAGE -->
+<!-- ============================================================ -->
 <div id="main-page" class="page active">
 
 <section id="hero">
   <div class="container">
     <div class="hero-inner">
       <div>
-                <h1 class="hero-h1 fade-up d1">Product transformations<br/>don't fail for lack of vision.<br/><em>They fail from lack of<br/>aligned execution.</em></h1>
+        <h1 class="hero-h1 fade-up d1">Product transformations<br/>don't fail for lack of vision.<br/><em>They fail from lack of<br/>aligned execution.</em></h1>
         <p class="hero-p fade-up d2">I help CEOs and CPOs close that gap — with the pattern recognition that only comes from having led this exact transformation from the inside, not from a consulting deck.</p>
         <div class="hero-ctas fade-up d3">
           <a onclick="showPage('main');scrollToSection('#services')" class="btn-blk">Work with me <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <a onclick="showPage('audit')" class="btn-orange">The Transition Audit <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a onclick="showPage('diagnostic')" class="btn-teal">Start with the Diagnostic <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a onclick="showPage('audit')" class="btn-orange">The Full Audit <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
         <div class="hero-stats fade-up d4">
           <div class="h-stat"><div class="h-stat-num">20+</div><div class="h-stat-lbl">Years in Product</div></div>
@@ -660,44 +695,39 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
       </div>
       <p class="sec-sub fade-up d1">Each engagement starts with a real conversation about where you are and where you need to get to. No templated deliverables, no generic frameworks.</p>
     </div>
-    <div class="svc-grid">
-      <div class="svc-card sig fade-up" onclick="showPage('audit')" style="cursor:pointer;">
-        <span class="svc-num">01</span>
+
+    <!-- Top two: signature programs -->
+    <div class="svc-grid-top" style="margin-bottom:1px;">
+      <div class="svc-card sig-teal fade-up" onclick="showPage('diagnostic')" style="cursor:pointer;">
+        <span class="sig-badge-teal">Entry Point Program</span>
+        <div class="svc-title">The Transition Diagnostic</div>
+        <div class="svc-wk">2 to 3 Week Sprint</div>
+        <p class="svc-desc">A focused diagnostic sprint that gives you a clear, honest picture of where your organization stands, what's blocking the transition, and what you already have working in your favor. The natural starting point before committing to the full Audit — or a standalone engagement in its own right.</p>
+      </div>
+      <div class="svc-card sig fade-up d1" onclick="showPage('audit')" style="cursor:pointer;">
         <span class="sig-badge">Signature Program</span>
         <div class="svc-title">The Transition Audit</div>
-        <div class="svc-wk">8 to 12 Week Assessment &amp; Recommendations</div>
-        <p class="svc-desc">A structured diagnostic and strategy program for mid-market CEOs and CPOs navigating product pivots. We assess every dimension of your organization, identify the real gaps, and build the transformation roadmap together.</p>
-        <span class="svc-arrow">↗</span>
+        <div class="svc-wk">8 to 9 Week Assessment &amp; Strategy</div>
+        <p class="svc-desc">A structured diagnostic and strategy program for mid-market CEOs and CPOs navigating product pivots. We assess every dimension of your organization, identify the real gaps, and build the transformation roadmap together. Companies completing the Diagnostic enter at Phase 2 with their work already done.</p>
       </div>
-      <div class="svc-card fade-up d1">
-        <span class="svc-num">02</span>
+    </div>
+
+    <!-- Bottom three -->
+    <div class="svc-grid">
+      <div class="svc-card fade-up">
         <div class="svc-title">Fractional CPO</div>
         <div class="svc-wk">Ongoing / Retainer</div>
         <p class="svc-desc">Executive-level product leadership embedded in your company. Ideal for growth-stage teams that need a seasoned CPO to build product culture, set strategy, and drive quarterly execution without the full-time overhead.</p>
-        <span class="svc-arrow">↗</span>
       </div>
-      <div class="svc-card fade-up d2">
-        <span class="svc-num">03</span>
+      <div class="svc-card fade-up d1">
         <div class="svc-title">GTM Strategy Workshops</div>
         <div class="svc-wk">1 to 3 Day Intensive</div>
         <p class="svc-desc">High-intensity working sessions that produce a market-ready go-to-market strategy, including ICP definition, pricing architecture, channel design, and launch sequencing.</p>
-        <span class="svc-arrow">↗</span>
       </div>
-    </div>
-    <div class="svc-grid-b">
-      <div class="svc-card fade-up">
-        <span class="svc-num">04</span>
-        <div class="svc-title">Product Org Assessment</div>
-        <div class="svc-wk">2 to 4 Week Engagement</div>
-        <p class="svc-desc">A rigorous diagnostic of your product organization covering team structure, process maturity, tooling, and output quality, delivered with a prioritized improvement roadmap.</p>
-        <span class="svc-arrow">↗</span>
-      </div>
-      <div class="svc-card fade-up d1">
-        <span class="svc-num">05</span>
+      <div class="svc-card fade-up d2">
         <div class="svc-title">Executive Coaching &amp; Mentoring</div>
         <div class="svc-wk">Monthly / Ongoing</div>
         <p class="svc-desc">One-on-one coaching for CPOs, VPs of Product, and senior PMs navigating career inflection points, organizational complexity, or their first real P&amp;L responsibility.</p>
-        <span class="svc-arrow">↗</span>
       </div>
     </div>
     <div class="svc-cta fade-up">
@@ -780,11 +810,11 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <h3>Consulting &amp; Advisory Engagements</h3>
         <p>Bring me in as an external strategic advisor or embedded consultant. This works best for boards, CEOs, and CPOs who need someone who has actually done the transformation they're trying to execute, not just advised on it from the outside.</p>
         <ul class="hire-list">
-          <li>The Transition Audit, our signature 8 to 12 week program</li>
+          <li>The Transition Diagnostic — 2-3 week entry point sprint</li>
+          <li>The Transition Audit — our signature 8 to 9 week program</li>
           <li>Fractional CPO on retainer</li>
           <li>Go-to-market strategy and product launch</li>
           <li>Board-level product strategy advisory</li>
-          <li>Team capability building and coaching</li>
           <li>M&amp;A product due diligence</li>
         </ul>
         <a class="btn-wht-inv" onclick="showPage('main');scrollToSection('#contact')">Start a conversation <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -841,10 +871,10 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
             <label>What brings you here?</label>
             <select id="cf-interest">
               <option value="" disabled selected>Select an option</option>
-              <option>The Transition Audit (signature program)</option>
+              <option>The Transition Diagnostic (2-3 week entry point)</option>
+              <option>The Transition Audit (full 8-9 week program)</option>
               <option>Fractional CPO</option>
               <option>GTM Strategy Workshop</option>
-              <option>Product Org Assessment</option>
               <option>Executive Coaching</option>
               <option>CPO / VP Product role</option>
               <option>Just want to connect</option>
@@ -866,6 +896,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
       <ul class="ft-nav">
         <li><a onclick="showPage('main');scrollToSection('#about')">About</a></li>
         <li><a onclick="showPage('main');scrollToSection('#services')">Services</a></li>
+        <li><a onclick="showPage('diagnostic')" style="color:rgba(14,158,138,.7)">The Transition Diagnostic</a></li>
         <li><a onclick="showPage('audit')" style="color:rgba(255,95,14,.7)">The Transition Audit</a></li>
         <li><a onclick="showPage('main');scrollToSection('#case-studies')">Work</a></li>
         <li><a onclick="showPage('main');scrollToSection('#hire')">Hire Brian</a></li>
@@ -879,37 +910,267 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
     <p class="ft-tag">Strategy forged from experience.</p>
   </div>
 </footer>
-
 </div><!-- end main-page -->
 
+
+<!-- ============================================================ -->
+<!-- DIAGNOSTIC PAGE -->
+<!-- ============================================================ -->
+<div id="diagnostic-page" class="page diag-page-wrap">
+
+<div class="diag-hero">
+  <div class="container">
+    <div class="diag-hero-inner">
+      <div class="diag-eyebrow">Forge Product Strategy — Entry Point Program</div>
+      <h1 class="prog-h1 diag-h1">The Transition<br/>Diagnostic<em>™</em></h1>
+      <p class="prog-tagline">A 2-3 week diagnostic sprint that gives you a clear, honest picture of where your organization stands — before you commit to the full transformation engagement.</p>
+      <div class="prog-hero-meta">
+        <div class="prog-meta-item">
+          <span class="prog-meta-label">Duration</span>
+          <span class="prog-meta-value">2 to 3 Weeks</span>
+        </div>
+        <div class="prog-meta-item">
+          <span class="prog-meta-label">Format</span>
+          <span class="prog-meta-value">Confidential 1:1 + Stakeholder Interviews</span>
+        </div>
+        <div class="prog-meta-item">
+          <span class="prog-meta-label">Ideal For</span>
+          <span class="prog-meta-value">CEOs &amp; CPOs Ready to Validate the Gap</span>
+        </div>
+        <div class="prog-meta-item">
+          <span class="prog-meta-label">Deliverable</span>
+          <span class="prog-meta-value">Current-State Diagnostic Report</span>
+        </div>
+      </div>
+      <div class="prog-ctas">
+        <a onclick="showPage('main');scrollToSection('#contact')" class="btn-teal">Start with the Diagnostic <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a onclick="showPage('audit')" style="background:transparent;color:rgba(255,255,255,.7);padding:15px 34px;border:1.5px solid rgba(255,255,255,.25);font-family:var(--fb);font-weight:600;font-size:.875rem;letter-spacing:.04em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;transition:all .2s;cursor:pointer;" onmouseover="this.style.borderColor='rgba(255,255,255,.6)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,.25)';this.style.color='rgba(255,255,255,.7)'">See the Full Audit <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a onclick="showPage('main')" class="btn-wht">Back to main site</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="prog-section">
+  <div class="container">
+    <div class="prog-2col">
+      <div>
+        <span class="prog-label fade-up">What It Is</span>
+        <h2 class="prog-heading fade-up d1">Clarity before<br/>you <em>commit.</em></h2>
+      </div>
+      <div class="prog-body fade-up d1">
+        <p>Most companies approaching a product pivot already have a strategic direction. The problem isn't the vision. It's that leadership doesn't yet have a shared, honest picture of the gap between where the business stands today and what the new model actually requires.</p>
+        <p>The Transition Diagnostic is a standalone 2-3 week engagement that delivers exactly that picture. It's the front end of the full Transition Audit program — available as an independent sprint for leadership teams that want to validate the scope of their challenge before committing to a full transformation engagement.</p>
+        <p><strong>The output is a Current-State Diagnostic Report</strong> that gives you and your leadership team a factual, prioritized view of the gaps, assets, and risks standing between your current business and the one you're building. No theory. No frameworks for their own sake. Just clarity.</p>
+        <p>Companies that complete the Diagnostic and elect to continue into the Transition Audit have Phase 1 credit applied to the full program. The work carries forward directly — you don't pay twice for what you've already built.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="prog-section prog-section-alt">
+  <div class="container">
+    <div class="prog-2col">
+      <div>
+        <span class="prog-label fade-up">What You'll Walk Away With</span>
+        <h2 class="prog-heading fade-up d1">Six deliverables.<br/><em>Complete clarity.</em></h2>
+      </div>
+      <div>
+        <div class="diag-deliverables fade-up d1">
+          <div class="diag-del-item">
+            <span class="diag-del-icon">📊</span>
+            <div class="diag-del-title">Current-State Diagnostic Report</div>
+            <p class="diag-del-desc">A full assessment of your go-to-market motion, org structure, product roadmap, internal processes, brand positioning, and customer health — baselined against the demands of your new business model.</p>
+          </div>
+          <div class="diag-del-item">
+            <span class="diag-del-icon">🗺</span>
+            <div class="diag-del-title">Gap and Impediment Map</div>
+            <p class="diag-del-desc">The specific organizational, operational, and strategic gaps most likely to derail or slow your transition, prioritized by impact and urgency.</p>
+          </div>
+          <div class="diag-del-item">
+            <span class="diag-del-icon">🔍</span>
+            <div class="diag-del-title">Legacy Asset Inventory</div>
+            <p class="diag-del-desc">A structured inventory of the customers, partnerships, IP, brand equity, and institutional knowledge you already have that can accelerate the transition — the advantages most companies underestimate.</p>
+          </div>
+          <div class="diag-del-item">
+            <span class="diag-del-icon">🐄</span>
+            <div class="diag-del-title">Sacred Cow Audit</div>
+            <p class="diag-del-desc">An honest identification of the legacy products, entrenched processes, and long-held assumptions quietly working against the new direction — with a framework for deciding what to address and when.</p>
+          </div>
+          <div class="diag-del-item">
+            <span class="diag-del-icon">📋</span>
+            <div class="diag-del-title">Transition Readiness Assessment</div>
+            <p class="diag-del-desc">A direct evaluation of your leadership team's alignment, capability, and bandwidth to execute the pivot — including where the biggest gaps in cross-functional conviction currently sit.</p>
+          </div>
+          <div class="diag-del-item">
+            <span class="diag-del-icon">🧭</span>
+            <div class="diag-del-title">A Clear Decision Point</div>
+            <p class="diag-del-desc">A direct recommendation on whether and how to proceed with the full Transition Audit, with a proposed scope that reflects your actual situation rather than a generic program outline.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="prog-section">
+  <div class="container">
+    <div style="margin-bottom:48px;">
+      <span class="prog-label fade-up">How It Works</span>
+      <h2 class="prog-heading fade-up d1">Three weeks.<br/><em>One clear picture.</em></h2>
+    </div>
+    <div class="phases fade-up d1">
+      <div class="phase-item">
+        <div class="phase-meta">
+          <div class="phase-num">01</div>
+          <span class="phase-label">Week One</span>
+          <span class="phase-weeks">Executive Interviews</span>
+        </div>
+        <div>
+          <div class="phase-title">Intake &amp; Listening</div>
+          <p class="phase-desc">Confidential interviews with the CEO, CPO, and 3-5 key leaders to understand the strategic intent, current organizational dynamics, and the points of friction each function is experiencing. Review of existing materials: roadmap, positioning documents, org chart, financial model, and customer data.</p>
+          <div class="phase-deliverable-label">Output</div>
+          <ul class="phase-deliverables">
+            <li>Interview synthesis and initial pattern identification across functional areas</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase-item">
+        <div class="phase-meta">
+          <div class="phase-num">02</div>
+          <span class="phase-label">Week Two</span>
+          <span class="phase-weeks">Audit &amp; Analysis</span>
+        </div>
+        <div>
+          <div class="phase-title">Current-State Audit</div>
+          <p class="phase-desc">Deep assessment across go-to-market motion, org structure, product roadmap, internal processes, and customer health. Sacred cow identification session. Legacy asset inventory covering existing customers, products, partnerships, IP, and brand equity that could accelerate the transition.</p>
+          <div class="phase-deliverable-label">Output</div>
+          <ul class="phase-deliverables">
+            <li>Draft gap analysis and impediment map</li>
+            <li>Initial legacy asset inventory</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase-item">
+        <div class="phase-meta">
+          <div class="phase-num">03</div>
+          <span class="phase-label">Week Three (if needed)</span>
+          <span class="phase-weeks">Validation &amp; Report</span>
+        </div>
+        <div>
+          <div class="phase-title">Synthesis &amp; Recommendations</div>
+          <p class="phase-desc">Validation sessions with the executive sponsor to pressure-test findings. Transition readiness discussion. Refinement of the gap analysis and prioritization of impediments. Final report preparation and delivery.</p>
+          <div class="phase-deliverable-label">Deliverable</div>
+          <ul class="phase-deliverables">
+            <li>Current-State Diagnostic Report with gap analysis and opportunity map</li>
+            <li>Transition Readiness Assessment</li>
+            <li>Recommendation on whether and how to proceed with the full Transition Audit</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="prog-section prog-section-alt">
+  <div class="container">
+    <div style="margin-bottom: 48px;">
+      <span class="prog-label fade-up">Who This Is For</span>
+      <h2 class="prog-heading fade-up d1">Right for leaders who need<br/><em>clarity before commitment.</em></h2>
+    </div>
+    <div class="fit-grid fade-up d1">
+      <div>
+        <div class="fit-col-title">The Diagnostic is the right starting point if...</div>
+        <ul class="fit-list fit-yes">
+          <li><span class="icon">✓</span>You've committed to a pivot or new product launch but your leadership team doesn't yet have a shared, objective view of the gaps you're facing.</li>
+          <li><span class="icon">✓</span>You're evaluating outside help for the full transformation and want a structured, low-risk way to assess what you're actually dealing with before committing.</li>
+          <li><span class="icon">✓</span>Your board or investors want evidence of a disciplined, structured approach to the transition before approving additional investment.</li>
+          <li><span class="icon">✓</span>You're moving fast and want an outside perspective to pressure-test your assumptions before the organizational cost of being wrong compounds.</li>
+          <li><span class="icon">✓</span>Something feels off in the first months of your pivot, but you can't quite name what's blocking you.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="fit-col-title">What happens next</div>
+        <ul class="fit-list fit-yes">
+          <li><span class="icon" style="background:var(--teal-light);color:var(--teal);">→</span>If the Diagnostic confirms a full transformation engagement makes sense, your diagnostic cost credits toward the Transition Audit and the work carries forward directly into Phase 2.</li>
+          <li><span class="icon" style="background:var(--teal-light);color:var(--teal);">→</span>If the Diagnostic surfaces a more targeted need, I'll tell you that too. You'll leave with a clear picture of what you actually need — even if it's not more work with me.</li>
+          <li><span class="icon" style="background:var(--teal-light);color:var(--teal);">→</span>The Diagnostic is a standalone deliverable with real value. You walk away with a report your leadership team can act on regardless of what comes next.</li>
+        </ul>
+        <div style="margin-top:32px;padding:24px;background:var(--teal-light);border-left:3px solid var(--teal);">
+          <p style="font-size:.875rem;color:var(--charcoal);line-height:1.7;font-weight:300;margin:0;">Time commitment: <strong>3-5 hours per week</strong> for the executive sponsor across the 2-3 week sprint.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="diag-cta-section">
+  <div class="container">
+    <div class="prog-cta-inner">
+      <span class="prog-cta-kicker">Ready to Get Started?</span>
+      <h2 class="prog-cta-head">Get a clear picture<br/>before you <em>commit.</em></h2>
+      <p class="prog-cta-sub">The Transition Diagnostic takes 2-3 weeks and gives your leadership team a shared, factual view of exactly what you're dealing with. Let's spend 30 minutes to see if it's the right fit.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
+        <a onclick="showPage('main');scrollToSection('#contact')" class="btn-teal">Book a discovery call <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a onclick="showPage('audit')" style="background:transparent;color:rgba(255,255,255,.7);padding:15px 34px;border:1.5px solid rgba(255,255,255,.25);font-family:var(--fb);font-weight:600;font-size:.875rem;letter-spacing:.04em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;transition:all .2s;cursor:pointer;" onmouseover="this.style.borderColor='rgba(255,255,255,.6)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,.25)';this.style.color='rgba(255,255,255,.7)'">See the Full Audit <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a onclick="showPage('main')" class="btn-wht">Back to main site</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="ft-inner">
+      <a class="ft-logo" onclick="showPage('main')" style="cursor:pointer;"><img src="https://i.postimg.cc/0yXnjbG2/FPS-Logo.png" alt="Forge Product Strategy" /></a>
+      <ul class="ft-nav">
+        <li><a onclick="showPage('main');scrollToSection('#about')">About</a></li>
+        <li><a onclick="showPage('main');scrollToSection('#services')">Services</a></li>
+        <li><a onclick="showPage('diagnostic')" style="color:rgba(14,158,138,.7)">The Transition Diagnostic</a></li>
+        <li><a onclick="showPage('audit')" style="color:rgba(255,95,14,.7)">The Transition Audit</a></li>
+        <li><a onclick="showPage('main');scrollToSection('#case-studies')">Work</a></li>
+        <li><a onclick="showPage('main');scrollToSection('#hire')">Hire Brian</a></li>
+        <li><a onclick="showPage('main');scrollToSection('#contact')">Contact</a></li>
+      </ul>
+      <div class="ft-right"><p class="ft-copy">© 2025 Forge Product Strategy. All rights reserved.<br/>Boulder, Colorado.</p></div>
+    </div>
+    <hr class="ft-hr" />
+    <p class="ft-tag">Strategy forged from experience.</p>
+  </div>
+</footer>
+</div><!-- end diagnostic-page -->
+
+
+<!-- ============================================================ -->
 <!-- AUDIT PAGE -->
-<div id="audit-page" class="page">
+<!-- ============================================================ -->
+<div id="audit-page" class="page audit-page-wrap">
 
 <div class="audit-hero">
   <div class="container">
     <div class="audit-hero-inner">
       <div class="audit-eyebrow">Forge Product Strategy — Signature Program</div>
-      <h1 class="audit-h1">The Transition<br/>Audit<em>™</em></h1>
-      <p class="audit-tagline">An 8 to 12 week assessment and recommendations program for mid-market CEOs and CPOs navigating a product strategy pivot or new go-to-market launch.</p>
-      <div class="audit-hero-meta">
-        <div class="audit-meta-item">
-          <span class="audit-meta-label">Duration</span>
-          <span class="audit-meta-value">8 to 12 Weeks</span>
+      <h1 class="prog-h1 audit-h1">The Transition<br/>Audit<em>™</em></h1>
+      <p class="prog-tagline">An 8 to 9 week assessment and strategy program for mid-market CEOs and CPOs navigating a product strategy pivot or new go-to-market launch.</p>
+      <div class="prog-hero-meta">
+        <div class="prog-meta-item">
+          <span class="prog-meta-label">Duration</span>
+          <span class="prog-meta-value">8 to 9 Weeks</span>
         </div>
-        <div class="audit-meta-item">
-          <span class="audit-meta-label">Format</span>
-          <span class="audit-meta-value">Advisory, Not Outsourced Execution</span>
+        <div class="prog-meta-item">
+          <span class="prog-meta-label">Format</span>
+          <span class="prog-meta-value">Advisory, Not Outsourced Execution</span>
         </div>
-        <div class="audit-meta-item">
-          <span class="audit-meta-label">Ideal For</span>
-          <span class="audit-meta-value">CEOs &amp; CPOs, 100–1,000 Employees</span>
+        <div class="prog-meta-item">
+          <span class="prog-meta-label">Ideal For</span>
+          <span class="prog-meta-value">CEOs &amp; CPOs, 100–1,000 Employees</span>
         </div>
-        <div class="audit-meta-item">
-          <span class="audit-meta-label">Deliverable</span>
-          <span class="audit-meta-value">Board-Ready Transformation Strategy</span>
+        <div class="prog-meta-item">
+          <span class="prog-meta-label">Deliverable</span>
+          <span class="prog-meta-value">Board-Ready Transformation Strategy</span>
         </div>
       </div>
-      <div class="audit-ctas">
+      <div class="prog-ctas">
         <a onclick="showPage('main');scrollToSection('#contact')" class="btn-orange">Apply for the program <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a onclick="showPage('main')" class="btn-wht">Back to main site</a>
       </div>
@@ -917,29 +1178,41 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   </div>
 </div>
 
-<div class="audit-section">
+<!-- Pathway banner -->
+<div class="pathway-banner">
   <div class="container">
-    <div class="audit-2col">
-      <div>
-        <span class="audit-label fade-up">The Problem</span>
-        <h2 class="audit-heading fade-up d1">Most pivots don't fail because<br/>the strategy is <em>wrong.</em></h2>
-      </div>
-      <div class="audit-body fade-up d1">
-        <p>They fail because the organization isn't rebuilt to execute it. The CEO sees the destination clearly. The board has approved the direction. Maybe there's even a prototype or early customers. But underneath the surface, the entire operational engine of the company — sales compensation, marketing messaging, support workflows, development priorities, even the org chart itself — is still optimized for the old business.</p>
-        <p>Leadership teams find themselves in an agonizing middle ground: too committed to turn back, but unable to accelerate because every function is pulling from a different playbook. The result is a slow, expensive bleed of resources, morale, and market timing that transforms what should be a bold strategic move into a years-long exercise in organizational frustration.</p>
-        <p><strong>What makes this particularly painful is the isolation.</strong> CEOs and CPOs navigating these transitions rarely have peers inside the organization who fully grasp the scope of what needs to change. Board members want progress updates, not vulnerability. Direct reports are simultaneously managing the old business and trying to build the new one, often with conflicting incentives.</p>
-        <p>The Transition Audit exists to break that pattern — bringing structured diagnostic rigor, cross-functional strategy development, and the pattern recognition of someone who has led this exact transformation before.</p>
+    <div class="pathway-banner-inner">
+      <p class="pathway-banner-text"><strong>Not ready to commit to the full program?</strong> Start with The Transition Diagnostic — a 2-3 week sprint that gives you a clear picture of exactly what you're dealing with. If you continue to the Audit, your diagnostic cost credits forward and the work carries directly into Phase 2.</p>
+      <div class="pathway-banner-cta">
+        <a onclick="showPage('diagnostic')" class="btn-teal-sm">Learn about the Diagnostic <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
   </div>
 </div>
 
-<div class="audit-section audit-section-alt">
+<div class="prog-section">
   <div class="container">
-    <div class="audit-2col">
+    <div class="prog-2col">
       <div>
-        <span class="audit-label fade-up">What You'll Walk Away With</span>
-        <h2 class="audit-heading fade-up d1">Six deliverables.<br/><em>One complete strategy.</em></h2>
+        <span class="prog-label fade-up">The Problem</span>
+        <h2 class="prog-heading fade-up d1">Most pivots don't fail because<br/>the strategy is <em>wrong.</em></h2>
+      </div>
+      <div class="prog-body fade-up d1">
+        <p>They fail because the organization isn't rebuilt to execute it. The CEO sees the destination clearly. The board has approved the direction. Maybe there's even a prototype or early customers. But underneath the surface, the entire operational engine of the company — sales compensation, marketing messaging, support workflows, development priorities, even the org chart itself — is still optimized for the old business.</p>
+        <p>Leadership teams find themselves in an agonizing middle ground: too committed to turn back, but unable to accelerate because every function is pulling from a different playbook. The result is a slow, expensive bleed of resources, morale, and market timing.</p>
+        <p><strong>What makes this particularly painful is the isolation.</strong> CEOs and CPOs navigating these transitions rarely have peers inside the organization who fully grasp the scope of what needs to change. Board members want progress updates, not vulnerability. Direct reports are simultaneously managing the old business and trying to build the new one, often with conflicting incentives.</p>
+        <p>The Transition Audit breaks that pattern — bringing structured diagnostic rigor, cross-functional strategy development, and the pattern recognition of someone who has led this exact transformation before.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="prog-section prog-section-alt">
+  <div class="container">
+    <div class="prog-2col">
+      <div>
+        <span class="prog-label fade-up">What You'll Walk Away With</span>
+        <h2 class="prog-heading fade-up d1">Six deliverables.<br/><em>One complete strategy.</em></h2>
         <p style="color:var(--mid);font-size:.9rem;line-height:1.75;font-weight:300;margin-top:16px;" class="fade-up d2">Upon completion, your organization will have everything needed to begin executing the transformation with clarity, alignment, and confidence.</p>
       </div>
       <div>
@@ -980,33 +1253,32 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   </div>
 </div>
 
-<div class="audit-section">
+<div class="prog-section">
   <div class="container">
     <div style="margin-bottom:48px;">
-      <span class="audit-label fade-up">Program Structure</span>
-      <h2 class="audit-heading fade-up d1">Four phases.<br/><em>Twelve weeks.</em></h2>
+      <span class="prog-label fade-up">Program Structure</span>
+      <h2 class="prog-heading fade-up d1">Four phases.<br/><em>Eight to nine weeks.</em></h2>
+      <p style="color:var(--mid);font-size:.9rem;line-height:1.75;font-weight:300;margin-top:16px;max-width:520px;" class="fade-up d2">Companies entering from The Transition Diagnostic begin at Phase 2 — your diagnostic report and all materials carry forward directly, eliminating the discovery phase.</p>
     </div>
     <div class="phases fade-up d1">
       <div class="phase-item">
         <div class="phase-meta">
           <div class="phase-num">01</div>
           <span class="phase-label">Phase One</span>
-          <span class="phase-weeks">Weeks 1 to 3</span>
+          <span class="phase-weeks">Weeks 1 to 2</span>
         </div>
         <div>
           <div class="phase-title">Discovery &amp; Diagnostic</div>
-          <p class="phase-desc">Deep-dive assessment of your current state across all dimensions of the business to establish a comprehensive baseline and identify the critical gaps between where you are and where you need to be.</p>
+          <p class="phase-desc">For companies entering the Audit without first completing The Transition Diagnostic, this abbreviated phase establishes the current-state baseline needed to begin strategy architecture. Companies coming from the Diagnostic skip this phase entirely and enter at Phase 2.</p>
           <div class="phase-deliverable-label">Includes</div>
           <ul class="phase-deliverables">
-            <li>Confidential 1:1 executive intake interviews with CEO, CPO, and 3 to 5 key leaders</li>
-            <li>Current-state audit across go-to-market, org structure, product roadmap, and customer health</li>
-            <li>Sacred cow identification workshop with the leadership team</li>
-            <li>Legacy asset inventory covering customers, products, partnerships, IP, and brand equity</li>
-            <li>Competitive and market-timing analysis for the new offering</li>
+            <li>Confidential 1:1 executive intake interviews with CEO, CPO, and 3-5 key leaders</li>
+            <li>Rapid current-state audit: go-to-market, org structure, product roadmap, and customer health</li>
+            <li>Sacred cow identification and legacy asset inventory</li>
           </ul>
           <div class="phase-deliverable-label">Deliverable</div>
           <ul class="phase-deliverables">
-            <li>Current-State Diagnostic Report with gap analysis and initial opportunity map</li>
+            <li>Working diagnostic baseline to anchor Phase 2</li>
           </ul>
         </div>
       </div>
@@ -1014,7 +1286,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <div class="phase-meta">
           <div class="phase-num">02</div>
           <span class="phase-label">Phase Two</span>
-          <span class="phase-weeks">Weeks 4 to 7</span>
+          <span class="phase-weeks">Weeks 3 to 6</span>
         </div>
         <div>
           <div class="phase-title">Strategy Architecture</div>
@@ -1037,7 +1309,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <div class="phase-meta">
           <div class="phase-num">03</div>
           <span class="phase-label">Phase Three</span>
-          <span class="phase-weeks">Weeks 8 to 10</span>
+          <span class="phase-weeks">Weeks 7 to 8</span>
         </div>
         <div>
           <div class="phase-title">Validation &amp; Refinement</div>
@@ -1059,7 +1331,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <div class="phase-meta">
           <div class="phase-num">04</div>
           <span class="phase-label">Phase Four</span>
-          <span class="phase-weeks">Weeks 11 to 12</span>
+          <span class="phase-weeks">Week 9</span>
         </div>
         <div>
           <div class="phase-title">Execution Blueprint &amp; Handoff</div>
@@ -1081,17 +1353,17 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   </div>
 </div>
 
-<div class="audit-section audit-section-alt">
+<div class="prog-section prog-section-alt">
   <div class="container">
     <div style="margin-bottom: 48px;">
-      <span class="audit-label fade-up">Who This Is For</span>
-      <h2 class="audit-heading fade-up d1">Built for leaders who have<br/>made the decision <em>and need to execute it.</em></h2>
+      <span class="prog-label fade-up">Who This Is For</span>
+      <h2 class="prog-heading fade-up d1">Built for leaders who have<br/>made the decision <em>and need to execute it.</em></h2>
     </div>
     <div class="persona-grid fade-up d1">
       <div class="persona-card dark">
         <span class="persona-role">Primary — The CEO / President</span>
         <div class="persona-title">You've committed to the pivot. Now you need to get the organization to execute it.</div>
-        <p class="persona-desc">Mid-market leader (100 to 1,000 employees) who has already made the strategic decision to pivot but is facing organizational resistance, execution uncertainty, or cross-functional misalignment. You've built the company — or inherited a legacy business — and feel personally responsible for getting this transition right. You're not looking for strategy theory. You need an operator who has done this before and can help you see around corners.</p>
+        <p class="persona-desc">Mid-market leader (100 to 1,000 employees) who has already made the strategic decision to pivot but is facing organizational resistance, execution uncertainty, or cross-functional misalignment. You've built the company — or inherited a legacy business — and feel personally responsible for getting this transition right. You need an operator who has done this before and can help you see around corners.</p>
       </div>
       <div class="persona-card">
         <span class="persona-role">Secondary — The CPO / VP Product</span>
@@ -1107,7 +1379,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
           <li><span class="icon">✓</span>Your go-to-market motion and org structure were designed for the business you built — not the one you're building.</li>
           <li><span class="icon">✓</span>You have sacred cows everyone knows are holding you back, but nobody has been willing to name them.</li>
           <li><span class="icon">✓</span>You want an advisor who has personally led this kind of transformation — not someone who studied it in a case study.</li>
-          <li><span class="icon">✓</span>You're ready to invest 12 focused weeks to compress what would otherwise be 12 to 24 months of expensive trial and error.</li>
+          <li><span class="icon">✓</span>You're ready to invest focused weeks to compress what would otherwise be 12 to 24 months of expensive trial and error.</li>
         </ul>
       </div>
       <div>
@@ -1122,11 +1394,11 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   </div>
 </div>
 
-<div class="audit-section">
+<div class="prog-section">
   <div class="container">
     <div style="margin-bottom:48px;">
-      <span class="audit-label fade-up">What's Included</span>
-      <h2 class="audit-heading fade-up d1">The program plus<br/><em>three bonus deliverables.</em></h2>
+      <span class="prog-label fade-up">What's Included</span>
+      <h2 class="prog-heading fade-up d1">The program plus<br/><em>three bonus deliverables.</em></h2>
     </div>
     <div class="bonus-grid fade-up d1">
       <div class="bonus-card">
@@ -1150,12 +1422,13 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 
 <div class="audit-cta-section">
   <div class="container">
-    <div class="audit-cta-inner">
-      <span class="audit-cta-kicker">Ready to Get Started?</span>
-      <h2 class="audit-cta-head">The window of market<br/>opportunity isn't <em>waiting.</em></h2>
-      <p class="audit-cta-sub">Every month of misalignment is a month of market timing you're not getting back. Let's spend 30 minutes to find out if The Transition Audit is the right fit for your company.</p>
+    <div class="prog-cta-inner">
+      <span class="prog-cta-kicker">Ready to Get Started?</span>
+      <h2 class="prog-cta-head">The window of market<br/>opportunity isn't <em>waiting.</em></h2>
+      <p class="prog-cta-sub">Every month of misalignment is a month of market timing you're not getting back. Let's spend 30 minutes to find out if The Transition Audit is the right fit for your company.</p>
       <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
         <a onclick="showPage('main');scrollToSection('#contact')" class="btn-orange">Apply for the program <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a onclick="showPage('diagnostic')" class="btn-teal-sm" style="padding:15px 34px;font-size:.875rem;">Start with the Diagnostic instead <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a onclick="showPage('main')" class="btn-wht">Back to main site</a>
       </div>
     </div>
@@ -1169,32 +1442,40 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
       <ul class="ft-nav">
         <li><a onclick="showPage('main');scrollToSection('#about')">About</a></li>
         <li><a onclick="showPage('main');scrollToSection('#services')">Services</a></li>
+        <li><a onclick="showPage('diagnostic')" style="color:rgba(14,158,138,.7)">The Transition Diagnostic</a></li>
         <li><a onclick="showPage('audit')" style="color:rgba(255,95,14,.7)">The Transition Audit</a></li>
         <li><a onclick="showPage('main');scrollToSection('#case-studies')">Work</a></li>
         <li><a onclick="showPage('main');scrollToSection('#hire')">Hire Brian</a></li>
         <li><a onclick="showPage('main');scrollToSection('#contact')">Contact</a></li>
       </ul>
-      <div class="ft-right">
-        <p class="ft-copy">© 2025 Forge Product Strategy. All rights reserved.<br/>Boulder, Colorado.</p>
-      </div>
+      <div class="ft-right"><p class="ft-copy">© 2025 Forge Product Strategy. All rights reserved.<br/>Boulder, Colorado.</p></div>
     </div>
     <hr class="ft-hr" />
     <p class="ft-tag">Strategy forged from experience.</p>
   </div>
 </footer>
-
 </div><!-- end audit-page -->
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
 emailjs.init("XN59403PvG9TAz-Wp");
 
 function showPage(page) {
   document.getElementById('main-page').classList.toggle('active', page === 'main');
+  document.getElementById('diagnostic-page').classList.toggle('active', page === 'diagnostic');
   document.getElementById('audit-page').classList.toggle('active', page === 'audit');
   window.scrollTo({ top: 0, behavior: 'smooth' });
   if (page === 'audit') {
     setTimeout(() => {
       document.querySelectorAll('#audit-page .fade-up').forEach(el => {
+        if (!el.classList.contains('visible')) obs.observe(el);
+      });
+    }, 100);
+  }
+  if (page === 'diagnostic') {
+    setTimeout(() => {
+      document.querySelectorAll('#diagnostic-page .fade-up').forEach(el => {
         if (!el.classList.contains('visible')) obs.observe(el);
       });
     }, 100);
