@@ -33,8 +33,8 @@
   --blue-light: #E8EEFB;
   --red: #B61E23;
   --red-light: #FAEAEA;
-  --teal: #0E9E8A;
-  --teal-light: #E6F7F5;
+  --diag: #2E6DA4;
+  --diag-light: #E8F2FA;
   
   --fd: 'DM Serif Display', serif;
   --fb: 'DM Sans', sans-serif;
@@ -79,7 +79,7 @@ nav {
 .nav-links a.active-tab { border-bottom: 2px solid #81C3E4; padding-bottom: 2px; }
 .nav-links a.audit-link { color: var(--orange); font-weight: 600; }
 .nav-links a.audit-link:hover { color: #ffffff; }
-.nav-links a.diag-link { color: var(--teal); font-weight: 600; }
+.nav-links a.diag-link { color: var(--diag); font-weight: 600; }
 .nav-links a.diag-link:hover { color: #ffffff; }
 .btn-nav {
   background: var(--orange); color: #ffffff;
@@ -127,8 +127,8 @@ nav {
 .btn-wht:hover { background: var(--black); color: var(--white); }
 .btn-orange { background: var(--orange); color: var(--white); padding: 15px 34px; border-radius: 3px; font-family: var(--fb); font-weight: 600; font-size: .875rem; text-decoration: none; letter-spacing: .04em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 10px; transition: all .2s; cursor: pointer; border: none; }
 .btn-orange:hover { background: #D94E00; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,95,14,.25); }
-.btn-teal { background: var(--teal); color: var(--white); padding: 15px 34px; border-radius: 3px; font-family: var(--fb); font-weight: 600; font-size: .875rem; text-decoration: none; letter-spacing: .04em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 10px; transition: all .2s; cursor: pointer; border: none; }
-.btn-teal:hover { background: #0B8878; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(14,158,138,.25); }
+.btn-teal { background: var(--diag); color: var(--white); padding: 15px 34px; border-radius: 3px; font-family: var(--fb); font-weight: 600; font-size: .875rem; text-decoration: none; letter-spacing: .04em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 10px; transition: all .2s; cursor: pointer; border: none; }
+.btn-teal:hover { background: #1D4F82; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(46,109,164,.25); }
 .hero-stats { display: flex; gap: 0; }
 .h-stat { padding-right: 40px; border-right: 1px solid var(--rule); margin-right: 40px; }
 .h-stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
@@ -188,17 +188,17 @@ section { padding: 110px 0; }
 .svc-card:hover { background: var(--bg); }
 .svc-card.sig { background: var(--black); cursor: pointer; }
 .svc-card.sig:hover { background: var(--off-black); }
-.svc-card.sig-teal { background: #0A3830; cursor: pointer; }
-.svc-card.sig-teal:hover { background: #0D4840; }
+.svc-card.sig-teal { background: #132C48; cursor: pointer; }
+.svc-card.sig-teal:hover { background: #1A3F6B; }
 .svc-num { display: none; }
 .sig-badge { display: inline-block; font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 4px 10px; border: 1px solid rgba(255,95,14,.5); color: var(--orange); margin-bottom: 16px; background: rgba(255,95,14,.08); }
-.sig-badge-teal { display: inline-block; font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 4px 10px; border: 1px solid rgba(14,158,138,.5); color: var(--teal); margin-bottom: 16px; background: rgba(14,158,138,.08); }
+.sig-badge-teal { display: inline-block; font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 4px 10px; border: 1px solid rgba(46,109,164,.5); color: var(--diag); margin-bottom: 16px; background: rgba(46,109,164,.08); }
 .svc-title { font-family: var(--fd); font-size: 1.3rem; font-weight: 400; color: var(--black); margin-bottom: 8px; line-height: 1.2; }
 .svc-card.sig .svc-title { color: var(--white); }
 .svc-card.sig-teal .svc-title { color: var(--white); }
 .svc-wk { font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--light); margin-bottom: 16px; }
 .svc-card.sig .svc-wk { color: var(--orange); }
-.svc-card.sig-teal .svc-wk { color: var(--teal); }
+.svc-card.sig-teal .svc-wk { color: var(--diag); }
 .svc-desc { font-size: .875rem; color: var(--mid); line-height: 1.7; font-weight: 300; }
 .svc-card.sig .svc-desc { color: rgba(255,255,255,.85); }
 .svc-card.sig-teal .svc-desc { color: rgba(255,255,255,.85); }
@@ -298,7 +298,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 #diagnostic-page { background: var(--bg); }
 
 .diag-hero {
-  background: #071F1C; color: var(--white);
+  background: #0D2238; color: var(--white);
   padding: calc(var(--nh) + 80px) 0 80px;
   position: relative; overflow: hidden;
 }
@@ -309,8 +309,8 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   opacity: .10;
 }
 .diag-hero-inner { position: relative; z-index: 1; max-width: 680px; }
-.diag-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: .68rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--teal); margin-bottom: 24px; }
-.diag-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--teal); }
+.diag-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: .68rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--diag); margin-bottom: 24px; }
+.diag-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--diag); }
 
 /* AUDIT PAGE */
 #audit-page { background: var(--bg); }
@@ -334,30 +334,30 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 .prog-h1 { font-family: var(--fd); font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 400; line-height: 1.05; letter-spacing: -.02em; margin-bottom: 12px; }
 .prog-h1 em { font-style: italic; }
 .audit-h1 em { color: var(--orange); }
-.diag-h1 em { color: var(--teal); }
+.diag-h1 em { color: var(--diag); }
 .prog-tagline { font-size: 1.1rem; color: rgba(255,255,255,.82); font-weight: 300; margin-bottom: 40px; line-height: 1.6; }
 .prog-hero-meta { display: flex; flex-wrap: wrap; gap: 32px; margin-bottom: 44px; }
 .prog-meta-item { display: flex; flex-direction: column; gap: 4px; }
 .prog-meta-label { font-size: .65rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
 .audit-page-wrap .prog-meta-label { color: #5EAAE6; }
-.diag-page-wrap .prog-meta-label { color: var(--teal); }
+.diag-page-wrap .prog-meta-label { color: var(--diag); }
 .prog-meta-value { font-size: .9rem; color: rgba(255,255,255,.95); font-weight: 500; }
 .prog-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
 
 /* Pathway banner — shown on audit page */
 .pathway-banner {
-  background: #0A3830;
-  border-bottom: 1px solid rgba(14,158,138,.2);
+  background: #132C48;
+  border-bottom: 1px solid rgba(46,109,164,.2);
   padding: 20px 0;
 }
 .pathway-banner-inner {
   display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
 }
 .pathway-banner-text { font-size: .9rem; color: rgba(255,255,255,.85); font-weight: 300; line-height: 1.6; }
-.pathway-banner-text strong { color: var(--teal); font-weight: 600; }
+.pathway-banner-text strong { color: var(--diag); font-weight: 600; }
 .pathway-banner-cta { flex-shrink: 0; }
-.btn-teal-sm { background: var(--teal); color: var(--white); padding: 10px 22px; border-radius: 3px; font-family: var(--fb); font-weight: 600; font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; transition: all .2s; cursor: pointer; border: none; white-space: nowrap; }
-.btn-teal-sm:hover { background: #0B8878; }
+.btn-teal-sm { background: var(--diag); color: var(--white); padding: 10px 22px; border-radius: 3px; font-family: var(--fb); font-weight: 600; font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; transition: all .2s; cursor: pointer; border: none; white-space: nowrap; }
+.btn-teal-sm:hover { background: #1D4F82; }
 
 /* Shared program section styles */
 .prog-section { padding: 80px 0; border-bottom: 1px solid var(--rule); }
@@ -377,7 +377,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 .outcome-item { background: var(--white); padding: 32px 28px; }
 .prog-section-alt .outcome-item { background: var(--bg); }
 .outcome-num { font-family: var(--fd); font-size: .85rem; font-style: italic; color: #406FB9; margin-bottom: 16px; display: block; }
-.outcome-num-teal { color: var(--teal); }
+.outcome-num-teal { color: var(--diag); }
 .outcome-title { font-family: var(--fd); font-size: 1.1rem; font-weight: 400; color: var(--black); margin-bottom: 10px; line-height: 1.2; }
 .outcome-desc { font-size: .875rem; color: var(--mid); line-height: 1.7; font-weight: 300; }
 
@@ -391,20 +391,20 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 .phase-label { font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--light); margin-bottom: 6px; display: block; }
 .phase-weeks { font-size: .82rem; font-weight: 600; }
 .audit-page-wrap .phase-weeks { color: var(--orange); }
-.diag-page-wrap .phase-weeks { color: var(--teal); }
+.diag-page-wrap .phase-weeks { color: var(--diag); }
 .phase-title { font-family: var(--fd); font-size: 1.35rem; font-weight: 400; color: var(--black); margin-bottom: 12px; line-height: 1.2; }
 .phase-desc { font-size: .9rem; color: var(--charcoal); line-height: 1.75; font-weight: 300; margin-bottom: 20px; }
 .phase-deliverables { list-style: none; }
 .phase-deliverables li { display: flex; align-items: flex-start; gap: 10px; font-size: .85rem; color: var(--charcoal); margin-bottom: 8px; font-weight: 300; }
 .audit-page-wrap .phase-deliverables li::before { content: '→'; color: var(--orange); flex-shrink: 0; font-weight: 600; margin-top: 1px; }
-.diag-page-wrap .phase-deliverables li::before { content: '→'; color: var(--teal); flex-shrink: 0; font-weight: 600; margin-top: 1px; }
+.diag-page-wrap .phase-deliverables li::before { content: '→'; color: var(--diag); flex-shrink: 0; font-weight: 600; margin-top: 1px; }
 .phase-deliverable-label { margin-top: 16px; margin-bottom: 8px; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--light); }
 
 /* Personas */
 .persona-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 48px; }
 .persona-card { background: var(--white); padding: 36px 32px; }
 .persona-card.dark { background: var(--black); }
-.persona-card.dark-teal { background: #071F1C; }
+.persona-card.dark-teal { background: #0D2238; }
 .persona-role { font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 16px; display: block; }
 .persona-card.dark .persona-role, .persona-card.dark-teal .persona-role { color: rgba(255,255,255,.4); }
 .persona-card:not(.dark):not(.dark-teal) .persona-role { color: var(--light); }
@@ -440,14 +440,14 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 
 /* CTA sections */
 .audit-cta-section { background: var(--black); padding: 80px 0; text-align: center; position: relative; overflow: hidden; }
-.diag-cta-section { background: #071F1C; padding: 80px 0; text-align: center; position: relative; overflow: hidden; }
+.diag-cta-section { background: #0D2238; padding: 80px 0; text-align: center; position: relative; overflow: hidden; }
 .audit-cta-section::before, .diag-cta-section::before { content: ''; position: absolute; inset: 0; background: url('https://i.postimg.cc/0yXnjbG2/FPS-Logo.png') center/400px no-repeat; opacity: .03; filter: brightness(0) invert(1); }
 .prog-cta-inner { position: relative; z-index: 1; }
 .prog-cta-kicker { font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 20px; display: block; }
 .prog-cta-head { font-family: var(--fd); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; color: var(--white); margin-bottom: 20px; line-height: 1.1; }
 .prog-cta-head em { font-style: italic; }
 .audit-cta-section .prog-cta-head em { color: var(--orange); }
-.diag-cta-section .prog-cta-head em { color: var(--teal); }
+.diag-cta-section .prog-cta-head em { color: var(--diag); }
 .prog-cta-sub { font-size: 1rem; color: rgba(255,255,255,.82); max-width: 520px; margin: 0 auto 40px; font-weight: 300; line-height: 1.7; }
 
 /* RESPONSIVE */
@@ -572,7 +572,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 <div class="mob-drawer" id="mob-nav">
   <a onclick="showPage('main');scrollToSection('#about');closeMob()">About</a>
   <a onclick="showPage('main');scrollToSection('#services');closeMob()">Services</a>
-  <a onclick="showPage('diagnostic');closeMob()" style="color:var(--teal);font-weight:600;">The Transition Diagnostic</a>
+  <a onclick="showPage('diagnostic');closeMob()" style="color:var(--diag);font-weight:600;">The Transition Diagnostic</a>
   <a onclick="showPage('audit');closeMob()" style="color:var(--orange);font-weight:600;">The Transition Audit</a>
   <a onclick="showPage('main');scrollToSection('#case-studies');closeMob()">Work</a>
   <a onclick="showPage('main');scrollToSection('#hire');closeMob()">Hire Brian</a>
@@ -1092,11 +1092,11 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
       <div>
         <div class="fit-col-title">What happens next</div>
         <ul class="fit-list fit-yes">
-          <li><span class="icon" style="background:var(--teal-light);color:var(--teal);">→</span>If the Diagnostic confirms a full transformation engagement makes sense, your diagnostic cost credits toward the Transition Audit and the work carries forward directly into Phase 2.</li>
-          <li><span class="icon" style="background:var(--teal-light);color:var(--teal);">→</span>If the Diagnostic surfaces a more targeted need, I'll tell you that too. You'll leave with a clear picture of what you actually need — even if it's not more work with me.</li>
-          <li><span class="icon" style="background:var(--teal-light);color:var(--teal);">→</span>The Diagnostic is a standalone deliverable with real value. You walk away with a report your leadership team can act on regardless of what comes next.</li>
+          <li><span class="icon" style="background:var(--diag-light);color:var(--diag);">→</span>If the Diagnostic confirms a full transformation engagement makes sense, your diagnostic cost credits toward the Transition Audit and the work carries forward directly into Phase 2.</li>
+          <li><span class="icon" style="background:var(--diag-light);color:var(--diag);">→</span>If the Diagnostic surfaces a more targeted need, I'll tell you that too. You'll leave with a clear picture of what you actually need — even if it's not more work with me.</li>
+          <li><span class="icon" style="background:var(--diag-light);color:var(--diag);">→</span>The Diagnostic is a standalone deliverable with real value. You walk away with a report your leadership team can act on regardless of what comes next.</li>
         </ul>
-        <div style="margin-top:32px;padding:24px;background:var(--teal-light);border-left:3px solid var(--teal);">
+        <div style="margin-top:32px;padding:24px;background:var(--diag-light);border-left:3px solid var(--diag);">
           <p style="font-size:.875rem;color:var(--charcoal);line-height:1.7;font-weight:300;margin:0;">Time commitment: <strong>3-5 hours per week</strong> for the executive sponsor across the 2-3 week sprint.</p>
         </div>
       </div>
