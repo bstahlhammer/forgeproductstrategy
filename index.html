@@ -456,6 +456,8 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   .about-top { grid-template-columns: 1fr; gap: 56px; }
   .about-bottom { grid-template-columns: 1fr; gap: 32px; }
   .svc-header { grid-template-columns: 1fr; gap: 24px; }
+  #tools .container > div:first-child { grid-template-columns: 1fr; gap: 32px; }
+  #tools [style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
   .svc-grid-top { grid-template-columns: 1fr; }
   .svc-grid { grid-template-columns: 1fr; }
   .svc-grid-b { grid-template-columns: 1fr; }
@@ -549,10 +551,8 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
       <ul class="nav-links" id="nav-links-main">
         <li><a onclick="showPage('main');scrollToSection('#about')">About</a></li>
         <li><a onclick="showPage('main');scrollToSection('#services')">Services</a></li>
-        <li><a onclick="showPage('diagnostic')" class="diag-link">The Transition Diagnostic</a></li>
-        <li><a onclick="showPage('audit')" class="audit-link">The Transition Audit</a></li>
         <li><a onclick="showPage('main');scrollToSection('#case-studies')">Work</a></li>
-        <li><a onclick="showPage('main');scrollToSection('#hire')">Hire Brian</a></li>
+        <li><a href="https://tools.forgeproductstrategy.com" target="_blank" style="color:var(--orange);font-weight:600;">Forge Intelligence Tools</a></li>
         <li><a onclick="showPage('main');scrollToSection('#contact')" class="btn-nav">Book a Call</a></li>
       </ul>
       <button class="nav-hbg" id="hbg" aria-label="Toggle menu">
@@ -565,11 +565,8 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 <div class="mob-drawer" id="mob-nav">
   <a onclick="showPage('main');scrollToSection('#about');closeMob()">About</a>
   <a onclick="showPage('main');scrollToSection('#services');closeMob()">Services</a>
-  <a onclick="showPage('diagnostic');closeMob()" style="color:var(--diag);font-weight:600;">The Transition Diagnostic</a>
-  <a onclick="showPage('audit');closeMob()" style="color:var(--orange);font-weight:600;">The Transition Audit</a>
   <a onclick="showPage('main');scrollToSection('#case-studies');closeMob()">Work</a>
-  <a onclick="showPage('main');scrollToSection('#hire');closeMob()">Hire Brian</a>
-  <a onclick="showPage('main');scrollToSection('#contact');closeMob()">Contact</a>
+  <a href="https://tools.forgeproductstrategy.com" target="_blank" style="color:var(--orange);font-weight:600;">Forge Intelligence Tools</a>
   <a onclick="showPage('main');scrollToSection('#contact');closeMob()" class="btn-nav">Book a Call</a>
 </div>
 
@@ -729,6 +726,74 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   </div>
 </section>
 
+<!-- ============================================================ -->
+<!-- FORGE TOOLS SECTION -->
+<!-- ============================================================ -->
+<section id="tools" style="background:#0D0D0D;padding:110px 0;border-top:1px solid #2a2a2a;border-bottom:1px solid #2a2a2a;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:70px;">
+      <div>
+        <span style="font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:20px;display:block;">Forge Intelligence Tools</span>
+        <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:400;line-height:1.1;letter-spacing:-.02em;margin-bottom:20px;color:#ffffff;">AI-powered intelligence,<br/><em style="font-style:italic;color:var(--orange);">built for operators.</em></h2>
+      </div>
+      <p style="font-size:1rem;color:rgba(255,255,255,.55);line-height:1.75;font-weight:300;max-width:440px;padding-bottom:8px;">Forge Intelligence Tools are AI-native products built on the same strategic frameworks I use with clients — designed to give mid-market SaaS and hardware-to-SaaS leaders an unfair advantage in a fast-moving market.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#2a2a2a;border:1px solid #2a2a2a;">
+
+      <!-- Tool 1: Competitive Signal Monitor — LIVE -->
+      <div style="background:#111111;padding:40px 36px;position:relative;display:flex;flex-direction:column;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
+          <span style="font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:4px 10px;border:1px solid rgba(255,95,14,.5);color:var(--orange);background:rgba(255,95,14,.08);">Live</span>
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="rgba(255,95,14,.4)" stroke-width="1.2"/><path d="M8 5v3.5l2.5 1.5" stroke="rgba(255,95,14,.4)" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <h3 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:#ffffff;margin-bottom:12px;line-height:1.2;">Competitive Signal Monitor</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.55);line-height:1.75;font-weight:300;margin-bottom:32px;flex:1;">Monitors competitors across job postings, pricing pages, funding activity, and product releases — then delivers a structured weekly briefing with signals scored by urgency and paired with a recommended action.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;">
+          <span style="font-size:.68rem;font-weight:500;padding:4px 10px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.1);">Pricing Intelligence</span>
+          <span style="font-size:.68rem;font-weight:500;padding:4px 10px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.1);">Hiring Signals</span>
+          <span style="font-size:.68rem;font-weight:500;padding:4px 10px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.1);">Funding Activity</span>
+          <span style="font-size:.68rem;font-weight:500;padding:4px 10px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.1);">AI Synthesis</span>
+        </div>
+        <a href="https://tools.forgeproductstrategy.com" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#ffffff;padding:13px 24px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;transition:all .2s;align-self:flex-start;" onmouseover="this.style.background='#D94E00'" onmouseout="this.style.background='var(--orange)'">Access Tool <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <!-- Tool 2: Churn Signal Analyzer — Coming Soon -->
+      <div style="background:#0D0D0D;padding:40px 36px;position:relative;display:flex;flex-direction:column;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
+          <span style="font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:4px 10px;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.3);background:rgba(255,255,255,.04);">Coming Soon</span>
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M8 2v4l3 3" stroke="rgba(255,255,255,.2)" stroke-width="1.2" stroke-linecap="round"/><circle cx="8" cy="8" r="6.5" stroke="rgba(255,255,255,.15)" stroke-width="1.2"/></svg>
+        </div>
+        <h3 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:rgba(255,255,255,.6);margin-bottom:12px;line-height:1.2;">Churn Signal Analyzer</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.35);line-height:1.75;font-weight:300;margin-bottom:32px;flex:1;">Paste in customer feedback, NPS verbatims, or support tickets and get a structured analysis of churn risk themes — segmented by severity, with recommended product and CS interventions for each.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;">
+          <span style="font-size:.68rem;font-weight:500;padding:4px 10px;background:rgba(255,255,255,.03);color:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.07);">NPS Analysis</span>
+          <span style="font-size:.68rem;font-weight:500;padding:4px 10px;background:rgba(255,255,255,.03);color:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.07);">Churn Themes</span>
+          <span style="font-size:.68rem;font-weight:500;padding:4px 10px;background:rgba(255,255,255,.03);color:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.07);">CS Playbooks</span>
+        </div>
+        <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.3);padding:13px 24px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;align-self:flex-start;cursor:default;">In Development</span>
+      </div>
+
+      <!-- Tool 3: Hardware-to-SaaS Scorecard — Coming Soon -->
+      <div style="background:#0D0D0D;padding:40px 36px;position:relative;display:flex;flex-direction:column;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
+          <span style="font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:4px 10px;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.3);background:rgba(255,255,255,.04);">Coming Soon</span>
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="1.5" stroke="rgba(255,255,255,.15)" stroke-width="1.2"/><path d="M5 8h6M8 5v6" stroke="rgba(255,255,255,.2)" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <h3 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:rgba(255,255,255,.6);margin-bottom:12px;line-height:1.2;">Hardware-to-SaaS Transition Scorecard</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.35);line-height:1.75;font-weight:300;margin-bottom:32px;flex:1;">An AI-powered assessment for operators navigating the hardware-to-platform transition. Input your revenue mix, customer concentration, and product maturity — get a scored readiness report with benchmarks and recommended next steps.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;">
+          <span style="font-size:.68rem;font-weight:500;padding:4px 10px;background:rgba(255,255,255,.03);color:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.07);">Readiness Score</span>
+          <span style="font-size:.68rem;font-weight:500;padding:4px 10px;background:rgba(255,255,255,.03);color:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.07);">Benchmarks</span>
+          <span style="font-size:.68rem;font-weight:500;padding:4px 10px;background:rgba(255,255,255,.03);color:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.07);">IoT / OT Focus</span>
+        </div>
+        <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.3);padding:13px 24px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;align-self:flex-start;cursor:default;">In Development</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section id="case-studies">
   <div class="container">
     <div class="cs-hdr">
@@ -839,9 +904,9 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <h2 class="ct-head">Let's talk about<br/>your <em>next</em><br/>transformation.</h2>
         <p class="ct-p">Whether you have a specific engagement in mind or just want to think through a challenge, I'm always up for a direct conversation. No sales process, no intake forms.</p>
         <div class="ct-tiles">
-          <a href="mailto:brian@forgeproductstrategy.com" class="ct-tile">
+          <a href="/cdn-cgi/l/email-protection#294b5b404847694f465b4e4c595b464d5c4a5d5a5d5b485d4c4e50074a4644" class="ct-tile">
             <div class="tile-icon">✉</div>
-            <div><div class="tile-lbl">Email</div><div class="tile-val">brian@forgeproductstrategy.com</div></div>
+            <div><div class="tile-lbl">Email</div><div class="tile-val"><span class="__cf_email__" data-cfemail="cba9b9a2aaa58bada4b9acaebbb9a4afbea8bfb8bfb9aabfaeacb2e5a8a4a6">[email&#160;protected]</span></div></div>
           </a>
           <a href="https://linkedin.com/in/brianstahlhammer" target="_blank" rel="noopener" class="ct-tile">
             <div class="tile-icon">in</div>
@@ -891,12 +956,12 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <li><a onclick="showPage('main');scrollToSection('#services')">Services</a></li>
         <li><a onclick="showPage('diagnostic')" style="color:rgba(14,158,138,.7)">The Transition Diagnostic</a></li>
         <li><a onclick="showPage('audit')" style="color:rgba(255,95,14,.7)">The Transition Audit</a></li>
-        <li><a onclick="showPage('main');scrollToSection('#case-studies')">Work</a></li>
+        <li><a href="https://tools.forgeproductstrategy.com" target="_blank" style="color:rgba(255,95,14,.7)">Forge Intelligence Tools</a></li><li><a onclick="showPage('main');scrollToSection('#case-studies')">Work</a></li>
         <li><a onclick="showPage('main');scrollToSection('#hire')">Hire Brian</a></li>
         <li><a onclick="showPage('main');scrollToSection('#contact')">Contact</a></li>
       </ul>
       <div class="ft-right">
-        <p class="ft-copy">© 2025 Forge Product Strategy. All rights reserved.<br/>Boulder, Colorado.</p>
+        <p class="ft-copy">© 2026 Forge Product Strategy. All rights reserved.<br/>Boulder, Colorado.</p>
       </div>
     </div>
     <hr class="ft-hr" />
@@ -1121,11 +1186,11 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <li><a onclick="showPage('main');scrollToSection('#services')">Services</a></li>
         <li><a onclick="showPage('diagnostic')" style="color:rgba(14,158,138,.7)">The Transition Diagnostic</a></li>
         <li><a onclick="showPage('audit')" style="color:rgba(255,95,14,.7)">The Transition Audit</a></li>
-        <li><a onclick="showPage('main');scrollToSection('#case-studies')">Work</a></li>
+        <li><a href="https://tools.forgeproductstrategy.com" target="_blank" style="color:rgba(255,95,14,.7)">Forge Intelligence Tools</a></li><li><a onclick="showPage('main');scrollToSection('#case-studies')">Work</a></li>
         <li><a onclick="showPage('main');scrollToSection('#hire')">Hire Brian</a></li>
         <li><a onclick="showPage('main');scrollToSection('#contact')">Contact</a></li>
       </ul>
-      <div class="ft-right"><p class="ft-copy">© 2025 Forge Product Strategy. All rights reserved.<br/>Boulder, Colorado.</p></div>
+      <div class="ft-right"><p class="ft-copy">© 2026 Forge Product Strategy. All rights reserved.<br/>Boulder, Colorado.</p></div>
     </div>
     <hr class="ft-hr" />
     <p class="ft-tag">Strategy forged from experience.</p>
@@ -1437,11 +1502,11 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <li><a onclick="showPage('main');scrollToSection('#services')">Services</a></li>
         <li><a onclick="showPage('diagnostic')" style="color:rgba(14,158,138,.7)">The Transition Diagnostic</a></li>
         <li><a onclick="showPage('audit')" style="color:rgba(255,95,14,.7)">The Transition Audit</a></li>
-        <li><a onclick="showPage('main');scrollToSection('#case-studies')">Work</a></li>
+        <li><a href="https://tools.forgeproductstrategy.com" target="_blank" style="color:rgba(255,95,14,.7)">Forge Intelligence Tools</a></li><li><a onclick="showPage('main');scrollToSection('#case-studies')">Work</a></li>
         <li><a onclick="showPage('main');scrollToSection('#hire')">Hire Brian</a></li>
         <li><a onclick="showPage('main');scrollToSection('#contact')">Contact</a></li>
       </ul>
-      <div class="ft-right"><p class="ft-copy">© 2025 Forge Product Strategy. All rights reserved.<br/>Boulder, Colorado.</p></div>
+      <div class="ft-right"><p class="ft-copy">© 2026 Forge Product Strategy. All rights reserved.<br/>Boulder, Colorado.</p></div>
     </div>
     <hr class="ft-hr" />
     <p class="ft-tag">Strategy forged from experience.</p>
@@ -1451,7 +1516,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 
 
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 emailjs.init("XN59403PvG9TAz-Wp");
 
 function showPage(page) {
@@ -1530,14 +1595,4 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     msg.className = 'form-msg success';
     btn.textContent = 'Message sent ✓';
     this.reset();
-    setTimeout(() => { btn.textContent = 'Send message →'; btn.disabled = false; }, 4000);
-  } catch(err) {
-    msg.textContent = 'Something went wrong. Please email me directly.';
-    msg.className = 'form-msg error';
-    btn.textContent = 'Send message →';
-    btn.disabled = false;
-  }
-});
-</script>
-</body>
-</html>
+    setTimeout(() => { btn.textContent = 'Send message →
