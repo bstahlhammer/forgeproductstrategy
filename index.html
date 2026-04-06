@@ -443,6 +443,53 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 .diag-cta-section .prog-cta-head em { color: var(--diag); }
 .prog-cta-sub { font-size: 1rem; color: rgba(255,255,255,.82); max-width: 520px; margin: 0 auto 40px; font-weight: 300; line-height: 1.7; }
 
+/* INTRO SESSIONS */
+#intro-sessions { background: var(--bg); }
+.intro-header { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; margin-bottom: 16px; }
+.intro-flag { display: inline-block; font-size: .6rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; padding: 3px 9px; border: 1px solid rgba(46,109,164,.4); color: var(--diag); background: rgba(46,109,164,.07); margin-bottom: 14px; }
+.intro-flag.featured { border-color: rgba(255,95,14,.45); color: var(--orange); background: rgba(255,95,14,.08); }
+.intro-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 40px; }
+.intro-card { background: var(--white); padding: 36px 30px; display: flex; flex-direction: column; transition: background .2s; }
+.intro-card:hover { background: #faf9f6; }
+.intro-card.featured { background: var(--white); border-top: 3px solid var(--orange); }
+.intro-duration { font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--light); margin-bottom: 10px; display: block; }
+.intro-card.featured .intro-duration { color: var(--orange); }
+.intro-card-title { font-family: 'DM Serif Display', serif; font-size: 1.2rem; font-weight: 400; color: var(--black); margin-bottom: 12px; line-height: 1.2; }
+.intro-card-desc { font-size: .875rem; color: var(--mid); line-height: 1.75; font-weight: 300; margin-bottom: 20px; flex: 1; }
+.intro-output { background: var(--bg); border-left: 2px solid var(--rule); padding: 12px 14px; margin-bottom: 20px; }
+.intro-card.featured .intro-output { background: var(--orange-light); border-left-color: var(--orange); }
+.intro-output-lbl { font-size: .62rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--light); margin-bottom: 4px; display: block; }
+.intro-card.featured .intro-output-lbl { color: var(--orange); }
+.intro-output-val { font-size: .82rem; color: var(--charcoal); font-weight: 400; line-height: 1.5; }
+.intro-ctas { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
+.intro-btn-primary { background: var(--black); color: var(--white); padding: 11px 20px; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: .78rem; letter-spacing: .04em; text-transform: uppercase; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; transition: all .2s; cursor: pointer; border: none; }
+.intro-btn-primary:hover { background: var(--charcoal); transform: translateY(-1px); }
+.intro-card.featured .intro-btn-primary { background: var(--orange); }
+.intro-card.featured .intro-btn-primary:hover { background: #D94E00; }
+.intro-btn-secondary { background: transparent; color: var(--mid); padding: 9px 20px; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: .78rem; letter-spacing: .04em; text-transform: uppercase; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; border: 1px solid var(--rule); transition: all .2s; cursor: pointer; }
+.intro-btn-secondary:hover { border-color: var(--black); color: var(--black); }
+.intro-page-hero { background: #0D2238; color: var(--white); padding: calc(var(--nh) + 80px) 0 80px; position: relative; overflow: hidden; }
+.intro-page-hero::before { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 40%; background: url('https://i.postimg.cc/tCVtVYW1/Edited-Aragon-Photo-Brian-Stahlhammer-2026-03-04-1.jpg') center top/cover no-repeat; opacity: .08; }
+.intro-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: .68rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--diag); margin-bottom: 24px; }
+.intro-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--diag); }
+.intro-session-block { padding: 56px 0; border-bottom: 1px solid var(--rule); }
+.intro-session-block:last-of-type { border-bottom: none; }
+.intro-session-block.alt { background: var(--white); }
+.intro-session-inner { display: grid; grid-template-columns: 320px 1fr; gap: 80px; align-items: start; }
+.intro-session-num { font-family: 'DM Serif Display', serif; font-size: 3rem; font-weight: 400; color: var(--rule); line-height: 1; margin-bottom: 12px; }
+.intro-session-name { font-family: 'DM Serif Display', serif; font-size: 1.5rem; font-weight: 400; color: var(--black); line-height: 1.2; margin-bottom: 10px; }
+.intro-session-time { font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--diag); margin-bottom: 20px; display: block; }
+.intro-session-ctas { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
+.intro-session-body p { color: var(--charcoal); font-size: .975rem; line-height: 1.8; font-weight: 300; margin-bottom: 16px; }
+.intro-session-body p strong { font-weight: 600; color: var(--black); }
+.intro-session-body p:last-child { margin-bottom: 0; }
+.intro-session-deliverable { background: var(--bg); border: 1px solid var(--rule); padding: 20px 24px; margin-top: 24px; }
+.intro-session-block.alt .intro-session-deliverable { background: var(--bg); }
+.isd-lbl { font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--light); margin-bottom: 6px; display: block; }
+.isd-val { font-size: .875rem; color: var(--charcoal); font-weight: 400; line-height: 1.6; }
+.intro-cta-section { background: #0D2238; padding: 80px 0; text-align: center; position: relative; overflow: hidden; }
+.intro-cta-section::before { content: ''; position: absolute; inset: 0; background: url('/FPS_Logo.png') center/400px no-repeat; opacity: .03; filter: brightness(0) invert(1); }
+
 /* RESPONSIVE */
 @media (max-width: 960px) {
   .container { padding: 0 24px; }
@@ -479,6 +526,12 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   .bonus-grid { grid-template-columns: 1fr; }
   .diag-deliverables { grid-template-columns: 1fr; }
   .pathway-banner-inner { flex-direction: column; align-items: flex-start; }
+  .intro-header { grid-template-columns: 1fr; gap: 24px; }
+  .intro-grid { grid-template-columns: 1fr 1fr; }
+  .intro-session-inner { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 640px) {
+  .intro-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
   section { padding: 72px 0; }
@@ -551,6 +604,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
       <ul class="nav-links" id="nav-links-main">
         <li><a onclick="showPage('main');scrollToSection('#about')">About</a></li>
         <li><a onclick="showPage('main');scrollToSection('#services')">Services</a></li>
+        <li><a onclick="showPage('intro')" style="color:var(--diag);font-weight:600;">Free Sessions</a></li>
         <li><a onclick="showPage('main');scrollToSection('#case-studies')">Work</a></li>
         <li><a href="https://tools.forgeproductstrategy.com" target="_blank" style="color:var(--orange);font-weight:600;">Forge Intelligence Tools</a></li>
         <li><a onclick="showPage('main');scrollToSection('#contact')" class="btn-nav">Book a Call</a></li>
@@ -565,6 +619,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 <div class="mob-drawer" id="mob-nav">
   <a onclick="showPage('main');scrollToSection('#about');closeMob()">About</a>
   <a onclick="showPage('main');scrollToSection('#services');closeMob()">Services</a>
+  <a onclick="showPage('intro');closeMob()" style="color:var(--diag);font-weight:600;">Free Sessions</a>
   <a onclick="showPage('main');scrollToSection('#case-studies');closeMob()">Work</a>
   <a href="https://tools.forgeproductstrategy.com" target="_blank" style="color:var(--orange);font-weight:600;">Forge Intelligence Tools</a>
   <a onclick="showPage('main');scrollToSection('#contact');closeMob()" class="btn-nav">Book a Call</a>
@@ -582,8 +637,8 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <h1 class="hero-h1">Product transformations<br/>don't fail for lack of vision.<br/><em>They fail from lack of<br/>aligned execution.</em></h1>
         <p class="hero-p">I help CEOs and CPOs close that gap — with the pattern recognition that only comes from having led this exact transformation from the inside, not from a consulting deck.</p>
         <div class="hero-ctas">
-          <a onclick="showPage('main');scrollToSection('#services')" class="btn-blk">Work with me <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <a onclick="showPage('diagnostic')" class="btn-teal">Start with the Diagnostic <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a onclick="showPage('intro')" class="btn-teal">Start free — no commitment <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a onclick="showPage('main');scrollToSection('#services')" class="btn-blk">Explore engagements <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <a onclick="showPage('audit')" class="btn-orange">The Full Audit <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
         <div class="hero-stats">
@@ -723,6 +778,97 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
     <div class="svc-cta">
       <a onclick="showPage('main');scrollToSection('#contact')" class="btn-blk">Book a free discovery call <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- INTRODUCTORY SESSIONS -->
+<!-- ============================================================ -->
+<section id="intro-sessions">
+  <div class="container">
+    <div class="intro-header">
+      <div>
+        <span class="sec-kicker">Start Here — No Commitment Required</span>
+        <h2 class="sec-title">Not ready for a full<br/>engagement? <em>Good.</em></h2>
+      </div>
+      <div>
+        <p class="sec-sub">If your company just committed to a transformation and things are already stalling, these sessions are the fastest way to get traction. Each one is free, focused, and built around what PE-backed operators actually need to hear — not what's easy to say.</p>
+        <p style="font-size:.82rem;color:var(--mid);margin-top:16px;font-weight:300;">All sessions are free. No deck. No proposal. Just a direct conversation with someone who has been exactly where you are.</p>
+      </div>
+    </div>
+
+    <div class="intro-grid">
+
+      <!-- Card 1: Strategy Gut Check -->
+      <div class="intro-card">
+        <span class="intro-flag">Open Format</span>
+        <span class="intro-duration">30 Minutes</span>
+        <div class="intro-card-title">Strategy Gut Check</div>
+        <p class="intro-card-desc">You have a direction. You're just not sure if it's the right one — or if it's the right time. Bring your current thinking and we'll pressure-test it together. No agenda required.</p>
+        <div class="intro-output">
+          <span class="intro-output-lbl">You Leave With</span>
+          <div class="intro-output-val">An honest outside read on where your strategy is solid and where it's exposed</div>
+        </div>
+        <div class="intro-ctas">
+          <a href="CALENDLY_LINK_HERE" target="_blank" class="intro-btn-primary">Book 30 Minutes <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="mailto:bstahlhammer@gmail.com?subject=Strategy Gut Check" class="intro-btn-secondary">Send a note instead</a>
+        </div>
+      </div>
+
+      <!-- Card 2: Sacred Cow Naming (FEATURED) -->
+      <div class="intro-card featured">
+        <span class="intro-flag featured">Most Requested</span>
+        <span class="intro-duration">90 Minutes</span>
+        <div class="intro-card-title">Sacred Cow Naming Session</div>
+        <p class="intro-card-desc">Every mid-pivot company has one: a legacy product, an entrenched process, or a long-held assumption that the whole organization is quietly working around. This session finds it and names it — with the evidence to have the conversation your leadership team has been avoiding.</p>
+        <div class="intro-output">
+          <span class="intro-output-lbl">You Leave With</span>
+          <div class="intro-output-val">A short written list of the specific sacred cows blocking your transition, ranked by the organizational cost of continuing to protect them</div>
+        </div>
+        <div class="intro-ctas">
+          <a href="CALENDLY_LINK_HERE" target="_blank" class="intro-btn-primary">Book the Session <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="mailto:bstahlhammer@gmail.com?subject=Sacred Cow Naming Session" class="intro-btn-secondary">Send a note instead</a>
+        </div>
+      </div>
+
+      <!-- Card 3: 5-KPI Transformation Scorecard -->
+      <div class="intro-card">
+        <span class="intro-flag">Structured Session</span>
+        <span class="intro-duration">90 Minutes</span>
+        <div class="intro-card-title">5-KPI Transformation Scorecard</div>
+        <p class="intro-card-desc">Most teams measuring a pivot are tracking the wrong things. We build five KPIs that actually tell you whether the transformation is working — not just whether the business is still running.</p>
+        <div class="intro-output">
+          <span class="intro-output-lbl">You Leave With</span>
+          <div class="intro-output-val">A scored, written set of five transformation KPIs with leading indicators and the current baseline for each</div>
+        </div>
+        <div class="intro-ctas">
+          <a href="CALENDLY_LINK_HERE" target="_blank" class="intro-btn-primary">Book the Session <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="mailto:bstahlhammer@gmail.com?subject=5-KPI Transformation Scorecard" class="intro-btn-secondary">Send a note instead</a>
+        </div>
+      </div>
+
+      <!-- Card 4: Legacy Asset Leverage Audit -->
+      <div class="intro-card">
+        <span class="intro-flag">Deep Dive</span>
+        <span class="intro-duration">2 Hours</span>
+        <div class="intro-card-title">Legacy Asset Leverage Audit</div>
+        <p class="intro-card-desc">Hardware-to-SaaS operators almost always underestimate what they already have. Customer relationships, field presence, proprietary data, brand trust with a specific vertical — these are real competitive advantages most pivot plans treat as liabilities. This session finds the ones worth using.</p>
+        <div class="intro-output">
+          <span class="intro-output-lbl">You Leave With</span>
+          <div class="intro-output-val">A written inventory of your three to five highest-leverage legacy assets and a concrete suggestion for how each one can accelerate the new model</div>
+        </div>
+        <div class="intro-ctas">
+          <a href="CALENDLY_LINK_HERE" target="_blank" class="intro-btn-primary">Book the Session <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="mailto:bstahlhammer@gmail.com?subject=Legacy Asset Leverage Audit" class="intro-btn-secondary">Send a note instead</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;padding:8px 0 20px;">
+      <a onclick="showPage('intro')" style="font-size:.82rem;color:var(--mid);cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--rule);">See full session details →</a>
+    </div>
+
   </div>
 </section>
 
@@ -868,6 +1014,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <h3>Consulting &amp; Advisory Engagements</h3>
         <p>Bring me in as an external strategic advisor or embedded consultant. This works best for boards, CEOs, and CPOs who need someone who has actually done the transformation they're trying to execute, not just advised on it from the outside.</p>
         <ul class="hire-list">
+          <li>Free introductory sessions — no commitment, no prep required</li>
           <li>The Transition Diagnostic — 2-3 week entry point sprint</li>
           <li>The Transition Audit — our signature 8 to 10 week program</li>
           <li>Fractional CPO on retainer</li>
@@ -929,6 +1076,10 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
             <label>What brings you here?</label>
             <select id="cf-interest">
               <option value="" disabled selected>Select an option</option>
+              <option>Free Session — Strategy Gut Check (30 min)</option>
+              <option>Free Session — Sacred Cow Naming (90 min)</option>
+              <option>Free Session — 5-KPI Transformation Scorecard (90 min)</option>
+              <option>Free Session — Legacy Asset Leverage Audit (2 hrs)</option>
               <option>The Transition Diagnostic (2-3 week entry point)</option>
               <option>The Transition Audit (full 8-10 week program)</option>
               <option>Fractional CPO</option>
@@ -954,9 +1105,11 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
       <ul class="ft-nav">
         <li><a onclick="showPage('main');scrollToSection('#about')">About</a></li>
         <li><a onclick="showPage('main');scrollToSection('#services')">Services</a></li>
+        <li><a onclick="showPage('intro')" style="color:rgba(46,109,164,.8)">Free Sessions</a></li>
         <li><a onclick="showPage('diagnostic')" style="color:rgba(14,158,138,.7)">The Transition Diagnostic</a></li>
         <li><a onclick="showPage('audit')" style="color:rgba(255,95,14,.7)">The Transition Audit</a></li>
-        <li><a href="https://tools.forgeproductstrategy.com" target="_blank" style="color:rgba(255,95,14,.7)">Forge Intelligence Tools</a></li><li><a onclick="showPage('main');scrollToSection('#case-studies')">Work</a></li>
+        <li><a href="https://tools.forgeproductstrategy.com" target="_blank" style="color:rgba(255,95,14,.7)">Forge Intelligence Tools</a></li>
+        <li><a onclick="showPage('main');scrollToSection('#case-studies')">Work</a></li>
         <li><a onclick="showPage('main');scrollToSection('#hire')">Hire Brian</a></li>
         <li><a onclick="showPage('main');scrollToSection('#contact')">Contact</a></li>
       </ul>
@@ -1515,6 +1668,192 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 </div><!-- end audit-page -->
 
 
+<!-- ============================================================ -->
+<!-- INTRO SESSIONS PAGE -->
+<!-- ============================================================ -->
+<div id="intro-page" class="page">
+
+<div class="intro-page-hero">
+  <div class="container">
+    <div style="position:relative;z-index:1;max-width:680px;">
+      <div class="intro-eyebrow">Forge Product Strategy — Free Sessions</div>
+      <h1 class="prog-h1" style="color:var(--white);">Introductory<br/><em style="font-style:italic;color:var(--diag);">Sessions</em></h1>
+      <p class="prog-tagline">If your company is mid-pivot and things are already getting complicated, these sessions exist to help you get traction fast — before committing to a longer engagement. Free, focused, and built around what PE-backed operators actually need to work through.</p>
+      <div class="prog-hero-meta">
+        <div class="prog-meta-item">
+          <span class="prog-meta-label" style="color:var(--diag);">Format</span>
+          <span class="prog-meta-value">1:1 Video or Phone Call</span>
+        </div>
+        <div class="prog-meta-item">
+          <span class="prog-meta-label" style="color:var(--diag);">Cost</span>
+          <span class="prog-meta-value">Free — No Strings</span>
+        </div>
+        <div class="prog-meta-item">
+          <span class="prog-meta-label" style="color:var(--diag);">Ideal For</span>
+          <span class="prog-meta-value">PE-Backed Teams Mid-Pivot</span>
+        </div>
+        <div class="prog-meta-item">
+          <span class="prog-meta-label" style="color:var(--diag);">Next Step</span>
+          <span class="prog-meta-value">Optional — Only If It Makes Sense</span>
+        </div>
+      </div>
+      <div class="prog-ctas">
+        <a onclick="showPage('main');scrollToSection('#intro-sessions')" class="btn-teal">See All Sessions <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a onclick="showPage('main')" class="btn-wht">Back to main site</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Session 1: Strategy Gut Check -->
+<div class="intro-session-block">
+  <div class="container">
+    <div class="intro-session-inner">
+      <div>
+        <div class="intro-session-num">01</div>
+        <span class="intro-flag">Open Format</span>
+        <div class="intro-session-name">Strategy Gut Check</div>
+        <span class="intro-session-time">30 Minutes — Free</span>
+        <p style="font-size:.875rem;color:var(--mid);line-height:1.7;font-weight:300;margin-bottom:8px;">For leaders who have a direction but aren't certain it's the right one — or the right time.</p>
+        <div class="intro-session-ctas">
+          <a href="CALENDLY_LINK_HERE" target="_blank" class="btn-teal" style="justify-content:center;">Book 30 Minutes <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="mailto:bstahlhammer@gmail.com?subject=Strategy Gut Check" class="btn-wht" style="justify-content:center;">Send a note instead</a>
+        </div>
+      </div>
+      <div class="intro-session-body">
+        <p>This is the shortest conversation on the list, and often the most useful. You bring your current strategic direction — a pivot hypothesis, a pricing change, a new segment you're chasing, a board expectation you're not sure you can meet. We talk through it directly.</p>
+        <p>There's no prep required. No deck to send in advance. The goal is a direct, outside read on your current thinking from someone who has navigated the same territory from the inside. Not a sounding board. An honest conversation.</p>
+        <p><strong>This session works best when you already have a direction and want to pressure-test it before committing resources</strong> — or when you're sitting on a nagging doubt about something the organization has already agreed on. Both are worth 30 minutes.</p>
+        <div class="intro-session-deliverable">
+          <span class="isd-lbl">You Leave With</span>
+          <div class="isd-val">An honest outside read on where your strategy is solid, where it's exposed, and — if anything stands out — a direct observation about what might deserve a second look before you move forward.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Session 2: Sacred Cow Naming (featured) -->
+<div class="intro-session-block alt">
+  <div class="container">
+    <div class="intro-session-inner">
+      <div>
+        <div class="intro-session-num">02</div>
+        <span class="intro-flag featured">Most Requested</span>
+        <div class="intro-session-name">Sacred Cow Naming Session</div>
+        <span class="intro-session-time" style="color:var(--orange);">90 Minutes — Free</span>
+        <p style="font-size:.875rem;color:var(--mid);line-height:1.7;font-weight:300;margin-bottom:8px;">For companies mid-pivot that are stalling in ways that don't show up cleanly in the numbers.</p>
+        <div class="intro-session-ctas">
+          <a href="CALENDLY_LINK_HERE" target="_blank" class="btn-orange" style="justify-content:center;">Book the Session <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="mailto:bstahlhammer@gmail.com?subject=Sacred Cow Naming Session" class="btn-wht" style="justify-content:center;">Send a note instead</a>
+        </div>
+      </div>
+      <div class="intro-session-body">
+        <p>Every company at the middle of a pivot has one. Sometimes it's a legacy product the sales team refuses to stop selling because it's how they've always made quota. Sometimes it's an architecture decision made six years ago that the entire roadmap is quietly working around. Sometimes it's a founding assumption about who the customer is that leadership hasn't revisited since the market shifted.</p>
+        <p>Whatever it is, the organization knows it's there. They just haven't been able to name it out loud — because naming it means dealing with it, and dealing with it is complicated. This session does the naming.</p>
+        <p><strong>We work through the current state of your business, your pivot plan, and the specific places where execution keeps slipping.</strong> From there I identify the specific legacy products, entrenched processes, and long-held assumptions that are most actively working against your new direction — and rank them by organizational cost.</p>
+        <p>This is the most common starting point for companies that end up working with me on a longer engagement. Not because it's designed to lead there, but because once the sacred cow is visible, the next question is usually: okay, so what do we actually do about it?</p>
+        <div class="intro-session-deliverable" style="border-left:3px solid var(--orange);background:var(--orange-light);">
+          <span class="isd-lbl" style="color:var(--orange);">You Leave With</span>
+          <div class="isd-val">A short written list of the specific sacred cows blocking your transition, ranked by the organizational cost of continuing to protect them — with enough clarity to take the list into a leadership conversation.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Session 3: 5-KPI Transformation Scorecard -->
+<div class="intro-session-block">
+  <div class="container">
+    <div class="intro-session-inner">
+      <div>
+        <div class="intro-session-num">03</div>
+        <span class="intro-flag">Structured Session</span>
+        <div class="intro-session-name">5-KPI Transformation Scorecard</div>
+        <span class="intro-session-time">90 Minutes — Free</span>
+        <p style="font-size:.875rem;color:var(--mid);line-height:1.7;font-weight:300;margin-bottom:8px;">For leadership teams measuring the wrong things and wondering why the numbers look fine but progress feels stuck.</p>
+        <div class="intro-session-ctas">
+          <a href="CALENDLY_LINK_HERE" target="_blank" class="btn-teal" style="justify-content:center;">Book the Session <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="mailto:bstahlhammer@gmail.com?subject=5-KPI Transformation Scorecard" class="btn-wht" style="justify-content:center;">Send a note instead</a>
+        </div>
+      </div>
+      <div class="intro-session-body">
+        <p>Most PE-backed teams executing a pivot are measuring the old business while trying to build a new one. Revenue retention, gross margin, NRR — these are real metrics, but they tell you whether the existing model is holding, not whether the transformation is working. A business can look healthy right up until the moment it isn't.</p>
+        <p>This session builds five KPIs that actually reflect transformation progress — leading indicators, not lagging ones. We start from where your business is today: the pivot hypothesis, the current revenue mix, the new motion you're trying to build, and where the organization's energy is actually going. From there we construct a scorecard that's honest about what stage of the transition you're actually in.</p>
+        <p><strong>The goal isn't a dashboard.</strong> It's a short list of numbers that tell a clear story about whether the transformation is gaining ground — that you can put in front of a board or a PE sponsor without spending 20 minutes explaining why the headline metrics don't show what's really happening.</p>
+        <div class="intro-session-deliverable">
+          <span class="isd-lbl">You Leave With</span>
+          <div class="isd-val">A scored, written set of five transformation KPIs with leading indicators and the current baseline for each — ready to be tracked, reported, or taken into a board conversation.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Session 4: Legacy Asset Leverage Audit -->
+<div class="intro-session-block alt">
+  <div class="container">
+    <div class="intro-session-inner">
+      <div>
+        <div class="intro-session-num">04</div>
+        <span class="intro-flag">Deep Dive</span>
+        <div class="intro-session-name">Legacy Asset Leverage Audit</div>
+        <span class="intro-session-time">2 Hours — Free</span>
+        <p style="font-size:.875rem;color:var(--mid);line-height:1.7;font-weight:300;margin-bottom:8px;">For hardware-to-SaaS operators who keep describing their legacy business as a problem to escape, not an asset to exploit.</p>
+        <div class="intro-session-ctas">
+          <a href="CALENDLY_LINK_HERE" target="_blank" class="btn-teal" style="justify-content:center;">Book the Session <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="mailto:bstahlhammer@gmail.com?subject=Legacy Asset Leverage Audit" class="btn-wht" style="justify-content:center;">Send a note instead</a>
+        </div>
+      </div>
+      <div class="intro-session-body">
+        <p>The most common thing I hear from operators mid-pivot: "We're trying to move away from the hardware business." I understand why they say it. The hardware business is the constraint. It's the thing that makes the financial model complicated, the customer conversations messy, and the investor narrative hard to tell cleanly.</p>
+        <p>But it's usually also the thing that's been building trust with a specific customer segment for 10, 20, or 30 years. That trust — that field presence, that proprietary operational data, that brand recognition in a niche vertical — is a real competitive advantage that most SaaS-native competitors simply can't replicate. Most pivot plans treat it as a liability. That's a mistake.</p>
+        <p><strong>This session maps the legacy assets that actually transfer to the new model</strong>: the customer relationships that can anchor SaaS expansion, the institutional knowledge that can power a differentiated data layer, the channel coverage that would cost a new entrant years to build. We work through each one and build a concrete suggestion for how it can pull the new model forward rather than hold it back.</p>
+        <div class="intro-session-deliverable">
+          <span class="isd-lbl">You Leave With</span>
+          <div class="isd-val">A written inventory of your three to five highest-leverage legacy assets — with a concrete, specific suggestion for how each one can accelerate the new model rather than complicate it.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA section -->
+<div class="intro-cta-section">
+  <div class="container">
+    <div class="prog-cta-inner">
+      <span class="prog-cta-kicker">Ready to start?</span>
+      <h2 class="prog-cta-head">Pick the session that fits<br/>where you are <em>right now.</em></h2>
+      <p class="prog-cta-sub" style="color:var(--diag);">No agenda required. No prep expected. Just a direct conversation with someone who has been here before.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
+        <a href="CALENDLY_LINK_HERE" target="_blank" class="btn-teal">Book a Session <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="mailto:bstahlhammer@gmail.com?subject=Intro Session Inquiry" class="btn-wht">Send Brian a note</a>
+        <a onclick="showPage('diagnostic')" class="btn-teal" style="background:transparent;border:1.5px solid rgba(255,255,255,.25);color:rgba(255,255,255,.7);" onmouseover="this.style.borderColor='rgba(255,255,255,.6)';this.style.color='#fff'" onmouseout="this.style.borderColor='rgba(255,255,255,.25)';this.style.color='rgba(255,255,255,.7)'">Ready for the Full Diagnostic?</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="ft-inner">
+      <a class="ft-logo" onclick="showPage('main')" style="cursor:pointer;"><img src="/FPS_Logo.png" alt="Forge Product Strategy" /></a>
+      <ul class="ft-nav">
+        <li><a onclick="showPage('main');scrollToSection('#about')">About</a></li>
+        <li><a onclick="showPage('main');scrollToSection('#services')">Services</a></li>
+        <li><a onclick="showPage('intro')" style="color:rgba(46,109,164,.8)">Free Sessions</a></li>
+        <li><a onclick="showPage('diagnostic')" style="color:rgba(14,158,138,.7)">The Transition Diagnostic</a></li>
+        <li><a onclick="showPage('audit')" style="color:rgba(255,95,14,.7)">The Transition Audit</a></li>
+        <li><a onclick="showPage('main');scrollToSection('#contact')">Contact</a></li>
+      </ul>
+      <div class="ft-right"><p class="ft-copy">© 2026 Forge Product Strategy. All rights reserved.<br/>Boulder, Colorado.</p></div>
+    </div>
+    <hr class="ft-hr" />
+    <p class="ft-tag">Strategy forged from experience.</p>
+  </div>
+</footer>
+</div><!-- end intro-page -->
+
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 emailjs.init("XN59403PvG9TAz-Wp");
@@ -1523,6 +1862,7 @@ function showPage(page) {
   document.getElementById('main-page').classList.toggle('active', page === 'main');
   document.getElementById('diagnostic-page').classList.toggle('active', page === 'diagnostic');
   document.getElementById('audit-page').classList.toggle('active', page === 'audit');
+  document.getElementById('intro-page').classList.toggle('active', page === 'intro');
   window.scrollTo({ top: 0, behavior: 'smooth' });
   if (page === 'audit') {
     setTimeout(() => {
