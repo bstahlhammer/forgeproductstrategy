@@ -542,6 +542,548 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   .cs-num { display: none; }
   .prog-section { padding: 56px 0; }
 }
+
+/* ===== NOTES FROM THE FIELD: homepage lead block ===== */
+#fps-lead { background: var(--bg); padding: calc(var(--nh) + 72px) 0 72px; border-bottom: 1px solid var(--rule); }
+#fps-lead + #hero { padding-top: 72px; }
+#fps-lead .sec-title { max-width: 18ch; margin-bottom: 24px; }
+.fps-lead-p { font-size: 1.05rem; color: var(--mid); line-height: 1.75; font-weight: 300; max-width: 620px; margin-bottom: 36px; }
+.fps-lead-rule { font-family: 'DM Serif Display', serif; font-size: clamp(1.3rem, 2.6vw, 1.7rem); font-weight: 400; line-height: 1.3; letter-spacing: -.02em; color: var(--black); border-top: 2px solid var(--black); border-bottom: 2px solid var(--black); padding: 18px 0; margin: 0 0 36px; max-width: 560px; }
+.fps-lead-rule span { display: block; font-family: 'DM Sans', sans-serif; font-size: .68rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--light); margin-bottom: 8px; }
+.fps-lead-meta { font-size: .72rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--light); align-self: center; }
+@media (max-width: 860px) { #fps-lead { padding: calc(var(--nh) + 48px) 0 56px; } }
+
+/* ===== NOTES FROM THE FIELD: article page ===== */
+
+/* ---------------------------------------------------------------
+   Forge Product Strategy / article module
+   Design tokens lifted from forgeproductstrategy.com:
+   DM Serif Display + DM Sans, #f8f7f4 ground, #2e6da4 teal,
+   #ff5f0e orange, 1160px container, 72px section rhythm.
+   All styles scoped to .fps so nothing leaks into the site.
+   Light only, matching the rest of the site.
+   --------------------------------------------------------------- */
+
+.fps {
+  --ground: var(--bg);
+  --white: #ffffff;
+  --ink: var(--black);
+  --body-ink: var(--mid);
+  --muted: var(--light);
+  --rule: #e2e2e2;
+  --teal: var(--diag);
+  --teal-tint: rgba(46, 109, 164, 0.08);
+  --orange: #ff5f0e;
+  --orange-tint: rgba(255, 95, 14, 0.08);
+
+  --z-compound: #1e4d2b;
+  --z-compound-bg: rgba(30, 77, 43, 0.07);
+  --z-meter: #2e6da4;
+  --z-meter-bg: rgba(46, 109, 164, 0.08);
+  --z-pace: #4e2a84;
+  --z-pace-bg: rgba(78, 42, 132, 0.07);
+  --z-trap: #8c1515;
+  --z-trap-bg: rgba(140, 21, 21, 0.06);
+
+  --display: "DM Serif Display", Georgia, "Times New Roman", serif;
+  --body: "DM Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+
+  color-scheme: light;
+  background: var(--ground);
+  color: var(--body-ink);
+  font-family: var(--body);
+  font-size: 16.8px;
+  font-weight: 300;
+  line-height: 1.75;
+  padding-block: calc(var(--nh) + 56px) 96px;
+  padding-left: max(24px, env(safe-area-inset-left, 0px));
+  padding-right: max(24px, env(safe-area-inset-right, 0px));
+  -webkit-font-smoothing: antialiased;
+}
+
+.fps *,
+.fps *::before,
+.fps *::after { box-sizing: border-box; }
+
+.fps .col { max-width: 42rem; margin-inline: auto; }
+.fps .wide { max-width: 1160px; margin-inline: auto; }
+
+.fps p { margin: 0 0 1.35em; max-width: 40rem; }
+.fps p:last-child { margin-bottom: 0; }
+
+.fps h1, .fps h2, .fps h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  margin: 0;
+}
+.fps h1 { font-size: clamp(2.1rem, 5.4vw, 3.15rem); line-height: 1.1; }
+.fps h2 {
+  font-size: clamp(1.5rem, 3vw, 1.95rem);
+  line-height: 1.15;
+  margin: 3.4rem 0 1.1rem;
+}
+.fps h3 { font-size: 1.28rem; line-height: 1.25; }
+
+.fps .eyebrow {
+  font-family: var(--body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  text-align: right;
+  margin: 0 0 1.3rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+.fps .kicker {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.6vw, 1.3rem);
+  color: var(--muted);
+  margin: 0 0 0.5rem;
+}
+.fps .standfirst {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--body-ink);
+  margin: 1.5rem 0 0;
+  max-width: 36rem;
+}
+.fps header { margin-bottom: 2.8rem; }
+.fps .byline {
+  font-family: var(--body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 1.9rem 0 0;
+  padding-top: 1.3rem;
+  border-top: 1px solid var(--rule);
+}
+
+.fps a { color: var(--orange); font-weight: 500; text-decoration: none; }
+.fps a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.fps strong { font-weight: 600; color: var(--ink); }
+
+.fps .pull {
+  border-left: 3px solid var(--orange);
+  padding: 0.15rem 0 0.15rem 1.3rem;
+  margin: 2.2rem 0;
+  font-family: var(--display);
+  font-size: 1.32rem;
+  line-height: 1.45;
+  color: var(--ink);
+  max-width: 36rem;
+}
+.fps .pull cite {
+  display: block;
+  font-family: var(--body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.75rem;
+}
+
+.fps .rule-line {
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 3.2vw, 1.85rem);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  padding: 1.1rem 0;
+  margin: 2.6rem 0;
+  max-width: 36rem;
+}
+
+/* ----- payoff ----- */
+.fps .payoff {
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  padding: 1.1rem 0 1.3rem;
+  margin: 0 0 2.8rem;
+  max-width: 40rem;
+}
+.fps .payoff h2 {
+  font-family: var(--body);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+  margin: 0 0 0.8rem;
+}
+.fps .payoff ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
+.fps .payoff li {
+  position: relative;
+  padding-left: 1.4rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+.fps .payoff li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.75em;
+  width: 0.7rem;
+  height: 2px;
+  background: var(--orange);
+}
+
+/* ----- module shell ----- */
+.fps .mod {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 2rem;
+  margin: 3rem auto;
+}
+.fps .mod-label {
+  font-family: var(--body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.6rem;
+}
+.fps .mod h3 { margin-bottom: 1rem; }
+.fps .mod > p { font-size: 0.95rem; }
+
+.fps button {
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: var(--ink);
+  border: 0;
+  border-radius: 3px;
+  padding: 15px 34px;
+  cursor: pointer;
+}
+.fps button:hover { background: var(--teal); }
+.fps :focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+
+/* ----- form bits ----- */
+.fps .qgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.6rem;
+  margin-top: 1.4rem;
+}
+.fps .field > label,
+.fps .field legend {
+  display: block;
+  font-family: var(--body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.55rem;
+  padding: 0;
+}
+.fps fieldset { border: 0; margin: 0; padding: 0; }
+.fps input[type="text"],
+.fps textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  font-family: var(--body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--ground);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 0.6rem 0.75rem;
+}
+.fps textarea {
+  resize: vertical;
+  min-height: 3.4rem;
+  overflow: hidden;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+.fps .field-wide { grid-column: 1 / -1; }
+.fps .opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+  color: var(--body-ink);
+  margin-bottom: 0.55rem;
+  cursor: pointer;
+  line-height: 1.5;
+}
+.fps .opt input { accent-color: var(--teal); margin: 0.35rem 0 0; flex: none; }
+.fps .opt small { display: block; color: var(--muted); font-size: 0.8rem; }
+
+/* ----- verdict ----- */
+.fps .verdict {
+  margin-top: 1.7rem;
+  background: var(--vbg, var(--ground));
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--vc, var(--rule));
+  border-radius: 3px;
+  padding: 1.3rem 1.4rem;
+}
+.fps .verdict-zone {
+  font-family: var(--body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--vc, var(--teal));
+  margin: 0 0 0.4rem;
+}
+.fps .verdict-task {
+  font-family: var(--body);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: var(--muted);
+  margin: 0 0 0.55rem;
+  overflow-wrap: break-word;
+}
+.fps .verdict-head {
+  font-family: var(--display);
+  font-size: 1.42rem;
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.7rem;
+  color: var(--ink);
+  max-width: 34rem;
+}
+.fps .verdict p { font-size: 0.94rem; color: var(--body-ink); margin: 0 0 1rem; }
+.fps .verdict p:last-child { margin-bottom: 0; }
+.fps .handoff {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+  margin-top: 0.2rem;
+}
+.fps .hand h4 {
+  font-family: var(--body);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.35rem;
+}
+.fps .hand p { font-size: 0.89rem; margin: 0; color: var(--ink); }
+
+/* ----- the grid ----- */
+.fps .mx {
+  display: grid;
+  grid-template-columns: 9rem 1fr 1fr;
+  gap: 0.6rem;
+  margin: 1.6rem 0 0;
+}
+.fps .mx-colhead, .fps .mx-rowhead {
+  font-family: var(--body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  align-self: end;
+  padding-bottom: 0.3rem;
+  line-height: 1.4;
+}
+.fps .mx-rowhead { align-self: center; text-align: right; padding: 0 0.6rem 0 0; }
+.fps .quad {
+  background: var(--ground);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--qc, var(--rule));
+  border-radius: 3px;
+  padding: 1rem 1rem 1.15rem;
+}
+.fps .quad[data-zone="compound"] { --qc: var(--z-compound); }
+.fps .quad[data-zone="pace"]     { --qc: var(--z-pace); }
+.fps .quad[data-zone="meter"]    { --qc: var(--z-meter); }
+.fps .quad[data-zone="trap"]     { --qc: var(--z-trap); background: var(--z-trap-bg); border-top-width: 5px; }
+
+.fps .quad-title {
+  font-family: var(--display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  color: var(--qc);
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+.fps .quad-title:hover { text-decoration: underline; background: none; }
+.fps .quad-axis {
+  font-family: var(--body);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0.25rem 0 0.8rem;
+}
+.fps .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.fps .chip {
+  font-family: var(--body);
+  font-size: 0.79rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  line-height: 1.4;
+  text-align: left;
+}
+.fps .chip:hover { border-color: var(--qc); background: var(--white); }
+.fps .chip[aria-pressed="true"] { background: var(--qc); border-color: var(--qc); color: #ffffff; }
+
+.fps .detail {
+  margin-top: 1.3rem;
+  background: var(--ground);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--dc, var(--teal));
+  border-radius: 3px;
+  padding: 1.15rem 1.25rem;
+}
+.fps .detail-zone {
+  font-family: var(--body);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--dc, var(--teal));
+  margin: 0 0 0.4rem;
+}
+.fps .detail-name {
+  font-family: var(--display);
+  font-size: 1.18rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+}
+.fps .detail p { margin: 0; font-size: 0.93rem; color: var(--body-ink); }
+.fps .mx-hint { font-size: 0.85rem; color: var(--muted); margin: 0.35rem 0 0; }
+.fps .mx-note {
+  font-family: var(--body);
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 1rem 0 0;
+  max-width: none;
+}
+
+@media (max-width: 760px) {
+  .fps .mx { grid-template-columns: 1fr; }
+  .fps .mx-corner, .fps .mx-colhead, .fps .mx-rowhead { display: none; }
+}
+
+/* ----- review questions ----- */
+.fps .ask { counter-reset: q; list-style: none; padding: 0; margin: 1.3rem 0 0; }
+.fps .ask li {
+  position: relative;
+  padding-left: 2.4rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--ink);
+}
+.fps .ask li::before {
+  counter-increment: q;
+  content: counter(q);
+  position: absolute;
+  left: 0; top: 0.1rem;
+  font-family: var(--body);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--orange);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  width: 1.7rem; height: 1.7rem;
+  display: grid; place-items: center;
+}
+.fps .copy-row { display: flex; align-items: center; gap: 1rem; margin-top: 1.4rem; flex-wrap: wrap; }
+.fps .copy-note {
+  font-family: var(--body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ----- close ----- */
+.fps .close { margin: 3.4rem 0 0; padding: 1.8rem 0 0; border-top: 2px solid var(--ink); }
+.fps .close p { font-family: var(--display); font-size: 1.42rem; line-height: 1.4; color: var(--ink); }
+.fps .cta {
+  background: var(--ink);
+  border-radius: 3px;
+  padding: 2.2rem 2rem;
+  margin-top: 2.4rem;
+}
+.fps .cta p { font-size: 1rem; color: rgba(255,255,255,0.85); margin-bottom: 1.4rem; max-width: 34rem; }
+.fps .cta a.btn {
+  display: inline-block;
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: var(--orange);
+  border-radius: 3px;
+  padding: 15px 34px;
+  text-decoration: none;
+}
+.fps .cta a.btn:hover { filter: brightness(1.08); text-decoration: none; }
+
+.fps .sources {
+  margin-top: 3.4rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.fps .sources h2 {
+  font-family: var(--body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.8rem;
+}
+.fps .sources ul { list-style: none; padding: 0; margin: 0; }
+.fps .sources li { margin-bottom: 0.5rem; line-height: 1.6; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fps * { transition: none !important; animation: none !important; }
+}
+
 </style>
 
 <script>
@@ -607,6 +1149,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <li><a onclick="showPage('intro')" style="color:var(--diag);font-weight:600;">Free Sessions</a></li>
         <li><a onclick="showPage('main');scrollToSection('#case-studies')">Work</a></li>
         <li><a href="https://tools.forgeproductstrategy.com" target="_blank" style="color:var(--orange);font-weight:600;">Forge Intelligence Tools</a></li>
+        <li><a onclick="showPage('notes')">Notes</a></li>
         <li><a onclick="showPage('main');scrollToSection('#contact')" class="btn-nav">Book a Call</a></li>
       </ul>
       <button class="nav-hbg" id="hbg" aria-label="Toggle menu">
@@ -622,6 +1165,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   <a onclick="showPage('intro');closeMob()" style="color:var(--diag);font-weight:600;">Free Sessions</a>
   <a onclick="showPage('main');scrollToSection('#case-studies');closeMob()">Work</a>
   <a href="https://tools.forgeproductstrategy.com" target="_blank" style="color:var(--orange);font-weight:600;">Forge Intelligence Tools</a>
+  <a onclick="showPage('notes');closeMob()">Notes from the Field</a>
   <a onclick="showPage('main');scrollToSection('#contact');closeMob()" class="btn-nav">Book a Call</a>
 </div>
 
@@ -629,6 +1173,20 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 <!-- MAIN PAGE -->
 <!-- ============================================================ -->
 <div id="main-page" class="page active">
+
+<section id="fps-lead">
+  <div class="container">
+    <span class="sec-kicker">Notes from the Field</span>
+    <h2 class="sec-title">Building products for humans <em>still requires humans.</em></h2>
+    <p class="fps-lead-p">Your team is right to use AI for prototypes, competitive analysis, and faster development. Most teams should push it harder than they do. It will still never do the part of the job that decides whether a product works, and the only question worth arguing about now is which activities sit on which side of that line.</p>
+    <p class="fps-lead-rule"><span>The rule</span>Agent autonomy is capped by outcome verifiability.</p>
+    <div class="hero-ctas" style="margin-bottom:0;">
+      <a onclick="showPage('notes')" class="btn-orange">Read the framework <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a onclick="showPage('main');scrollToSection('#contact')" class="btn-blk">Book a call <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <span class="fps-lead-meta">5 min read &middot; Includes a test you can run today</span>
+    </div>
+  </div>
+</section>
 
 <section id="hero">
   <div class="container">
@@ -1671,6 +2229,285 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 <!-- ============================================================ -->
 <!-- INTRO SESSIONS PAGE -->
 <!-- ============================================================ -->
+<div id="notes-page" class="page">
+<div class="fps">
+
+  <header class="col">
+    <p class="eyebrow">Notes from the field</p>
+    <p class="kicker">Does this sound familiar?</p>
+    <h1>Your delivery velocity is accelerating. Your users' problems are not getting solved.</h1>
+    <p class="standfirst">I keep hearing and reading the same thing across AI-assisted product work: we are shipping the wrong things faster. Shipping a capability and a user realizing a benefit are two separate events, and agents only accelerated the first.</p>
+    <p class="byline">Brian Stahlhammer &nbsp;·&nbsp; Boulder, CO &nbsp;·&nbsp; 5 min read</p>
+  </header>
+
+  <div class="col">
+    <div class="payoff">
+      <h2>In this post, I give you:</h2>
+      <ul>
+        <li>A two question test that sorts any piece of work on your roadmap into what an agent can own and what stays with your people.</li>
+        <li>The reason new products fail that test by default, and the one metric that gets them out.</li>
+        <li>Three questions to take into your next product review, and the one sentence that gives your PMs cover to push back.</li>
+      </ul>
+    </div>
+
+    <p>Every good product team I know is already using AI to prototype concepts, run competitive analysis, and compress development cycles. That capability is real, and most of you should be pushing it harder than you are. It will still never do the part of this job that decides whether a product works, because building products for humans requires humans, and the only question worth arguing about now is which activities sit on which side of that line.</p>
+
+    <h2>Give the tools their due first</h2>
+
+    <p>The boundary only means something if you are honest about how far out it sits.</p>
+
+    <p>An agent will build a working prototype from a description in an afternoon. It will read every competitor release note from the last two years and tell you what changed. It will turn a pile of interview transcripts into themes faster than your best analyst. It will write production code against a clear spec, run the tests, and fix what it broke.</p>
+
+    <p>Every one of those has the same property. You can check the answer. The prototype runs or it does not. The competitor shipped the feature or they did not. The tests pass or they fail.</p>
+
+    <p>That property is the whole story.</p>
+
+    <h2>Where it stops</h2>
+
+    <p>Does the operator trust the alarm at 2am, or wait for the phone call she actually believes? Does the field tech stop calling support? Does the buyer understand what she just signed? Will anyone change how they work because of what you shipped?</p>
+
+    <p>Nothing checks those answers. No test, no dashboard, no agent. A person has to use the thing, or watch somebody use it, and then decide.</p>
+
+    <p>I spent twenty years shipping to exactly those users. Operators on an alarm panel. Technicians up a tower in weather. Passengers at 35,000 feet with one shot at connecting before they give up. You do not learn whether that software worked by querying it. You learn by watching a face.</p>
+
+    <p>An agent cannot tell the two categories apart. Point one at either and it returns something that looks finished.</p>
+
+    <div class="rule-line">Agent autonomy is capped by outcome verifiability.</div>
+
+    <p>How an outcome gets judged is a property of the work. You do not get a vote. How much the agent owns is your decision, every sprint. Let the second outrun the first and you have bought speed with no way to know it helped.</p>
+  </div>
+
+  <!-- ============ MODULE 1: the diagnostic ============ -->
+  <section class="mod wide" aria-labelledby="dx-h">
+    <p class="mod-label">Try it on your own work</p>
+    <h3 id="dx-h">Two questions set the ceiling</h3>
+    <p>Take something your team is building right now. In under a minute you will know how much of it you can safely hand an agent, and what has to stay with a person. Only the second question is yours to decide.</p>
+
+    <div class="qgrid">
+      <div class="field field-wide">
+        <label for="taskName">The work</label>
+        <textarea id="taskName" rows="2" autocomplete="off" spellcheck="false">Redesigned alert workflow for field operators</textarea>
+      </div>
+
+      <fieldset class="field">
+        <legend>How will you know your user got the benefit?</legend>
+        <label class="opt">
+          <input type="radio" name="outcome" value="inst" id="outInst">
+          <span>A number moves and we see it within days
+          <small>Conversion, latency, ticket volume, activation</small></span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="outcome" value="judg" id="outJudg" checked>
+          <span>A person has to use it, watch a user, or hear from a customer
+          <small>Trust, comprehension, whether the workaround stops. New products almost always land here.</small></span>
+        </label>
+      </fieldset>
+
+      <fieldset class="field">
+        <legend>How much does the agent own?</legend>
+        <label class="opt">
+          <input type="radio" name="agent" value="assist" id="agAssist">
+          <span>It assists, a person is in the loop on each step
+          <small>Drafts, scaffolding, variants, a human decides</small></span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="agent" value="exec" id="agExec" checked>
+          <span>It executes end to end, a person reviews the output
+          <small>Ticket in, pull request out</small></span>
+        </label>
+      </fieldset>
+    </div>
+
+    <div class="verdict" id="verdict" aria-live="polite">
+      <p class="verdict-zone" id="vZone">Velocity trap</p>
+      <p class="verdict-task" id="vTask">Redesigned alert workflow for field operators</p>
+      <h4 class="verdict-head" id="vHead">This one ships on time and solves nothing.</h4>
+      <p id="vBody"></p>
+      <div class="handoff">
+        <div class="hand">
+          <h4>What the agent gets</h4>
+          <p id="vAgent"></p>
+        </div>
+        <div class="hand">
+          <h4>What stays with a human</h4>
+          <p id="vHuman"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MODULE 2: the grid ============ -->
+  <section class="mod wide" aria-labelledby="mx-h">
+    <p class="mod-label">The grid</p>
+    <h3 id="mx-h">Find your roadmap in here</h3>
+    <p>Twenty-four pieces of real product work, already placed. Anything sitting in the bottom right corner is shipping on time and solving nothing, and no dashboard will tell you for another two quarters.</p>
+    <p class="mx-hint">Click an item for why it sits there. Click a zone name for the move a leader should make.</p>
+
+    <div class="mx" id="mx">
+      <div class="mx-corner"></div>
+      <div class="mx-colhead">Outcome is instrumented</div>
+      <div class="mx-colhead">Outcome is judged</div>
+
+      <div class="mx-rowhead">Agent assists,<br>human in the loop</div>
+      <div class="quad" data-zone="compound">
+        <button type="button" class="quad-title" data-zonekey="compound">Compound</button>
+        <p class="quad-axis">instrumented · agent assists</p>
+        <div class="chips" data-chips="compound"></div>
+      </div>
+      <div class="quad" data-zone="pace">
+        <button type="button" class="quad-title" data-zonekey="pace">Pace it</button>
+        <p class="quad-axis">judged · agent assists</p>
+        <div class="chips" data-chips="pace"></div>
+      </div>
+
+      <div class="mx-rowhead">Agent executes<br>end to end</div>
+      <div class="quad" data-zone="meter">
+        <button type="button" class="quad-title" data-zonekey="meter">Meter it</button>
+        <p class="quad-axis">instrumented · agent executes</p>
+        <div class="chips" data-chips="meter"></div>
+      </div>
+      <div class="quad" data-zone="trap">
+        <button type="button" class="quad-title" data-zonekey="trap">Velocity trap</button>
+        <p class="quad-axis">judged · agent executes</p>
+        <div class="chips" data-chips="trap"></div>
+      </div>
+    </div>
+
+    <p class="mx-note">Moving down the grid is a choice. Moving right is not. The bottom right corner is the only one that produces a green dashboard and an unsolved problem at the same time.</p>
+
+    <div class="detail" id="detail" aria-live="polite">
+      <p class="detail-zone" id="detailZone">Velocity trap</p>
+      <p class="detail-name" id="detailName">A core workflow redesigned straight from a ticket</p>
+      <p id="detailBody">Nobody on the team has watched the current workflow being used, so the agent optimizes the description of the problem instead of the problem. It will look finished and it will ship.</p>
+    </div>
+  </section>
+
+  <div class="col">
+    <h2>New products fall into the trap by default</h2>
+
+    <p>Everything above assumes you have instruments. On an existing product you usually do: a funnel, a baseline, telemetry, a support queue with history.</p>
+
+    <p>Start something new and none of that exists.</p>
+
+    <p>No baseline. No cohort. No trend to break. The first real usage data lands months after the decisions that matter. Every outcome that counts is a judged outcome, which drops the entire effort into the right column of that grid before anyone writes a line of code.</p>
+
+    <p>Now add agents. Velocity feels free, because nothing can contradict you yet.</p>
+
+    <div class="pull">
+      AI has made it cheap to ship products fast. It hasn't made it easier to ship products that matter.
+      <cite>Dave Scott, Product at a Distance</cite>
+    </div>
+
+    <p>That is where most AI-accelerated work goes wrong. Not incremental features. New bets, built fast, judged by nothing until launch.</p>
+
+    <h2>Customer Benefit Metrics move the work</h2>
+
+    <p>Dave Scott's fix is a Customer Benefit Metric, and it is the sharpest tool I have found for this problem.</p>
+
+    <p>A CBM measures the benefit your customer receives. Not the benefit to your company. It is the only instrument I know of that sits on the adoption side of the release.</p>
+
+    <p>Revenue, attach rate and NPS are business metrics. MAU, traffic and funnel dropout are usage metrics. Both are real and both look backward. Scott calls them the rear-view mirror. A CBM is the windshield.</p>
+
+    <p>For Amazon, NPS is not a CBM. DAU is not a CBM. Dollars saved per order is.</p>
+
+    <p>Retention is not one either, which is what trips up teams who assume outcomes over outputs already covers this. Retention tells you somebody stayed. It never tells you what they got.</p>
+
+    <p>Write one before you build and a judged outcome becomes a measurable one. The alarm workflow stops being "operators should trust it" and becomes time from alarm to action, or the share of alarms acted on without a confirming phone call. Now the agent has something to build against and the reviewer has something to check.</p>
+
+    <p>That is the move. Not less velocity. A better definition of done.</p>
+
+    <h2>What you hand over, and what you do not</h2>
+
+    <p>Most AI guidance lists approved tools. That is the easy half.</p>
+
+    <p>Before an agent touches the work, produce two things.</p>
+
+    <p>The agent gets a definition of done a machine can check, anchored on the CBM rather than on the ticket. Tests, contracts, the benefit metric, the guardrails. If you cannot write it, the work is not ready to delegate. Pointing an agent at a paragraph of intent is a wish with a deadline.</p>
+
+    <p>The human keeps the judgment no test replaces, with a name and a date on it. Not "we will validate with users." A person, a week, and what she will look at.</p>
+
+    <p>Scott puts that on the calendar as a toll booth: a standing weekly review aimed at opportunity definition and concept work, not sprint demos. If your only recurring product review is a sprint demo, the judged outcomes never get judged.</p>
+
+    <h2>Your team will not draw this line for you</h2>
+
+    <p>Two things have to happen for a team to hold the line on its own. Neither will.</p>
+
+    <p>Someone has to notice when work crossed it. They will not. In a randomized trial, experienced developers using AI finished 19% slower and then estimated they had gone 20% faster. Thirty-nine points of error, from the people closest to the work. Microsoft's research names the mechanism: the more someone trusts an AI output, the less they scrutinize it. Your strongest engineers are the least reliable narrators you have on this.</p>
+
+    <p>Then someone has to say it out loud. Most companies are already broken here.</p>
+
+    <p>Three years from a senior engineer's chair: layoffs, two reorgs, a roadmap rewritten twice after she was told it was locked. Then leadership walks in with an AI mandate and asks for enthusiasm.</p>
+
+    <p>She complies. Of course she complies.</p>
+
+    <div class="pull">
+      When you strip people of the ability to question, to learn at their own pace, to experiment with tools on their own terms, you strip them of agency.
+      <cite>John Cutler, The Beautiful Mess, June 2026</cite>
+    </div>
+
+    <p>Compliance and adoption produce identical slides. Underneath they are opposites. Adoption means your team tells you where the tool hurts. Compliance means they use it there anyway, because usage is what you measure.</p>
+
+    <p>So a product manager holding a judged outcome and an autonomous agent has a choice. Say the quiet part, that you can hit the date or know whether it worked but not both. Or ship it and move on.</p>
+
+    <p>Guess which one she picks when the mandate came from her skip level.</p>
+
+    <p>Read skepticism as signal, not as a mindset problem. When an engineer says the output is not good enough for this particular work, that is information about the work. Most organizations have trained the reflex to hear it as information about the engineer.</p>
+
+    <p>DORA surveyed nearly 5,000 practitioners last year and found AI adoption tracks positively with throughput and negatively with delivery stability. AI does not fix a team, it amplifies what is already there. Which is why the line gets written down by you, rather than discovered by them.</p>
+
+    <h2>The rule is really about permission</h2>
+
+    <p>A product manager who says "this outcome is judged, so the agent assists here" is resisting the initiative if nothing is written down. She is executing policy if something is. Same sentence. Different career risk.</p>
+
+    <p>That is the value. Not the grid. The permission.</p>
+
+    <p>Cutler asks leaders to say who benefits from an adoption push. Usually some mix of cost, speed, and a board slide. Your teams already assume it. Saying it out loud costs you nothing.</p>
+
+    <p>This fails when leadership publishes the framework and still asks only about velocity every week. People read the meeting, not the document.</p>
+  </div>
+
+  <!-- ============ MODULE 3: the ask ============ -->
+  <section class="mod wide" aria-labelledby="ask-h">
+    <p class="mod-label">Take this into your next review</p>
+    <h3 id="ask-h">Three questions for your next review</h3>
+    <ol class="ask" id="askList">
+      <li>What benefit is the user supposed to realize, and is that a number or a judgment?</li>
+      <li>If it is a judgment, who is doing the judging and on what date?</li>
+      <li>What did we hand the agent as a definition of done, and could a machine check it?</li>
+    </ol>
+    <div class="copy-row">
+      <button type="button" id="copyBtn">Copy the three questions</button>
+      <span class="copy-note" id="copyNote"></span>
+    </div>
+  </section>
+
+  <div class="col">
+    <div class="close">
+      <p>Stop asking whether your teams use AI enough. They do. Ask what benefit your user is supposed to realize, how you would know they got it, and who is on the calendar to check. If nobody is, you know how this ends.</p>
+    </div>
+
+    <div class="cta">
+      <p>I run this as a working session with product and engineering leadership. We put your roadmap in the grid, find what is sitting in the bottom right corner, and write the ceiling your teams are missing.</p>
+      <a class="btn" href="/book-a-call">Book a call</a>
+    </div>
+
+    <div class="sources">
+      <h2>Sources and further reading</h2>
+      <ul>
+        <li>DORA, <a href="https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report">2025 State of AI-assisted Software Development report</a>, and <a href="https://dora.dev/insights/balancing-ai-tensions/">Balancing AI tensions</a>. Nearly 5,000 respondents.</li>
+        <li>METR, <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">Measuring the impact of early 2025 AI on experienced open source developer productivity</a>, July 2025.</li>
+        <li>Microsoft Research, <a href="https://www.microsoft.com/en-us/research/publication/the-impact-of-generative-ai-on-critical-thinking-self-reported-reductions-in-cognitive-effort-and-confidence-effects-from-a-survey-of-knowledge-workers/">The impact of generative AI on critical thinking</a>, January 2025.</li>
+        <li>Teresa Torres on <a href="https://itx.com/podcast/179-teresa-torres-is-ai-reprioritizing-delivery-over-discovery-again/">Is AI re-prioritizing delivery over discovery (again)</a>, ITX, January 2026.</li>
+        <li>John Cutler, <a href="https://cutlefish.substack.com/p/tbm-425-ai-and-agency">TBM 425: AI and agency</a>, June 2026.</li>
+        <li>Marty Cagan, <a href="https://www.svpg.com/ai-product-management-2-years-in/">AI product management two years in</a>, Silicon Valley Product Group.</li>
+        <li>Dave Scott, <em>Product at a Distance</em>, and the Product House framework. Customer Benefit Metrics and toll booths are his, and the Decide floor is where this article's argument and his framework meet.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</div>
+
 <div id="intro-page" class="page">
 
 <div class="intro-page-hero">
@@ -1863,6 +2700,7 @@ function showPage(page) {
   document.getElementById('diagnostic-page').classList.toggle('active', page === 'diagnostic');
   document.getElementById('audit-page').classList.toggle('active', page === 'audit');
   document.getElementById('intro-page').classList.toggle('active', page === 'intro');
+  document.getElementById('notes-page').classList.toggle('active', page === 'notes');
   window.scrollTo({ top: 0, behavior: 'smooth' });
   if (page === 'audit') {
     setTimeout(() => {
@@ -1943,6 +2781,209 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     btn.disabled = false;
   }
 });
+</script>
+<script>
+
+(function () {
+  var root = document.querySelector('.fps');
+  if (!root) return;
+
+  var ZONES = {
+    compound: {
+      label: 'Compound',
+      axis: 'instrumented outcome · agent assists',
+      head: 'You are leaving speed on the table here.',
+      body: 'The meter catches a bad result within days, so the human in the loop is insurance you are already paying for twice. Give the agent more of this work and watch the number.',
+      agent: 'The metric it is moving, the tests, and enough context to run further without a check-in on every step.',
+      human: 'Watch the metric. Raise the agent’s autonomy next sprint and see whether the number holds.',
+      action: 'Push the agent to own more of this. A human reviewing every step of instrumented work is a cost with no matching risk.'
+    },
+    meter: {
+      label: 'Meter it',
+      axis: 'instrumented outcome · agent executes',
+      head: 'Safe to hand over, on one condition.',
+      body: 'Name the metric before the work starts and confirm it is the outcome rather than a proxy somebody picked because it was easy to query. A proxy metric plus an autonomous agent is how you get a green dashboard and an unhappy customer.',
+      agent: 'The metric, the guardrail metrics it must not degrade, and an automated check that fails the build.',
+      human: 'Approve the metric before work starts. Audit once a quarter for proxy drift.',
+      action: 'Approve the metric up front and audit it quarterly. This zone fails when the number is real and measures the wrong thing.'
+    },
+    pace: {
+      label: 'Pace it',
+      axis: 'judged outcome · agent assists',
+      head: 'The agent does everything around the judgment and never the judgment.',
+      body: 'Research prep, scaffolding, variants to react to, a synthesis draft. All fair. Someone still has to use the thing or watch a real user use it, and that step does not compress.',
+      agent: 'Context, options, drafts. Explicitly not the verdict.',
+      human: 'Name who judges it, what they look at, and the date. A standing toll booth beats a promise to validate later.',
+      action: 'Protect the judgment step on the schedule. It is the first thing cut when the date slips and the last thing anyone remembers cutting.'
+    },
+    trap: {
+      label: 'Velocity trap',
+      axis: 'judged outcome · agent executes',
+      head: 'This one ships on time and solves nothing.',
+      body: 'Nothing in your delivery system can see a qualitative miss, so the work will look finished, the dashboard will stay green, and you will find out from a customer. New products land here by default. Two ways out: define a Customer Benefit Metric before you build, or move the work up a row and accept the slower date.',
+      agent: 'Nothing yet. This work is not ready to delegate.',
+      human: 'Write the CBM. What benefit does the customer receive, and how would you measure it? If nobody can answer that, you are not ready to delegate this.',
+      action: 'Stop and choose. Define the Customer Benefit Metric, or pull the agent back to assisting. Doing neither is the decision most teams make by default.'
+    }
+  };
+
+  var TASKS = [
+    { z:'compound', n:'Checkout funnel experiments', d:'Conversion tells you within days whether the change worked, so the agent can run further than most teams let it.' },
+    { z:'compound', n:'Search relevance tuning', d:'Click-through and refinement rates settle the argument fast. Let the agent propose and measure, you set the bar.' },
+    { z:'compound', n:'Onboarding step completion', d:'Drop-off by step is visible the same week. The only reason to keep a human on every step is habit.' },
+    { z:'compound', n:'API latency work', d:'The profile either improves or it does not. Give the agent the budget and the guardrails.' },
+    { z:'compound', n:'Billing and invoicing logic', d:'High stakes, fully testable. Keep a human close for now, then loosen as the test suite proves itself.' },
+
+    { z:'meter', n:'A new product once its CBM is live', d:'Once you can measure the benefit the customer actually receives, the work moves down a row and the agent can own more of it. This is the whole point of writing one.' },
+    { z:'meter', n:'Dependency upgrades and migrations', d:'The build is the check. Hand it over and spend your review time on the metric, not the diff.' },
+    { z:'meter', n:'Test coverage backfill', d:'Coverage is measurable and the failure mode is visible. Watch for tests written to pass rather than to catch.' },
+    { z:'meter', n:'Internal tooling and scripts', d:'Your own team is the user and will complain immediately. That complaint is your instrument.' },
+    { z:'meter', n:'Performance regressions with a budget', d:'A named budget makes this fully autonomous work. Without the budget it slides into the trap.' },
+    { z:'meter', n:'Data pipeline cleanup', d:'Row counts and schema checks catch the errors. Confirm the checks exist before you delegate.' },
+
+    { z:'pace', n:'First release of a new product line', d:'Define the customer benefit metric first, then let the agent build against it. Skip that step and this drops into the corner below.' },
+    { z:'pace', n:'Alarm and alert design for operators', d:'Whether someone trusts an alarm at 2am is not in any log. A person has to watch a shift.' },
+    { z:'pace', n:'First run experience', d:'Completion rates tell you what happened and never why. Sit with five new users before you call it done.' },
+    { z:'pace', n:'Error and empty states', d:'The agent can draft every variant. Someone still has to read them out loud and decide which one sounds like a person.' },
+    { z:'pace', n:'Pricing page and packaging', d:'Whether a buyer understands what she just agreed to shows up in churn, months late. Test it on real buyers first.' },
+    { z:'pace', n:'Navigation restructure', d:'Usage data after the change cannot tell you about the people who gave up. Watch someone look for something.' },
+    { z:'pace', n:'Trust and safety flows', d:'The cost of being wrong lands on a person, and no metric surfaces it in time.' },
+
+    { z:'trap', n:'A net-new product with no CBM', d:'No baseline, no cohort, no trend to break, and the first usage data arrives months after the decisions that matter. The agent will still hand you something that looks finished.' },
+    { z:'trap', n:'A core workflow redesigned from a ticket', d:'Nobody on the team has watched the current workflow in use, so the agent optimizes the description of the problem instead of the problem. It will look finished and it will ship.' },
+    { z:'trap', n:'Customer-facing copy nobody read aloud', d:'Plausible sentences that no human checked against how a customer actually talks. Reads fine in review, lands badly in the product.' },
+    { z:'trap', n:'A dashboard for a role nobody has observed', d:'Built from an assumption about what that role needs, shipped with usage tracking as the only feedback. Usage will look fine.' },
+    { z:'trap', n:'Accessibility work with no assistive testing', d:'The automated checks pass, and the experience for someone using a screen reader stays broken. This one has legal teeth too.' },
+    { z:'trap', n:'An assistant feature judged on usage counts', d:'People click it once out of curiosity. The counter goes up and tells you nothing about whether it helped anyone.' }
+  ];
+
+  var zoneVar = {
+    compound: ['--z-compound', '--z-compound-bg'],
+    meter:    ['--z-meter', '--z-meter-bg'],
+    pace:     ['--z-pace', '--z-pace-bg'],
+    trap:     ['--z-trap', '--z-trap-bg']
+  };
+
+  /* ---------- module 1: the diagnostic ---------- */
+  var taskName = document.getElementById('taskName');
+  var verdict = document.getElementById('verdict');
+  var vZone = document.getElementById('vZone');
+  var vTask = document.getElementById('vTask');
+  var vHead = document.getElementById('vHead');
+  var vBody = document.getElementById('vBody');
+  var vAgent = document.getElementById('vAgent');
+  var vHuman = document.getElementById('vHuman');
+
+  function placeWork() {
+    var inst = document.getElementById('outInst').checked;
+    var assist = document.getElementById('agAssist').checked;
+    var key = inst ? (assist ? 'compound' : 'meter') : (assist ? 'pace' : 'trap');
+    var z = ZONES[key];
+    var name = taskName.value.trim();
+
+    vZone.textContent = z.label;
+    vTask.textContent = name;
+    vTask.hidden = !name;
+    vHead.textContent = z.head;
+    vBody.textContent = z.body;
+    vAgent.textContent = z.agent;
+    vHuman.textContent = z.human;
+    verdict.style.setProperty('--vc', 'var(' + zoneVar[key][0] + ')');
+    verdict.style.setProperty('--vbg', 'var(' + zoneVar[key][1] + ')');
+  }
+
+  function autoGrow() {
+    taskName.style.height = 'auto';
+    taskName.style.height = (taskName.scrollHeight + 2) + 'px';
+  }
+  taskName.addEventListener('input', autoGrow);
+  window.addEventListener('resize', autoGrow);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(autoGrow); }
+  autoGrow();
+
+  var inputs = root.querySelectorAll('#taskName, input[name="outcome"], input[name="agent"]');
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].addEventListener('input', placeWork);
+    inputs[i].addEventListener('change', placeWork);
+  }
+  placeWork();
+
+  /* ---------- module 2: the grid ---------- */
+  var detailBox = document.getElementById('detail');
+  var detailZone = document.getElementById('detailZone');
+  var detailName = document.getElementById('detailName');
+  var detailBody = document.getElementById('detailBody');
+
+  function paintDetail(key) {
+    detailBox.style.setProperty('--dc', 'var(' + zoneVar[key][0] + ')');
+  }
+  function clearChips() {
+    var on = root.querySelectorAll('.chip[aria-pressed="true"]');
+    for (var i = 0; i < on.length; i++) on[i].setAttribute('aria-pressed', 'false');
+  }
+
+  Object.keys(ZONES).forEach(function (key) {
+    var host = root.querySelector('[data-chips="' + key + '"]');
+    if (!host) return;
+    TASKS.filter(function (t) { return t.z === key; }).forEach(function (t) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'chip';
+      b.textContent = t.n;
+      b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () {
+        clearChips();
+        b.setAttribute('aria-pressed', 'true');
+        detailZone.textContent = ZONES[key].label;
+        detailName.textContent = t.n;
+        detailBody.textContent = t.d;
+        paintDetail(key);
+      });
+      host.appendChild(b);
+    });
+  });
+
+  var titles = root.querySelectorAll('.quad-title');
+  for (var j = 0; j < titles.length; j++) {
+    titles[j].addEventListener('click', function (e) {
+      var key = e.currentTarget.getAttribute('data-zonekey');
+      clearChips();
+      detailZone.textContent = ZONES[key].label;
+      detailName.textContent = ZONES[key].axis;
+      detailBody.textContent = ZONES[key].action;
+      paintDetail(key);
+    });
+  }
+  paintDetail('trap');
+
+  /* ---------- module 3: copy ---------- */
+  var copyBtn = document.getElementById('copyBtn');
+  var copyNote = document.getElementById('copyNote');
+  var askList = document.getElementById('askList');
+
+  copyBtn.addEventListener('click', function () {
+    var items = askList.querySelectorAll('li');
+    var lines = [];
+    for (var k = 0; k < items.length; k++) lines.push((k + 1) + '. ' + items[k].textContent.trim());
+    var text = lines.join('\n');
+    function fallback() {
+      var r = document.createRange();
+      r.selectNodeContents(askList);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(r);
+      copyNote.textContent = 'Selected the text for you. Press copy.';
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () {
+        copyNote.textContent = 'Copied.';
+      }, fallback);
+    } else {
+      fallback();
+    }
+  });
+})();
+
 </script>
 </body>
 </html>
