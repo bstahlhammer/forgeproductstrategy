@@ -1090,6 +1090,141 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   .fps * { transition: none !important; animation: none !important; }
 }
 
+
+/* ----- context, scene and figures (Notes redesign) ----- */
+.fps figure { margin: 0; }
+.fps .fig { max-width: 54rem; margin: 2.8rem auto; }
+.fps .fig figcaption { font-size: 0.82rem; color: var(--muted); line-height: 1.55; margin-top: 1rem; max-width: 40rem; }
+.fps .term {
+  background: var(--teal-tint);
+  border-left: 3px solid var(--teal);
+  border-radius: 0 3px 3px 0;
+  padding: 0.85rem 1.1rem;
+  margin: 0 0 1.35em;
+  max-width: 40rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.fps .term b {
+  display: block;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.2rem;
+}
+
+/* scene: Friday versus two weeks later */
+.fps .scene { display: grid; grid-template-columns: 1fr 3rem 1fr; align-items: stretch; }
+.fps .sc-panel { background: var(--white); border: 1px solid var(--rule); border-radius: 3px; padding: 1.4rem 1.5rem; }
+.fps .sc-good { border-top: 4px solid var(--z-compound); }
+.fps .sc-bad { border-top: 4px solid var(--z-trap); background: var(--z-trap-bg); }
+.fps .sc-when { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin: 0 0 0.9rem; }
+.fps .sc-good .sc-when { color: var(--z-compound); }
+.fps .sc-bad .sc-when { color: var(--z-trap); }
+.fps .sc-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.55rem; }
+.fps .sc-list li { position: relative; padding-left: 1.6rem; color: var(--ink); font-size: 0.98rem; line-height: 1.45; }
+.fps .sc-list li::before {
+  content: "";
+  position: absolute;
+  left: 0.2rem; top: 0.22em;
+  width: 0.38rem; height: 0.72rem;
+  border: solid var(--z-compound);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.fps .sc-big { font-family: var(--display); font-size: clamp(1.5rem, 3vw, 1.95rem); line-height: 1.15; letter-spacing: -0.02em; color: var(--z-trap); margin: 0 0 0.7rem; }
+.fps .sc-bad .sc-text { font-size: 0.98rem; color: var(--ink); margin: 0; }
+.fps .sc-arrow { display: flex; align-items: center; justify-content: center; }
+.fps .sc-arrow::before { content: ""; border: 0.55rem solid transparent; border-left: 0.85rem solid var(--ink); border-right: 0; }
+
+/* figure 1: instrumented versus judged */
+.fps .vs { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.4rem; }
+.fps .vs-col { display: flex; flex-direction: column; }
+.fps .vs-card { border: 1px solid var(--rule); border-radius: 3px; padding: 1.3rem 1.4rem; flex: 1; }
+.fps .vs-inst { background: var(--z-meter-bg); border-top: 4px solid var(--z-meter); }
+.fps .vs-judg { background: var(--orange-tint); border-top: 4px solid var(--orange); }
+.fps .vs-label { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin: 0 0 0.3rem; }
+.fps .vs-inst .vs-label { color: var(--z-meter); }
+.fps .vs-judg .vs-label { color: #b8450a; }
+.fps .vs-title { font-family: var(--display); font-size: 1.3rem; line-height: 1.2; color: var(--ink); margin: 0 0 0.85rem; }
+.fps .vs-list { list-style: none; padding: 0; margin: 0 0 1rem; display: grid; gap: 0.45rem; }
+.fps .vs-list li { position: relative; padding-left: 1.05rem; font-size: 0.94rem; line-height: 1.45; color: var(--ink); }
+.fps .vs-list li::before { content: ""; position: absolute; left: 0; top: 0.68em; width: 0.4rem; height: 2px; background: var(--ink); opacity: 0.45; }
+.fps .vs-foot { font-size: 0.82rem; font-weight: 700; margin: 0; }
+.fps .vs-inst .vs-foot { color: var(--z-meter); }
+.fps .vs-judg .vs-foot { color: var(--z-trap); }
+.fps .vs-link { position: relative; height: 3.2rem; display: flex; flex-direction: column; align-items: center; }
+.fps .vs-link::before { content: ""; width: 2px; height: 2.45rem; background: var(--ink); }
+.fps .vs-link::after { content: ""; border: 0.5rem solid transparent; border-top: 0.78rem solid var(--ink); border-bottom: 0; margin-top: -1px; }
+.fps .vs-link span { position: absolute; left: calc(50% + 1rem); top: 0.85rem; font-size: 0.76rem; letter-spacing: 0.03em; color: var(--muted); white-space: nowrap; }
+.fps .vs-out { background: var(--white); border: 1px solid var(--rule); border-radius: 3px; padding: 1rem 1.2rem; }
+.fps .vs-out strong { display: block; font-size: 1rem; }
+.fps .vs-out span { font-size: 0.9rem; color: var(--body-ink); }
+.fps .vs-note { grid-column: 1 / -1; text-align: center; font-size: 0.85rem; color: var(--muted); margin: 1.1rem auto 0; max-width: none; }
+@media (max-width: 720px) {
+  .fps .vs { grid-template-columns: 1fr; gap: 0; }
+  .fps .vs-col + .vs-col { margin-top: 1.6rem; }
+  .fps .scene { grid-template-columns: 1fr; }
+  .fps .sc-arrow { padding: 0.7rem 0; }
+  .fps .sc-arrow::before { border: 0.55rem solid transparent; border-top: 0.85rem solid var(--ink); border-bottom: 0; }
+}
+
+/* figure 2: the four zones */
+.fps .zmap { display: grid; grid-template-columns: 6.5rem 1fr 1fr; gap: 0.9rem; }
+.fps .zm-col, .fps .zm-row { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); }
+.fps .zm-col { text-align: center; align-self: end; }
+.fps .zm-row { align-self: center; text-align: right; line-height: 1.5; }
+.fps .zm-row small { display: block; font-size: 0.78rem; font-weight: 400; letter-spacing: 0.02em; text-transform: none; color: var(--muted); }
+.fps .zm-card { background: var(--zbg); border: 1px solid var(--rule); border-top: 4px solid var(--zc); border-radius: 3px; padding: 1.1rem 1.25rem 1.2rem; }
+.fps .zm-card[data-z="compound"] { --zc: var(--z-compound); --zbg: var(--z-compound-bg); }
+.fps .zm-card[data-z="pace"]     { --zc: var(--z-pace);     --zbg: var(--z-pace-bg); }
+.fps .zm-card[data-z="meter"]    { --zc: var(--z-meter);    --zbg: var(--z-meter-bg); }
+.fps .zm-card[data-z="trap"]     { --zc: var(--z-trap);     --zbg: var(--z-trap-bg); border: 2px solid var(--z-trap); border-top-width: 5px; }
+.fps .zm-name { font-family: var(--display); font-size: 1.32rem; line-height: 1.2; color: var(--zc); margin: 0 0 0.3rem; }
+.fps .zm-axis { display: none; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0 0 0.6rem; }
+.fps .zm-move { font-size: 0.92rem; line-height: 1.55; color: var(--ink); margin: 0 0 0.85rem; }
+.fps .zm-eg { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.3rem; }
+.fps .zm-eg li { position: relative; padding-left: 0.95rem; font-size: 0.84rem; line-height: 1.45; color: var(--body-ink); }
+.fps .zm-eg li::before { content: ""; position: absolute; left: 0; top: 0.58em; width: 0.35rem; height: 0.35rem; border-radius: 50%; background: var(--zc); }
+.fps .cbm-wrap { grid-column: 2 / 4; padding: 0 25%; margin-bottom: 1.2rem; }
+.fps .cbm { position: relative; height: 3.3rem; margin-top: -0.9rem; border: 2px solid var(--z-meter); border-top: 0; border-radius: 0 0 0.8rem 0.8rem; }
+.fps .cbm::before { content: ""; position: absolute; left: -9px; top: -12px; border: 8px solid transparent; border-top: 0; border-bottom: 12px solid var(--z-meter); }
+.fps .cbm span {
+  position: absolute; left: 50%; bottom: 0;
+  transform: translate(-50%, 50%);
+  background: var(--ground);
+  border: 1px solid var(--z-meter);
+  border-radius: 999px;
+  padding: 0.25rem 0.85rem;
+  font-size: 0.78rem; font-weight: 700; color: var(--z-meter);
+  white-space: nowrap;
+}
+.fps .cbm-m { display: none; text-align: center; font-size: 0.85rem; font-weight: 700; color: var(--z-meter); margin: 0.2rem auto 0; }
+@media (max-width: 720px) {
+  .fps .zmap { grid-template-columns: 1fr; gap: 0.9rem; }
+  .fps .zm-col, .fps .zm-row, .fps .zm-corner, .fps .cbm-wrap { display: none; }
+  .fps .zm-axis { display: block; }
+  .fps .cbm-m { display: block; }
+}
+
+/* fix: option labels in the diagnostic inherited the small uppercase field-label style */
+.fps .field > label.opt { display: flex; font-size: 0.92rem; font-weight: 300; letter-spacing: 0; text-transform: none; color: var(--body-ink); margin-bottom: 0.55rem; }
+.fps .opt > span { color: var(--ink); }
+.fps .opt small { font-weight: 300; }
+
+/* nav: keep each tab on one line, tighten on narrower laptops */
+.nav-links a { white-space: nowrap; }
+@media (max-width: 1360px) and (min-width: 961px) {
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: 0.78rem; }
+  .nav-links a.btn-nav { padding: 9px 16px; }
+}
+@media (max-width: 1180px) and (min-width: 961px) {
+  .nav-logo-text { display: none; }
+}
 </style>
 
 <script>
@@ -1150,13 +1285,14 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
         <span class="nav-logo-text">Forge Product Strategy</span>
       </a>
       <ul class="nav-links" id="nav-links-main">
-        <li><a onclick="showPage('main');scrollToSection('#about')">About</a></li>
+        <li><a onclick="showPage('notes')">Insights from the Field</a></li>
+        <li><a href="https://tools.forgeproductstrategy.com" target="_blank" style="color:var(--orange);font-weight:600;">Forge Intelligence Tools</a></li>
         <li><a onclick="showPage('main');scrollToSection('#services')">Services</a></li>
         <li><a onclick="showPage('intro')" style="color:var(--diag);font-weight:600;">Free Sessions</a></li>
         <li><a onclick="showPage('main');scrollToSection('#case-studies')">Work</a></li>
-        <li><a href="https://tools.forgeproductstrategy.com" target="_blank" style="color:var(--orange);font-weight:600;">Forge Intelligence Tools</a></li>
-        <li><a onclick="showPage('notes')">Notes</a></li>
+        <li><a onclick="showPage('main');scrollToSection('#about')">About</a></li>
         <li><a onclick="showPage('main');scrollToSection('#contact')" class="btn-nav">Book a Call</a></li>
+      
       </ul>
       <button class="nav-hbg" id="hbg" aria-label="Toggle menu">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -1166,13 +1302,14 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 </nav>
 
 <div class="mob-drawer" id="mob-nav">
-  <a onclick="showPage('main');scrollToSection('#about');closeMob()">About</a>
+  <a onclick="showPage('notes');closeMob()">Insights from the Field</a>
+  <a href="https://tools.forgeproductstrategy.com" target="_blank" style="color:var(--orange);font-weight:600;">Forge Intelligence Tools</a>
   <a onclick="showPage('main');scrollToSection('#services');closeMob()">Services</a>
   <a onclick="showPage('intro');closeMob()" style="color:var(--diag);font-weight:600;">Free Sessions</a>
   <a onclick="showPage('main');scrollToSection('#case-studies');closeMob()">Work</a>
-  <a href="https://tools.forgeproductstrategy.com" target="_blank" style="color:var(--orange);font-weight:600;">Forge Intelligence Tools</a>
-  <a onclick="showPage('notes');closeMob()">Notes from the Field</a>
+  <a onclick="showPage('main');scrollToSection('#about');closeMob()">About</a>
   <a onclick="showPage('main');scrollToSection('#contact');closeMob()" class="btn-nav">Book a Call</a>
+
 </div>
 
 <!-- ============================================================ -->
@@ -1184,7 +1321,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   <div class="container">
    <div class="fps-lead-inner">
     <div>
-    <span class="sec-kicker">Notes from the Field</span>
+    <span class="sec-kicker">Insights from the Field</span>
     <h2 class="sec-title">Building products for humans <em>still requires humans.</em></h2>
     <p class="fps-lead-p">Your team is right to use AI for prototypes, competitive analysis, and faster development. Most teams should push it harder than they do. It will still never do the part of the job that decides whether a product works, and the only question worth arguing about now is which activities sit on which side of that line.</p>
     <p class="fps-lead-rule"><span>The rule</span>Agent autonomy is capped by outcome verifiability.</p>
@@ -2244,7 +2381,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 <div class="fps">
 
   <header class="col">
-    <p class="eyebrow">Notes from the field</p>
+    <p class="eyebrow">Insights from the Field</p>
     <p class="kicker">Does this sound familiar?</p>
     <h1>Your delivery velocity is accelerating. Your users' problems are not getting solved.</h1>
     <p class="standfirst">I keep hearing and reading the same thing across AI-assisted product work: we are shipping the wrong things faster. Shipping a capability and a user realizing a benefit are two separate events, and agents only accelerated the first.</p>
@@ -2261,31 +2398,101 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
       </ul>
     </div>
 
-    <p>Every good product team I know is already using AI to prototype concepts, run competitive analysis, and compress development cycles. That capability is real, and most of you should be pushing it harder than you are. It will still never do the part of this job that decides whether a product works, because building products for humans requires humans, and the only question worth arguing about now is which activities sit on which side of that line.</p>
+    <h2>First, what changed</h2>
 
-    <h2>Give the tools their due first</h2>
+    <div class="term"><b>AI agent</b>A software tool that takes a goal and works through the steps to reach it, without a person deciding each step.</div>
 
-    <p>The boundary only means something if you are honest about how far out it sits.</p>
+    <p>Product teams now point agents at real work. An agent will build a working prototype from a description in an afternoon. It will read every competitor release note from the last two years and tell you what changed. It will turn a pile of interview transcripts into themes faster than your best analyst. It will write production code against a clear spec, run the tests, and fix what it broke.</p>
 
-    <p>An agent will build a working prototype from a description in an afternoon. It will read every competitor release note from the last two years and tell you what changed. It will turn a pile of interview transcripts into themes faster than your best analyst. It will write production code against a clear spec, run the tests, and fix what it broke.</p>
+    <p>Every good product team I know already uses AI for some of this. Most of you should push it harder than you do. That capability is real.</p>
 
-    <p>Every one of those has the same property. You can check the answer. The prototype runs or it does not. The competitor shipped the feature or they did not. The tests pass or they fail.</p>
+    <h2>The gap nobody named</h2>
 
-    <p>That property is the whole story.</p>
+    <p>Shipping a capability and a user getting a benefit are two separate events. Agents compressed the first one. Nobody compressed the second.</p>
 
-    <h2>Where it stops</h2>
+    <p>The gap hides well, because the first event is the one your dashboards measure. Here is what it looks like from the inside.</p>
+  </div>
 
-    <p>Does the operator trust the alarm at 2am, or wait for the phone call she actually believes? Does the field tech stop calling support? Does the buyer understand what she just signed? Will anyone change how they work because of what you shipped?</p>
+  <figure class="fig">
+    <div class="scene" role="group" aria-label="A team ships on time and the dashboard is green. Two weeks later a customer calls to say her team works around the new workflow.">
+      <div class="sc-panel sc-good">
+        <p class="sc-when">Friday</p>
+        <ul class="sc-list">
+          <li>Every ticket done</li>
+          <li>Every pull request merged</li>
+          <li>Release shipped on time</li>
+          <li>Dashboard green</li>
+        </ul>
+      </div>
+      <div class="sc-arrow" aria-hidden="true"></div>
+      <div class="sc-panel sc-bad">
+        <p class="sc-when">Two weeks later</p>
+        <p class="sc-big">A customer calls.</p>
+        <p class="sc-text">Her team works around the new version. It does not match how they operate.</p>
+      </div>
+    </div>
+    <figcaption>An illustrative scene, not a client story. Nobody on the team had watched her use the old workflow. The agent had a ticket, and it optimized the ticket.</figcaption>
+  </figure>
 
-    <p>Nothing checks those answers. No test, no dashboard, no agent. A person has to use the thing, or watch somebody use it, and then decide.</p>
+  <div class="col">
+    <h2>Why it happens: two kinds of results</h2>
+
+    <p>Some results a machine can check. The prototype runs or it does not. The competitor shipped the feature or they did not. The tests pass or they fail.</p>
+
+    <div class="term"><b>Instrumented outcome</b>A result you measure with a number that moves within days, such as conversion, latency, or ticket volume.</div>
+
+    <p>Other results only a person can judge. Does the operator trust the alarm at 2am, or wait for the phone call she believes? Does the field tech stop calling support? Does the buyer understand what she just signed? Will anyone change how they work because of what you shipped?</p>
+
+    <div class="term"><b>Judged outcome</b>A result where a person has to use the thing, watch someone use it, or hear from a customer before anyone knows whether it worked. Nothing checks it: no test, no dashboard, no agent.</div>
 
     <p>I spent twenty years shipping to exactly those users. Operators on an alarm panel. Technicians up a tower in weather. Passengers at 35,000 feet with one shot at connecting before they give up. You do not learn whether that software worked by querying it. You learn by watching a face.</p>
+  </div>
 
-    <p>An agent cannot tell the two categories apart. Point one at either and it returns something that looks finished.</p>
+  <figure class="fig">
+    <div class="vs" role="group" aria-label="Two lanes. Work whose result a machine can check can be owned by an agent end to end. Work whose result only a person can judge needs a named person and a date, and the delivery dashboard cannot see it.">
+      <div class="vs-col">
+        <div class="vs-card vs-inst">
+          <p class="vs-label">A machine can check it</p>
+          <p class="vs-title">Instrumented outcomes</p>
+          <ul class="vs-list">
+            <li>The prototype runs, or it does not</li>
+            <li>The competitor shipped it, or did not</li>
+            <li>The tests pass, or they fail</li>
+            <li>A number moves within days</li>
+          </ul>
+          <p class="vs-foot">Your dashboard can see this side</p>
+        </div>
+        <div class="vs-link" aria-hidden="true"><span>so the agent can</span></div>
+        <div class="vs-out"><strong>Own the work end to end</strong><span>A person reviews the output.</span></div>
+      </div>
+      <div class="vs-col">
+        <div class="vs-card vs-judg">
+          <p class="vs-label">Only a person can judge it</p>
+          <p class="vs-title">Judged outcomes</p>
+          <ul class="vs-list">
+            <li>Does the operator trust the 2am alarm?</li>
+            <li>Does the field tech stop calling support?</li>
+            <li>Does the buyer understand what she signed?</li>
+            <li>Does anyone change how they work?</li>
+          </ul>
+          <p class="vs-foot">Your dashboard stays green either way</p>
+        </div>
+        <div class="vs-link" aria-hidden="true"><span>so the agent can only</span></div>
+        <div class="vs-out"><strong>Assist, while a person decides</strong><span>A named person, on a date, looks at the result.</span></div>
+      </div>
+      <p class="vs-note">An agent returns something that looks finished on both sides.</p>
+    </div>
+    <figcaption>Figure 1. An agent can own work whose result a machine can check. When only a person can judge the result, the agent assists and a named person decides.</figcaption>
+  </figure>
+
+  <div class="col">
+    <p>An agent cannot tell the two kinds apart. Point it at either one and it returns something that looks finished.</p>
 
     <div class="rule-line">Agent autonomy is capped by outcome verifiability.</div>
 
     <p>How an outcome gets judged is a property of the work. You do not get a vote. How much the agent owns is your decision, every sprint. Let the second outrun the first and you have bought speed with no way to know it helped.</p>
+
+    <p>That is a business problem, not a product problem. A green dashboard and an unsolved customer problem look identical until churn tells you otherwise.</p>
   </div>
 
   <!-- ============ MODULE 1: the diagnostic ============ -->
@@ -2347,6 +2554,52 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
     </div>
   </section>
 
+  <!-- ============ FIGURE: the four zones ============ -->
+  <div class="col">
+    <h2>Put the two answers together</h2>
+    <p>Every piece of work lands in one of four zones. Read the map left to right for what you can measure, and top to bottom for how much you hand the agent. Moving down is a choice. Moving right is not.</p>
+  </div>
+
+  <figure class="fig">
+    <div class="zmap" role="group" aria-label="A two by two map. Columns are outcome instrumented and outcome judged. Rows are agent assists and agent executes. The bottom right zone, Velocity trap, is highlighted: judged outcomes with an agent executing end to end. An arrow shows that writing a Customer Benefit Metric moves work from the Velocity trap to Meter it.">
+      <div class="zm-corner"></div>
+      <div class="zm-col">Outcome is instrumented</div>
+      <div class="zm-col">Outcome is judged</div>
+
+      <div class="zm-row">Agent assists<small>a person in the loop</small></div>
+      <div class="zm-card" data-z="compound">
+        <p class="zm-name">Compound</p>
+        <p class="zm-axis">Instrumented · agent assists</p>
+        <p class="zm-move">Push velocity here. The outcome is measurable and a person supervises.</p>
+        <ul class="zm-eg"><li>Checkout funnel experiments</li><li>Search relevance tuning</li><li>API latency work</li></ul>
+      </div>
+      <div class="zm-card" data-z="pace">
+        <p class="zm-name">Pace it</p>
+        <p class="zm-axis">Judged · agent assists</p>
+        <p class="zm-move">Keep a person in the loop and put the judgment on a calendar. Knowing it worked is the constraint, not speed.</p>
+        <ul class="zm-eg"><li>First release of a new product line</li><li>Alarm and alert design for operators</li><li>First run experience</li></ul>
+      </div>
+
+      <div class="zm-row">Agent executes<small>end to end</small></div>
+      <div class="zm-card" data-z="meter">
+        <p class="zm-name">Meter it</p>
+        <p class="zm-axis">Instrumented · agent executes</p>
+        <p class="zm-move">Delegate this. The outcome is instrumented and the agent has something real to build against.</p>
+        <ul class="zm-eg"><li>A new product once its CBM is live</li><li>Dependency upgrades and migrations</li><li>Test coverage backfill</li></ul>
+      </div>
+      <div class="zm-card" data-z="trap">
+        <p class="zm-name">Velocity trap</p>
+        <p class="zm-axis">Judged · agent executes</p>
+        <p class="zm-move">Stop. Write the CBM first or move the work up a row. This corner gives you a green dashboard and an unsolved problem.</p>
+        <ul class="zm-eg"><li>A net-new product with no CBM</li><li>A core workflow redesigned from a ticket</li><li>A dashboard for a role nobody has observed</li></ul>
+      </div>
+
+      <div class="cbm-wrap" aria-hidden="true"><div class="cbm"><span>Write a CBM: move left</span></div></div>
+      <p class="cbm-m">Write a CBM and this work moves up to Meter it</p>
+    </div>
+    <figcaption>Figure 2. The four zones. The shaded bottom right zone, judged outcomes with an agent executing end to end, is the only one that produces a green dashboard and an unsolved problem at the same time. A Customer Benefit Metric (CBM) moves work out of it.</figcaption>
+  </figure>
+
   <!-- ============ MODULE 2: the grid ============ -->
   <section class="mod wide" aria-labelledby="mx-h">
     <p class="mod-label">The grid</p>
@@ -2396,13 +2649,11 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
   <div class="col">
     <h2>New products fall into the trap by default</h2>
 
-    <p>Everything above assumes you have instruments. On an existing product you usually do: a funnel, a baseline, telemetry, a support queue with history.</p>
+    <p>If you are in a platform transition or launching a new product line, this section is about you.</p>
 
-    <p>Start something new and none of that exists.</p>
+    <p>Everything above assumes you have instruments. On an existing product you usually do: a funnel, a baseline, telemetry, a support queue with history. Start something new and none of that exists. No baseline. No cohort. No trend to break. The first real usage data lands months after the decisions that matter.</p>
 
-    <p>No baseline. No cohort. No trend to break. The first real usage data lands months after the decisions that matter. Every outcome that counts is a judged outcome, which drops the entire effort into the right column of that grid before anyone writes a line of code.</p>
-
-    <p>Now add agents. Velocity feels free, because nothing can contradict you yet.</p>
+    <p>Every outcome that counts is a judged outcome, which drops the whole effort into the right column before anyone writes a line of code. Now add agents. Velocity feels free, because nothing can contradict you yet.</p>
 
     <div class="pull">
       AI has made it cheap to ship products fast. It hasn't made it easier to ship products that matter.
@@ -2411,60 +2662,46 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 
     <p>That is where most AI-accelerated work goes wrong. Not incremental features. New bets, built fast, judged by nothing until launch.</p>
 
-    <h2>Customer Benefit Metrics move the work</h2>
+    <h2>The fix: a Customer Benefit Metric</h2>
 
-    <p>Dave Scott's fix is a Customer Benefit Metric, and it is the sharpest tool I have found for this problem.</p>
+    <div class="term"><b>Customer Benefit Metric (CBM)</b>A measure of the benefit your customer receives, not the benefit to your company. It sits on the adoption side of the release, not the delivery side.</div>
 
-    <p>A CBM measures the benefit your customer receives. Not the benefit to your company. It is the only instrument I know of that sits on the adoption side of the release.</p>
+    <p>Dave Scott's fix is the sharpest tool I have found for this problem.</p>
 
-    <p>Revenue, attach rate and NPS are business metrics. MAU, traffic and funnel dropout are usage metrics. Both are real and both look backward. Scott calls them the rear-view mirror. A CBM is the windshield.</p>
+    <p>Revenue, attach rate, and NPS are business metrics. MAU, traffic, and funnel dropout are usage metrics. Both are real, and both look backward. Scott calls them the rear-view mirror. A CBM is the windshield.</p>
 
-    <p>For Amazon, NPS is not a CBM. DAU is not a CBM. Dollars saved per order is.</p>
-
-    <p>Retention is not one either, which is what trips up teams who assume outcomes over outputs already covers this. Retention tells you somebody stayed. It never tells you what they got.</p>
+    <p>For Amazon, NPS is not a CBM. DAU is not a CBM. Dollars saved per order is. Retention is not one either, which is what trips up teams who assume "outcomes over outputs" already covers this. Retention tells you somebody stayed. It never tells you what they got.</p>
 
     <p>Write one before you build and a judged outcome becomes a measurable one. The alarm workflow stops being "operators should trust it" and becomes time from alarm to action, or the share of alarms acted on without a confirming phone call. Now the agent has something to build against and the reviewer has something to check.</p>
 
-    <p>That is the move. Not less velocity. A better definition of done.</p>
+    <p><strong>That is the move. Not less velocity. A better definition of done.</strong></p>
 
-    <h2>What you hand over, and what you do not</h2>
+    <h2>What you hand over, and what you keep</h2>
 
-    <p>Most AI guidance lists approved tools. That is the easy half.</p>
+    <p>Most AI guidance lists approved tools. That is the easy half. Before an agent touches the work, produce two things.</p>
 
-    <p>Before an agent touches the work, produce two things.</p>
+    <p><strong>The agent gets a definition of done a machine can check.</strong> Anchor it on the CBM, not on the ticket: tests, contracts, the benefit metric, the guardrails. If you cannot write it, the work is not ready to delegate. Pointing an agent at a paragraph of intent is a wish with a deadline.</p>
 
-    <p>The agent gets a definition of done a machine can check, anchored on the CBM rather than on the ticket. Tests, contracts, the benefit metric, the guardrails. If you cannot write it, the work is not ready to delegate. Pointing an agent at a paragraph of intent is a wish with a deadline.</p>
-
-    <p>The human keeps the judgment no test replaces, with a name and a date on it. Not "we will validate with users." A person, a week, and what she will look at.</p>
-
-    <p>Scott puts that on the calendar as a toll booth: a standing weekly review aimed at opportunity definition and concept work, not sprint demos. If your only recurring product review is a sprint demo, the judged outcomes never get judged.</p>
+    <p><strong>The human keeps the judgment no test replaces, with a name and a date on it.</strong> Not "we will validate with users." A person, a week, and what she will look at. Scott puts that on the calendar as a toll booth: a standing weekly review aimed at opportunity definition and concept work, not sprint demos. If your only recurring product review is a sprint demo, the judged outcomes never get judged.</p>
 
     <h2>Your team will not draw this line for you</h2>
 
     <p>Two things have to happen for a team to hold the line on its own. Neither will.</p>
 
-    <p>Someone has to notice when work crossed it. They will not. In a randomized trial, experienced developers using AI finished 19% slower and then estimated they had gone 20% faster. Thirty-nine points of error, from the people closest to the work. Microsoft's research names the mechanism: the more someone trusts an AI output, the less they scrutinize it. Your strongest engineers are the least reliable narrators you have on this.</p>
+    <p><strong>Someone has to notice when work crossed it. They will not.</strong> In a randomized trial, experienced developers using AI finished 19% slower and then estimated they had gone 20% faster. That is a 39-point error from the people closest to the work. Microsoft's research names the mechanism: the more someone trusts an AI output, the less they scrutinize it. Your strongest engineers are the least reliable narrators you have on this.</p>
 
-    <p>Then someone has to say it out loud. Most companies are already broken here.</p>
-
-    <p>Three years from a senior engineer's chair: layoffs, two reorgs, a roadmap rewritten twice after she was told it was locked. Then leadership walks in with an AI mandate and asks for enthusiasm.</p>
-
-    <p>She complies. Of course she complies.</p>
+    <p><strong>Someone has to say it out loud, and most companies are already broken here.</strong> When your team has lived through reorgs and rewritten roadmaps, an AI mandate reads as one more thing to comply with. They comply. Of course they comply.</p>
 
     <div class="pull">
       When you strip people of the ability to question, to learn at their own pace, to experiment with tools on their own terms, you strip them of agency.
       <cite>John Cutler, The Beautiful Mess, June 2026</cite>
     </div>
 
-    <p>Compliance and adoption produce identical slides. Underneath they are opposites. Adoption means your team tells you where the tool hurts. Compliance means they use it there anyway, because usage is what you measure.</p>
-
-    <p>So a product manager holding a judged outcome and an autonomous agent has a choice. Say the quiet part, that you can hit the date or know whether it worked but not both. Or ship it and move on.</p>
-
-    <p>Guess which one she picks when the mandate came from her skip level.</p>
+    <p>Compliance and adoption produce identical slides. Underneath they are opposites. Adoption means your team tells you where the tool hurts. Compliance means they use it there anyway, because usage is what you measure. You will not know which one you have until the customer tells you.</p>
 
     <p>Read skepticism as signal, not as a mindset problem. When an engineer says the output is not good enough for this particular work, that is information about the work. Most organizations have trained the reflex to hear it as information about the engineer.</p>
 
-    <p>DORA surveyed nearly 5,000 practitioners last year and found AI adoption tracks positively with throughput and negatively with delivery stability. AI does not fix a team, it amplifies what is already there. Which is why the line gets written down by you, rather than discovered by them.</p>
+    <p>DORA surveyed nearly 5,000 practitioners and found that AI adoption tracks positively with throughput and negatively with delivery stability. AI does not fix a team. It amplifies what is already there. That is why you write the line down, rather than waiting for your team to discover it.</p>
 
     <h2>The rule is really about permission</h2>
 
@@ -2472,7 +2709,7 @@ footer { background: var(--off-black); border-top: 1px solid rgba(255,255,255,.0
 
     <p>That is the value. Not the grid. The permission.</p>
 
-    <p>Cutler asks leaders to say who benefits from an adoption push. Usually some mix of cost, speed, and a board slide. Your teams already assume it. Saying it out loud costs you nothing.</p>
+    <p>Cutler asks leaders to say who benefits from an adoption push. Usually it is some mix of cost, speed, and a board slide. Your teams already assume it. Saying it out loud costs you nothing.</p>
 
     <p>This fails when leadership publishes the framework and still asks only about velocity every week. People read the meeting, not the document.</p>
   </div>
